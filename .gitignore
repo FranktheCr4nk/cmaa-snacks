@@ -6,3 +6,5 @@ desktop.ini
 .vscode/
 node_modules/
 *.log
+
+.playwright-mcp/
