@@ -1,0 +1,33 @@
+[
+  {
+    "id": "typo-1",
+    "name": "Heritage Serif",
+    "concept": "An elegant high-contrast serif wordmark in which a custom-drawn 'C' cradles a fine Archimedean chakli spiral, finished with a gold sesame accent. A refined, letter-spaced 'HOMEMADE / CHAKLI & CHIVDA' descriptor lockup keeps it timeless and premium.",
+    "files": {
+      "primary": "typo-1.svg",
+      "rev": "typo-1-rev.svg",
+      "mono": "typo-1-mono.svg"
+    }
+  },
+  {
+    "id": "typo-2",
+    "name": "Warm & Homemade",
+    "concept": "A friendly, rounded lowercase 'cmaa' in a soft bold sans, gently cradled by a terracotta-to-mustard swash that connects the two a's and buds into a tiny leaf, with a sesame-dot tittle above. Approachable and cosy yet still classy, with a clean one-colour version.",
+    "files": {
+      "primary": "typo-2.svg",
+      "rev": "typo-2-rev.svg",
+      "mono": "typo-2-mono.svg"
+    }
+  },
+  {
+    "id": "typo-3",
+    "name": "Gold Seal Monogram",
+    "concept": "A foil-stamp-quality 'C + chakli-spiral' monogram seal in gold on ink — a pure-vector mark that works as a favicon, app icon or wax seal — paired in a horizontal lockup with the Fraunces 'Cmaa' wordmark and a stacked descriptor for a luxe, giftable Diwali feel.",
+    "files": {
+      "primary": "typo-3.svg",
+      "rev": "typo-3-rev.svg",
+      "mono": "typo-3-mono.svg",
+      "icon": "typo-3-icon.svg"
+    }
+  }
+]

@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cmaa Snacks — Team Voting Board</title>
+<meta name="description" content="Vote and add feedback on every part of the Cmaa Snacks brand — names, logos, taglines, colours, flavours, packaging and more." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Mulish:wght@400;500;600;700;800&family=Caveat:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Marcellus&family=Spectral:wght@400;500;600;700&family=Anton&family=Poppins:wght@500;600;700;800&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600&family=Yatra+One&family=DM+Serif+Display&family=DM+Sans:wght@400;500;700&family=Bitter:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --terracotta:#B5512E;--terracotta-deep:#8C3D22;--mustard:#D99A2B;--gold:#E9B949;
+  --ink:#2E2017;--ink-soft:#5b4636;--cream:#F4ECDD;--cream-deep:#EBDFC9;--kraft:#D9C2A3;--paper:#FBF5E9;--leaf:#5E6B3B;
+  --serif:'Fraunces',Georgia,serif;--sans:'Mulish',system-ui,sans-serif;--hand:'Caveat',cursive;
+  --up:#5E6B3B;--down:#B5512E;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--cream);
+  background-image:radial-gradient(circle at 12% 6%,rgba(217,194,163,.30),transparent 36%),radial-gradient(circle at 88% 4%,rgba(233,185,73,.16),transparent 32%);
+  -webkit-font-smoothing:antialiased;line-height:1.55}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.06;margin:0 0 .35em;letter-spacing:-.01em}
+p{margin:0 0 .8em}
+.wrap{max-width:1240px;margin:0 auto;padding:0 22px}
+.hand{font-family:var(--hand)}
+
+.topbar{position:sticky;top:0;z-index:40;background:rgba(46,32,23,.97);color:var(--cream);backdrop-filter:blur(8px)}
+.topbar .wrap{display:flex;align-items:center;gap:16px;height:60px}
+.tb-brand{font-family:var(--serif);font-weight:700;font-size:24px;color:var(--gold);letter-spacing:-.02em;white-space:nowrap}
+.tb-brand small{font-family:var(--sans);font-weight:600;font-size:11px;color:var(--kraft);letter-spacing:.14em;text-transform:uppercase;display:block;margin-top:-3px}
+.tb-who{margin-left:auto;font-size:13px;color:var(--kraft);white-space:nowrap}
+.tb-who b{color:var(--cream)}
+.tb-who a{color:var(--gold);cursor:pointer;text-decoration:underline;margin-left:6px}
+.tb-stats{display:flex;gap:14px;font-size:12px;color:var(--kraft)}
+.tb-stats b{color:var(--gold);font-family:var(--serif);font-size:16px}
+@media(max-width:760px){.tb-stats{display:none}}
+
+.intro{padding:48px 0 26px;position:relative;overflow:hidden}
+.intro h1{font-size:clamp(40px,8vw,76px);font-weight:600}
+.intro h1 em{font-style:italic;color:var(--terracotta)}
+.intro .kick{font-family:var(--hand);font-size:28px;color:var(--terracotta)}
+.intro .lede{font-size:18px;max-width:680px;color:var(--ink-soft);font-weight:500}
+.howto{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.howto span{background:var(--paper);border:1px solid rgba(46,32,23,.14);border-radius:999px;padding:8px 15px;font-size:13px;font-weight:600;color:var(--ink-soft)}
+.howto b{color:var(--terracotta)}
+.utils{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:22px;background:rgba(233,185,73,.14);border:1px solid rgba(233,185,73,.4);border-radius:14px;padding:14px 16px}
+.utils .u-note{font-size:13px;color:var(--ink-soft);flex:1;min-width:240px}
+.btn{border:none;border-radius:999px;padding:9px 16px;font-family:var(--sans);font-weight:700;font-size:13px;cursor:pointer;background:var(--ink);color:var(--cream)}
+.btn:hover{background:var(--terracotta)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(46,32,23,.3)}
+.btn.ghost:hover{background:var(--ink);color:var(--cream)}
+
+.sec{padding:40px 0 18px;border-top:1px solid rgba(46,32,23,.1)}
+.sec-h{max-width:820px;margin-bottom:22px}
+.sec-h .sn{font-family:var(--hand);font-size:30px;color:var(--mustard);line-height:1}
+.sec-h .sk{display:block;font-weight:800;text-transform:uppercase;letter-spacing:.2em;font-size:11px;color:var(--terracotta);margin-top:4px}
+.sec-h h2{font-size:clamp(26px,4vw,40px)}
+.sec-h p{font-size:16px;color:var(--ink-soft)}
+
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:1000px){.g4{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:820px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.g2,.g3,.g4{grid-template-columns:1fr}}
+
+.opt{background:var(--paper);border:1px solid rgba(46,32,23,.13);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s,border-color .25s;position:relative}
+.opt:hover{transform:translateY(-3px);box-shadow:0 16px 34px -22px rgba(46,32,23,.55)}
+.opt.leading{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold) inset,0 16px 34px -22px rgba(46,32,23,.55)}
+.opt .leadtag{display:none;position:absolute;top:10px;left:10px;background:var(--gold);color:var(--ink);font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:999px;z-index:3}
+.opt.leading .leadtag{display:inline-block}
+
+.v-img{height:150px;background:var(--cream-deep);position:relative}
+.v-img img{width:100%;height:100%;object-fit:cover;display:block}
+.v-img.noimg::after{content:"📷";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:30px;opacity:.4}
+.v-badge{position:absolute;bottom:8px;right:8px;background:rgba(46,32,23,.82);color:var(--cream);font-size:10px;font-weight:700;padding:4px 8px;border-radius:999px}
+
+/* applied palette preview */
+.v-pal{height:150px;padding:12px 14px;display:flex;flex-direction:column;gap:7px;justify-content:center;background:var(--bg);color:var(--ink)}
+.v-pal .vp-top{display:flex;align-items:center;justify-content:space-between}
+.v-pal .vp-name{font-family:var(--serif);font-weight:600;color:var(--pr);font-size:18px}
+.v-pal .vp-pill{background:var(--ac);color:var(--bg);font-size:9px;font-weight:800;letter-spacing:.06em;padding:3px 9px;border-radius:999px}
+.v-pal .vp-head{font-family:var(--serif);font-size:21px;color:var(--pr);line-height:1}
+.v-pal .vp-card{background:var(--sf);border-radius:9px;padding:8px 9px;display:flex;align-items:center;gap:6px;box-shadow:0 4px 12px -8px rgba(0,0,0,.4)}
+.v-pal .vp-chip{width:18px;height:18px;border-radius:5px;background:var(--se)}
+.v-pal .vp-chip.alt{background:var(--ac)}
+.v-pal .vp-btn{margin-left:auto;background:var(--pr);color:var(--bg);font-size:10px;font-weight:800;padding:6px 11px;border-radius:999px}
+.v-sw{display:flex;height:18px}
+.v-sw i{flex:1}
+
+.v-type{height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--cream);gap:6px;padding:10px}
+.v-type .t-head{font-size:36px;color:var(--terracotta);line-height:1}
+.v-type .t-body{font-size:13px;color:var(--ink-soft);text-align:center}
+
+.v-logo{height:160px;display:flex;align-items:center;justify-content:center;background:var(--cream);text-align:center;padding:14px;background-image:linear-gradient(135deg,#f6efe0,#efe4cd)}
+.v-logo svg{max-width:100%;max-height:128px;height:auto;width:auto}
+.v-logo .lo-load{color:var(--ink-soft);font-size:13px;opacity:.5}
+
+.v-pack{height:200px;display:flex;align-items:center;justify-content:center;padding:14px;overflow:hidden;background:linear-gradient(180deg,#efe6d2,#e6d9be)}
+.pk{position:relative;filter:drop-shadow(0 14px 22px rgba(46,32,23,.4))}
+.pk.pouch{width:126px;height:172px;border-radius:8px 8px 12px 12px;background:linear-gradient(160deg,#dcc6a8,#c2a67c);border:1px solid #a8895f}
+.pk.pouch .pk-crimp{position:absolute;top:0;left:0;right:0;height:13px;background:repeating-linear-gradient(90deg,#b69a70 0 5px,#a98d63 5px 10px);border-radius:7px 7px 0 0}
+.pk-label{position:absolute;inset:22px 11px 11px;background:#F8F1E3;border-radius:7px;display:flex;flex-direction:column;align-items:center;padding:8px 6px;gap:5px;border:1px solid rgba(46,32,23,.1)}
+.pk-logo{font-family:var(--serif);font-weight:600;color:#B5512E;font-size:20px;line-height:1}
+.pk-logo.light{color:#F4ECDD}
+.pk-prod{font-family:var(--serif);font-size:11px;color:#2E2017}
+.pk-window{width:62px;height:48px;border-radius:6px;overflow:hidden;border:2px solid #fff;box-shadow:0 3px 8px rgba(0,0,0,.22)}
+.pk-window.round{width:52px;height:52px;border-radius:50%}
+.pk-window img,.pk-bigwindow img,.pk-jarfill{width:100%;height:100%;object-fit:cover;display:block}
+.pk-strip{font-size:6.5px;letter-spacing:.06em;font-weight:800;color:#8C3D22;text-align:center;margin-top:auto}
+.pk.tin{width:152px;height:118px;border-radius:12px;background:linear-gradient(180deg,#edc05a,#d29f2c);border:2px solid #b9851f;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.pk.tin .pk-lid{position:absolute;top:-8px;left:-5px;right:-5px;height:17px;border-radius:11px;background:linear-gradient(180deg,#f2cb63,#dcab38);border:2px solid #b9851f}
+.pk-band{display:flex;flex-direction:column;align-items:center;background:#7a3b1e;border-radius:6px;padding:5px 16px}
+.pk-band .pk-sub{font-size:7px;color:#f0dcc0;letter-spacing:.12em;margin-top:1px}
+.pk.box{width:166px;height:120px;border-radius:8px;background:linear-gradient(135deg,#a52f2f,#7a1f1f)}
+.pk.box .pk-ribbon-v{position:absolute;top:0;bottom:0;left:50%;width:16px;transform:translateX(-50%);background:linear-gradient(180deg,#E9B949,#caa23f)}
+.pk.box .pk-ribbon-h{position:absolute;left:0;right:0;top:50%;height:16px;transform:translateY(-50%);background:linear-gradient(90deg,#E9B949,#caa23f)}
+.pk-box-label{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:2;gap:2px}
+.pk-box-label span:last-child{font-size:9px;color:#f3d9a0;letter-spacing:.12em}
+.pk.clearpouch{width:118px;height:168px;border-radius:8px 8px 10px 10px;background:linear-gradient(160deg,rgba(255,255,255,.55),rgba(220,205,175,.45));border:1.5px solid #c9ad86;display:flex;flex-direction:column;align-items:center;padding:8px}
+.pk.clearpouch .pk-top{background:#B5512E;width:calc(100% + 16px);margin:-8px -8px 6px;padding:6px;text-align:center;border-radius:7px 7px 0 0}
+.pk-bigwindow{flex:1;width:100%;border-radius:6px;overflow:hidden;border:1px solid rgba(46,32,23,.15)}
+.pk.jar{width:90px;height:122px}
+.pk.jar .pk-jarlid{position:absolute;top:0;left:6px;right:6px;height:17px;border-radius:6px;background:#6E4B2A;z-index:3}
+.pk-jarbody{position:absolute;top:11px;bottom:0;left:0;right:0;border-radius:10px 10px 14px 14px;overflow:hidden;border:2px solid rgba(46,32,23,.28);background:#eadbb8}
+.pk-jarfill{position:absolute;inset:0;opacity:.96}
+.pk-jarlabel{position:absolute;left:8px;right:8px;bottom:14px;background:#F4ECDD;border-radius:5px;text-align:center;font-family:var(--serif);color:#B5512E;font-size:15px;padding:3px;z-index:2}
+.pk.sachets{display:flex;gap:6px;filter:none}
+.pk-sachet{width:38px;height:98px;border-radius:5px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:9px;box-shadow:0 12px 20px -10px rgba(46,32,23,.55)}
+.pk-sachet span{font-family:var(--serif);color:#fff;font-size:11px;writing-mode:vertical-rl;transform:rotate(180deg)}
+
+.v-hero{height:185px;background-size:cover;background-position:center;display:flex;align-items:center;padding:18px}
+.v-hero .vh-head{font-size:24px;line-height:1.05;max-width:13ch}
+.v-hero .vh-sub{font-size:12px;color:#fff;opacity:.92;margin-top:6px}
+.v-text{padding:26px 18px;font-family:var(--serif);font-size:23px;color:var(--ink);text-align:center;background:linear-gradient(180deg,var(--cream),var(--paper));min-height:120px;display:flex;align-items:center;justify-content:center;line-height:1.2}
+
+.opt-body{padding:12px 14px 4px;flex:1}
+.opt-body h4{font-size:16px;margin-bottom:2px}
+.opt-body p,.opt-body .rationale{font-size:12.5px;color:var(--ink-soft);margin:0}
+.opt-vote{display:flex;gap:8px;align-items:center;padding:10px 14px 6px}
+.vb{flex:1;border:1.5px solid rgba(46,32,23,.18);background:#fff;border-radius:10px;padding:8px;font-family:var(--sans);font-weight:700;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:.15s;color:var(--ink)}
+.vb .c{font-size:12px;opacity:.7}
+.vb.up:hover,.vb.up.mine{background:var(--up);color:#fff;border-color:var(--up)}
+.vb.down:hover,.vb.down.mine{background:var(--down);color:#fff;border-color:var(--down)}
+.vb.mine .c{opacity:1}
+.who-voted{display:flex;flex-wrap:wrap;gap:4px;padding:0 14px 12px}
+.who-voted .wv{font-size:10.5px;font-weight:700;border-radius:999px;padding:2px 8px;background:rgba(94,107,59,.16);color:#42572c}
+.who-voted .wv.dn{background:rgba(181,81,46,.16);color:#8C3D22}
+
+.fb{margin-top:18px;background:rgba(255,255,255,.5);border:1px dashed rgba(46,32,23,.28);border-radius:14px;padding:16px 18px}
+.fb h4{font-size:15px;margin-bottom:10px;color:var(--terracotta-deep)}
+.fb-list{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+.fb-note{background:var(--paper);border:1px solid rgba(46,32,23,.12);border-radius:10px;padding:9px 12px;font-size:13.5px}
+.fb-note .who{font-weight:800;color:var(--ink);margin-right:6px}
+.fb-note .when{font-size:11px;color:var(--ink-soft);float:right}
+.fb-empty{font-size:13px;color:var(--ink-soft);font-style:italic}
+.fb-form{display:flex;gap:8px;align-items:flex-start}
+.fb-form textarea{flex:1;border:1.5px solid rgba(46,32,23,.2);border-radius:10px;padding:10px;font-family:var(--sans);font-size:14px;resize:vertical;min-height:46px;background:#fff;color:var(--ink)}
+.fb-form button{align-self:stretch}
+
+.results{padding:40px 0;border-top:1px solid rgba(46,32,23,.1)}
+.res-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.res-card{background:var(--ink);color:var(--cream);border-radius:12px;padding:14px 16px}
+.res-card .rs{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);font-weight:700}
+.res-card .rl{font-family:var(--serif);font-size:18px;margin-top:4px}
+.res-card .rv{font-size:12px;color:var(--kraft);margin-top:4px}
+
+footer{padding:30px 0 70px;color:var(--ink-soft);font-size:12px;border-top:1px solid rgba(46,32,23,.1)}
+footer h4{font-size:14px;color:var(--ink)}
+footer .credits{font-size:11px;line-height:1.7;columns:2;column-gap:30px}
+@media(max-width:640px){footer .credits{columns:1}}
+footer a{color:var(--terracotta)}
+
+.gate{position:fixed;inset:0;z-index:100;background:rgba(46,32,23,.86);display:flex;align-items:center;justify-content:center;padding:20px}
+.gate.hide{display:none}
+.gate-box{background:var(--paper);border-radius:18px;padding:32px;max-width:440px;width:100%;text-align:center;box-shadow:0 30px 80px -30px #000}
+.gate-box .sp{font-family:var(--hand);font-size:30px;color:var(--terracotta)}
+.gate-box h2{font-size:30px}
+.gate-box p{font-size:14px;color:var(--ink-soft)}
+.gate-box input{width:100%;border:1.5px solid rgba(46,32,23,.25);border-radius:12px;padding:13px;font-size:16px;font-family:var(--sans);margin:14px 0;text-align:center;color:var(--ink)}
+.gate-box .btn{width:100%;padding:13px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(120%);background:var(--ink);color:var(--cream);padding:12px 20px;border-radius:999px;font-weight:600;font-size:14px;z-index:120;transition:transform .35s;box-shadow:0 14px 30px -12px rgba(0,0,0,.6)}
+.toast.show{transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="tb-brand">Cmaa<small>Snacks · Team Vote</small></div>
+    <div class="tb-stats">
+      <div><b id="st-voters">0</b> voters</div>
+      <div><b id="st-votes">0</b> votes</div>
+      <div><b id="st-fb">0</b> notes</div>
+    </div>
+    <div class="tb-who" id="tb-who"></div>
+  </div>
+</div>
+
+<section class="intro">
+  <div class="wrap">
+    <p class="kick">Help us shape Cmaa — vote on everything 👇</p>
+    <h1>What should <em>Cmaa</em> look, sound &amp; taste like?</h1>
+    <p class="lede"><b>Cmaa</b> ≈ "Seema" + "Maa" — homemade chakli &amp; chivda, made by a real mother. Below is every part of the brand with lots of options. <b>Vote 👍 or 👎</b> on anything — your name shows on each pick so the whole team sees who voted for what. Drop <b>ideas in the feedback box</b> under each section. The top pick in each lights up gold.</p>
+    <div class="howto">
+      <span><b>1.</b> Add your name</span>
+      <span><b>2.</b> 👍 / 👎 each option</span>
+      <span><b>3.</b> Leave feedback per section</span>
+      <span><b>4.</b> See who voted &amp; what's winning</span>
+    </div>
+    <div class="utils">
+      <div class="u-note">💾 Votes save on <b>this device</b> for now. To pool the whole team into one live tally, each person hits <b>Export</b> and sends it to the organiser, who <b>Imports</b> them — or we switch on a one-link shared tally next.</div>
+      <button class="btn ghost" id="exportBtn">⬇ Export my ballot</button>
+      <label class="btn ghost" style="cursor:pointer">⬆ Import ballots<input id="importInput" type="file" accept="application/json" hidden></label>
+      <button class="btn ghost" id="resetBtn">↺ Reset my votes</button>
+    </div>
+  </div>
+</section>
+
+<main id="board" class="wrap"></main>
+
+<section class="results wrap">
+  <div class="sec-h"><span class="sn">★</span><span class="sk">Live tally</span><h2>Current front-runners</h2><p>The leading option in each section, based on votes on this device (plus any imported ballots).</p></div>
+  <div class="res-grid" id="resGrid"></div>
+</section>
+
+<footer class="wrap">
+  <h4>Cmaa Snacks — Team Voting Board</h4>
+  <p>All concepts are early drafts on a blank slate, made for your team to react to. Nothing here is final.</p>
+  <h4 style="margin-top:18px">Image credits (Wikimedia Commons)</h4>
+  <div class="credits" id="credits"></div>
+</footer>
+
+<div class="gate" id="gate">
+  <div class="gate-box">
+    <div class="sp">namaste 🙏</div>
+    <h2>Who's voting?</h2>
+    <p>Add your name so we know whose picks and ideas are whose. (Just for this board.)</p>
+    <input id="nameInput" placeholder="Your name" autocomplete="name" />
+    <button class="btn" id="nameGo">Start voting →</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const IMG='../assets/images/';
+const LOGO='../assets/logos/';
+
+const DATA=[
+{id:'name',num:'01',kicker:'Identity',title:'Brand name & lock-up',intro:'We love “Cmaa”. Which written treatment feels most like us on a pack and a sign?',grid:'g3',options:[
+ {id:'n1',type:'text',big:'Cmaa',sub:'Clean and bold. Lets the word — and the “Maa” hidden in it — do the work.'},
+ {id:'n2',type:'text',big:'Cmaa Snacks',sub:'Adds the category so a first-time buyer instantly gets it.'},
+ {id:'n3',type:'text',big:'Cmaa — Homemade Chakli & Chivda',sub:'The full honest lock-up. Says exactly what we make, by hand.'},
+ {id:'n4',type:'text',big:'cMaa',sub:'Lowercase c, capital Maa — quietly spotlights the mother at the heart of it.'},
+ {id:'n5',type:'text',big:'Cmaa by Seema',sub:'Names the real person. “A brand by a real Maa, Seema.”'},
+ {id:'n6',type:'text',big:'Cmaa Foods',sub:'Reads like a company — good if we plan to grow well beyond two snacks.'},
+ {id:'n7',type:'text',big:'Cmaa Ghar Ka',sub:'Hinglish warmth — “Cmaa, the homemade one.”'},
+ {id:'n8',type:'text',big:'Cmaa Kitchen',sub:'Homely and place-based, easy to picture a kitchen behind it.'},
+ {id:'n9',type:'text',big:'Cmaa Faral',sub:'Roots us in the Diwali-faral tradition. Very Maharashtrian.'},
+ {id:'n10',type:'text',big:'Cmaa & Co.',sub:'A small trusted “house” feel — heritage and timeless.'},
+ {id:'n11',type:'text',big:'CMAA',sub:'All-caps, modern, confident — leans more design-forward / D2C.'},
+ {id:'n12',type:'text',big:'Cmaa Homemade',sub:'Says the promise outright; very SEO-friendly.'},
+]},
+
+{id:'story',num:'02',kicker:'Positioning',title:'What story do we lead with?',intro:'Every great food brand has one core idea it repeats everywhere. Which one is Cmaa’s?',grid:'g3',options:[
+ {id:'s1',type:'text',big:'“Because everything’s better when Maa makes it.”',sub:'The mother-made truth. Warm, universal, instantly understood.'},
+ {id:'s2',type:'text',big:'“Sounds like Seema. Means Maa.”',sub:'Leans into the clever name + the real person behind it.'},
+ {id:'s3',type:'text',big:'“Small-batch, by hand, no shortcuts.”',sub:'Craft & honesty — pressed by hand, fried fresh, no preservatives.'},
+ {id:'s4',type:'text',big:'“The faral you grew up on.”',sub:'Nostalgia & festival tradition — the Diwali snack, all year.'},
+ {id:'s5',type:'text',big:'“Crunch worth couriering.”',sub:'For the diaspora & gifting — send the taste of home anywhere.'},
+ {id:'s6',type:'text',big:'“No machines. Just patience.”',sub:'Anti-factory positioning — the opposite of mass namkeen.'},
+]},
+
+{id:'logo',num:'03',kicker:'Identity',title:'Logo direction',intro:'Nine refined concepts across three families — typographic wordmarks, heritage seals, and warm symbols. Each is the real, polished thing (we’ll perfect the winner). Which is most “Cmaa”?',grid:'g3',options:[
+ {id:'lg1',type:'svglogo',file:'typo-1.svg',label:'Heritage Serif',sub:'Elegant serif “Cmaa” with a chakli-spiral tucked into the C and a gold sesame accent. Timeless & premium.'},
+ {id:'lg2',type:'svglogo',file:'typo-2.svg',label:'Warm & Homemade',sub:'Rounded lowercase “cmaa” with a swash linking the a’s and a little leaf bud. Friendly, cosy, classy.'},
+ {id:'lg3',type:'svglogo',file:'typo-3.svg',label:'Gold Seal Monogram',sub:'A foil-quality C-spiral monogram paired with the wordmark. Luxe and giftable.'},
+ {id:'lg4',type:'svglogo',file:'emblem-1.svg',label:'Heritage Crest',sub:'A circular trust-seal — arched CMAA over a spiral medallion, “handmade · small batch”.'},
+ {id:'lg5',type:'svglogo',file:'emblem-2.svg',label:'Chakli Wax Seal',sub:'A tactile wax-seal spiral with a gold beaded ring. Iconic as an app icon or foil emboss.'},
+ {id:'lg6',type:'svglogo',file:'emblem-3.svg',label:'Maker’s Label',sub:'A vintage craft ingredient-label stamp — reads as honest, small-batch and real.'},
+ {id:'lg7',type:'svglogo',file:'symbol-1.svg',label:'The Maa Mark',sub:'A dignified line-portrait of a mother beside the wordmark. The human heart of the brand.'},
+ {id:'lg8',type:'svglogo',file:'symbol-2.svg',label:'Chakli-Sun / Marigold',sub:'A spiral that doubles as a sun and a marigold. Festive, optimistic, infinitely scalable.'},
+ {id:'lg9',type:'svglogo',file:'symbol-3.svg',label:'Warmth Mark',sub:'Steam rising from a homemade bowl. Minimal, modern, heart-warming.'},
+]},
+
+{id:'tagline',num:'04',kicker:'Voice',title:'Tagline',intro:'The line that sits under the logo and ends our ads. Pick the ones that give you goosebumps.',grid:'g3',options:[
+ {id:'t1',type:'text',big:'Made by hand. Made for you.',sub:'Crisp, gift-ready, travels globally.'},
+ {id:'t2',type:'text',big:'Ghar ka swaad, Maa ke haath ka.',sub:'India-first warmth — taste of home, from Maa’s hands.'},
+ {id:'t3',type:'text',big:'Because everything’s better when Maa makes it.',sub:'The core truth, said simply.'},
+ {id:'t4',type:'text',big:'Sounds like Seema. Tastes like home.',sub:'Plays on the name + the feeling.'},
+ {id:'t5',type:'text',big:'Maa-de with love.',sub:'Cheeky pun — fun on social & packs.'},
+ {id:'t6',type:'text',big:'Snacks that taste like someone made them for you.',sub:'The most emotionally precise line.'},
+ {id:'t7',type:'text',big:'Small batches. Big love.',sub:'Modern D2C cadence; craft + warmth.'},
+ {id:'t8',type:'text',big:'The chakli your Maa would approve of.',sub:'Witty, high-trust quality bar.'},
+ {id:'t9',type:'text',big:'A little crunch. A lot of home.',sub:'Sensory + emotional, perfect for chakli/chivda.'},
+ {id:'t10',type:'text',big:'No machines. No shortcuts. Just Maa.',sub:'The honest, anti-factory line.'},
+ {id:'t11',type:'text',big:'Crunch worth couriering.',sub:'Built for the NRI / gifting angle.'},
+ {id:'t12',type:'text',big:'From Maa’s hands to your tin.',sub:'Tells the little journey of every batch.'},
+ {id:'t13',type:'text',big:'Handmade, the way it should be.',sub:'Quiet confidence vs machine-made namkeen.'},
+ {id:'t14',type:'text',big:'Maa knows best. Especially the chakli.',sub:'Warm and funny — great on social.'},
+ {id:'t15',type:'text',big:'Faral, fresh from a real kitchen.',sub:'Roots us in festive tradition + freshness.'},
+ {id:'t16',type:'text',big:'The taste you grew up on.',sub:'Pure nostalgia, very broad appeal.'},
+ {id:'t17',type:'text',big:'Ghar jaisa — kyunki ghar ka hai.',sub:'“Like home — because it is home.”'},
+ {id:'t18',type:'text',big:'Crunch. Care. Cmaa.',sub:'Three-word brand stamp — memorable rhythm.'},
+]},
+
+{id:'colour',num:'05',kicker:'Look',title:'Colour palette',intro:'Don’t just judge swatches — each tile is a tiny preview of how the site would actually feel in that palette (heading, card, button, chips). The strip under it shows the full colour set.',grid:'g3',options:[
+ {id:'c1',type:'swatch',label:'Kitchen Warmth',sub:'Terracotta, mustard, gold on cream. Cozy-premium. (Our pick.)',roles:{bg:'#F4ECDD',surface:'#FBF5E9',ink:'#2E2017',primary:'#B5512E',secondary:'#D99A2B',accent:'#E9B949'},colors:['#B5512E','#D99A2B','#E9B949','#2E2017','#F4ECDD','#D9C2A3']},
+ {id:'c2',type:'swatch',label:'Festive Heirloom',sub:'Marigold + pomegranate + gold. Rich, Diwali-ready.',roles:{bg:'#FBF6EC',surface:'#FFFFFF',ink:'#241312',primary:'#9E2B2B',secondary:'#E8A317',accent:'#C9A14A'},colors:['#E8A317','#9E2B2B','#C9A14A','#241312','#FBF6EC','#D8A7A0']},
+ {id:'c3',type:'swatch',label:'Modern Maker',sub:'Charcoal + off-white + a single saffron pop. Editorial.',roles:{bg:'#F7F4EE',surface:'#FFFFFF',ink:'#23211E',primary:'#A6552F',secondary:'#B7AEA0',accent:'#E2841C'},colors:['#23211E','#A6552F','#E2841C','#F7F4EE','#B7AEA0']},
+ {id:'c4',type:'swatch',label:'Garden & Grain',sub:'Olive + sesame + cream. Wholesome, clean-label.',roles:{bg:'#F1EBDB',surface:'#FFFFFF',ink:'#2B2A21',primary:'#5E6B3B',secondary:'#C8A86B',accent:'#C24B33'},colors:['#5E6B3B','#C8A86B','#C24B33','#2B2A21','#F1EBDB','#C4C7AC']},
+ {id:'c5',type:'swatch',label:'Aaji’s Kitchen',sub:'Earthy, handwritten, made-by-mum warmth.',roles:{bg:'#FBF4E6',surface:'#FFFFFF',ink:'#4A3B2A',primary:'#C8612D',secondary:'#3E5C2F',accent:'#D9A441'},colors:['#FBF4E6','#C8612D','#7A3B1E','#3E5C2F','#D9A441','#4A3B2A']},
+ {id:'c6',type:'swatch',label:'Quiet Luxury',sub:'Bone, ink & brass. Minimal, premium, calm.',roles:{bg:'#F4F1EC',surface:'#FFFFFF',ink:'#1A1A18',primary:'#9A7B4F',secondary:'#5B5B52',accent:'#B8442C'},colors:['#F4F1EC','#1A1A18','#9A7B4F','#E8E2D6','#5B5B52','#B8442C']},
+ {id:'c7',type:'swatch',label:'Roshni Bazaar',sub:'Aubergine + kumkum + marigold. Festival, maxed out.',roles:{bg:'#3A0B45',surface:'#4D1A59',ink:'#FFF3D6',primary:'#F6A21E',secondary:'#E63946',accent:'#FFD24C'},colors:['#3A0B45','#E63946','#F6A21E','#FFD24C','#118A7E','#FFF3D6']},
+ {id:'c8',type:'swatch',label:'Brown Paper & Twine',sub:'Kraft, cocoa & sage. Honest small-batch craft.',roles:{bg:'#D8C4A5',surface:'#F0E9D8',ink:'#2F2A24',primary:'#6E4B2A',secondary:'#8C9A5B',accent:'#C24E2C'},colors:['#D8C4A5','#6E4B2A','#2F2A24','#8C9A5B','#C24E2C','#F0E9D8']},
+ {id:'c9',type:'swatch',label:'Crunch!',sub:'Bright cream, chilli-orange, pop yellow. Loud & fun.',roles:{bg:'#FFF8E1',surface:'#FFFFFF',ink:'#1B1B3A',primary:'#FF5630',secondary:'#2DBE9A',accent:'#FFC93C'},colors:['#FFF8E1','#FF5630','#1B1B3A','#FFC93C','#2DBE9A','#FF8FB1']},
+ {id:'c10',type:'swatch',label:'The Almanac',sub:'Aged ivory, maroon & old gold. Heritage editorial.',roles:{bg:'#F3EDE1',surface:'#FFFFFF',ink:'#1F2A24',primary:'#7B1E1E',secondary:'#3D5A4C',accent:'#C58A3D'},colors:['#F3EDE1','#7B1E1E','#1F2A24','#C58A3D','#3D5A4C','#A8432A']},
+ {id:'c11',type:'swatch',label:'Haldi & Honey',sub:'All-golden warmth — turmeric, honey, toffee, cream.',roles:{bg:'#FFF6E4',surface:'#FFFFFF',ink:'#3A2A18',primary:'#C9781A',secondary:'#E7A100',accent:'#7A4A1E'},colors:['#F7E9C8','#E7A100','#C9781A','#7A4A1E','#3A2A18','#FFF6E4']},
+ {id:'c12',type:'swatch',label:'Saffron Nights',sub:'Deep indigo + saffron + gold. Modern-festive premium.',roles:{bg:'#0F1B33',surface:'#1B2A4A',ink:'#F3ECDD',primary:'#F4892B',secondary:'#9DB4C0',accent:'#E9C46A'},colors:['#1B2A4A','#F4892B','#E9C46A','#0F1B33','#F3ECDD','#9DB4C0']},
+]},
+
+{id:'type',num:'06',kicker:'Look',title:'Typography',intro:'The fonts that carry our name and words. Which voice should the type speak in?',grid:'g3',options:[
+ {id:'ty1',type:'typepair',label:'Warm Editorial',sub:'Fraunces + Mulish — artisanal, premium, alive. (Our pick.)',head:'Fraunces',body:'Mulish'},
+ {id:'ty2',type:'typepair',label:'Friendly Classic',sub:'DM Serif Display + DM Sans — elegant, gift-ready.',head:'"DM Serif Display"',body:'"DM Sans"'},
+ {id:'ty3',type:'typepair',label:'Homely & Sturdy',sub:'Bitter + Work Sans — cozy slab, the aunt’s-kitchen feel.',head:'Bitter',body:'"Work Sans"'},
+ {id:'ty4',type:'typepair',label:'Luxe Editorial',sub:'Cormorant Garamond + Inter — high-fashion, premium gifting.',head:'"Cormorant Garamond"',body:'Inter'},
+ {id:'ty5',type:'typepair',label:'Heritage Magazine',sub:'Marcellus + Spectral — literary, story-led, sophisticated.',head:'Marcellus',body:'Spectral'},
+ {id:'ty6',type:'typepair',label:'Modern Friendly',sub:'Poppins throughout — clean, rounded, very mobile-readable.',head:'Poppins',body:'Poppins'},
+]},
+
+{id:'vibe',num:'07',kicker:'Look & feel',title:'Overall vibe (art direction)',intro:'Six complete “worlds” the website & brand could live in — over real product photography. Which feels right?',grid:'g3',options:[
+ {id:'v1',type:'hero',label:'Aaji’s Kitchen',sub:'Warm, nostalgic, made-by-Maa. Gentle motion.',img:'cooking.jpg',font:'Fraunces',color:'#7A3B1E',overlay:'rgba(251,244,230,.5),rgba(240,226,200,.78)',headline:'Made the way Maa makes it.',tagline:'Small-batch, fried fresh, packed with love.'},
+ {id:'v2',type:'hero',label:'Quiet Luxury',sub:'Minimal, premium, the snack as a precious object.',img:'chakli-2.jpg',font:'"Cormorant Garamond"',color:'#1A1A18',overlay:'rgba(244,241,236,.55),rgba(244,241,236,.62)',headline:'The humble, elevated.',tagline:'Chakli & chivda. Handmade. Nothing else.'},
+ {id:'v3',type:'hero',label:'Roshni Bazaar',sub:'Festive Diwali energy — jewel tones, celebration.',img:'diwali.jpg',font:'"Yatra One"',color:'#FFD24C',overlay:'rgba(30,8,40,.55),rgba(58,11,69,.72)',headline:'Is Diwali, ghar ka swaad bhejiye.',tagline:'Send the taste of home this festive season.'},
+ {id:'v4',type:'hero',label:'Brown Paper & Twine',sub:'Earthy, honest, small-batch craft.',img:'packaging.jpg',font:'"Space Mono"',color:'#3A2410',overlay:'rgba(216,196,165,.35),rgba(216,196,165,.6)',headline:'No shortcuts. Just small batches.',tagline:'Rice flour, sesame, curry leaf, patience.'},
+ {id:'v5',type:'hero',label:'Crunch!',sub:'Loud, playful, big type — younger & social.',img:'chakli-1.jpg',font:'Anton',color:'#FFF8E1',overlay:'rgba(27,27,58,.35),rgba(255,86,48,.5)',headline:'CRUNCH THAT MEANS IT.',tagline:'Homemade chakli & chivda. No nonsense.'},
+ {id:'v6',type:'hero',label:'The Almanac',sub:'Editorial, heritage storytelling, sophisticated.',img:'spices.jpg',font:'Marcellus',color:'#F3EDE1',overlay:'rgba(31,42,36,.45),rgba(123,30,30,.55)',headline:'A spiral of flour, ghee & memory.',tagline:'Issue 01 — the story of Cmaa’s kitchen.'},
+]},
+
+{id:'hero',num:'08',kicker:'Website',title:'Homepage headline',intro:'The very first words a visitor reads. Which opening line should greet them?',grid:'g3',options:[
+ {id:'h1',type:'text',big:'“Made the way Maa makes it.”',sub:'Warm, universal, on-brand.'},
+ {id:'h2',type:'text',big:'“Ghar ka swaad, ab ghar pe.”',sub:'“The taste of home, now at home.”'},
+ {id:'h3',type:'text',big:'“The chakli you grew up on — couriered to your door.”',sub:'Nostalgia + the delivery promise.'},
+ {id:'h4',type:'text',big:'“Small-batch chakli & chivda, by a real Maa.”',sub:'Clear, honest, descriptive.'},
+ {id:'h5',type:'text',big:'“Crunch that tastes like home.”',sub:'Short, sensory, punchy.'},
+ {id:'h6',type:'text',big:'“Faral, fresh from Cmaa’s kitchen.”',sub:'Festive + freshness + brand.'},
+]},
+
+{id:'flavours',num:'09',kicker:'The product',title:'Which flavours should we launch?',intro:'Real photos of the kind of snacks we’ll make. Vote the flavours you’d actually buy — we’ll launch the winners first.',grid:'g4',options:[
+ {id:'f1',type:'image',img:'chakli-2.jpg',badge:'Chakli',label:'Classic Bhajani Chakli',sub:'Roasted multigrain spirals, the authentic Maharashtrian hero.'},
+ {id:'f2',type:'image',img:'chakli-1.jpg',badge:'Chakli',label:'Butter Chakli',sub:'Real butter, mild & melt-in-mouth. The family favourite.'},
+ {id:'f3',type:'image',img:'chakli-1.jpg',badge:'Chakli · 🌶🌶',label:'Masala Chakli',sub:'Bold, fiery, garlic-kissed. Chai’s best friend.'},
+ {id:'f4',type:'image',img:'chakli-2.jpg',badge:'Chakli',label:'Palak / Methi Chakli',sub:'A herby green twist on the classic spiral.'},
+ {id:'f5',type:'image',img:'murukku.jpg',badge:'Chakli',label:'Butter Murukku',sub:'Light, lacy South-Indian cousin — delicate crunch.'},
+ {id:'f6',type:'image',img:'murukku.jpg',badge:'Chakli',label:'Multigrain / Ragi Chakli',sub:'Millet-forward, “feel-good” modern variant.'},
+ {id:'f7',type:'image',img:'chivda-1.jpg',badge:'Chivda',label:'Classic Poha Chivda',sub:'Crisp poha, peanuts, curry leaves. The chai-time legend.'},
+ {id:'f8',type:'image',img:'chivda-1.jpg',badge:'Chivda · light',label:'Roasted (Diet) Chivda',sub:'Roasted not fried — light on oil, big on crunch.'},
+ {id:'f9',type:'image',img:'chivda-2.jpg',badge:'Chivda · 🌶🌶',label:'Bombay Mix Chivda',sub:'Sev-loaded spicy mix — the party-bowl hero.'},
+ {id:'f10',type:'image',img:'chivda-2.jpg',badge:'Chivda',label:'Sweet-n-Salty Chivda',sub:'Gujarati-style, gentle jaggery sweetness. Bowl empties itself.'},
+ {id:'f11',type:'image',img:'sev.jpg',badge:'Namkeen',label:'Crispy Sev',sub:'Fine, crunchy sev — topper & everyday nibble.'},
+ {id:'f12',type:'image',img:'faral.jpg',badge:'Gift · combo',label:'Diwali Faral Combo',sub:'Chakli + chivda + extras in one festive box.'},
+]},
+
+{id:'packaging',num:'10',kicker:'Packaging',title:'How should it be packed?',intro:'Real, branded pack mock-ups — each carries the Cmaa name and an actual product photo. Which format feels most premium &amp; “us”?',grid:'g3',options:[
+ {id:'pk1',type:'pack',label:'Kraft resealable pouch',sub:'Matte kraft stand-up pouch with a product window &amp; spiral seal. Premium-but-honest, recyclable.',html:`<div class="pk pouch"><div class="pk-crimp"></div><div class="pk-label"><div class="pk-logo">Cmaa</div><div class="pk-prod">Bhajani Chakli</div><div class="pk-window"><img src="../assets/images/chakli-2.jpg" alt=""></div><div class="pk-strip">SMALL BATCH · NO PRESERVATIVES</div></div></div>`},
+ {id:'pk2',type:'pack',label:'Reusable tin',sub:'A round tin like the dabba on Maa’s counter. High keep-&amp;-reuse value; lovely for gifting.',html:`<div class="pk tin"><div class="pk-lid"></div><div class="pk-band"><span class="pk-logo light">Cmaa</span><span class="pk-sub">HOMEMADE CHAKLI</span></div><div class="pk-window round"><img src="../assets/images/chakli-2.jpg" alt=""></div></div>`},
+ {id:'pk3',type:'pack',label:'Diwali gift box',sub:'Rigid festive box with a ribbon — the hamper hero for Diwali &amp; corporate gifting.',html:`<div class="pk box"><div class="pk-ribbon-v"></div><div class="pk-ribbon-h"></div><div class="pk-box-label"><span class="pk-logo light">Cmaa</span><span>DIWALI FARAL</span></div></div>`},
+ {id:'pk4',type:'pack',label:'Clear-window pouch',sub:'See the actual crunch before you buy — product-forward, builds instant trust.',html:`<div class="pk clearpouch"><div class="pk-top"><span class="pk-logo light">Cmaa</span></div><div class="pk-bigwindow"><img src="../assets/images/faral.jpg" alt=""></div><div class="pk-strip" style="margin-top:6px">SEE THE CRUNCH</div></div>`},
+ {id:'pk5',type:'pack',label:'Premium glass jar',sub:'Shelf-presence &amp; reuse value; lovely for gifting. Heavier to ship.',html:`<div class="pk jar"><div class="pk-jarlid"></div><div class="pk-jarbody"><img class="pk-jarfill" src="../assets/images/namkeen-mix.jpg" alt=""><div class="pk-jarlabel">Cmaa</div></div></div>`},
+ {id:'pk6',type:'pack',label:'Eco sachet multipack',sub:'Single-serve compostable sachets — try-me sizes &amp; travel packs.',html:`<div class="pk sachets"><div class="pk-sachet" style="background:linear-gradient(180deg,#B5512E,#8C3D22)"><span>Chakli</span></div><div class="pk-sachet" style="background:linear-gradient(180deg,#5E6B3B,#46552b)"><span>Diet Chivda</span></div><div class="pk-sachet" style="background:linear-gradient(180deg,#D99A2B,#b97f1f)"><span>Masala</span></div></div>`},
+]},
+
+{id:'gifting',num:'11',kicker:'Festive & gifting',title:'Diwali & gifting concept',intro:'Gifting is where this category makes its money. Which gifting idea should we build first?',grid:'g4',options:[
+ {id:'g1',type:'image',img:'faral.jpg',badge:'🪔 Diwali',label:'Cmaa Diwali Faral Box',sub:'Chakli + chivda + a sweet, reusable tin, hand-written note.'},
+ {id:'g2',type:'image',img:'namkeen-mix.jpg',badge:'Build-it',label:'Build-your-own hamper',sub:'Pick your packs & spice levels — personalised gift.'},
+ {id:'g3',type:'image',img:'diwali.jpg',badge:'Corporate',label:'Corporate gifting',sub:'Bulk, custom-branded festive hampers with on-time delivery.'},
+ {id:'g4',type:'image',img:'chai.jpg',badge:'Everyday',label:'“Chai & Crunch” gift',sub:'A snack + tea pairing gift for housewarmings & thank-yous.'},
+]},
+
+{id:'voice',num:'12',kicker:'Voice',title:'How should Cmaa talk?',intro:'The tone of our website copy, buttons and notes. Which voice sounds like us?',grid:'g4',options:[
+ {id:'vo1',type:'text',big:'“Pull up a chair. Have some.”',sub:'Warm & homely — like a loved one offering you a snack.'},
+ {id:'vo2',type:'text',big:'“The chakli your Maa would approve of.”',sub:'Witty & cheeky — a little wink in every line.'},
+ {id:'vo3',type:'text',big:'“Handmade. Nothing else.”',sub:'Premium & spare — confident, minimal, no hype.'},
+ {id:'vo4',type:'text',big:'“Thoda aur le lo, na.”',sub:'Hinglish & nostalgic — full desi-home warmth.'},
+]},
+];
+
+const KEY='cmaa_votes_v1';
+let state=load();
+let voter=localStorage.getItem('cmaa_voter')||'';
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||blank();}catch(e){return blank();}}
+function blank(){return {voters:{},votes:{},feedback:{}};}
+function save(){localStorage.setItem(KEY,JSON.stringify(state));}
+
+const board=document.getElementById('board');
+function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+function visual(o){
+  switch(o.type){
+    case 'image':return `<div class="v-img"><img loading="lazy" src="${IMG}${o.img}" alt="${esc(o.label)}" onerror="this.parentElement.classList.add('noimg');this.remove();">${o.badge?`<span class="v-badge">${o.badge}</span>`:''}</div>`;
+    case 'swatch':return `<div class="v-pal" style="--bg:${o.roles.bg};--sf:${o.roles.surface};--ink:${o.roles.ink};--pr:${o.roles.primary};--se:${o.roles.secondary};--ac:${o.roles.accent}"><div class="vp-top"><span class="vp-name">Cmaa</span><span class="vp-pill">SHOP</span></div><div class="vp-head">Made by hand.</div><div class="vp-card"><span class="vp-chip"></span><span class="vp-chip alt"></span><span class="vp-btn">Add to tin</span></div></div><div class="v-sw">${o.colors.map(c=>`<i style="background:${c}"></i>`).join('')}</div>`;
+    case 'typepair':return `<div class="v-type"><div class="t-head" style="font-family:${o.head}">Cmaa</div><div class="t-body" style="font-family:${o.body}">Made by hand, in small batches, by a real Maa.</div></div>`;
+    case 'svglogo':return `<div class="v-logo" data-svg="${o.file}"><span class="lo-load">…</span></div>`;
+    case 'pack':return `<div class="v-pack">${o.html}</div>`;
+    case 'hero':return `<div class="v-hero" style="background-image:linear-gradient(${o.overlay}),url('${IMG}${o.img}')"><div><div class="vh-head" style="font-family:${o.font};color:${o.color}">${o.headline}</div><div class="vh-sub">${o.tagline}</div></div></div>`;
+    default:return `<div class="v-text">${o.big}</div>`;
+  }
+}
+function body(o){
+  if(o.type==='text')return `<div class="opt-body"><p class="rationale">${o.sub||''}</p></div>`;
+  return `<div class="opt-body"><h4>${o.label}</h4>${o.sub?`<p>${o.sub}</p>`:''}</div>`;
+}
+function voteBar(id){
+  return `<div class="opt-vote">
+    <button class="vb up" data-act="up" data-opt="${id}">👍 <span class="c">0</span></button>
+    <button class="vb down" data-act="down" data-opt="${id}">👎 <span class="c">0</span></button>
+  </div><div class="who-voted" id="wv-${id}"></div>`;
+}
+DATA.forEach(s=>{
+  const sec=document.createElement('section');sec.className='sec';sec.id='sec-'+s.id;
+  sec.innerHTML=`<div class="sec-h"><span class="sn">${s.num}</span><span class="sk">${s.kicker}</span><h2>${s.title}</h2><p>${s.intro}</p></div>
+    <div class="grid ${s.grid}">${s.options.map(o=>`<div class="opt" data-opt="${o.id}" data-sec="${s.id}"><span class="leadtag">★ Top pick</span>${visual(o)}${body(o)}${voteBar(o.id)}</div>`).join('')}</div>
+    <div class="fb">
+      <h4>💬 Feedback &amp; ideas for “${s.title}”</h4>
+      <div class="fb-list" id="fblist-${s.id}"></div>
+      <div class="fb-form"><textarea placeholder="Add a note, an idea, a concern or a brand-new option for this section…"></textarea><button class="btn" data-fb="${s.id}">Post note</button></div>
+    </div>`;
+  board.appendChild(sec);
+});
+
+function loadLogos(){
+  document.querySelectorAll('.v-logo[data-svg]').forEach(el=>{
+    fetch(LOGO+el.dataset.svg).then(r=>r.ok?r.text():'').then(t=>{if(t)el.innerHTML=t;}).catch(()=>{});
+  });
+}
+
+board.addEventListener('click',e=>{
+  const vbtn=e.target.closest('.vb');
+  if(vbtn){
+    if(!voter){openGate();return;}
+    const oid=vbtn.dataset.opt,dir=vbtn.dataset.act;
+    state.votes[oid]=state.votes[oid]||{by:{}};
+    const by=state.votes[oid].by;
+    if(by[voter]===dir)delete by[voter];else by[voter]=dir;
+    state.voters[voter]=true;save();renderCounts();
+    return;
+  }
+  const fbtn=e.target.closest('[data-fb]');
+  if(fbtn){
+    if(!voter){openGate();return;}
+    const sid=fbtn.dataset.fb;
+    const ta=fbtn.parentElement.querySelector('textarea');
+    const txt=ta.value.trim();if(!txt)return;
+    state.feedback[sid]=state.feedback[sid]||[];
+    state.feedback[sid].push({name:voter,text:txt,ts:Date.now()});
+    ta.value='';save();renderFeedback(sid);toast('Thanks — feedback added 💛');
+  }
+});
+
+function renderCounts(){
+  let totalVotes=0;
+  DATA.forEach(s=>{
+    let best=null,bestNet=-100;
+    s.options.forEach(o=>{
+      const by=(state.votes[o.id]&&state.votes[o.id].by)||{};
+      let up=0,down=0;const ups=[],dns=[];
+      for(const k in by){if(by[k]==='up'){up++;ups.push(k);}else{down++;dns.push(k);}totalVotes++;}
+      const card=document.querySelector(`.opt[data-opt="${o.id}"]`);if(!card)return;
+      card.querySelector('.vb.up .c').textContent=up;
+      card.querySelector('.vb.down .c').textContent=down;
+      const mine=by[voter];
+      card.querySelector('.vb.up').classList.toggle('mine',mine==='up');
+      card.querySelector('.vb.down').classList.toggle('mine',mine==='down');
+      const wv=document.getElementById('wv-'+o.id);
+      if(wv)wv.innerHTML=ups.map(n=>`<span class="wv">👍 ${esc(n)}</span>`).join('')+dns.map(n=>`<span class="wv dn">👎 ${esc(n)}</span>`).join('');
+      card.classList.remove('leading');
+      const net=up-down;if(up>0&&net>bestNet){bestNet=net;best=o.id;}
+    });
+    if(best)document.querySelector(`.opt[data-opt="${best}"]`).classList.add('leading');
+  });
+  document.getElementById('st-voters').textContent=Object.keys(state.voters).length;
+  document.getElementById('st-votes').textContent=totalVotes;
+  let fbCount=0;for(const k in state.feedback)fbCount+=state.feedback[k].length;
+  document.getElementById('st-fb').textContent=fbCount;
+  renderResults();
+}
+function renderFeedback(sid){
+  const list=document.getElementById('fblist-'+sid);if(!list)return;
+  const notes=state.feedback[sid]||[];
+  if(!notes.length){list.innerHTML='<div class="fb-empty">No notes yet — be the first to add an idea.</div>';return;}
+  list.innerHTML=notes.slice().sort((a,b)=>a.ts-b.ts).map(n=>`<div class="fb-note"><span class="when">${timeAgo(n.ts)}</span><span class="who">${esc(n.name)}</span>${esc(n.text)}</div>`).join('');
+  let fbCount=0;for(const k in state.feedback)fbCount+=state.feedback[k].length;
+  document.getElementById('st-fb').textContent=fbCount;
+}
+function renderResults(){
+  const grid=document.getElementById('resGrid');
+  grid.innerHTML=DATA.map(s=>{
+    let best=null,bestNet=-100,bestUp=0;
+    s.options.forEach(o=>{
+      const by=(state.votes[o.id]&&state.votes[o.id].by)||{};
+      let up=0,down=0;for(const k in by)by[k]==='up'?up++:down++;
+      const net=up-down;if(up>0&&net>bestNet){bestNet=net;best=o;bestUp=up;}
+    });
+    const label=best?(best.big||best.label):'—';
+    return `<div class="res-card"><div class="rs">${s.title}</div><div class="rl">${best?label:'No votes yet'}</div><div class="rv">${best?('👍 '+bestUp+(bestNet!==bestUp?' · net '+bestNet:'')):'be the first to vote'}</div></div>`;
+  }).join('');
+}
+function timeAgo(ts){const d=(Date.now()-ts)/1000;if(d<60)return 'just now';if(d<3600)return Math.floor(d/60)+'m ago';if(d<86400)return Math.floor(d/3600)+'h ago';return Math.floor(d/86400)+'d ago';}
+
+const gate=document.getElementById('gate');
+function openGate(){gate.classList.remove('hide');const i=document.getElementById('nameInput');i.value=voter||'';i.focus();}
+function setVoter(n){voter=n.trim();if(!voter)return;localStorage.setItem('cmaa_voter',voter);state.voters[voter]=true;save();gate.classList.add('hide');renderWho();renderCounts();}
+document.getElementById('nameGo').addEventListener('click',()=>setVoter(document.getElementById('nameInput').value));
+document.getElementById('nameInput').addEventListener('keydown',e=>{if(e.key==='Enter')setVoter(e.target.value);});
+function renderWho(){document.getElementById('tb-who').innerHTML=voter?`Voting as <b>${esc(voter)}</b><a id="changeName">change</a>`:'';const c=document.getElementById('changeName');if(c)c.onclick=openGate;}
+
+document.getElementById('exportBtn').addEventListener('click',()=>{
+  const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download='cmaa-ballot-'+(voter||'anon').replace(/\s+/g,'-')+'.json';a.click();
+  toast('Ballot exported — send it to the organiser 📨');
+});
+document.getElementById('importInput').addEventListener('change',e=>{
+  const f=e.target.files[0];if(!f)return;const r=new FileReader();
+  r.onload=()=>{try{
+    const inc=JSON.parse(r.result);
+    Object.assign(state.voters,inc.voters||{});
+    for(const oid in (inc.votes||{})){state.votes[oid]=state.votes[oid]||{by:{}};Object.assign(state.votes[oid].by,inc.votes[oid].by||{});}
+    for(const sid in (inc.feedback||{})){state.feedback[sid]=state.feedback[sid]||[];(inc.feedback[sid]||[]).forEach(n=>{if(!state.feedback[sid].some(g=>g.ts===n.ts&&g.name===n.name))state.feedback[sid].push(n);});}
+    save();renderCounts();DATA.forEach(s=>renderFeedback(s.id));toast('Ballots merged into the tally ✅');
+  }catch(err){toast('Could not read that file ❌');}};
+  r.readAsText(f);e.target.value='';
+});
+document.getElementById('resetBtn').addEventListener('click',()=>{
+  if(!confirm('Remove YOUR votes from this device? (Feedback notes stay.)'))return;
+  for(const oid in state.votes){if(state.votes[oid].by[voter])delete state.votes[oid].by[voter];}
+  save();renderCounts();toast('Your votes were cleared ↺');
+});
+
+let toastT;function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('show'),2200);}
+
+fetch(IMG+'manifest.json').then(r=>r.json()).then(m=>{
+  document.getElementById('credits').innerHTML=m.filter(x=>x.success).map(x=>`<div><a href="${x.sourcePageURL}" target="_blank" rel="noopener">${x.filename}</a> — ${x.author}, ${x.license}</div>`).join('');
+}).catch(()=>{});
+
+loadLogos();
+DATA.forEach(s=>renderFeedback(s.id));
+renderCounts();
+if(voter){renderWho();gate.classList.add('hide');}else{openGate();}
+</script>
+</body>
+</html>

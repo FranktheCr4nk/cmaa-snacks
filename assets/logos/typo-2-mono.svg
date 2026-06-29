@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 240" width="480" height="240" role="img" aria-label="cmaa — homemade chakli and chivda">
+  <title>cmaa — Friendly modern wordmark (one colour)</title>
+
+  <text x="240" y="146" text-anchor="middle"
+        font-family="Mulish, 'Helvetica Neue', Arial, sans-serif"
+        font-size="128" font-weight="800" letter-spacing="-4" fill="#2E2017">cmaa</text>
+
+  <path fill="none" stroke="#2E2017" stroke-width="6.5" stroke-linecap="round"
+        d="M 250 170 C 270 188 324 189 351 171"/>
+
+  <g transform="translate(351,171) rotate(-40)">
+    <path fill="#2E2017" d="M 0 0 C 7 -4 16 -3 21 4 C 14 8 4 7 0 0 Z"/>
+  </g>
+
+  <circle cx="240" cy="50" r="4" fill="#2E2017"/>
+
+  <text x="240" y="202" text-anchor="middle"
+        font-family="Mulish, 'Helvetica Neue', Arial, sans-serif"
+        font-size="14" font-weight="600" letter-spacing="6" fill="#2E2017">HOMEMADE CHAKLI &amp; CHIVDA</text>
+</svg>

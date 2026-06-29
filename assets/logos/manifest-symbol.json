@@ -1,0 +1,35 @@
+[
+  {
+    "id": "symbol-1",
+    "name": "The Maa mark",
+    "concept": "A dignified, minimal line-portrait of a mother — hair in a bun, bindi, a knowing half-smile — held inside a warm embrace ring. The human heart of the brand; Cmaa reads as Seema and carries Maa (mother).",
+    "files": {
+      "primary": "symbol-1.svg",
+      "rev": "symbol-1-rev.svg",
+      "mono": "symbol-1-mono.svg",
+      "icon": "symbol-1-icon.svg"
+    }
+  },
+  {
+    "id": "symbol-2",
+    "name": "Chakli-Sun / Marigold mark",
+    "concept": "A true chakli spiral coil at the centre of a terracotta disc, ringed by a double layer of radiant gold and mustard petals that double as sun rays and a marigold bloom. Iconic, optimistic, festive and infinitely scalable.",
+    "files": {
+      "primary": "symbol-2.svg",
+      "rev": "symbol-2-rev.svg",
+      "mono": "symbol-2-mono.svg",
+      "icon": "symbol-2-icon.svg"
+    }
+  },
+  {
+    "id": "symbol-3",
+    "name": "Warmth mark",
+    "concept": "Steam rising from a homemade bowl — a warm terracotta vessel with a cream snack line and three graceful steam wisps conveying freshly-made care. Minimal, modern, premium geometry.",
+    "files": {
+      "primary": "symbol-3.svg",
+      "rev": "symbol-3-rev.svg",
+      "mono": "symbol-3-mono.svg",
+      "icon": "symbol-3-icon.svg"
+    }
+  }
+]

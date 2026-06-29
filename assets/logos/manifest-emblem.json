@@ -1,0 +1,32 @@
+[
+  {
+    "id": "emblem-1",
+    "name": "Cmaa Heritage Crest",
+    "concept": "Circular crest — 'CMAA' arched in tracked Fraunces caps over a clean Archimedean chakli-spiral medallion, fine triple rings, 'HANDMADE · SMALL BATCH' along the bottom arc, curry-leaf sprigs at 3 & 9 o'clock, sesame seeds and an 'EST. 2026' banner. Classic, balanced, premium trust-seal.",
+    "files": {
+      "primary": "emblem-1.svg",
+      "rev": "emblem-1-rev.svg",
+      "mono": "emblem-1-mono.svg"
+    }
+  },
+  {
+    "id": "emblem-2",
+    "name": "Cmaa Chakli Wax Seal",
+    "concept": "Wax-seal spiral mark — a tactile, subtly irregular wax-seal disc with a radial-gradient body and a gold beaded ring, the hand-pressed chakli spiral as the hero. Iconic and scalable as an app icon, foil emboss or packaging tape. Reverse is a true gold-on-ink foil treatment.",
+    "files": {
+      "primary": "emblem-2.svg",
+      "rev": "emblem-2-rev.svg",
+      "mono": "emblem-2-mono.svg"
+    }
+  },
+  {
+    "id": "emblem-3",
+    "name": "Cmaa Maker's Label",
+    "concept": "Artisanal rectangular label / maker's stamp — a double-bordered card with vintage corner ornaments, 'Cmaa' in Fraunces, an italic 'Homemade Chakli & Chivda' descriptor, a diamond-centred rule, a tiny spiral, and stamped microtext ('SINCE 2026 · SMALL BATCH' / 'NO PRESERVATIVES · PRESSED BY HAND'). Reads like a real craft ingredient label.",
+    "files": {
+      "primary": "emblem-3.svg",
+      "rev": "emblem-3-rev.svg",
+      "mono": "emblem-3-mono.svg"
+    }
+  }
+]

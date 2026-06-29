@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 130" role="img" aria-label="Cmaa">
+  <title>Cmaa — The Maa mark (single ink)</title>
+  <!-- ============ SYMBOL ============ -->
+  <g transform="translate(5 5)" fill="none" stroke="#2E2017" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="60" cy="60" r="52" stroke-width="3.2"/>
+    <g stroke-width="4">
+      <path d="M44.5 41 C46.5 30.5 73.5 30.5 75.5 41"/>
+      <path d="M44.5 42 C42 52 42 60 44.5 67 C47.5 76 53 81 60 81 C67 81 72.5 76 75.5 67 C78 60 78 52 75.5 42"/>
+      <path d="M44.5 42 C40 49 39.5 60 42 70"/>
+      <path d="M75.5 42 C80 49 80.5 60 78 70"/>
+      <path d="M52 69 C56 73 64 73 68 69"/>
+      <path d="M50.5 56.5 C52.5 54.5 55.5 54.5 57.5 56.5" stroke-width="3.4"/>
+      <path d="M62.5 56.5 C64.5 54.5 67.5 54.5 69.5 56.5" stroke-width="3.4"/>
+    </g>
+    <circle cx="60" cy="30.5" r="6.6" fill="#2E2017" stroke="none"/>
+    <circle cx="60" cy="47.5" r="3.2" fill="#2E2017" stroke="none"/>
+  </g>
+  <!-- ============ WORDMARK ============ -->
+  <text x="148" y="82"
+        font-family="Fraunces, 'Cormorant Garamond', Georgia, serif"
+        font-size="68" font-weight="600" letter-spacing="1.5"
+        fill="#2E2017">Cmaa</text>
+  <path d="M150 96 C200 100 280 100 330 96" fill="none" stroke="#2E2017" stroke-width="3" stroke-linecap="round"/>
+</svg>

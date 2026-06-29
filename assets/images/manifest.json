@@ -1,0 +1,156 @@
+﻿[
+    {
+        "filename":  "chakli-1.jpg",
+        "target":  "chakli-1",
+        "success":  true,
+        "sourcePageURL":  "https://commons.wikimedia.org/wiki/File:Chakli_(Indian_snack).jpg",
+        "downloadURL":  "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Chakli_%28Indian_snack%29.jpg/1280px-Chakli_%28Indian_snack%29.jpg",
+        "license":  "CC BY-SA 4.0",
+        "author":  "SwatiGupta1986",
+        "widthPx":  1100,
+        "fileSizeKB":  425.1
+    },
+    {
+        "filename":  "chakli-2.jpg",
+        "target":  "chakli-2",
+        "success":  true,
+        "sourcePageURL":  "https://commons.wikimedia.org/wiki/File:Chakli_in_a_bowl.jpg",
+        "downloadURL":  "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Chakli_in_a_bowl.jpg/1280px-Chakli_in_a_bowl.jpg",
+        "license":  "CC BY-SA 4.0",
+        "author":  "PilotChicago",
+        "widthPx":  1100,
+        "fileSizeKB":  469.2
+    },
+    {
+        "filename":  "murukku.jpg",
+        "target":  "murukku",
+        "success":  true,
+        "sourcePageURL":  "https://commons.wikimedia.org/wiki/File:A_Traditional_Tamil_Snack_Murukku.jpg",
+        "downloadURL":  "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/A_Traditional_Tamil_Snack_Murukku.jpg/1280px-A_Traditional_Tamil_Snack_Murukku.jpg",
+        "license":  "CC BY-SA 3.0",
+        "author":  "Thamizhpparithi Maari",
+        "widthPx":  1100,
+        "fileSizeKB":  200.5
+    },
+    {
+        "filename":  "chivda-1.jpg",
+        "target":  "chivda-1",
+        "success":  true,
+        "sourcePageURL":  "https://commons.wikimedia.org/wiki/File:Sev-Chivda.jpg",
+        "downloadURL":  "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Sev-Chivda.jpg/1280px-Sev-Chivda.jpg",
+        "license":  "CC BY-SA 4.0",
+        "author":  "Yogesh Bhaie",
+        "widthPx":  1100,
+        "fileSizeKB":  287
+    },
+    {
+        "filename":  "chivda-2.jpg",
+        "target":  "chivda-2",
+        "success":  true,
+        "sourcePageURL":  "https://commons.wikimedia.org/wiki/File:Cofresh_Bombay_Mix.jpg",
+        "downloadURL":  "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Cofresh_Bombay_Mix.jpg/1280px-Cofresh_Bombay_Mix.jpg",
+        "license":  "CC0",
+        "author":  "Mx. Granger",
+        "widthPx":  1100,
+        "fileSizeKB":  346.8
+    },
+    {
+        "filename":  "namkeen-mix.jpg",
+        "target":  "namkeen-mix",
+        "success":  true,
+        "sourcePageURL":  "https://commons.wikimedia.org/wiki/File:Diwali_Farsan.jpg",
+        "downloadURL":  "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Diwali_Farsan.jpg/1280px-Diwali_Farsan.jpg",
+        "license":  "CC BY-SA 4.0",
+        "author":  "Nivedita Walunj",
+        "widthPx":  1100,
+        "fileSizeKB":  337.2
+    },
+    {
+        "filename":  "faral.jpg",
+        "target":  "faral",
+        "success":  true,
+        "sourcePageURL":  "https://commons.wikimedia.org/wiki/File:Diwali_faral_IMG_20201114_090717.jpg",
+        "downloadURL":  "https://upload.wikimedia.org/wikipedia/commons/d/d2/Diwali_faral_IMG_20201114_090717.jpg",
+        "license":  "CC BY-SA 4.0",
+        "author":  "Jonathansammy",
+        "widthPx":  625,
+        "fileSizeKB":  200.8
+    },
+    {
+        "filename":  "sev.jpg",
+        "target":  "sev",
+        "success":  true,
+        "sourcePageURL":  "https://commons.wikimedia.org/wiki/File:Sev_2013-12-01_16-57.jpg",
+        "downloadURL":  "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Sev_2013-12-01_16-57.jpg/1280px-Sev_2013-12-01_16-57.jpg",
+        "license":  "CC BY-SA 3.0",
+        "author":  "User:Randhirreddy",
+        "widthPx":  1100,
+        "fileSizeKB":  727.3
+    },
+    {
+        "filename":  "cooking.jpg",
+        "target":  "cooking",
+        "success":  true,
+        "sourcePageURL":  "https://commons.wikimedia.org/wiki/File:A_Bengali_woman_cooking_at_noon.jpg",
+        "downloadURL":  "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/A_Bengali_woman_cooking_at_noon.jpg/1280px-A_Bengali_woman_cooking_at_noon.jpg",
+        "license":  "CC BY-SA 4.0",
+        "author":  "Billjones94",
+        "widthPx":  1100,
+        "fileSizeKB":  416.1
+    },
+    {
+        "filename":  "spices.jpg",
+        "target":  "spices",
+        "success":  true,
+        "sourcePageURL":  "https://commons.wikimedia.org/wiki/File:Indian_Spices.jpg",
+        "downloadURL":  "https://upload.wikimedia.org/wikipedia/commons/e/ea/Indian_Spices.jpg",
+        "license":  "CC BY-SA 4.0",
+        "author":  "Joe mon bkk",
+        "widthPx":  1200,
+        "fileSizeKB":  559.9
+    },
+    {
+        "filename":  "packaging.jpg",
+        "target":  "packaging",
+        "success":  true,
+        "sourcePageURL":  "https://commons.wikimedia.org/wiki/File:Brown_paper_bag_texture.jpg",
+        "downloadURL":  "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Brown_paper_bag_texture.jpg/1280px-Brown_paper_bag_texture.jpg",
+        "license":  "CC BY 2.0",
+        "author":  "Matt Edward",
+        "widthPx":  1100,
+        "fileSizeKB":  744.2
+    },
+    {
+        "filename":  "diwali.jpg",
+        "target":  "diwali",
+        "success":  true,
+        "sourcePageURL":  "https://commons.wikimedia.org/wiki/File:Diya_at_a_wedding_in_Tamil_Nadu_01.jpg",
+        "downloadURL":  "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Diya_at_a_wedding_in_Tamil_Nadu_01.jpg/1280px-Diya_at_a_wedding_in_Tamil_Nadu_01.jpg",
+        "license":  "CC BY-SA 4.0",
+        "author":  "Kritzolina",
+        "widthPx":  1100,
+        "fileSizeKB":  290.7
+    },
+    {
+        "filename":  "chai.jpg",
+        "target":  "chai",
+        "success":  true,
+        "sourcePageURL":  "https://commons.wikimedia.org/wiki/File:Masala_Chai.jpg",
+        "downloadURL":  "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Masala_Chai.jpg/1280px-Masala_Chai.jpg",
+        "license":  "CC BY-SA 4.0",
+        "author":  "Ganesh Mohan T",
+        "widthPx":  1100,
+        "fileSizeKB":  433.4
+    },
+    {
+        "filename":  "peanuts.jpg",
+        "target":  "peanuts",
+        "success":  true,
+        "sourcePageURL":  "https://commons.wikimedia.org/wiki/File:Roasted_Peanuts_with_shell.jpg",
+        "downloadURL":  "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Roasted_Peanuts_with_shell.jpg/1280px-Roasted_Peanuts_with_shell.jpg",
+        "license":  "CC BY-SA 4.0",
+        "author":  "Sanjay Acharya",
+        "widthPx":  1100,
+        "fileSizeKB":  250.4
+    }
+]

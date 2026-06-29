@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 130" role="img" aria-label="Cmaa">
+  <title>Cmaa — Warmth mark (primary lockup)</title>
+  <defs>
+    <g id="s3sym">
+      <g fill="none" stroke="#B5512E" stroke-width="5" stroke-linecap="round">
+        <path d="M45 50 C40 43 49 38 45 30 C42 24 47 20 44.5 15" stroke="#D99A2B"/>
+        <path d="M60 48 C54 40 66 34 60 25 C56 19 61.5 14 59 9"/>
+        <path d="M75 50 C80 43 71 38 75 30 C78 24 73 20 75.5 15" stroke="#D99A2B"/>
+      </g>
+      <path d="M24 60 C24 60 30 92 60 92 C90 92 96 60 96 60 Z" fill="#B5512E"/>
+      <path d="M26 61 C36 70 84 70 94 61" fill="none" stroke="#F4ECDD" stroke-width="4" stroke-linecap="round"/>
+      <path d="M24 60 C24 53.5 96 53.5 96 60" fill="#8C3D22"/>
+      <path d="M46 96 C46 96 50 102 60 102 C70 102 74 96 74 96 Z" fill="#8C3D22"/>
+    </g>
+  </defs>
+
+  <use href="#s3sym" transform="translate(5 5)"/>
+  <text x="148" y="82" font-family="Fraunces, 'Cormorant Garamond', Georgia, serif" font-size="68" font-weight="600" letter-spacing="1.5" fill="#2E2017">Cmaa</text>
+  <path d="M150 96 C200 100 280 100 330 96" fill="none" stroke="#D99A2B" stroke-width="3" stroke-linecap="round"/>
+</svg>

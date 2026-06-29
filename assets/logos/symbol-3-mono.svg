@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 130" role="img" aria-label="Cmaa">
+  <title>Cmaa — Warmth mark (single ink)</title>
+  <defs>
+    <g id="m3sym" fill="none" stroke="#2E2017" stroke-linecap="round" stroke-linejoin="round">
+      <!-- steam wisps -->
+      <g stroke-width="5">
+        <path d="M45 50 C40 43 49 38 45 30 C42 24 47 20 44.5 15"/>
+        <path d="M60 48 C54 40 66 34 60 25 C56 19 61.5 14 59 9"/>
+        <path d="M75 50 C80 43 71 38 75 30 C78 24 73 20 75.5 15"/>
+      </g>
+      <!-- bowl body outline -->
+      <path d="M24 60 C24 60 30 92 60 92 C90 92 96 60 96 60" stroke-width="5"/>
+      <!-- rim line across the top -->
+      <path d="M24 60 C24 54 96 54 96 60" stroke-width="5"/>
+      <!-- contents line -->
+      <path d="M30 60 C40 67 80 67 90 60" stroke-width="4"/>
+      <!-- foot -->
+      <path d="M46 96 C48 100 52 102 60 102 C68 102 72 100 74 96" stroke-width="5"/>
+    </g>
+  </defs>
+
+  <use href="#m3sym" transform="translate(5 5)"/>
+  <text x="148" y="82" font-family="Fraunces, 'Cormorant Garamond', Georgia, serif" font-size="68" font-weight="600" letter-spacing="1.5" fill="#2E2017">Cmaa</text>
+  <path d="M150 96 C200 100 280 100 330 96" fill="none" stroke="#2E2017" stroke-width="3" stroke-linecap="round"/>
+</svg>
