@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Cmaa Snacks — Homemade Chakli & Chivda, Made by Maa's Hands</title>
+<meta name="description" content="Cmaa Snacks — premium homemade chakli & chivda, hand-pressed in small batches and fried fresh in ghee by Seema. Ghar ka swaad, Maa ke haath ka. No preservatives. FSSAI certified." />
+<link rel="icon" type="image/svg+xml" href="../../assets/logos/symbol-3-icon.svg" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================
+   CMAA SNACKS — "Aaji's Kitchen" art direction
+   ============================================================ */
+:root{
+  --cream:#FBF4E6;
+  --cream-2:#F4E9D2;
+  --cream-3:#EFE0C4;
+  --terracotta:#C8612D;
+  --terracotta-dk:#AC4E22;
+  --roast:#7A3B1E;
+  --curry:#3E5C2F;
+  --curry-dk:#2F4824;
+  --haldi:#D9A441;
+  --haldi-dk:#C28E2D;
+  --espresso:#4A3B2A;
+  --espresso-soft:#6A5742;
+  --line:rgba(122,59,30,.16);
+  --card:#FFFDF7;
+  --shadow-sm:0 2px 10px rgba(74,59,42,.08);
+  --shadow:0 18px 44px -22px rgba(122,59,30,.45);
+  --shadow-lg:0 40px 80px -34px rgba(122,59,30,.55);
+  --r-lg:26px;
+  --r-md:18px;
+  --r-sm:12px;
+  --maxw:1240px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --nav-h:74px;
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+body{
+  margin:0;
+  font-family:"Mulish",system-ui,sans-serif;
+  color:var(--espresso);
+  background:var(--cream);
+  line-height:1.65;
+  font-size:16.5px;
+  font-weight:400;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+ul{margin:0;padding:0;list-style:none;}
+h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif;font-weight:600;line-height:1.05;margin:0;color:var(--roast);letter-spacing:-.01em;}
+
+/* recipe-card faint lines as a subtle paper texture for the whole page */
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+    repeating-linear-gradient(to bottom,transparent 0 39px,rgba(122,59,30,.035) 39px 40px);
+  opacity:.7;
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:radial-gradient(120% 80% at 80% -10%,rgba(217,164,65,.10),transparent 60%),
+             radial-gradient(120% 90% at -10% 110%,rgba(62,92,47,.07),transparent 55%);
+}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px;}
+.eyebrow{
+  font-family:"Mulish",sans-serif;font-weight:800;letter-spacing:.22em;text-transform:uppercase;
+  font-size:.72rem;color:var(--terracotta);display:inline-flex;align-items:center;gap:.55em;
+}
+.eyebrow::before{content:"";width:26px;height:1.5px;background:var(--terracotta);opacity:.6;}
+.script{font-family:"Caveat",cursive;color:var(--terracotta);font-weight:700;}
+.section{padding:clamp(64px,9vw,118px) 0;position:relative;}
+
+/* chakli-spiral bullet */
+.spiral-bullet{display:inline-block;width:18px;height:18px;flex:none;}
+
+/* torn-edge divider */
+.torn{display:block;width:100%;height:34px;color:var(--cream);position:relative;z-index:2;margin-top:-1px;}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6em;
+  font-weight:800;font-size:.94rem;letter-spacing:.01em;
+  padding:.92em 1.55em;border-radius:999px;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .3s ease;
+  will-change:transform;white-space:nowrap;
+}
+.btn-primary{
+  background:linear-gradient(165deg,var(--terracotta),var(--terracotta-dk));
+  color:#fff;box-shadow:0 14px 26px -12px rgba(172,78,34,.85),inset 0 1px 0 rgba(255,255,255,.22);
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 20px 34px -12px rgba(172,78,34,.9),inset 0 1px 0 rgba(255,255,255,.3);}
+.btn-ghost{background:var(--cream);color:var(--roast);border:1.5px solid var(--line);box-shadow:var(--shadow-sm);}
+.btn-ghost:hover{transform:translateY(-3px);border-color:var(--terracotta);color:var(--terracotta);}
+.btn-curry{background:var(--curry);color:#F4ECD8;box-shadow:0 14px 26px -12px rgba(47,72,36,.75);}
+.btn-curry:hover{transform:translateY(-3px);background:var(--curry-dk);}
+.btn-wa{background:#1faa55;color:#fff;box-shadow:0 14px 26px -12px rgba(31,170,85,.8);}
+.btn-wa:hover{transform:translateY(-3px);background:#178c46;}
+.btn-block{width:100%;}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  height:var(--nav-h);display:flex;align-items:center;
+  transition:height .4s var(--ease),background .4s ease,box-shadow .4s ease,backdrop-filter .4s ease;
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;gap:18px;}
+.nav.scrolled{
+  height:60px;background:rgba(251,244,230,.86);
+  backdrop-filter:saturate(140%) blur(12px);-webkit-backdrop-filter:saturate(140%) blur(12px);
+  box-shadow:0 8px 28px -18px rgba(122,59,30,.55),inset 0 -1px 0 var(--line);
+}
+.brand{display:flex;align-items:center;gap:.5rem;}
+.brand-mark{width:34px;height:34px;transition:transform .5s var(--ease);}
+.nav.scrolled .brand-mark{transform:scale(.9) rotate(-4deg);}
+.brand-word{
+  font-family:"Fraunces",serif;font-weight:700;font-size:1.72rem;letter-spacing:-.02em;color:var(--roast);
+  line-height:1;transition:font-size .4s var(--ease),color .4s ease;
+}
+.brand-word b{color:var(--terracotta);font-weight:900;font-style:italic;}
+.nav.scrolled .brand-word{font-size:1.5rem;}
+.nav-links{display:flex;align-items:center;gap:30px;}
+.nav-links a{
+  font-weight:700;font-size:.92rem;color:var(--espresso);position:relative;padding:4px 0;letter-spacing:.01em;
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;right:100%;bottom:-2px;height:2px;border-radius:2px;
+  background:var(--terracotta);transition:right .35s var(--ease);
+}
+.nav-links a:hover{color:var(--terracotta);}
+.nav-links a:hover::after{right:0;}
+.nav-actions{display:flex;align-items:center;gap:12px;}
+.cart-btn{
+  position:relative;display:inline-flex;align-items:center;gap:.5em;
+  background:var(--cream);border:1.5px solid var(--line);border-radius:999px;
+  padding:.5em .95em;font-weight:800;font-size:.88rem;color:var(--roast);
+  box-shadow:var(--shadow-sm);transition:transform .3s var(--ease),border-color .3s ease;
+}
+.cart-btn:hover{transform:translateY(-2px);border-color:var(--terracotta);}
+.cart-count{
+  min-width:21px;height:21px;padding:0 5px;border-radius:999px;background:var(--terracotta);color:#fff;
+  font-size:.74rem;font-weight:800;display:grid;place-items:center;transition:transform .3s var(--ease);
+}
+.cart-count.bump{animation:bump .45s var(--ease);}
+@keyframes bump{0%{transform:scale(1)}35%{transform:scale(1.5)}100%{transform:scale(1)}}
+.hamburger{display:none;width:44px;height:44px;border-radius:12px;border:1.5px solid var(--line);background:var(--cream);position:relative;}
+.hamburger span,.hamburger span::before,.hamburger span::after{
+  content:"";position:absolute;left:50%;top:50%;width:20px;height:2px;border-radius:2px;background:var(--roast);
+  transform:translate(-50%,-50%);transition:transform .35s var(--ease),opacity .2s ease;
+}
+.hamburger span::before{transform:translate(-50%,-7px);}
+.hamburger span::after{transform:translate(-50%,7px);}
+body.menu-open .hamburger span{background:transparent;}
+body.menu-open .hamburger span::before{transform:translate(-50%,0) rotate(45deg);}
+body.menu-open .hamburger span::after{transform:translate(-50%,0) rotate(-45deg);}
+
+/* mobile drawer menu */
+.mobile-menu{
+  position:fixed;inset:0 0 0 auto;width:min(82vw,360px);z-index:58;
+  background:var(--cream);box-shadow:var(--shadow-lg);
+  transform:translateX(100%);transition:transform .5s var(--ease);
+  padding:calc(var(--nav-h) + 18px) 30px 30px;display:flex;flex-direction:column;gap:6px;
+  border-left:1px solid var(--line);
+}
+body.menu-open .mobile-menu{transform:translateX(0);}
+.mobile-menu a{font-family:"Fraunces",serif;font-size:1.5rem;font-weight:600;color:var(--roast);padding:12px 0;border-bottom:1px solid var(--line);}
+.mobile-menu a:last-of-type{border-bottom:none;}
+.menu-scrim{position:fixed;inset:0;z-index:57;background:rgba(74,59,42,.4);opacity:0;visibility:hidden;transition:opacity .4s ease,visibility .4s;}
+body.menu-open .menu-scrim{opacity:1;visibility:visible;}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  position:relative;min-height:100svh;display:flex;align-items:flex-end;
+  padding:calc(var(--nav-h) + 40px) 0 64px;overflow:hidden;isolation:isolate;
+}
+.hero-media{position:absolute;inset:0;z-index:-2;overflow:hidden;}
+.hero-media img{
+  width:100%;height:118%;object-fit:cover;object-position:50% 40%;
+  will-change:transform;transform:translateY(0) scale(1.06);
+}
+.hero-media::after{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(180deg,rgba(58,28,12,.46) 0%,rgba(58,28,12,.12) 30%,rgba(45,22,10,.34) 62%,rgba(40,18,8,.86) 100%),
+    radial-gradient(110% 70% at 18% 88%,rgba(122,59,30,.55),transparent 60%);
+}
+.hero-grain{position:absolute;inset:0;z-index:-1;opacity:.4;pointer-events:none;mix-blend-mode:soft-light;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");}
+.hero-content{position:relative;color:#FBF1DF;max-width:760px;}
+.hero-eyebrow{color:var(--haldi);font-size:.78rem;}
+.hero-eyebrow::before{background:var(--haldi);}
+.hero h1{
+  color:#FFF6E6;font-weight:600;
+  font-size:clamp(2.85rem,7.4vw,5.4rem);line-height:.98;letter-spacing:-.02em;
+  margin:.32em 0 .14em;text-shadow:0 4px 30px rgba(40,16,6,.45);
+}
+.hero h1 .flourish{
+  display:block;font-family:"Caveat",cursive;color:var(--haldi);
+  font-size:clamp(2.6rem,8vw,5rem);font-weight:700;line-height:.9;letter-spacing:0;
+  transform:rotate(-3deg);margin-bottom:-.06em;text-shadow:0 3px 18px rgba(40,16,6,.4);
+}
+.hero p.lede{
+  font-size:clamp(1.04rem,2.1vw,1.28rem);max-width:50ch;color:#F6E8D2;font-weight:400;
+  margin:0 0 1.7em;text-shadow:0 2px 16px rgba(40,16,6,.5);
+}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+.hero-rating{display:flex;align-items:center;gap:.6em;color:#F6E8D2;font-weight:700;font-size:.92rem;margin-top:1.6em;}
+.hero-rating .stars{color:var(--haldi);letter-spacing:.08em;font-size:1.02rem;}
+.scroll-cue{
+  position:absolute;left:50%;bottom:20px;transform:translateX(-50%);z-index:3;color:#FBF1DF;
+  display:flex;flex-direction:column;align-items:center;gap:7px;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;opacity:.85;
+}
+.scroll-cue .dot{width:5px;height:5px;border-radius:50%;background:var(--haldi);animation:cuefall 1.7s var(--ease) infinite;}
+@keyframes cuefall{0%{transform:translateY(-6px);opacity:0}30%{opacity:1}100%{transform:translateY(10px);opacity:0}}
+
+/* steam wisps drifting on hero */
+.steam{position:absolute;z-index:-1;pointer-events:none;bottom:8%;width:120px;height:260px;opacity:0;}
+.steam svg{width:100%;height:100%;}
+.steam path{stroke:#fff;stroke-width:3;fill:none;stroke-linecap:round;opacity:.5;}
+.steam.s1{left:14%;animation:drift 9s ease-in-out infinite;}
+.steam.s2{left:34%;width:90px;height:300px;animation:drift 11s ease-in-out .8s infinite;}
+.steam.s3{right:20%;width:100px;animation:drift 10s ease-in-out 1.6s infinite;}
+@keyframes drift{
+  0%{opacity:0;transform:translateY(30px) scaleY(.8);}
+  25%{opacity:.55;}
+  60%{opacity:.4;}
+  100%{opacity:0;transform:translateY(-60px) scaleY(1.15) translateX(14px);}
+}
+
+/* ============================================================
+   TRUST STRIP (marquee)
+   ============================================================ */
+.trust{background:var(--roast);color:#F3E4C9;overflow:hidden;border-top:3px solid var(--haldi);}
+.trust-track{display:flex;gap:0;width:max-content;animation:marquee 34s linear infinite;}
+.trust-track:hover{animation-play-state:paused;}
+@keyframes marquee{to{transform:translateX(-50%);}}
+.trust-item{display:inline-flex;align-items:center;gap:.7em;padding:15px 34px;font-weight:700;font-size:.95rem;white-space:nowrap;}
+.trust-item .s{color:var(--haldi);font-size:1.1em;line-height:1;}
+.trust-item b{color:#fff;}
+.trust-sep{width:6px;height:6px;border-radius:50%;background:var(--haldi);align-self:center;opacity:.7;}
+
+/* ============================================================
+   STORY — Meet Seema
+   ============================================================ */
+.story{background:var(--cream);}
+.story-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(34px,6vw,84px);align-items:center;}
+.story-figure{position:relative;}
+.story-img-frame{
+  position:relative;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg);
+  border:8px solid #fff;rotate:-1.6deg;
+}
+.story-img-frame img{width:100%;height:clamp(380px,52vw,560px);object-fit:cover;object-position:50% 35%;}
+.story-img-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(122,59,30,.22));}
+.tape{
+  position:absolute;width:128px;height:34px;background:rgba(217,164,65,.55);
+  border:1px dashed rgba(122,59,30,.35);backdrop-filter:blur(1px);
+  box-shadow:0 6px 14px -8px rgba(74,59,42,.5);
+}
+.tape.t1{top:-16px;left:18%;rotate:-7deg;}
+.tape.t2{bottom:-14px;right:14%;rotate:6deg;}
+.story-note{
+  position:absolute;right:-12px;bottom:34px;background:#fff;padding:16px 20px 18px;border-radius:14px;
+  box-shadow:var(--shadow);max-width:230px;rotate:2.4deg;border:1px solid var(--line);
+}
+.story-note .script{font-size:1.5rem;line-height:1.05;display:block;}
+.story-note small{font-weight:700;color:var(--espresso-soft);font-size:.78rem;}
+.story-note .sig{font-family:"Caveat",cursive;font-size:1.7rem;color:var(--curry);transform:rotate(-4deg);display:inline-block;margin-top:4px;}
+.story h2{font-size:clamp(2rem,4.6vw,3.2rem);margin:.34em 0 .5em;}
+.story h2 em{font-style:italic;color:var(--terracotta);font-weight:500;}
+.story p{margin:0 0 1.1em;color:var(--espresso);max-width:52ch;}
+.story p .hl{background:linear-gradient(180deg,transparent 62%,rgba(217,164,65,.45) 62%);font-weight:600;}
+.story-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;}
+.tag{
+  display:inline-flex;align-items:center;gap:.5em;background:var(--cream-2);border:1px solid var(--line);
+  border-radius:999px;padding:.5em 1em;font-weight:700;font-size:.84rem;color:var(--roast);
+}
+.tag .spiral-bullet{color:var(--terracotta);}
+
+/* ============================================================
+   PRODUCTS
+   ============================================================ */
+.products{background:linear-gradient(180deg,var(--cream-2),var(--cream));}
+.sec-head{text-align:center;max-width:620px;margin:0 auto clamp(38px,5vw,58px);}
+.sec-head h2{font-size:clamp(2.1rem,5vw,3.4rem);margin:.3em 0 .35em;}
+.sec-head h2 em{font-style:italic;color:var(--terracotta);font-weight:500;}
+.sec-head p{color:var(--espresso-soft);margin:0;font-size:1.05rem;}
+
+.filter-row{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:38px;}
+.chip{
+  font-weight:800;font-size:.86rem;letter-spacing:.02em;color:var(--roast);
+  background:var(--cream);border:1.5px solid var(--line);border-radius:999px;padding:.6em 1.2em;
+  transition:transform .3s var(--ease),background .3s,color .3s,border-color .3s;
+}
+.chip:hover{transform:translateY(-2px);border-color:var(--terracotta);}
+.chip.active{background:var(--terracotta);color:#fff;border-color:var(--terracotta);box-shadow:0 12px 22px -12px rgba(172,78,34,.8);}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+.card{
+  background:var(--card);border-radius:var(--r-lg);overflow:hidden;position:relative;
+  border:1px solid var(--line);box-shadow:var(--shadow-sm);
+  transition:transform .45s var(--ease),box-shadow .45s var(--ease);display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);}
+.card-media{position:relative;aspect-ratio:4/3.3;overflow:hidden;background:var(--cream-3);}
+.card-media img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease);}
+.card:hover .card-media img{transform:scale(1.08);}
+.card-badge{
+  position:absolute;top:13px;left:13px;display:inline-flex;align-items:center;gap:.4em;
+  background:rgba(251,244,230,.95);backdrop-filter:blur(3px);color:var(--roast);
+  font-weight:800;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;
+  padding:.45em .8em;border-radius:999px;box-shadow:var(--shadow-sm);
+}
+.card-badge.spicy{background:rgba(200,49,29,.95);color:#fff;}
+.card-badge.best{background:var(--haldi);color:var(--roast);}
+.card-fav{
+  position:absolute;top:11px;right:11px;width:38px;height:38px;border-radius:50%;
+  background:rgba(251,244,230,.92);backdrop-filter:blur(3px);display:grid;place-items:center;
+  box-shadow:var(--shadow-sm);transition:transform .3s var(--ease),color .3s;color:var(--espresso-soft);
+}
+.card-fav:hover{transform:scale(1.12);color:var(--terracotta);}
+.card-fav.on{color:var(--terracotta);}
+.card-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1;}
+.card-tagline{font-family:"Caveat",cursive;font-size:1.18rem;color:var(--curry);line-height:1;margin-bottom:2px;}
+.card h3{font-size:1.32rem;margin:0 0 4px;}
+.card-rating{display:flex;align-items:center;gap:.4em;font-size:.82rem;color:var(--espresso-soft);font-weight:700;margin-bottom:8px;}
+.card-rating .stars{color:var(--haldi);letter-spacing:.04em;}
+.card-desc{font-size:.9rem;color:var(--espresso-soft);margin:0 0 16px;flex:1;}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;}
+.price{font-family:"Fraunces",serif;font-size:1.45rem;font-weight:600;color:var(--roast);line-height:1;}
+.price small{font-size:.72rem;color:var(--espresso-soft);font-weight:600;font-family:"Mulish",sans-serif;display:block;margin-top:2px;}
+.add-btn{
+  display:inline-flex;align-items:center;gap:.45em;background:var(--curry);color:#F3E7CE;
+  font-weight:800;font-size:.84rem;padding:.7em 1.15em;border-radius:999px;
+  transition:transform .3s var(--ease),background .3s;box-shadow:0 12px 20px -12px rgba(47,72,36,.8);
+}
+.add-btn:hover{transform:translateY(-2px);background:var(--curry-dk);}
+.add-btn:active{transform:scale(.94);}
+.add-btn.added{background:var(--terracotta);}
+
+/* ============================================================
+   PROCESS / WHY HOMEMADE
+   ============================================================ */
+.process{background:var(--roast);color:#F3E4C9;position:relative;overflow:hidden;}
+.process::before{
+  content:"";position:absolute;inset:0;opacity:.10;pointer-events:none;
+  background:url("../../assets/images/spices.jpg") center/cover;mix-blend-mode:overlay;
+}
+.process .sec-head h2{color:#FFF3DD;}
+.process .sec-head h2 em{color:var(--haldi);}
+.process .sec-head p{color:#E7D2AF;}
+.process .eyebrow{color:var(--haldi);}
+.process .eyebrow::before{background:var(--haldi);}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:14px;}
+.step{
+  background:rgba(255,247,231,.05);border:1px solid rgba(243,228,201,.18);border-radius:var(--r-md);
+  padding:30px 24px;position:relative;backdrop-filter:blur(2px);
+  transition:transform .45s var(--ease),background .45s;
+}
+.step:hover{transform:translateY(-6px);background:rgba(255,247,231,.09);}
+.step-num{
+  font-family:"Caveat",cursive;font-size:2.6rem;color:var(--haldi);line-height:.8;font-weight:700;
+  display:block;margin-bottom:12px;
+}
+.step h3{color:#FFF3DD;font-size:1.28rem;margin-bottom:8px;}
+.step p{font-size:.92rem;color:#E7D2AF;margin:0;}
+.process-promise{
+  margin-top:46px;text-align:center;font-family:"Fraunces",serif;font-style:italic;
+  font-size:clamp(1.3rem,3vw,1.9rem);color:#FFF3DD;font-weight:500;
+}
+.process-promise .script{color:var(--haldi);font-size:1.4em;font-style:normal;}
+
+/* ============================================================
+   GIFTING — Diwali
+   ============================================================ */
+.gifting{background:linear-gradient(170deg,var(--cream),var(--cream-3));overflow:hidden;}
+.gift-grid{display:grid;grid-template-columns:1fr 1.08fr;gap:clamp(34px,6vw,76px);align-items:center;}
+.gift-figure{position:relative;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg);border:7px solid #fff;rotate:1.4deg;}
+.gift-figure img{width:100%;height:clamp(360px,48vw,520px);object-fit:cover;}
+.gift-figure::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(122,59,30,.5),transparent 55%);}
+.gift-figure .diya-glow{position:absolute;inset:0;background:radial-gradient(40% 30% at 32% 78%,rgba(217,164,65,.5),transparent 60%);mix-blend-mode:screen;animation:flicker 3.4s ease-in-out infinite;}
+@keyframes flicker{0%,100%{opacity:.7}45%{opacity:1}70%{opacity:.55}}
+.gift-figure figcaption{position:absolute;left:20px;bottom:18px;color:#FFF3DD;font-family:"Caveat",cursive;font-size:1.7rem;font-weight:700;text-shadow:0 2px 10px rgba(40,16,6,.6);}
+.gift h2{font-size:clamp(2rem,4.8vw,3.3rem);margin:.3em 0 .45em;}
+.gift h2 em{font-style:italic;color:var(--terracotta);font-weight:500;}
+.gift > .lede{color:var(--espresso);font-size:1.06rem;max-width:48ch;margin:0 0 22px;}
+.gift-box-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:24px;
+  box-shadow:var(--shadow);display:flex;gap:18px;align-items:center;flex-wrap:wrap;
+}
+.gift-box-card .gb-info{flex:1;min-width:180px;}
+.gift-box-card h3{font-size:1.5rem;margin-bottom:4px;}
+.gift-box-card ul{margin:8px 0 0;display:grid;gap:5px;}
+.gift-box-card li{display:flex;align-items:center;gap:.5em;font-size:.9rem;color:var(--espresso-soft);font-weight:600;}
+.gift-box-card .gb-price{text-align:center;}
+.gift-box-card .gb-price .price{font-size:2rem;}
+.gift-perks{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px;}
+.gift-perks .tag{background:#fff;}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.testi{background:var(--curry-dk);color:#EFEAD8;position:relative;overflow:hidden;}
+.testi::before{content:"";position:absolute;inset:0;background:url("../../assets/images/chai.jpg") center/cover;opacity:.08;mix-blend-mode:overlay;}
+.testi .sec-head h2{color:#FBF3DF;}
+.testi .sec-head h2 em{color:var(--haldi);font-style:italic;}
+.testi .sec-head p{color:#D4E0C4;}
+.testi .eyebrow{color:var(--haldi);}
+.testi .eyebrow::before{background:var(--haldi);}
+.t-viewport{overflow:hidden;}
+.t-track{display:flex;gap:24px;will-change:transform;transition:transform .65s var(--ease);}
+.t-card{
+  flex:0 0 calc(33.333% - 16px);background:#FBF4E6;color:var(--espresso);border-radius:var(--r-md);
+  padding:30px 28px 26px;box-shadow:var(--shadow-lg);position:relative;border:1px solid rgba(122,59,30,.1);
+}
+.t-card .quote-mark{font-family:"Fraunces",serif;font-size:4rem;line-height:.5;color:var(--terracotta);opacity:.25;height:30px;display:block;}
+.t-card .stars{color:var(--haldi);letter-spacing:.06em;font-size:1.02rem;margin-bottom:10px;display:block;}
+.t-card p{font-size:1rem;line-height:1.6;margin:0 0 18px;color:var(--espresso);}
+.t-author{display:flex;align-items:center;gap:12px;}
+.t-avatar{width:46px;height:46px;border-radius:50%;flex:none;display:grid;place-items:center;font-family:"Fraunces",serif;font-weight:700;color:#fff;font-size:1.15rem;}
+.t-author b{display:block;font-family:"Fraunces",serif;font-size:1.05rem;color:var(--roast);line-height:1.1;}
+.t-author small{color:var(--espresso-soft);font-weight:700;font-size:.82rem;}
+.t-nav{display:flex;justify-content:center;gap:12px;margin-top:34px;}
+.t-arrow{width:50px;height:50px;border-radius:50%;background:rgba(251,244,230,.12);border:1.5px solid rgba(243,228,201,.35);color:#FBF3DF;display:grid;place-items:center;transition:transform .3s var(--ease),background .3s;}
+.t-arrow:hover{transform:translateY(-3px);background:rgba(251,244,230,.22);}
+.t-arrow svg{width:20px;height:20px;}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq{background:var(--cream);}
+.faq-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,5vw,64px);align-items:start;}
+.faq-intro{position:sticky;top:96px;}
+.faq-intro h2{font-size:clamp(2rem,4.6vw,3.1rem);margin:.3em 0 .5em;}
+.faq-intro h2 em{font-style:italic;color:var(--terracotta);font-weight:500;}
+.faq-intro p{color:var(--espresso-soft);margin:0 0 22px;}
+.faq-help{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:20px 22px;box-shadow:var(--shadow-sm);}
+.faq-help .script{font-size:1.5rem;display:block;line-height:1;margin-bottom:6px;}
+.faq-help p{margin:0 0 14px;font-size:.92rem;}
+.faq-list{display:flex;flex-direction:column;gap:12px;}
+.faq-item{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;transition:box-shadow .4s ease,border-color .4s;}
+.faq-item.open{box-shadow:var(--shadow);border-color:rgba(200,97,45,.4);}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 22px;text-align:left;font-family:"Fraunces",serif;font-size:1.12rem;font-weight:600;color:var(--roast);}
+.faq-q .ico{flex:none;width:30px;height:30px;border-radius:50%;background:var(--cream-2);display:grid;place-items:center;position:relative;transition:background .3s,transform .4s var(--ease);}
+.faq-item.open .faq-q .ico{background:var(--terracotta);transform:rotate(135deg);}
+.faq-q .ico::before,.faq-q .ico::after{content:"";position:absolute;background:var(--roast);border-radius:2px;transition:background .3s;}
+.faq-q .ico::before{width:12px;height:2px;}
+.faq-q .ico::after{width:2px;height:12px;}
+.faq-item.open .faq-q .ico::before,.faq-item.open .faq-q .ico::after{background:#fff;}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s var(--ease);}
+.faq-a-inner{padding:0 22px 22px;color:var(--espresso-soft);font-size:.96rem;}
+
+/* ============================================================
+   NEWSLETTER
+   ============================================================ */
+.news{position:relative;overflow:hidden;background:var(--terracotta);}
+.news::before{content:"";position:absolute;inset:0;background:url("../../assets/images/packaging.jpg") center/cover;opacity:.16;mix-blend-mode:multiply;}
+.news::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(172,78,34,.92),rgba(122,59,30,.86));}
+.news-inner{position:relative;text-align:center;max-width:640px;margin:0 auto;color:#FFF4E2;}
+.news .script{color:var(--haldi);font-size:1.7rem;}
+.news h2{color:#FFF6E8;font-size:clamp(2rem,4.6vw,3rem);margin:.2em 0 .4em;}
+.news p{color:#FBE9D2;margin:0 0 26px;font-size:1.05rem;}
+.news-form{display:flex;gap:10px;max-width:480px;margin:0 auto;flex-wrap:wrap;}
+.news-form input{
+  flex:1;min-width:200px;border:none;border-radius:999px;padding:1em 1.3em;font-family:inherit;font-size:1rem;
+  color:var(--espresso);background:#FFF8EC;box-shadow:inset 0 1px 4px rgba(74,59,42,.15);outline:2px solid transparent;transition:outline .25s;
+}
+.news-form input:focus{outline:2px solid var(--haldi);}
+.news-msg{min-height:1.4em;margin-top:14px;font-weight:700;color:var(--haldi);font-size:.95rem;}
+.news-fine{margin-top:8px;font-size:.8rem;color:rgba(255,244,226,.75);}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{background:#2E1B10;color:#D9C4A6;padding:clamp(56px,7vw,84px) 0 0;position:relative;}
+.footer a:hover{color:var(--haldi);}
+.foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:46px;border-bottom:1px solid rgba(217,196,166,.18);}
+.foot-brand .brand-word{color:#FBF1DF;font-size:2rem;}
+.foot-brand .brand-word b{color:var(--haldi);}
+.foot-brand p{margin:14px 0 18px;max-width:34ch;font-size:.94rem;color:#C3AC8B;}
+.foot-cta{display:flex;gap:10px;flex-wrap:wrap;}
+.foot-col h4{font-family:"Mulish",sans-serif;font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:.76rem;color:var(--haldi);margin-bottom:16px;}
+.foot-col ul{display:grid;gap:10px;}
+.foot-col a{font-size:.94rem;color:#C3AC8B;transition:color .25s;}
+.socials{display:flex;gap:10px;}
+.socials a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(217,196,166,.25);display:grid;place-items:center;transition:transform .3s var(--ease),border-color .3s,color .3s;color:#D9C4A6;}
+.socials a:hover{transform:translateY(-3px);border-color:var(--haldi);}
+.socials svg{width:18px;height:18px;}
+.foot-trust{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+.foot-trust span{font-size:.78rem;font-weight:700;color:#C3AC8B;background:rgba(217,196,166,.08);border:1px solid rgba(217,196,166,.15);border-radius:999px;padding:.4em .85em;}
+.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;padding:22px 0 28px;font-size:.82rem;color:#A8906F;}
+.foot-bottom a{color:#C3AC8B;}
+.demo-pill{font-size:.72rem;font-weight:800;letter-spacing:.06em;color:#2E1B10;background:var(--haldi);border-radius:999px;padding:.3em .8em;}
+
+/* ============================================================
+   CART DRAWER
+   ============================================================ */
+.scrim{position:fixed;inset:0;z-index:80;background:rgba(46,27,16,.5);backdrop-filter:blur(2px);opacity:0;visibility:hidden;transition:opacity .4s ease,visibility .4s;}
+body.cart-open .scrim{opacity:1;visibility:visible;}
+.drawer{
+  position:fixed;top:0;right:0;bottom:0;width:min(94vw,420px);z-index:81;background:var(--cream);
+  box-shadow:var(--shadow-lg);transform:translateX(100%);transition:transform .5s var(--ease);
+  display:flex;flex-direction:column;border-left:1px solid var(--line);
+}
+body.cart-open .drawer{transform:translateX(0);}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;border-bottom:1px solid var(--line);}
+.drawer-head h3{font-size:1.4rem;display:flex;align-items:center;gap:.4em;}
+.drawer-head .script{font-size:1.1rem;color:var(--curry);}
+.drawer-close{width:38px;height:38px;border-radius:50%;background:var(--cream-2);display:grid;place-items:center;transition:transform .3s var(--ease),background .3s;color:var(--roast);font-size:1.1rem;}
+.drawer-close:hover{transform:rotate(90deg);background:var(--cream-3);}
+.drawer-body{flex:1;overflow-y:auto;padding:18px 24px;}
+.cart-empty{text-align:center;padding:50px 10px;color:var(--espresso-soft);}
+.cart-empty .big{font-family:"Caveat",cursive;font-size:1.9rem;color:var(--terracotta);display:block;margin-bottom:6px;}
+.cart-line{display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px dashed var(--line);}
+.cart-line img{width:62px;height:62px;border-radius:12px;object-fit:cover;flex:none;}
+.cart-line .cl-info{flex:1;min-width:0;}
+.cart-line .cl-info b{font-family:"Fraunces",serif;font-size:1rem;color:var(--roast);display:block;line-height:1.15;}
+.cart-line .cl-info small{color:var(--espresso-soft);font-weight:700;font-size:.82rem;}
+.qty{display:inline-flex;align-items:center;gap:0;margin-top:6px;background:var(--cream-2);border-radius:999px;padding:2px;}
+.qty button{width:26px;height:26px;border-radius:50%;font-weight:900;color:var(--roast);font-size:1rem;display:grid;place-items:center;transition:background .25s;}
+.qty button:hover{background:var(--cream-3);}
+.qty span{min-width:26px;text-align:center;font-weight:800;font-size:.9rem;}
+.cl-remove{font-size:.74rem;font-weight:700;color:var(--terracotta);margin-top:5px;display:inline-block;opacity:.8;}
+.cl-remove:hover{opacity:1;text-decoration:underline;}
+.cl-price{font-family:"Fraunces",serif;font-weight:600;color:var(--roast);font-size:1.05rem;}
+.drawer-foot{border-top:1px solid var(--line);padding:20px 24px;background:var(--card);}
+.ship-bar{height:7px;border-radius:999px;background:var(--cream-3);overflow:hidden;margin:6px 0 14px;}
+.ship-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--haldi),var(--terracotta));border-radius:999px;transition:width .5s var(--ease);}
+.ship-note{font-size:.82rem;font-weight:700;color:var(--curry);margin-bottom:14px;}
+.cart-totals{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px;}
+.cart-totals .lbl{font-weight:700;color:var(--espresso-soft);}
+.cart-totals .amt{font-family:"Fraunces",serif;font-size:1.6rem;font-weight:600;color:var(--roast);}
+
+/* ============================================================
+   MOBILE STICKY BAR
+   ============================================================ */
+.mbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:55;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(251,244,230,.92);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+  box-shadow:0 -10px 30px -18px rgba(122,59,30,.5);
+  transform:translateY(120%);transition:transform .5s var(--ease);
+}
+.mbar.show{transform:translateY(0);}
+.mbar .btn{flex:1;padding:.85em 1em;font-size:.9rem;}
+.mbar .mbar-cart{flex:0 0 auto;position:relative;background:var(--cream);border:1.5px solid var(--line);border-radius:999px;padding:.7em 1em;color:var(--roast);font-weight:800;display:inline-flex;align-items:center;gap:.4em;}
+.mbar .mbar-cart .cart-count{position:absolute;top:-6px;right:-6px;}
+
+/* ============================================================
+   REVEAL ANIMATIONS
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease);will-change:transform,opacity;}
+.reveal.in{opacity:1;transform:none;}
+.reveal.d1{transition-delay:.08s;}
+.reveal.d2{transition-delay:.16s;}
+.reveal.d3{transition-delay:.24s;}
+.reveal.d4{transition-delay:.32s;}
+.reveal-x{opacity:0;transform:translateX(-40px);transition:opacity .9s var(--ease),transform .9s var(--ease);}
+.reveal-x.in{opacity:1;transform:none;}
+.reveal-r{opacity:0;transform:translateX(40px);transition:opacity .9s var(--ease),transform .9s var(--ease);}
+.reveal-r.in{opacity:1;transform:none;}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:1024px){
+  .grid{grid-template-columns:repeat(2,1fr);}
+  .steps{grid-template-columns:repeat(2,1fr);}
+  .t-card{flex-basis:calc(50% - 12px);}
+  .foot-top{grid-template-columns:1fr 1fr;gap:32px;}
+}
+@media (max-width:760px){
+  body{font-size:16px;}
+  .nav-links{display:none;}
+  .hamburger{display:block;}
+  .cart-btn .cart-label{display:none;}
+  .story-grid{grid-template-columns:1fr;gap:54px;}
+  .story-figure{max-width:480px;margin:0 auto;}
+  .story-note{right:6px;}
+  .gift-grid{grid-template-columns:1fr;gap:40px;}
+  .gift-figure{order:-1;}
+  .faq-grid{grid-template-columns:1fr;gap:28px;}
+  .faq-intro{position:static;}
+  .grid{grid-template-columns:1fr;gap:20px;}
+  .steps{grid-template-columns:1fr;}
+  .t-card{flex-basis:calc(100% - 0px);}
+  .foot-top{grid-template-columns:1fr;gap:30px;}
+  .mbar{display:flex;}
+  .hero{min-height:100svh;padding-bottom:96px;}
+  .hero h1{font-size:clamp(2.6rem,11vw,4rem);}
+  .gift-box-card{flex-direction:column;align-items:stretch;text-align:left;}
+  .gift-box-card .gb-price{text-align:left;}
+  .scroll-cue{display:none;}
+}
+@media (max-width:420px){
+  .wrap{padding:0 16px;}
+  .hero-cta{width:100%;}
+  .hero-cta .btn{flex:1;}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition-duration:.001ms !important;}
+  .reveal,.reveal-x,.reveal-r{opacity:1 !important;transform:none !important;}
+  .hero-media img{transform:scale(1.04) !important;}
+  .steam{display:none;}
+  .trust-track{animation:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================ NAV ============================ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="Cmaa Snacks home">
+      <img class="brand-mark" src="../../assets/logos/symbol-3-icon.svg" alt="" aria-hidden="true" />
+      <span class="brand-word">C<b>maa</b></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#story">Our Maa</a>
+      <a href="#products">Shop</a>
+      <a href="#process">Why Homemade</a>
+      <a href="#gifting">Diwali Gifting</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="cart-btn" id="openCart" aria-label="Open cart">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-label">Tin</span>
+        <span class="cart-count" id="navCount">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<div class="menu-scrim" id="menuScrim"></div>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+  <a href="#story">Our Maa</a>
+  <a href="#products">Shop the Tins</a>
+  <a href="#process">Why Homemade</a>
+  <a href="#gifting">Diwali Gifting</a>
+  <a href="#testimonials">Reviews</a>
+  <a href="#faq">FAQ</a>
+  <a class="btn btn-wa" style="margin-top:18px;justify-content:center" href="https://wa.me/910000000000" target="_blank" rel="noopener">Order on WhatsApp</a>
+</nav>
+
+<main id="top">
+
+<!-- ============================ HERO ============================ -->
+<section class="hero" id="hero">
+  <div class="hero-media" id="heroMedia">
+    <img src="../../assets/images/cooking.jpg" alt="Seema cooking by warm window light at her stove" fetchpriority="high" />
+  </div>
+  <div class="hero-grain"></div>
+
+  <div class="steam s1"><svg viewBox="0 0 60 200" preserveAspectRatio="none"><path d="M30 200 C12 160 48 130 30 95 C14 65 46 40 30 6"/></svg></div>
+  <div class="steam s2"><svg viewBox="0 0 60 200" preserveAspectRatio="none"><path d="M30 200 C50 160 14 128 30 92 C44 60 16 36 30 4"/></svg></div>
+  <div class="steam s3"><svg viewBox="0 0 60 200" preserveAspectRatio="none"><path d="M30 200 C14 158 46 132 30 96 C16 64 44 38 30 8"/></svg></div>
+
+  <div class="wrap">
+    <div class="hero-content">
+      <span class="eyebrow hero-eyebrow">Homemade · Small Batch · Since Always</span>
+      <h1>
+        <span class="flourish">Made the way</span>
+        Maa makes it.
+      </h1>
+      <p class="lede">Small-batch chakli &amp; chivda, hand-pressed and fried fresh in pure ghee, then packed with love. No machines, no shortcuts — just <em>ghar ka swaad</em>.</p>
+      <div class="hero-cta">
+        <a href="#products" class="btn btn-primary">Taste home
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#story" class="btn btn-ghost">Meet Seema</a>
+      </div>
+      <div class="hero-rating">
+        <span class="stars">★★★★★</span>
+        <span>4.9 from 2,000+ home kitchens across India &amp; abroad</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue"><span>Scroll</span><span class="dot"></span></div>
+</section>
+
+<!-- ============================ TRUST STRIP ============================ -->
+<section class="trust" aria-label="Why trust Cmaa">
+  <div class="trust-track" id="trustTrack">
+    <!-- duplicated for seamless marquee -->
+    <div class="trust-item"><span class="s">✓</span> <b>FSSAI Certified</b></div><span class="trust-sep"></span>
+    <div class="trust-item"><span class="s">✦</span> No Preservatives, Ever</div><span class="trust-sep"></span>
+    <div class="trust-item"><span class="s">◷</span> Made in <b>Small Batches</b></div><span class="trust-sep"></span>
+    <div class="trust-item"><span class="s">★</span> <b>4.9</b> · 2,000+ Reviews</div><span class="trust-sep"></span>
+    <div class="trust-item"><span class="s">⊕</span> Free Shipping over <b>₹499</b></div><span class="trust-sep"></span>
+    <div class="trust-item"><span class="s">♨</span> Fried Fresh in <b>Pure Ghee</b></div><span class="trust-sep"></span>
+    <div class="trust-item"><span class="s">✓</span> <b>FSSAI Certified</b></div><span class="trust-sep"></span>
+    <div class="trust-item"><span class="s">✦</span> No Preservatives, Ever</div><span class="trust-sep"></span>
+    <div class="trust-item"><span class="s">◷</span> Made in <b>Small Batches</b></div><span class="trust-sep"></span>
+    <div class="trust-item"><span class="s">★</span> <b>4.9</b> · 2,000+ Reviews</div><span class="trust-sep"></span>
+    <div class="trust-item"><span class="s">⊕</span> Free Shipping over <b>₹499</b></div><span class="trust-sep"></span>
+    <div class="trust-item"><span class="s">♨</span> Fried Fresh in <b>Pure Ghee</b></div><span class="trust-sep"></span>
+  </div>
+</section>
+
+<!-- ============================ STORY ============================ -->
+<section class="section story" id="story">
+  <div class="wrap story-grid">
+    <figure class="story-figure reveal-x">
+      <span class="tape t1"></span>
+      <span class="tape t2"></span>
+      <div class="story-img-frame">
+        <img src="../../assets/images/cooking.jpg" alt="Seema at her stove, frying a fresh batch by hand" loading="lazy" />
+      </div>
+      <div class="story-note">
+        <span class="script">Seema's special</span>
+        <small>30 Diwalis of practice in every spiral.</small>
+        <span class="sig">— Maa</span>
+      </div>
+    </figure>
+
+    <div class="story-copy reveal-r">
+      <span class="eyebrow">Meet Seema · the Maa in Cmaa</span>
+      <h2>The hands behind <em>every spiral.</em></h2>
+      <p>For <span class="hl">thirty years</span>, Seema has made faral for her family every Diwali — kneading bhajani by feel, pressing each chakli through the brass <em>soncha</em>, listening for the exact hiss that means the ghee is ready.</p>
+      <p>No recipe card, just memory in her fingertips. The steel <em>paraat</em>, the warm window light, the smell that pulled the whole house into the kitchen. That same batch — the one her children fought over — is now pressed fresh and packed for you, with a <span class="hl">packed-on date</span>, never a factory in sight.</p>
+      <p style="font-family:'Caveat',cursive;font-size:1.55rem;color:var(--curry);margin-bottom:24px;line-height:1.2;">"Because everything's better when Maa makes it."</p>
+      <div class="story-tags">
+        <span class="tag"><svg class="spiral-bullet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0-2 0M12 12a3 3 0 1 1 3 3a5 5 0 1 1-5-5a7 7 0 1 1 7 7"/></svg> Hand-pressed</span>
+        <span class="tag"><svg class="spiral-bullet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0-2 0M12 12a3 3 0 1 1 3 3a5 5 0 1 1-5-5a7 7 0 1 1 7 7"/></svg> Pure ghee</span>
+        <span class="tag"><svg class="spiral-bullet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0-2 0M12 12a3 3 0 1 1 3 3a5 5 0 1 1-5-5a7 7 0 1 1 7 7"/></svg> Family recipe</span>
+        <span class="tag"><svg class="spiral-bullet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0-2 0M12 12a3 3 0 1 1 3 3a5 5 0 1 1-5-5a7 7 0 1 1 7 7"/></svg> Packed fresh</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PRODUCTS ============================ -->
+<section class="section products" id="products">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" style="justify-content:center">The Tins · 200g each</span>
+      <h2>Shop Maa's <em>kitchen.</em></h2>
+      <p>Fried in fresh batches, never warehoused. Pick your crunch — we pack it the week it ships.</p>
+    </div>
+
+    <div class="filter-row reveal d1" id="filterRow">
+      <button class="chip active" data-filter="all">All</button>
+      <button class="chip" data-filter="chakli">Chakli &amp; Murukku</button>
+      <button class="chip" data-filter="chivda">Chivda &amp; Sev</button>
+      <button class="chip" data-filter="gift">Gifting</button>
+    </div>
+
+    <div class="grid" id="productGrid"><!-- injected by JS --></div>
+  </div>
+</section>
+
+<!-- ============================ PROCESS ============================ -->
+<section class="section process" id="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" style="justify-content:center">Why Homemade Tastes Different</span>
+      <h2>No machines. <em>Just Maa's method.</em></h2>
+      <p>Every tin walks through the same four steps Seema has used for three decades — no automation, no compromises.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal d1">
+        <span class="step-num">01</span>
+        <h3>Stone-ground bhajani</h3>
+        <p>Rice and roasted dals ground fresh into our family bhajani flour — the soul of a real chakli, never a packet mix.</p>
+      </div>
+      <div class="step reveal d2">
+        <span class="step-num">02</span>
+        <h3>Kneaded &amp; pressed by hand</h3>
+        <p>Dough rested by feel, then pressed spiral by spiral through the brass soncha. Slower, yes — but you can taste the difference.</p>
+      </div>
+      <div class="step reveal d3">
+        <span class="step-num">03</span>
+        <h3>Fried fresh in pure ghee</h3>
+        <p>Small batches into hot ghee, watched to a deep gold. No palm oil, no preservatives, no day-old stock.</p>
+      </div>
+      <div class="step reveal d4">
+        <span class="step-num">04</span>
+        <h3>Packed with a date</h3>
+        <p>Cooled, sealed airtight and stamped with a <em>packed-on</em> date the same week it leaves the kitchen.</p>
+      </div>
+    </div>
+    <p class="process-promise reveal">If Maa wouldn't serve it to her own family, <span class="script">it never reaches your tin.</span></p>
+  </div>
+</section>
+
+<!-- ============================ GIFTING ============================ -->
+<section class="section gifting" id="gifting">
+  <div class="wrap gift-grid">
+    <figure class="gift-figure reveal-x">
+      <img src="../../assets/images/diwali.jpg" alt="A lit diya glowing for Diwali" loading="lazy" />
+      <span class="diya-glow"></span>
+      <figcaption>Shubh Deepavali ✦</figcaption>
+    </figure>
+    <div class="gift reveal-r">
+      <span class="eyebrow">Festive &amp; Gifting</span>
+      <h2>Send a tin of <em>home</em> this Diwali.</h2>
+      <p class="lede">Whether they're three streets away or three oceans across, gift the faral that tastes like Maa's kitchen. Hand-packed, festive-wrapped, and ready to ship across India and to NRI families abroad.</p>
+
+      <div class="gift-box-card">
+        <img src="../../assets/images/faral.jpg" alt="Diwali Faral gift box with assorted homemade snacks" loading="lazy" style="width:120px;height:120px;border-radius:14px;object-fit:cover;flex:none;" />
+        <div class="gb-info">
+          <span class="card-tagline">The whole thaali, boxed</span>
+          <h3>Diwali Faral Box</h3>
+          <ul>
+            <li><span style="color:var(--terracotta)">●</span> Chakli · Chivda · Murukku · Sev</li>
+            <li><span style="color:var(--terracotta)">●</span> Festive kraft box + hand-written note</li>
+            <li><span style="color:var(--terracotta)">●</span> Ships pan-India &amp; worldwide</li>
+          </ul>
+        </div>
+        <div class="gb-price">
+          <div class="price">₹549 <small>per box</small></div>
+          <button class="add-btn" data-id="faral" style="margin-top:10px;">Add to tin</button>
+        </div>
+      </div>
+
+      <div class="gift-perks">
+        <span class="tag">🎁 Gift wrap included</span>
+        <span class="tag">✍️ Personal note</span>
+        <span class="tag">🌍 NRI shipping</span>
+        <span class="tag">📦 Bulk &amp; corporate orders</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TESTIMONIALS ============================ -->
+<section class="section testi" id="testimonials">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" style="justify-content:center">2,000+ Happy Families</span>
+      <h2>Tastes like <em>Sunday at Aaji's.</em></h2>
+      <p>Real notes from kitchens that found their faral again.</p>
+    </div>
+
+    <div class="t-viewport">
+      <div class="t-track" id="tTrack"><!-- injected --></div>
+    </div>
+    <div class="t-nav">
+      <button class="t-arrow" id="tPrev" aria-label="Previous reviews"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button class="t-arrow" id="tNext" aria-label="Next reviews"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FAQ ============================ -->
+<section class="section faq" id="faq">
+  <div class="wrap faq-grid">
+    <div class="faq-intro reveal-x">
+      <span class="eyebrow">Good to Know</span>
+      <h2>Questions, <em>answered.</em></h2>
+      <p>Everything about freshness, shipping and ingredients — straight from the kitchen.</p>
+      <div class="faq-help">
+        <span class="script">Still wondering?</span>
+        <p>Maa's happy to help. Message us and we usually reply within a few hours.</p>
+        <a class="btn btn-wa btn-block" href="https://wa.me/910000000000" target="_blank" rel="noopener">Ask on WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="faq-list reveal-r" id="faqList"><!-- injected --></div>
+  </div>
+</section>
+
+<!-- ============================ NEWSLETTER ============================ -->
+<section class="section news" id="newsletter">
+  <div class="wrap news-inner reveal">
+    <span class="script">Join the kitchen table</span>
+    <h2>Fresh batches, festive drops, no spam.</h2>
+    <p>Get first dibs on Diwali pre-orders, new flavours, and the occasional recipe from Maa's notebook.</p>
+    <form class="news-form" id="newsForm" novalidate>
+      <input type="email" id="newsEmail" placeholder="your@email.com" aria-label="Email address" autocomplete="email" />
+      <button type="submit" class="btn btn-curry">Keep me posted</button>
+    </form>
+    <div class="news-msg" id="newsMsg" role="status"></div>
+    <p class="news-fine">By subscribing you agree to receive occasional emails. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <span class="brand-word">C<b>maa</b></span>
+        <p>Premium homemade chakli &amp; chivda, hand-pressed in small batches by Seema. <em>Ghar ka swaad, Maa ke haath ka.</em></p>
+        <div class="foot-cta">
+          <a class="btn btn-wa" href="https://wa.me/910000000000" target="_blank" rel="noopener">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .6l-.4.5c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.5.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l1.8.9c.3.1.4.2.5.4.1.1.1.6-.1 1.1Z"/></svg>
+            Order now
+          </a>
+          <a class="btn btn-ghost" href="#products">Browse tins</a>
+        </div>
+        <div class="foot-trust">
+          <span>FSSAI · 11523998000457</span>
+          <span>No Preservatives</span>
+          <span>4.9★ (2,000+)</span>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#products">All Tins</a></li>
+          <li><a href="#products">Chakli &amp; Murukku</a></li>
+          <li><a href="#products">Chivda &amp; Sev</a></li>
+          <li><a href="#gifting">Diwali Faral Box</a></li>
+          <li><a href="#gifting">Bulk &amp; Corporate</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Cmaa</h4>
+        <ul>
+          <li><a href="#story">Meet Seema</a></li>
+          <li><a href="#process">Why Homemade</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#newsletter">Newsletter</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Stay in touch</h4>
+        <ul>
+          <li><a href="https://wa.me/910000000000" target="_blank" rel="noopener">WhatsApp: +91 00000 00000</a></li>
+          <li><a href="mailto:hello@cmaasnacks.example">hello@cmaasnacks.example</a></li>
+          <li>Shipping pan-India &amp; worldwide</li>
+        </ul>
+        <div class="socials" style="margin-top:14px;">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2 0-3 1-3 3v2H8v3h3v6h3v-6h2.5l.5-3H14v-1.5c0-.6.4-.5 1-.5Z"/></svg></a>
+          <a href="https://wa.me/910000000000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .6l-.4.5c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.5.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l1.8.9c.3.1.4.2.5.4.1.1.1.6-.1 1.1Z"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 Cmaa Snacks. Made by hand. Made for you. <span class="demo-pill">Demo site</span></span>
+      <span>Photos: Wikimedia Commons (CC). · Prices &amp; FSSAI no. illustrative.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================ CART DRAWER ============================ -->
+<div class="scrim" id="cartScrim"></div>
+<aside class="drawer" id="drawer" aria-label="Your tin" aria-hidden="true">
+  <div class="drawer-head">
+    <h3>Your tin <span class="script">— packed fresh</span></h3>
+    <button class="drawer-close" id="closeCart" aria-label="Close cart">✕</button>
+  </div>
+  <div class="drawer-body" id="drawerBody"><!-- lines injected --></div>
+  <div class="drawer-foot">
+    <div class="ship-note" id="shipNote"></div>
+    <div class="ship-bar"><i id="shipFill"></i></div>
+    <div class="cart-totals">
+      <span class="lbl">Subtotal</span>
+      <span class="amt" id="cartTotal">₹0</span>
+    </div>
+    <a class="btn btn-wa btn-block" id="checkoutWa" href="https://wa.me/910000000000" target="_blank" rel="noopener" style="margin-bottom:8px;">Checkout on WhatsApp</a>
+    <p style="text-align:center;font-size:.78rem;color:var(--espresso-soft);margin:6px 0 0;">COD · UPI · Cards — confirmed over chat. <b>Demo only.</b></p>
+  </div>
+</aside>
+
+<!-- ============================ MOBILE STICKY BAR ============================ -->
+<div class="mbar" id="mbar">
+  <button class="mbar-cart" id="mbarCart" aria-label="Open cart">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+    <span class="cart-count" id="mbarCount">0</span>
+  </button>
+  <a class="btn btn-primary" href="#products">Shop tins</a>
+  <a class="btn btn-wa" href="https://wa.me/910000000000" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<!-- ============================ SCRIPTS ============================ -->
+<script>
+const REDUCED = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+const INR = n => '₹' + n.toLocaleString('en-IN');
+
+/* ---------- DATA ---------- */
+const PRODUCTS = [
+  {id:'chakli-classic', name:'Classic Bhajani Chakli', price:199, img:'chakli-2.jpg', cat:'chakli', rating:4.9, n:512, badge:'Bestseller', badgeCls:'best', tagline:'The original spiral', desc:'Crisp, layered &amp; perfectly spiced — our family bhajani recipe, pressed by hand.'},
+  {id:'chakli-butter', name:'Butter Chakli', price:219, img:'chakli-1.jpg', cat:'chakli', rating:4.9, n:288, badge:'Melt-in-mouth', badgeCls:'', tagline:'Soft, rich, buttery', desc:'Extra ghee &amp; a whisper of butter for that delicate, crumbly bite kids adore.'},
+  {id:'chakli-masala', name:'Masala Chakli', price:219, img:'chakli-1.jpg', cat:'chakli', rating:4.8, n:204, badge:'Spicy 🌶', badgeCls:'spicy', tagline:'For the chatpata soul', desc:'Garlic, red chilli &amp; roasted spices kicked up a notch. Pairs dangerously well with chai.'},
+  {id:'murukku', name:'Butter Murukku', price:209, img:'murukku.jpg', cat:'chakli', rating:4.9, n:176, badge:'South special', badgeCls:'', tagline:'Coil of crunch', desc:'Rice-flour murukku with urad dal &amp; cumin — light, golden and beautifully crisp.'},
+  {id:'chivda-classic', name:'Classic Poha Chivda', price:119, img:'chivda-1.jpg', cat:'chivda', rating:4.9, n:341, badge:'Tea-time hero', badgeCls:'best', tagline:'The everyday mix', desc:'Thin poha tossed with peanuts, curry leaves &amp; raisins — sweet, salty, just right.'},
+  {id:'chivda-diet', name:'Roasted Diet Chivda', price:129, img:'chivda-1.jpg', cat:'chivda', rating:4.7, n:158, badge:'Roasted, not fried', badgeCls:'', tagline:'Guilt-free crunch', desc:'Dry-roasted poha with almonds &amp; less oil — the snack you can keep reaching for.'},
+  {id:'chivda-bombay', name:'Bombay Mix Chivda', price:119, img:'chivda-2.jpg', cat:'chivda', rating:4.8, n:227, badge:'Spicy 🌶', badgeCls:'spicy', tagline:'Mumbai street in a tin', desc:'Sev, boondi, peanuts &amp; spice — that loud, addictive farsan crunch you crave.'},
+  {id:'sev', name:'Crispy Sev', price:99, img:'sev.jpg', cat:'chivda', rating:4.8, n:193, badge:'Pantry staple', badgeCls:'', tagline:'Top anything', desc:'Fine besan sev fried light &amp; crisp — sprinkle on poha, bhel, or just snack it.'},
+  {id:'faral', name:'Diwali Faral Box', price:549, img:'faral.jpg', cat:'gift', rating:5.0, n:96, badge:'Gift box', badgeCls:'best', tagline:'The whole thaali', desc:'Chakli, chivda, murukku &amp; sev in a festive kraft box with a hand-written note.'}
+];
+
+const TESTIMONIALS = [
+  {q:"Opened the tin and my whole flat smelled like Diwali at my aaji's. The bhajani chakli is exactly how I remember it — crisp, not oily.", name:"Anjali Deshpande", city:"Pune", color:"#C8612D"},
+  {q:"I'm in Toronto and homesick faral is real. Cmaa shipped fast, packed beautifully, and the chivda was still perfectly crunchy. Cried a little, not gonna lie.", name:"Rohit Iyer", city:"Toronto, NRI", color:"#3E5C2F"},
+  {q:"Sent the Faral Box to my parents for Diwali. Mom called to ask which 'aunty' made it — that's the highest compliment in our house.", name:"Sneha Kulkarni", city:"Bengaluru", color:"#7A3B1E"},
+  {q:"The masala chakli is dangerously good with evening chai. Finished a 200g tin in two days. Reordering three.", name:"Vikram Shah", city:"Ahmedabad", color:"#D9A441"},
+  {q:"You can taste that it's actually homemade — no weird factory aftertaste, no oil sitting heavy. The packed-on date is such a thoughtful touch.", name:"Meera Nair", city:"Kochi", color:"#AC4E22"},
+  {q:"Ordered the butter murukku for my kids and they refuse store brands now. Light, fresh and gone too fast. Maa Seema, you've spoiled us.", name:"Farah Sheikh", city:"Hyderabad", color:"#2F4824"}
+];
+
+const FAQS = [
+  {q:"How fresh is it, and how long does it stay crisp?", a:"Every tin is fried in small batches and stamped with a <strong>packed-on date</strong> — never warehouse stock. Sealed, it stays fresh and crisp for about 30 days. Once opened, keep it airtight and finish within 10–12 days for the best crunch (it rarely lasts that long!)."},
+  {q:"How does shipping work, and is it really free?", a:"We ship pan-India in 3–6 days and worldwide for NRI families in 7–12 days, in protective cushioned packaging so nothing arrives crushed. <strong>Shipping is free on orders over ₹499</strong> within India; a flat fee applies below that and on international orders, shown at checkout."},
+  {q:"What's inside? Any preservatives or allergens?", a:"Just real ingredients — bhajani flour, rice, dals, pure ghee, peanuts, curry leaves and home spices. <strong>No preservatives, no palm oil, no artificial colours.</strong> Products contain or may trace peanuts, gluten and dairy (ghee). Full ingredient and allergen lists are on every pack."},
+  {q:"Can I gift it or order in bulk?", a:"Absolutely — gifting is our favourite. The <strong>Diwali Faral Box</strong> comes festive-wrapped with a hand-written note, and we love bulk &amp; corporate orders for festivals, weddings and hampers. Message us on WhatsApp for custom quantities and personalisation."},
+  {q:"What payment options do you accept?", a:"We accept <strong>UPI, all major cards, net-banking and Cash on Delivery</strong> across India. International orders are paid by card. On this demo, your order is simply confirmed over WhatsApp chat — no real payment is taken."},
+  {q:"Is this a real store I can order from right now?", a:"This is a <strong>demo storefront</strong> built to showcase the Cmaa brand. The cart and checkout are illustrative — but the love for proper homemade faral is entirely real. 💛"}
+];
+
+/* ---------- RENDER PRODUCTS ---------- */
+const grid = document.getElementById('productGrid');
+grid.innerHTML = PRODUCTS.map((p,i)=>`
+  <article class="card reveal d${(i%3)+1}" data-cat="${p.cat}">
+    <div class="card-media">
+      <img src="../../assets/images/${p.img}" alt="${p.name}" loading="lazy" />
+      ${p.badge?`<span class="card-badge ${p.badgeCls}">${p.badge}</span>`:''}
+      <button class="card-fav" data-fav="${p.id}" aria-label="Save ${p.name}">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+      </button>
+    </div>
+    <div class="card-body">
+      <span class="card-tagline">${p.tagline}</span>
+      <h3>${p.name}</h3>
+      <div class="card-rating"><span class="stars">★★★★★</span> ${p.rating.toFixed(1)} · ${p.n} reviews</div>
+      <p class="card-desc">${p.desc}</p>
+      <div class="card-foot">
+        <div class="price">${INR(p.price)}<small>200g tin</small></div>
+        <button class="add-btn" data-id="${p.id}">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          Add
+        </button>
+      </div>
+    </div>
+  </article>`).join('');
+
+/* ---------- FILTERS ---------- */
+document.getElementById('filterRow').addEventListener('click', e=>{
+  const btn = e.target.closest('.chip'); if(!btn) return;
+  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+  btn.classList.add('active');
+  const f = btn.dataset.filter;
+  document.querySelectorAll('#productGrid .card').forEach(card=>{
+    const show = f==='all' || card.dataset.cat===f;
+    card.style.display = show ? '' : 'none';
+  });
+});
+
+/* ---------- FAVOURITES ---------- */
+grid.addEventListener('click', e=>{
+  const fav = e.target.closest('.card-fav');
+  if(fav){ fav.classList.toggle('on'); }
+});
+
+/* ---------- TESTIMONIALS ---------- */
+const tTrack = document.getElementById('tTrack');
+tTrack.innerHTML = TESTIMONIALS.map(t=>`
+  <article class="t-card">
+    <span class="quote-mark">&rdquo;</span>
+    <span class="stars">★★★★★</span>
+    <p>${t.q}</p>
+    <div class="t-author">
+      <span class="t-avatar" style="background:${t.color}">${t.name[0]}</span>
+      <div><b>${t.name}</b><small>${t.city}</small></div>
+    </div>
+  </article>`).join('');
+
+let tIndex = 0;
+function perView(){ return window.innerWidth<=760?1:window.innerWidth<=1024?2:3; }
+function maxIndex(){ return Math.max(0, TESTIMONIALS.length - perView()); }
+function moveT(){
+  tIndex = Math.min(tIndex, maxIndex());
+  const card = tTrack.querySelector('.t-card');
+  if(!card) return;
+  const gap = 24;
+  const step = card.getBoundingClientRect().width + gap;
+  tTrack.style.transform = `translateX(${-tIndex*step}px)`;
+}
+document.getElementById('tNext').addEventListener('click', ()=>{ tIndex = tIndex>=maxIndex()?0:tIndex+1; moveT(); });
+document.getElementById('tPrev').addEventListener('click', ()=>{ tIndex = tIndex<=0?maxIndex():tIndex-1; moveT(); });
+window.addEventListener('resize', moveT);
+setTimeout(moveT, 60);
+// gentle autoplay
+let tAuto = setInterval(()=>{ if(!REDUCED){ tIndex = tIndex>=maxIndex()?0:tIndex+1; moveT(); } }, 6000);
+tTrack.parentElement.addEventListener('mouseenter', ()=>clearInterval(tAuto));
+
+/* ---------- FAQ ---------- */
+const faqList = document.getElementById('faqList');
+faqList.innerHTML = FAQS.map((f,i)=>`
+  <div class="faq-item${i===0?' open':''}">
+    <button class="faq-q" aria-expanded="${i===0}">
+      <span>${f.q}</span>
+      <span class="ico" aria-hidden="true"></span>
+    </button>
+    <div class="faq-a"><div class="faq-a-inner">${f.a}</div></div>
+  </div>`).join('');
+faqList.addEventListener('click', e=>{
+  const q = e.target.closest('.faq-q'); if(!q) return;
+  const item = q.parentElement;
+  const a = item.querySelector('.faq-a');
+  const isOpen = item.classList.contains('open');
+  // close others
+  faqList.querySelectorAll('.faq-item').forEach(it=>{
+    it.classList.remove('open');
+    it.querySelector('.faq-q').setAttribute('aria-expanded','false');
+    it.querySelector('.faq-a').style.maxHeight = null;
+  });
+  if(!isOpen){
+    item.classList.add('open');
+    q.setAttribute('aria-expanded','true');
+    a.style.maxHeight = a.scrollHeight + 'px';
+  }
+});
+// open first by default after layout
+requestAnimationFrame(()=>{
+  const first = faqList.querySelector('.faq-item.open .faq-a');
+  if(first) first.style.maxHeight = first.scrollHeight + 'px';
+});
+
+/* ---------- CART ---------- */
+const cart = {}; // id -> qty
+const FREE_SHIP = 499;
+const byId = id => PRODUCTS.find(p=>p.id===id);
+
+function cartCount(){ return Object.values(cart).reduce((a,b)=>a+b,0); }
+function cartTotal(){ return Object.entries(cart).reduce((s,[id,q])=>s+byId(id).price*q,0); }
+
+function bumpCounts(){
+  const c = cartCount();
+  ['navCount','mbarCount'].forEach(id=>{
+    const el = document.getElementById(id);
+    el.textContent = c;
+    el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump');
+  });
+}
+
+function renderCart(){
+  const body = document.getElementById('drawerBody');
+  const ids = Object.keys(cart);
+  if(ids.length===0){
+    body.innerHTML = `<div class="cart-empty"><span class="big">Your tin is empty</span>Add some fresh chakli &amp; chivda — Maa's waiting. 🤍</div>`;
+  } else {
+    body.innerHTML = ids.map(id=>{
+      const p = byId(id), q = cart[id];
+      return `<div class="cart-line">
+        <img src="../../assets/images/${p.img}" alt="${p.name}" />
+        <div class="cl-info">
+          <b>${p.name}</b>
+          <small>${INR(p.price)} · 200g</small>
+          <div class="qty" data-id="${id}">
+            <button data-act="dec" aria-label="Decrease">−</button>
+            <span>${q}</span>
+            <button data-act="inc" aria-label="Increase">+</button>
+          </div>
+          <a class="cl-remove" data-act="rm" data-id="${id}">Remove</a>
+        </div>
+        <div class="cl-price">${INR(p.price*q)}</div>
+      </div>`;
+    }).join('');
+  }
+  document.getElementById('cartTotal').textContent = INR(cartTotal());
+  // shipping bar
+  const total = cartTotal();
+  const pct = Math.min(100, Math.round(total/FREE_SHIP*100));
+  document.getElementById('shipFill').style.width = (ids.length?pct:0)+'%';
+  const note = document.getElementById('shipNote');
+  if(total===0){ note.textContent = 'Free shipping unlocks at ₹499.'; }
+  else if(total>=FREE_SHIP){ note.innerHTML = '🎉 You\'ve unlocked <b>free shipping!</b>'; }
+  else { note.innerHTML = `Add <b>${INR(FREE_SHIP-total)}</b> more for free shipping.`; }
+  // whatsapp checkout link
+  buildWaLink();
+  bumpCounts();
+}
+
+function buildWaLink(){
+  const ids = Object.keys(cart);
+  let msg = 'Namaste Cmaa! I\'d like to order:%0A';
+  if(ids.length){
+    ids.forEach(id=>{ const p=byId(id); msg += `• ${p.name} x${cart[id]} — ${INR(p.price*cart[id])}%0A`; });
+    msg += `%0ASubtotal: ${INR(cartTotal())}`;
+  } else { msg = 'Namaste Cmaa! I\'d like to know more about your homemade snacks.'; }
+  const link = `https://wa.me/910000000000?text=${msg}`;
+  document.getElementById('checkoutWa').href = link;
+}
+
+function addToCart(id){
+  cart[id] = (cart[id]||0)+1;
+  renderCart();
+}
+
+// add-to-cart (event delegation, whole document covers grid + gift box)
+document.addEventListener('click', e=>{
+  const add = e.target.closest('.add-btn');
+  if(add){
+    const id = add.dataset.id;
+    addToCart(id);
+    add.classList.add('added');
+    const orig = add.innerHTML;
+    add.innerHTML = '✓ In tin';
+    setTimeout(()=>{ add.classList.remove('added'); add.innerHTML = orig; }, 1100);
+    openCart();
+  }
+});
+
+// qty + remove inside drawer
+document.getElementById('drawerBody').addEventListener('click', e=>{
+  const rm = e.target.closest('[data-act="rm"]');
+  if(rm){ delete cart[rm.dataset.id]; renderCart(); return; }
+  const btn = e.target.closest('button[data-act]');
+  if(!btn) return;
+  const id = btn.parentElement.dataset.id;
+  if(btn.dataset.act==='inc') cart[id]++;
+  else { cart[id]--; if(cart[id]<=0) delete cart[id]; }
+  renderCart();
+});
+
+/* ---------- DRAWER OPEN/CLOSE ---------- */
+function openCart(){ document.body.classList.add('cart-open'); document.getElementById('drawer').setAttribute('aria-hidden','false'); }
+function closeCart(){ document.body.classList.remove('cart-open'); document.getElementById('drawer').setAttribute('aria-hidden','true'); }
+document.getElementById('openCart').addEventListener('click', openCart);
+document.getElementById('mbarCart').addEventListener('click', openCart);
+document.getElementById('closeCart').addEventListener('click', closeCart);
+document.getElementById('cartScrim').addEventListener('click', closeCart);
+
+/* ---------- MOBILE MENU ---------- */
+const hamburger = document.getElementById('hamburger');
+function toggleMenu(force){
+  const open = force!==undefined?force:!document.body.classList.contains('menu-open');
+  document.body.classList.toggle('menu-open', open);
+  hamburger.setAttribute('aria-expanded', open);
+}
+hamburger.addEventListener('click', ()=>toggleMenu());
+document.getElementById('menuScrim').addEventListener('click', ()=>toggleMenu(false));
+document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click', ()=>toggleMenu(false)));
+
+document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ closeCart(); toggleMenu(false); } });
+
+renderCart();
+
+/* ---------- NEWSLETTER ---------- */
+document.getElementById('newsForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  const input = document.getElementById('newsEmail');
+  const msg = document.getElementById('newsMsg');
+  const val = input.value.trim();
+  const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+  if(!ok){ msg.style.color='#FFE0C0'; msg.textContent='Please enter a valid email so Maa can reach you. 🙂'; return; }
+  msg.style.color='var(--haldi)';
+  msg.textContent='You\'re in! Welcome to the kitchen table. 🤍';
+  input.value='';
+});
+
+/* ---------- NAV SCROLL SHRINK + MOBILE BAR + PARALLAX ---------- */
+const nav = document.getElementById('nav');
+const mbar = document.getElementById('mbar');
+const heroImg = document.querySelector('#heroMedia img');
+const steams = document.querySelectorAll('.steam');
+let ticking = false;
+
+function onScroll(){
+  const y = window.scrollY;
+  nav.classList.toggle('scrolled', y>30);
+  mbar.classList.toggle('show', y>620);
+  if(!REDUCED && heroImg && y < window.innerHeight){
+    heroImg.style.transform = `translateY(${y*0.28}px) scale(1.08)`;
+  }
+  ticking = false;
+}
+window.addEventListener('scroll', ()=>{ if(!ticking){ requestAnimationFrame(onScroll); ticking=true; } }, {passive:true});
+onScroll();
+
+// reveal steam after load
+window.addEventListener('load', ()=>{ steams.forEach(s=>s.style.opacity=''); });
+
+/* ---------- SCROLL REVEAL (IntersectionObserver) ---------- */
+const revealEls = document.querySelectorAll('.reveal,.reveal-x,.reveal-r');
+if(REDUCED){
+  revealEls.forEach(el=>el.classList.add('in'));
+} else {
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+  revealEls.forEach(el=>io.observe(el));
+  // re-trigger reveal for product cards injected after observer (they're in DOM already, fine)
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cmaa Snacks — Is Diwali, ghar ka swaad bhejiye | Homemade Chakli & Chivda</title>
+<meta name="description" content="Premium homemade Chakli & Chivda, hand-pressed in small batches by Seema. Send the taste of home this Diwali. India + worldwide gifting." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Yatra+One&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<!-- Swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.css" integrity="sha384-gAPqlBuTCdtVcYt9ocMOYWrnBZ4XSL6q+4eXqwNycOr4iFczhNKtnYhF3NEXJM51" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+/* ============================================================
+   ROSHNI BAZAAR — Cmaa Snacks Diwali gifting homepage
+   ============================================================ */
+:root{
+  --aubergine:#3A0B45;
+  --aubergine-deep:#2A0832;
+  --aubergine-2:#4A1257;
+  --kumkum:#E63946;
+  --marigold:#F6A21E;
+  --gold:#FFD24C;
+  --teal:#118A7E;
+  --ivory:#FFF3D6;
+  --ivory-dim:#F3E4C0;
+  --ink:#2E1430;
+  --rose:#ff7a8a;
+  --shadow:rgba(20,2,28,.55);
+  --display:'Yatra One', 'Marcellus', serif;
+  --serif:'Marcellus', serif;
+  --body:'Poppins', system-ui, sans-serif;
+  --maxw:1240px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{
+  font-family:var(--body);
+  color:var(--ivory);
+  background:var(--aubergine-deep);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+ul{list-style:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+
+/* night-sky background layer */
+.skybg{
+  position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(1100px 700px at 78% -8%, rgba(246,162,30,.20), transparent 60%),
+    radial-gradient(900px 650px at 12% 8%, rgba(17,138,126,.16), transparent 60%),
+    radial-gradient(1200px 900px at 50% 120%, rgba(230,57,70,.18), transparent 60%),
+    linear-gradient(180deg,#2A0832 0%, #3A0B45 45%, #2A0832 100%);
+}
+.skybg::after{
+  content:"";position:absolute;inset:0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 20% 30%, rgba(255,210,76,.7), transparent),
+    radial-gradient(1.5px 1.5px at 70% 20%, rgba(255,255,255,.5), transparent),
+    radial-gradient(1px 1px at 40% 60%, rgba(255,210,76,.6), transparent),
+    radial-gradient(1.5px 1.5px at 85% 70%, rgba(255,255,255,.45), transparent),
+    radial-gradient(1px 1px at 15% 80%, rgba(255,210,76,.5), transparent),
+    radial-gradient(1px 1px at 60% 85%, rgba(255,255,255,.4), transparent),
+    radial-gradient(1.5px 1.5px at 92% 40%, rgba(255,210,76,.6), transparent);
+  opacity:.7;
+  animation:twinkle 5s ease-in-out infinite alternate;
+}
+@keyframes twinkle{from{opacity:.35}to{opacity:.8}}
+
+/* drifting gold particles canvas */
+#particles{position:fixed;inset:0;z-index:-1;pointer-events:none}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+section{position:relative}
+
+/* ---------- decorative toran border (top of sections) ---------- */
+.toran{
+  width:100%;height:34px;overflow:hidden;line-height:0;
+  filter:drop-shadow(0 4px 6px rgba(0,0,0,.35));
+}
+.toran svg{display:block;width:100%;height:100%}
+
+/* section heading shared */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--body);font-weight:600;letter-spacing:.22em;
+  text-transform:uppercase;font-size:.72rem;color:var(--gold);
+}
+.eyebrow::before,.eyebrow::after{content:"";width:26px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.eyebrow::after{background:linear-gradient(90deg,var(--gold),transparent)}
+h2.title{
+  font-family:var(--display);font-weight:400;line-height:1.05;
+  font-size:clamp(2rem,5.4vw,3.4rem);color:var(--ivory);
+  margin:.5rem 0 .4rem;
+}
+.title .accent{color:var(--gold)}
+.lede{color:var(--ivory-dim);max-width:56ch;font-weight:300}
+.center{text-align:center}
+.center .lede{margin-inline:auto}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.55em;justify-content:center;
+  font-weight:600;font-size:.98rem;padding:.85em 1.6em;border-radius:999px;
+  position:relative;transition:transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s, filter .25s;
+  will-change:transform;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--gold),var(--marigold));
+  color:#3a1500;box-shadow:0 8px 24px rgba(246,162,30,.4),inset 0 1px 0 rgba(255,255,255,.4);
+}
+.btn-primary:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 14px 34px rgba(246,162,30,.55)}
+.btn-ghost{
+  border:1.5px solid rgba(255,210,76,.55);color:var(--gold);background:rgba(255,210,76,.05);
+}
+.btn-ghost:hover{transform:translateY(-3px);background:rgba(255,210,76,.13)}
+.btn-wa{background:#1faf55;color:#fff;box-shadow:0 8px 22px rgba(31,175,85,.4)}
+.btn-wa:hover{transform:translateY(-3px) scale(1.03)}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+header.nav{
+  position:fixed;top:0;left:0;right:0;z-index:80;
+  transition:background .35s, box-shadow .35s, padding .35s;
+  padding:16px 0;
+}
+header.nav.scrolled{
+  background:rgba(42,8,50,.82);backdrop-filter:blur(14px);
+  box-shadow:0 6px 26px rgba(0,0,0,.4);padding:10px 0;
+  border-bottom:1px solid rgba(255,210,76,.16);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.6rem}
+.brand img{width:38px;height:38px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.4));animation:spinSlow 26s linear infinite}
+@keyframes spinSlow{to{transform:rotate(360deg)}}
+.brand .word{font-family:var(--display);font-size:1.7rem;color:var(--ivory);line-height:1;letter-spacing:.5px}
+.brand .word b{color:var(--gold);font-weight:400}
+.brand .tag{display:block;font-family:var(--body);font-size:.56rem;letter-spacing:.32em;text-transform:uppercase;color:var(--marigold);font-weight:600;margin-top:2px}
+.nav-links{display:flex;align-items:center;gap:1.7rem}
+.nav-links a{font-size:.92rem;font-weight:500;color:var(--ivory-dim);position:relative;transition:color .2s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--gold);transition:width .3s}
+.nav-links a:hover{color:var(--ivory)}
+.nav-links a:hover::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:.8rem}
+.cart-btn{position:relative;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:rgba(255,210,76,.12);border:1px solid rgba(255,210,76,.3);transition:transform .25s,background .25s}
+.cart-btn:hover{transform:translateY(-2px) scale(1.05);background:rgba(255,210,76,.2)}
+.cart-btn svg{width:22px;height:22px;stroke:var(--gold)}
+.cart-count{position:absolute;top:-6px;right:-6px;min-width:20px;height:20px;padding:0 5px;border-radius:999px;background:var(--kumkum);color:#fff;font-size:.7rem;font-weight:700;display:grid;place-items:center;box-shadow:0 2px 8px rgba(230,57,70,.6);transform:scale(0);transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+.cart-count.show{transform:scale(1)}
+.cart-count.bump{animation:bump .4s}
+@keyframes bump{0%,100%{transform:scale(1)}40%{transform:scale(1.4)}}
+.hamburger{display:none;width:46px;height:46px;border-radius:50%;background:rgba(255,210,76,.12);border:1px solid rgba(255,210,76,.3);flex-direction:column;gap:5px;align-items:center;justify-content:center}
+.hamburger span{width:20px;height:2px;background:var(--gold);border-radius:2px;transition:.3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* mobile menu */
+.mobile-menu{
+  position:fixed;inset:0;z-index:75;background:rgba(42,8,50,.97);backdrop-filter:blur(8px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;
+  opacity:0;visibility:hidden;transition:opacity .35s;
+}
+.mobile-menu.open{opacity:1;visibility:visible}
+.mobile-menu a{font-family:var(--serif);font-size:1.7rem;color:var(--ivory)}
+.mobile-menu a:hover{color:var(--gold)}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  min-height:100svh;display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:120px 22px 90px;position:relative;overflow:hidden;
+}
+/* hanging fairy lights */
+.fairy{position:absolute;top:0;left:0;right:0;height:90px;z-index:3;pointer-events:none}
+.fairy svg{width:100%;height:100%}
+.fairy .bulb{transform-box:fill-box;transform-origin:center;animation:glow 2.4s ease-in-out infinite}
+@keyframes glow{0%,100%{opacity:.45}50%{opacity:1}}
+
+/* rangoli ring behind product */
+.hero-rangoli{
+  position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);
+  width:min(86vw,640px);aspect-ratio:1;z-index:1;pointer-events:none;opacity:.95;
+}
+.hero-rangoli svg{width:100%;height:100%;overflow:visible}
+.hero-rangoli path,.hero-rangoli circle,.hero-rangoli line{
+  stroke-dasharray:var(--len,1400);stroke-dashoffset:var(--len,1400);
+}
+.hero-rangoli.drawn path,.hero-rangoli.drawn circle,.hero-rangoli.drawn line{stroke-dashoffset:0}
+
+.hero-content{position:relative;z-index:4;max-width:880px}
+.hero-frame{
+  display:inline-block;padding:.4rem 1.1rem;border-radius:999px;margin-bottom:1.3rem;
+  background:rgba(255,210,76,.1);border:1px solid rgba(255,210,76,.32);
+  font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);
+  backdrop-filter:blur(4px);
+}
+.hero h1{
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(2.5rem,8vw,5.4rem);line-height:1.02;letter-spacing:.5px;
+  text-shadow:0 4px 30px rgba(0,0,0,.5);margin-bottom:.4rem;
+}
+.hero h1 .gold{
+  background:linear-gradient(180deg,#FFE9A8,var(--gold) 55%,var(--marigold));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 2px 12px rgba(246,162,30,.4));
+}
+.hero .sub{
+  font-family:var(--serif);font-size:clamp(1.05rem,2.4vw,1.45rem);
+  color:var(--ivory-dim);margin:.3rem auto 1.1rem;max-width:36ch;letter-spacing:.5px;
+}
+.hero-product{
+  position:relative;z-index:2;width:min(72vw,330px);margin:0 auto 1.5rem;
+}
+.hero-product .glow-disc{
+  position:absolute;inset:-18% -12%;border-radius:50%;z-index:-1;
+  background:radial-gradient(circle, rgba(255,210,76,.55), rgba(246,162,30,.18) 45%, transparent 70%);
+  filter:blur(6px);animation:pulseGlow 4s ease-in-out infinite;
+}
+@keyframes pulseGlow{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.08);opacity:1}}
+.hero-product img{
+  width:100%;border-radius:18px;
+  box-shadow:0 30px 70px rgba(0,0,0,.6),0 0 0 1px rgba(255,210,76,.25),0 0 60px rgba(246,162,30,.3);
+  animation:floaty 6s ease-in-out infinite;
+}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.hero-price-badge{
+  position:absolute;bottom:8%;right:-4%;z-index:3;
+  background:linear-gradient(135deg,var(--kumkum),#b81f2d);color:#fff;
+  border-radius:50%;width:84px;height:84px;display:grid;place-content:center;text-align:center;
+  box-shadow:0 10px 26px rgba(230,57,70,.55),inset 0 1px 0 rgba(255,255,255,.3);
+  font-weight:700;line-height:1;transform:rotate(-8deg);border:2px dashed rgba(255,255,255,.5);
+  animation:floaty 6s ease-in-out infinite .4s;
+}
+.hero-price-badge small{display:block;font-size:.55rem;font-weight:600;letter-spacing:.1em;opacity:.85;margin-bottom:3px}
+.hero-price-badge b{font-size:1.25rem}
+.hero-cta{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap;margin-top:.3rem}
+.scroll-hint{margin-top:2.2rem;font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ivory-dim);opacity:.7;display:inline-flex;flex-direction:column;align-items:center;gap:.5rem}
+.scroll-hint .mouse{width:22px;height:34px;border:2px solid rgba(255,210,76,.5);border-radius:12px;position:relative}
+.scroll-hint .mouse::after{content:"";position:absolute;top:6px;left:50%;width:3px;height:6px;background:var(--gold);border-radius:2px;transform:translateX(-50%);animation:scrolldot 1.6s infinite}
+@keyframes scrolldot{0%{opacity:0;transform:translate(-50%,0)}40%{opacity:1}100%{opacity:0;transform:translate(-50%,12px)}}
+
+/* ============================================================
+   TRUST STRIP (marquee)
+   ============================================================ */
+.trust{
+  background:linear-gradient(90deg,var(--kumkum),#c01f2e 50%,var(--kumkum));
+  border-top:2px solid rgba(255,210,76,.4);border-bottom:2px solid rgba(255,210,76,.4);
+  overflow:hidden;padding:.85rem 0;position:relative;
+}
+.marquee{display:flex;width:max-content;animation:scrollx 32s linear infinite}
+.trust:hover .marquee{animation-play-state:paused}
+.marquee .item{display:inline-flex;align-items:center;gap:.6rem;padding:0 1.8rem;font-weight:600;font-size:.92rem;color:#fff;white-space:nowrap}
+.marquee .item .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold)}
+.marquee .item.hot{color:var(--gold)}
+@keyframes scrollx{to{transform:translateX(-50%)}}
+
+/* ============================================================
+   GIFTING (centerpiece)
+   ============================================================ */
+.gifting{padding:84px 0 70px;position:relative}
+.gift-hero{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;
+  background:linear-gradient(150deg,rgba(74,18,87,.7),rgba(42,8,50,.4));
+  border:1px solid rgba(255,210,76,.22);border-radius:28px;padding:38px;
+  position:relative;overflow:hidden;box-shadow:0 26px 60px rgba(0,0,0,.45);
+}
+.gift-hero::before{
+  content:"";position:absolute;inset:0;z-index:0;opacity:.5;
+  background:radial-gradient(420px 300px at 88% 12%, rgba(246,162,30,.28), transparent 70%);
+}
+.gift-hero>*{position:relative;z-index:1}
+.gift-img{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.gift-img img{width:100%;aspect-ratio:4/3.4;object-fit:cover;transition:transform .8s}
+.gift-img:hover img{transform:scale(1.06)}
+.gift-img .ribbon{
+  position:absolute;top:18px;left:-44px;transform:rotate(-45deg);
+  background:var(--gold);color:#3a1500;font-weight:700;font-size:.72rem;letter-spacing:.1em;
+  padding:6px 56px;box-shadow:0 4px 12px rgba(0,0,0,.3);text-transform:uppercase;
+}
+.gift-body h3{font-family:var(--display);font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.08;margin:.3rem 0 .6rem}
+.gift-body h3 .gold{color:var(--gold)}
+.gift-feats{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 1.3rem}
+.gift-feats li{font-size:.82rem;font-weight:500;background:rgba(255,210,76,.1);border:1px solid rgba(255,210,76,.25);padding:.35em .85em;border-radius:999px;color:var(--ivory-dim)}
+.gift-price{display:flex;align-items:baseline;gap:.6rem;margin-bottom:1.2rem}
+.gift-price .now{font-family:var(--serif);font-size:2rem;color:var(--gold)}
+.gift-price .was{text-decoration:line-through;opacity:.5;font-size:1rem}
+.gift-price .save{background:var(--teal);color:#fff;font-size:.72rem;font-weight:600;padding:.25em .7em;border-radius:999px}
+
+/* hamper builder */
+.builder{margin-top:54px}
+.builder-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}
+.hamper{
+  background:linear-gradient(160deg,rgba(255,243,214,.07),rgba(255,243,214,.02));
+  border:1px solid rgba(255,210,76,.2);border-radius:22px;overflow:hidden;
+  transition:transform .35s,box-shadow .35s,border-color .35s;position:relative;
+}
+.hamper:hover{transform:translateY(-8px);box-shadow:0 24px 50px rgba(0,0,0,.45);border-color:rgba(255,210,76,.5)}
+.hamper.featured{border-color:rgba(255,210,76,.55);box-shadow:0 18px 40px rgba(246,162,30,.18)}
+.hamper-tag{position:absolute;top:14px;right:14px;z-index:2;background:var(--marigold);color:#3a1500;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.3em .8em;border-radius:999px}
+.hamper .ph{position:relative;height:178px;overflow:hidden}
+.hamper .ph img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.hamper:hover .ph img{transform:scale(1.08)}
+.hamper .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(42,8,50,.85))}
+.hamper-body{padding:18px 20px 22px}
+.hamper-body h4{font-family:var(--serif);font-size:1.25rem;color:var(--ivory)}
+.hamper-body p{font-size:.82rem;color:var(--ivory-dim);font-weight:300;margin:.3rem 0 .9rem;min-height:2.6em}
+.hamper-foot{display:flex;align-items:center;justify-content:space-between;gap:.6rem}
+.hamper-foot .price{font-family:var(--serif);font-size:1.35rem;color:var(--gold)}
+
+.add-btn{
+  display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,var(--gold),var(--marigold));
+  color:#3a1500;font-weight:600;font-size:.84rem;padding:.6em 1.05em;border-radius:999px;
+  transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s;white-space:nowrap;
+}
+.add-btn:hover{transform:scale(1.06);box-shadow:0 8px 20px rgba(246,162,30,.4)}
+.add-btn:active{transform:scale(.95)}
+.add-btn svg{width:15px;height:15px}
+
+/* ============================================================
+   PRODUCTS
+   ============================================================ */
+.products{padding:80px 0 70px}
+.prod-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;margin-bottom:8px}
+.swiper.prod-swiper{padding:30px 6px 60px;overflow:visible}
+.card{
+  background:linear-gradient(165deg,#48125a,#33093f);
+  border:1px solid rgba(255,210,76,.16);border-radius:22px;overflow:hidden;height:100%;
+  display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s,border-color .35s;
+}
+.card:hover{transform:translateY(-8px);box-shadow:0 26px 50px rgba(0,0,0,.5);border-color:rgba(255,210,76,.45)}
+.card .media{position:relative;height:210px;overflow:hidden}
+.card .media img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.card:hover .media img{transform:scale(1.09)}
+.card .media::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(42,8,50,.7))}
+.badge-spicy{position:absolute;top:12px;left:12px;z-index:2;background:var(--kumkum);color:#fff;font-size:.68rem;font-weight:600;padding:.3em .7em;border-radius:999px;box-shadow:0 4px 12px rgba(230,57,70,.5)}
+.fav{position:absolute;top:12px;right:12px;z-index:2;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(42,8,50,.55);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15)}
+.fav svg{width:17px;height:17px;stroke:var(--ivory);fill:none;transition:.25s}
+.fav.active svg{fill:var(--kumkum);stroke:var(--kumkum)}
+.card-body{padding:16px 18px 20px;display:flex;flex-direction:column;flex:1}
+.card-body .cat{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--marigold);font-weight:600}
+.card-body h4{font-family:var(--serif);font-size:1.22rem;margin:.15rem 0 .35rem;color:var(--ivory)}
+.card-body .desc{font-size:.8rem;color:var(--ivory-dim);font-weight:300;flex:1;margin-bottom:.9rem}
+.stars{color:var(--gold);font-size:.8rem;letter-spacing:1px;margin-bottom:.6rem}
+.stars span{color:var(--ivory-dim);font-size:.72rem;margin-left:.3rem}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:.6rem}
+.card-foot .price{font-family:var(--serif);font-size:1.35rem;color:var(--gold)}
+.card-foot .price small{font-size:.7rem;color:var(--ivory-dim);font-weight:300;margin-left:2px}
+.swiper-pagination-bullet{background:var(--ivory-dim);opacity:.4}
+.swiper-pagination-bullet-active{background:var(--gold);opacity:1}
+.prod-nav{display:flex;gap:.6rem}
+.prod-nav button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,210,76,.4);background:rgba(255,210,76,.08);display:grid;place-items:center;transition:.25s}
+.prod-nav button:hover{background:var(--gold);border-color:var(--gold)}
+.prod-nav button:hover svg{stroke:#3a1500}
+.prod-nav button svg{width:20px;height:20px;stroke:var(--gold)}
+
+/* ============================================================
+   MEET SEEMA
+   ============================================================ */
+.seema{padding:84px 0}
+.seema-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:center}
+.seema-photo{position:relative}
+.seema-photo .frame{
+  border-radius:24px;overflow:hidden;box-shadow:0 28px 60px rgba(0,0,0,.5);
+  border:1px solid rgba(255,210,76,.3);
+}
+.seema-photo .frame img{width:100%;aspect-ratio:4/4.6;object-fit:cover}
+.seema-photo .mandala{
+  position:absolute;width:160px;height:160px;right:-34px;bottom:-34px;opacity:.9;
+  animation:spinSlow 40s linear infinite;
+}
+.seema-photo .stamp{
+  position:absolute;top:-22px;left:-22px;width:96px;height:96px;border-radius:50%;
+  background:var(--teal);color:var(--ivory);display:grid;place-content:center;text-align:center;
+  font-family:var(--serif);font-size:.78rem;line-height:1.2;box-shadow:0 10px 26px rgba(0,0,0,.4);
+  border:2px dashed rgba(255,255,255,.4);transform:rotate(-8deg);
+}
+.seema-photo .stamp b{font-size:1.5rem;display:block}
+.seema-body h2{font-family:var(--display);font-size:clamp(1.9rem,4.6vw,3rem);line-height:1.08;margin:.4rem 0 1rem}
+.seema-body p{color:var(--ivory-dim);font-weight:300;margin-bottom:1rem}
+.seema-body .sig{font-family:'Yatra One',serif;font-size:1.7rem;color:var(--gold);margin-top:.5rem}
+.seema-body .sig small{display:block;font-family:var(--body);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ivory-dim);margin-top:.3rem}
+
+/* ============================================================
+   WHY HOMEMADE
+   ============================================================ */
+.why{padding:78px 0;position:relative}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:38px}
+.why-card{
+  background:linear-gradient(165deg,rgba(255,243,214,.06),rgba(255,243,214,.015));
+  border:1px solid rgba(255,210,76,.18);border-radius:20px;padding:28px 24px;
+  transition:transform .35s,border-color .35s;
+}
+.why-card:hover{transform:translateY(-6px);border-color:rgba(255,210,76,.45)}
+.why-card .ic{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;margin-bottom:16px;background:linear-gradient(135deg,rgba(246,162,30,.25),rgba(230,57,70,.18));border:1px solid rgba(255,210,76,.3)}
+.why-card .ic svg{width:28px;height:28px;stroke:var(--gold);fill:none}
+.why-card h4{font-family:var(--serif);font-size:1.2rem;margin-bottom:.4rem;color:var(--ivory)}
+.why-card p{font-size:.85rem;color:var(--ivory-dim);font-weight:300}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.testi{padding:80px 0;position:relative}
+.swiper.testi-swiper{padding:34px 0 60px}
+.quote{
+  background:var(--ivory);color:var(--ink);border-radius:22px;padding:34px 30px;height:100%;
+  box-shadow:0 20px 44px rgba(0,0,0,.4);position:relative;display:flex;flex-direction:column;
+}
+.quote::before{content:"\201C";position:absolute;top:6px;left:20px;font-family:var(--serif);font-size:5rem;color:rgba(246,162,30,.3);line-height:1}
+.quote .stars{color:var(--marigold);margin-bottom:.8rem}
+.quote p{font-family:var(--serif);font-size:1.04rem;line-height:1.5;flex:1;color:#42283f}
+.quote .who{display:flex;align-items:center;gap:.8rem;margin-top:1.2rem}
+.quote .who .ava{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--marigold),var(--kumkum));color:#fff;display:grid;place-items:center;font-family:var(--serif);font-size:1.1rem;flex:0 0 auto}
+.quote .who b{display:block;font-family:var(--body);font-weight:600;font-size:.92rem;color:var(--ink)}
+.quote .who span{font-size:.78rem;color:#8a6a85}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq{padding:78px 0}
+.faq-wrap{max-width:760px;margin:34px auto 0}
+.faq-item{border:1px solid rgba(255,210,76,.18);border-radius:16px;margin-bottom:14px;overflow:hidden;background:rgba(255,243,214,.04);transition:border-color .3s,background .3s}
+.faq-item.open{border-color:rgba(255,210,76,.5);background:rgba(255,243,214,.07)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;text-align:left;padding:20px 22px;font-family:var(--serif);font-size:1.08rem;color:var(--ivory)}
+.faq-q .ico{flex:0 0 auto;width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,210,76,.45);display:grid;place-items:center;transition:transform .35s,background .3s}
+.faq-q .ico::before,.faq-q .ico::after{content:"";position:absolute;background:var(--gold);border-radius:2px}
+.faq-q .ico::before{width:12px;height:2px}
+.faq-q .ico::after{width:2px;height:12px;transition:transform .35s}
+.faq-item.open .ico{background:rgba(255,210,76,.18)}
+.faq-item.open .ico::after{transform:scaleY(0)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-a p{padding:0 22px 22px;color:var(--ivory-dim);font-weight:300;font-size:.92rem}
+
+/* ============================================================
+   NEWSLETTER
+   ============================================================ */
+.news{padding:30px 0 80px}
+.news-card{
+  position:relative;overflow:hidden;border-radius:28px;padding:54px 40px;text-align:center;
+  background:linear-gradient(135deg,#5a1568,#3A0B45);border:1px solid rgba(255,210,76,.3);
+  box-shadow:0 26px 60px rgba(0,0,0,.45);
+}
+.news-card::before{content:"";position:absolute;inset:0;background:radial-gradient(500px 300px at 20% 0%,rgba(246,162,30,.28),transparent 70%),radial-gradient(500px 300px at 90% 100%,rgba(17,138,126,.25),transparent 70%);z-index:0}
+.news-card>*{position:relative;z-index:1}
+.news-card h2{font-family:var(--display);font-size:clamp(1.7rem,4vw,2.6rem);margin:.4rem 0 .5rem}
+.news-card p{color:var(--ivory-dim);font-weight:300;max-width:48ch;margin:0 auto 1.6rem}
+.news-form{display:flex;gap:.6rem;max-width:460px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+.news-form input{flex:1;min-width:200px;padding:.95em 1.3em;border-radius:999px;border:1px solid rgba(255,210,76,.4);background:rgba(0,0,0,.25);color:var(--ivory);font-family:inherit;font-size:.95rem}
+.news-form input::placeholder{color:rgba(255,243,214,.55)}
+.news-form input:focus{outline:none;border-color:var(--gold)}
+.news-note{font-size:.78rem;color:var(--ivory-dim);opacity:.7;margin-top:1rem}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{background:var(--aubergine-deep);border-top:2px solid rgba(255,210,76,.22);padding:60px 0 30px;position:relative}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.foot-brand .word{font-family:var(--display);font-size:1.9rem}
+.foot-brand .word b{color:var(--gold);font-weight:400}
+.foot-brand p{color:var(--ivory-dim);font-weight:300;font-size:.88rem;margin:.8rem 0 1.2rem;max-width:34ch}
+.socials{display:flex;gap:.7rem}
+.socials a{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(255,210,76,.1);border:1px solid rgba(255,210,76,.25);transition:.25s}
+.socials a:hover{background:var(--gold);transform:translateY(-3px)}
+.socials a:hover svg{stroke:#3a1500}
+.socials svg{width:18px;height:18px;stroke:var(--gold);fill:none}
+.foot-col h5{font-family:var(--serif);font-size:1.05rem;color:var(--gold);margin-bottom:1rem}
+.foot-col a,.foot-col li{display:block;color:var(--ivory-dim);font-weight:300;font-size:.88rem;margin-bottom:.6rem;transition:color .2s}
+.foot-col a:hover{color:var(--gold)}
+.foot-bar{border-top:1px solid rgba(255,210,76,.15);padding-top:24px;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.8rem;color:var(--ivory-dim);opacity:.85}
+.foot-bar .fssai{display:inline-flex;align-items:center;gap:.4rem}
+.foot-bar .demo{color:var(--marigold)}
+
+/* ============================================================
+   CART DRAWER
+   ============================================================ */
+.overlay{position:fixed;inset:0;background:rgba(20,2,28,.6);backdrop-filter:blur(3px);z-index:90;opacity:0;visibility:hidden;transition:opacity .35s}
+.overlay.open{opacity:1;visibility:visible}
+.drawer{
+  position:fixed;top:0;right:0;bottom:0;width:min(420px,92vw);z-index:95;
+  background:linear-gradient(180deg,#3d0f4a,#2a0832);border-left:2px solid rgba(255,210,76,.3);
+  transform:translateX(100%);transition:transform .42s cubic-bezier(.4,0,.2,1);
+  display:flex;flex-direction:column;box-shadow:-20px 0 50px rgba(0,0,0,.5);
+}
+.drawer.open{transform:translateX(0)}
+.drawer-head{padding:24px 24px 18px;border-bottom:1px solid rgba(255,210,76,.18);display:flex;align-items:center;justify-content:space-between}
+.drawer-head h3{font-family:var(--display);font-size:1.5rem;display:flex;align-items:center;gap:.5rem}
+.drawer-head h3 span{font-size:.8rem;font-family:var(--body);background:var(--kumkum);color:#fff;border-radius:999px;padding:.1em .6em;font-weight:600}
+.drawer-close{width:38px;height:38px;border-radius:50%;background:rgba(255,210,76,.1);border:1px solid rgba(255,210,76,.3);display:grid;place-items:center;font-size:1.2rem;color:var(--gold);transition:.2s}
+.drawer-close:hover{background:rgba(255,210,76,.2);transform:rotate(90deg)}
+.drawer-items{flex:1;overflow-y:auto;padding:18px 24px}
+.drawer-empty{text-align:center;padding:60px 20px;color:var(--ivory-dim)}
+.drawer-empty .em{font-size:3rem;margin-bottom:1rem;opacity:.6}
+.citem{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid rgba(255,210,76,.12);align-items:center}
+.citem img{width:62px;height:62px;border-radius:12px;object-fit:cover;flex:0 0 auto}
+.citem .ci-body{flex:1;min-width:0}
+.citem .ci-body h5{font-family:var(--serif);font-size:.98rem;color:var(--ivory);margin-bottom:2px}
+.citem .ci-body .ci-price{font-size:.82rem;color:var(--gold)}
+.qty{display:inline-flex;align-items:center;gap:.5rem;margin-top:.4rem}
+.qty button{width:24px;height:24px;border-radius:6px;background:rgba(255,210,76,.12);border:1px solid rgba(255,210,76,.3);color:var(--gold);font-size:.95rem;display:grid;place-items:center;transition:.2s}
+.qty button:hover{background:var(--gold);color:#3a1500}
+.qty span{font-size:.9rem;min-width:18px;text-align:center}
+.ci-remove{background:none;color:var(--ivory-dim);font-size:.72rem;text-decoration:underline;opacity:.7;align-self:flex-start;margin-top:2px}
+.ci-remove:hover{color:var(--kumkum)}
+.drawer-foot{padding:20px 24px 24px;border-top:1px solid rgba(255,210,76,.18)}
+.drawer-foot .totrow{display:flex;justify-content:space-between;margin-bottom:.4rem;font-size:.9rem;color:var(--ivory-dim)}
+.drawer-foot .totrow.grand{font-family:var(--serif);font-size:1.3rem;color:var(--ivory);margin:.7rem 0 1rem}
+.drawer-foot .totrow.grand b{color:var(--gold)}
+.ship-note{font-size:.76rem;color:var(--teal);background:rgba(17,138,126,.15);border:1px solid rgba(17,138,126,.4);border-radius:10px;padding:.5em .8em;margin-bottom:1rem;text-align:center}
+.drawer-foot .btn{width:100%}
+
+/* ============================================================
+   STICKY MOBILE BAR + FLOATING WA
+   ============================================================ */
+.wa-float{
+  position:fixed;right:18px;bottom:88px;z-index:60;width:58px;height:58px;border-radius:50%;
+  background:#1faf55;display:grid;place-items:center;box-shadow:0 8px 24px rgba(31,175,85,.5);
+  transition:transform .25s;
+}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+.wa-float .ping{position:absolute;inset:0;border-radius:50%;border:2px solid #1faf55;animation:ping 2s infinite}
+@keyframes ping{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.6);opacity:0}}
+
+.mobile-bar{
+  display:none;position:fixed;left:0;right:0;bottom:0;z-index:65;
+  background:rgba(42,8,50,.96);backdrop-filter:blur(12px);border-top:1px solid rgba(255,210,76,.25);
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom));gap:.7rem;
+}
+.mobile-bar .btn{flex:1;padding:.8em 1em;font-size:.92rem}
+
+/* confetti */
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:99}
+
+/* reveal animation base */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media(max-width:980px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .gift-hero{grid-template-columns:1fr;gap:28px}
+  .seema-grid{grid-template-columns:1fr;gap:60px}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .builder-grid{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
+}
+@media(max-width:680px){
+  .wrap{padding:0 16px}
+  .gift-hero{padding:24px}
+  .builder-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr;gap:28px}
+  .mobile-bar{display:flex}
+  .wa-float{bottom:96px}
+  .hero{padding-top:104px;min-height:auto;padding-bottom:60px}
+  .seema-photo .stamp{width:80px;height:80px}
+  .foot-bar{flex-direction:column}
+  .news-card{padding:38px 22px}
+}
+
+/* reduced motion */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+  .hero-rangoli path,.hero-rangoli circle,.hero-rangoli line{stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+
+<div class="skybg" aria-hidden="true"></div>
+<canvas id="particles" aria-hidden="true"></canvas>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="Cmaa Snacks home">
+      <img src="../../assets/logos/symbol-2-icon.svg" alt="" />
+      <span>
+        <span class="word">C<b>maa</b></span>
+        <span class="tag">Snacks · Ghar ka swaad</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#gifting">Diwali Gifting</a>
+      <a href="#products">Snacks</a>
+      <a href="#seema">Our Story</a>
+      <a href="#why">Why Homemade</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-right">
+      <button class="cart-btn" id="cartOpen" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#gifting">Diwali Gifting</a>
+  <a href="#products">Snacks</a>
+  <a href="#seema">Our Story</a>
+  <a href="#why">Why Homemade</a>
+  <a href="#faq">FAQ</a>
+  <a class="btn btn-primary" href="https://wa.me/910000000000" target="_blank" rel="noopener" style="margin-top:1rem">Order on WhatsApp</a>
+</div>
+
+<a id="top"></a>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <!-- fairy lights -->
+  <div class="fairy" aria-hidden="true">
+    <svg viewBox="0 0 1200 90" preserveAspectRatio="none">
+      <path d="M0 12 Q150 70 300 18 T600 18 T900 18 T1200 12" fill="none" stroke="rgba(255,210,76,.35)" stroke-width="2"/>
+      <g id="bulbs"></g>
+    </svg>
+  </div>
+
+  <!-- self-drawing rangoli ring -->
+  <div class="hero-rangoli" id="heroRangoli" aria-hidden="true">
+    <svg viewBox="0 0 400 400">
+      <g fill="none" stroke="var(--gold)" stroke-width="1.4" opacity=".85">
+        <circle cx="200" cy="200" r="186" style="--len:1170"/>
+        <circle cx="200" cy="200" r="150" stroke="var(--marigold)" style="--len:942"/>
+        <g id="rangPetals"></g>
+        <g id="rangDots"></g>
+      </g>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <span class="hero-frame">🪔 Diwali Gifting Collection · 2026</span>
+    <h1>Is Diwali,<br><span class="gold">ghar ka swaad</span> bhejiye.</h1>
+    <p class="sub">This Diwali, send the taste of home — hand-pressed chakli &amp; chivda, made in small batches by Seema.</p>
+
+    <div class="hero-product reveal">
+      <span class="glow-disc"></span>
+      <img src="../../assets/images/faral.jpg" alt="Cmaa Diwali Faral Box — assorted homemade festive snacks" />
+      <div class="hero-price-badge"><small>FROM</small><b>₹549</b></div>
+    </div>
+
+    <div class="hero-cta">
+      <a href="#gifting" class="btn btn-primary" data-sparkle>Shop Gift Boxes 🪔</a>
+      <a href="#products" class="btn btn-ghost">Browse Snacks</a>
+    </div>
+
+    <div class="scroll-hint">
+      <span class="mouse"></span>
+      Scroll to celebrate
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<div class="trust" aria-label="Trust and urgency">
+  <div class="marquee" id="marquee">
+    <span class="item"><span class="dot"></span>FSSAI Certified Kitchen</span>
+    <span class="item"><span class="dot"></span>No Preservatives</span>
+    <span class="item"><span class="dot"></span>Small-Batch · Hand-Pressed</span>
+    <span class="item"><span class="dot"></span>4.9 ★ from 2,300+ families</span>
+    <span class="item hot"><span class="dot"></span>🪔 Order by Nov 5 for Diwali delivery</span>
+    <span class="item"><span class="dot"></span>Free shipping over ₹499</span>
+  </div>
+</div>
+
+<!-- ============ GIFTING (CENTERPIECE) ============ -->
+<section class="gifting" id="gifting">
+  <div class="toran" aria-hidden="true"><svg viewBox="0 0 1200 34" preserveAspectRatio="none"><g id="toranG"></g></svg></div>
+  <div class="wrap">
+    <div class="center reveal" style="margin-bottom:28px">
+      <span class="eyebrow">The Centerpiece</span>
+      <h2 class="title">Celebration <span class="accent">in a box</span></h2>
+      <p class="lede">Glowing gift boxes packed with Maa's hand-pressed festive faral — ready to delight family, neighbours and far-away loved ones.</p>
+    </div>
+
+    <!-- FARAL HERO PRODUCT -->
+    <div class="gift-hero reveal">
+      <div class="gift-img">
+        <img src="../../assets/images/faral.jpg" alt="Diwali Faral Box with assorted chakli, chivda, sev and murukku" />
+        <span class="ribbon">Bestseller</span>
+      </div>
+      <div class="gift-body">
+        <span class="eyebrow">Hero Gift · The Faral Box</span>
+        <h3>Diwali <span class="gold">Faral Box</span></h3>
+        <p class="lede" style="max-width:46ch">A grand festive assortment — Bhajani chakli, butter murukku, poha chivda, crispy sev and namkeen mix — nestled in a hand-tied gold toran box. The taste of a whole Diwali thali, sent with love.</p>
+        <ul class="gift-feats">
+          <li>🌀 5 homemade varieties</li>
+          <li>🎀 Gift-wrapped &amp; toran-tied</li>
+          <li>💌 Free handwritten note</li>
+          <li>📦 Ships pan-India + worldwide</li>
+        </ul>
+        <div class="gift-price">
+          <span class="now">₹549</span>
+          <span class="was">₹699</span>
+          <span class="save">Save 21%</span>
+        </div>
+        <div style="display:flex;gap:.7rem;flex-wrap:wrap">
+          <button class="btn btn-primary add-to-cart" data-name="Diwali Faral Box" data-price="549" data-img="../../assets/images/faral.jpg" data-sparkle>Add to hamper 🎁</button>
+          <a class="btn btn-wa" href="https://wa.me/910000000000" target="_blank" rel="noopener">Order on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- HAMPER BUILDER -->
+    <div class="builder">
+      <div class="center reveal" style="margin-bottom:6px">
+        <span class="eyebrow">Build Your Hamper</span>
+        <h2 class="title" style="font-size:clamp(1.6rem,4vw,2.4rem)">Pick a tin, pick a <span class="accent">vibe</span></h2>
+      </div>
+      <div class="builder-grid">
+        <article class="hamper reveal">
+          <span class="hamper-tag">Mini</span>
+          <div class="ph"><img src="../../assets/images/namkeen-mix.jpg" alt="Chhoti Khushi mini namkeen hamper" /></div>
+          <div class="hamper-body">
+            <h4>Chhoti Khushi Tin</h4>
+            <p>A sweet little hello — chivda, sev &amp; a chakli pack in a reusable tin.</p>
+            <div class="hamper-foot">
+              <span class="price">₹349</span>
+              <button class="add-btn add-to-cart" data-name="Chhoti Khushi Tin" data-price="349" data-img="../../assets/images/namkeen-mix.jpg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="hamper featured reveal">
+          <span class="hamper-tag">Most Loved</span>
+          <div class="ph"><img src="../../assets/images/faral.jpg" alt="Roshni festive hamper with assorted faral" /></div>
+          <div class="hamper-body">
+            <h4>Roshni Festive Hamper</h4>
+            <p>The crowd-pleaser — 6 varieties, diya, and a festive greeting card.</p>
+            <div class="hamper-foot">
+              <span class="price">₹749</span>
+              <button class="add-btn add-to-cart" data-name="Roshni Festive Hamper" data-price="749" data-img="../../assets/images/faral.jpg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="hamper reveal">
+          <span class="hamper-tag">Grand</span>
+          <div class="ph"><img src="../../assets/images/packaging.jpg" alt="Maharani grand corporate gifting hamper" /></div>
+          <div class="hamper-body">
+            <h4>Maharani Grand Box</h4>
+            <p>For the people who matter — 9 varieties, brass diya &amp; premium toran box.</p>
+            <div class="hamper-foot">
+              <span class="price">₹1,299</span>
+              <button class="add-btn add-to-cart" data-name="Maharani Grand Box" data-price="1299" data-img="../../assets/images/packaging.jpg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Add</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section class="products" id="products">
+  <div class="wrap">
+    <div class="prod-head reveal">
+      <div>
+        <span class="eyebrow">From the Kitchen</span>
+        <h2 class="title">The whole <span class="accent">snack shelf</span></h2>
+        <p class="lede">Crisp, golden and made-to-order. Add what you love to your tin.</p>
+      </div>
+      <div class="prod-nav">
+        <button id="prodPrev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button id="prodNext" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+    </div>
+
+    <div class="swiper prod-swiper">
+      <div class="swiper-wrapper" id="prodWrapper"><!-- JS injects cards --></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MEET SEEMA ============ -->
+<section class="seema" id="seema">
+  <div class="toran" aria-hidden="true"><svg viewBox="0 0 1200 34" preserveAspectRatio="none"><use href="#toranG"/></svg></div>
+  <div class="wrap seema-grid">
+    <div class="seema-photo reveal">
+      <div class="frame"><img src="../../assets/images/cooking.jpg" alt="Seema hand-pressing chakli in her home kitchen" /></div>
+      <div class="stamp"><span><b>Maa</b>ke haath ka</span></div>
+      <img class="mandala" src="../../assets/logos/symbol-2-icon.svg" alt="" aria-hidden="true" />
+    </div>
+    <div class="seema-body reveal">
+      <span class="eyebrow">Meet Seema</span>
+      <h2>The hands behind every <span style="color:var(--gold)">spiral</span>.</h2>
+      <p>Cmaa began at a kitchen counter in Pune, where Seema — a mother of two — pressed chakli the way her own Aai taught her: slowly, by hand, one perfect spiral at a time. When her children moved abroad, she'd post them tins of faral so a bite of Diwali always reached them on time.</p>
+      <p>Friends asked for theirs. Then friends of friends. Today Cmaa is still that same kitchen, scaled with love and never machines — fresh ghee, real spices, no shortcuts. "Cmaa" carries her name, and the <b>Maa</b> inside it. Every box leaves with a blessing.</p>
+      <div class="sig">— Seema<small>Founder · Head Cook · Maa</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY HOMEMADE ============ -->
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow">The Cmaa Promise</span>
+      <h2 class="title">Why <span class="accent">homemade</span> tastes different</h2>
+      <p class="lede">No factory line, no compromise — just the things a mother insists on.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/><path d="M8 3v18" stroke-dasharray="2 3"/></svg></div>
+        <h4>No machines</h4>
+        <p>Every chakli is hand-pressed and shaped — the spiral you see is a spiral someone made.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h4>Small batch, fresh fried</h4>
+        <p>We cook to order in tiny batches so your snacks reach you crisp, never sitting in a warehouse.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h4>No preservatives</h4>
+        <p>Nothing artificial — no colours, no chemicals. Just the ingredients you'd use yourself.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.8 7.2 17l.9-5.4L4.2 7.7l5.4-.8z"/></svg></div>
+        <h4>Pure fresh ghee</h4>
+        <p>Butter murukku and chakli are made with real ghee — the richness you can taste in one bite.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h4>FSSAI certified</h4>
+        <p>A licensed, inspected home kitchen — homemade taste, professional hygiene standards.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h4>Made-to-order, shipped fast</h4>
+        <p>Order by Nov 5 and your Diwali box ships in time — across India and to the diaspora.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="testi">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow">Loved by Families</span>
+      <h2 class="title">Sent with love, <span class="accent">received with joy</span></h2>
+    </div>
+    <div class="swiper testi-swiper">
+      <div class="swiper-wrapper" id="testiWrapper"><!-- JS injects --></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow">Good to Know</span>
+      <h2 class="title">Your Diwali, <span class="accent">sorted</span></h2>
+    </div>
+    <div class="faq-wrap" id="faqWrap"><!-- JS injects --></div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section class="news">
+  <div class="wrap">
+    <div class="news-card reveal">
+      <span class="eyebrow" style="justify-content:center">Stay in the loop</span>
+      <h2>Get ₹50 off your first <span style="color:var(--gold)">gift box</span></h2>
+      <p>Join the Cmaa parivaar for festive drops, early Diwali access and Seema's seasonal recipes — straight to your inbox.</p>
+      <form class="news-form" id="newsForm">
+        <input type="email" id="newsEmail" name="email" autocomplete="email" placeholder="you@email.com" aria-label="Email address" required />
+        <button class="btn btn-primary" type="submit" data-sparkle>Subscribe 🪔</button>
+      </form>
+      <p class="news-note" id="newsNote">No spam — just good food and good wishes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="word">C<b>maa</b> Snacks</span>
+        <p>Ghar ka swaad, Maa ke haath ka. Homemade chakli &amp; chivda, hand-pressed in small batches and shipped with love across India and the world.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://wa.me/910000000000" aria-label="WhatsApp"><svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 21l2.2-5.3A8.5 8.5 0 1 1 21 11.5z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Shop</h5>
+        <a href="#gifting">Diwali Gifting</a>
+        <a href="#gifting">Gift Hampers</a>
+        <a href="#products">Chakli</a>
+        <a href="#products">Chivda</a>
+        <a href="#products">Sev &amp; Mixes</a>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <a href="#seema">Our Story</a>
+        <a href="#why">Why Homemade</a>
+        <a href="#faq">FAQ</a>
+        <a href="#">Corporate Gifting</a>
+        <a href="#">Track Order</a>
+      </div>
+      <div class="foot-col">
+        <h5>Order Now</h5>
+        <a class="btn btn-wa" href="https://wa.me/910000000000" target="_blank" rel="noopener" style="margin-bottom:1rem">WhatsApp Us</a>
+        <p style="font-weight:300;font-size:.84rem;opacity:.85">Mon–Sat · 9am–8pm IST<br>care@cmaasnacks.example</p>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span class="fssai">🛡️ FSSAI Lic. No. 11522998000459 · Made in Pune, India</span>
+      <span class="demo">Demo site — not a real store. Photos: Wikimedia Commons (CC).</span>
+      <span>© 2026 Cmaa Snacks</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ CART DRAWER ============ -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Shopping cart" aria-hidden="true">
+  <div class="drawer-head">
+    <h3>🧺 Your Hamper <span id="drawerCount">0</span></h3>
+    <button class="drawer-close" id="drawerClose" aria-label="Close cart">✕</button>
+  </div>
+  <div class="drawer-items" id="drawerItems"></div>
+  <div class="drawer-foot" id="drawerFoot" style="display:none">
+    <div class="ship-note" id="shipNote"></div>
+    <div class="totrow"><span>Subtotal</span><span id="subtotal">₹0</span></div>
+    <div class="totrow"><span>Shipping</span><span id="shipping">—</span></div>
+    <div class="totrow grand"><span>Total</span><b id="grandtotal">₹0</b></div>
+    <a class="btn btn-wa" href="https://wa.me/910000000000" target="_blank" rel="noopener">Checkout on WhatsApp</a>
+  </div>
+</aside>
+
+<!-- ============ FLOATING + MOBILE BAR ============ -->
+<a class="wa-float" href="https://wa.me/910000000000" target="_blank" rel="noopener" aria-label="Order on WhatsApp">
+  <span class="ping"></span>
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.4A10 10 0 1 0 12 2zm5.6 14.2c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-3.4-.9-2.9-1.2-4.7-4.2-4.9-4.4-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.7.9.8 1.6 1 1.9 1.2.2.1.4.1.5-.1l.6-.7c.2-.2.3-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.1.1.7-.1 1.2z"/></svg>
+</a>
+
+<div class="mobile-bar">
+  <button class="btn btn-ghost" id="cartOpenMobile">🧺 Hamper</button>
+  <a class="btn btn-primary" href="#gifting">Shop Gift Boxes 🪔</a>
+</div>
+
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<!-- ============ SCRIPTS ============ -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.js" integrity="sha384-2UI1PfnXFjVMQ7/ZDEF70CR943oH3v6uZrFQGGqJYlvhh4g6z6uVktxYbOlAczav" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" integrity="sha384-li4UtcFCH6QeUqR4JyV58/VgTprMuz9aauj+oWtew7V4Y7ZVjnvz5px9Y3UCG0Ea" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+(function(){
+'use strict';
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- DATA ---------- */
+const PRODUCTS = [
+  {name:'Classic Bhajani Chakli', cat:'Chakli', price:199, img:'../../assets/images/chakli-2.jpg', desc:'Crisp multi-grain spirals, roasted bhajani, just the right heat.', spicy:false, r:4.9},
+  {name:'Butter Chakli', cat:'Chakli', price:219, img:'../../assets/images/chakli-1.jpg', desc:'Melt-in-mouth ghee chakli — our most-gifted classic.', spicy:false, r:5.0},
+  {name:'Masala Chakli', cat:'Chakli', price:219, img:'../../assets/images/chakli-1.jpg', desc:'Bold home masala with a warm chilli kick.', spicy:true, r:4.8},
+  {name:'Butter Murukku', cat:'South Special', price:209, img:'../../assets/images/murukku.jpg', desc:'Delicate rice-and-urad coils, fried in fresh ghee.', spicy:false, r:4.9},
+  {name:'Classic Poha Chivda', cat:'Chivda', price:119, img:'../../assets/images/chivda-1.jpg', desc:'Light poha chivda with peanuts, curry leaf & raisins.', spicy:false, r:4.9},
+  {name:'Roasted Diet Chivda', cat:'Chivda', price:129, img:'../../assets/images/chivda-1.jpg', desc:'Roasted, not fried — guilt-free festive munching.', spicy:false, r:4.7},
+  {name:'Bombay Mix Chivda', cat:'Chivda', price:119, img:'../../assets/images/chivda-2.jpg', desc:'Tangy, spicy Bombay-style mix — addictively crunchy.', spicy:true, r:4.8},
+  {name:'Crispy Sev', cat:'Namkeen', price:99, img:'../../assets/images/sev.jpg', desc:'Fine golden sev — perfect topping, perfect snack.', spicy:false, r:4.9},
+  {name:'Diwali Faral Box', cat:'Gift Box', price:549, img:'../../assets/images/faral.jpg', desc:'The hero — 5 varieties in a toran-tied gift box.', spicy:false, r:5.0}
+];
+
+const TESTI = [
+  {q:"Shipped a Faral Box to my son in Toronto and he called crying — said it tasted exactly like my kitchen. That's everything.", n:"Anjali Deshpande", c:"Pune → Toronto"},
+  {q:"Ordered 30 hampers for our office Diwali. Beautiful boxes, on time, and the whole floor was raving about the butter chakli.", n:"Rohan Mehta", c:"Mumbai"},
+  {q:"The murukku is dangerously good. I gift Cmaa every Diwali now — it feels personal in a way a sweet shop never could.", n:"Lakshmi Iyer", c:"Bengaluru"},
+  {q:"My mother can't cook faral anymore, so this year Cmaa did it for us. Honestly couldn't tell the difference. Thank you, Seema.", n:"Priya & Sameer", c:"Delhi"},
+  {q:"Reached London in 5 days, perfectly crisp. The handwritten note made my mum tear up. Will order every festival now.", n:"Neha Kapoor", c:"London"},
+  {q:"Spicy Bombay chivda + chai = my whole Diwali week. The freshness is unreal compared to store brands.", n:"Arjun Nair", c:"Hyderabad"}
+];
+
+const FAQ = [
+  {q:"Can I send a gift box directly to someone else?", a:"Absolutely — that's what we love most. Add their address at checkout and we'll include a free handwritten note from you. Perfect for family abroad or friends across town."},
+  {q:"Will it arrive in time for Diwali?", a:"Order by November 5 and we guarantee delivery before Diwali across India. International orders ship the same week — we recommend ordering by October 28 for the diaspora."},
+  {q:"Do you ship internationally?", a:"Yes! We ship to the US, UK, Canada, UAE, Australia and more. Everything is vacuum-sealed and freshly fried so it travels crisp. Shipping is calculated at checkout."},
+  {q:"How long do the snacks stay fresh?", a:"Because we use no preservatives, enjoy within 4–5 weeks of the made-on date. Each pack is sealed for freshness; reseal or transfer to an airtight tin after opening."},
+  {q:"Do you do bulk or corporate gifting?", a:"We love big celebrations. For 20+ hampers we offer custom branding, co-printed cards and volume pricing. Message us on WhatsApp and we'll build a quote within a day."},
+  {q:"Is the kitchen really homemade?", a:"Yes — every batch is hand-pressed by Seema and her small team in our FSSAI-licensed home kitchen in Pune. No factory, no machines, no shortcuts. Just Maa ke haath ka swaad."}
+];
+
+const fmt = n => '₹' + n.toLocaleString('en-IN');
+
+/* ---------- RENDER PRODUCTS ---------- */
+const prodWrapper = document.getElementById('prodWrapper');
+prodWrapper.innerHTML = PRODUCTS.map(p => `
+  <div class="swiper-slide" style="height:auto">
+    <article class="card">
+      <div class="media">
+        ${p.spicy ? '<span class="badge-spicy">🌶 Spicy</span>' : ''}
+        <button class="fav" aria-label="Save to favourites"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></button>
+        <img src="${p.img}" alt="${p.name}" loading="lazy" />
+      </div>
+      <div class="card-body">
+        <span class="cat">${p.cat}</span>
+        <h4>${p.name}</h4>
+        <div class="stars">★★★★★ <span>${p.r.toFixed(1)}</span></div>
+        <p class="desc">${p.desc}</p>
+        <div class="card-foot">
+          <span class="price">${fmt(p.price)}<small>/pack</small></span>
+          <button class="add-btn add-to-cart" data-name="${p.name}" data-price="${p.price}" data-img="${p.img}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Add</button>
+        </div>
+      </div>
+    </article>
+  </div>`).join('');
+
+document.querySelectorAll('.fav').forEach(f => f.addEventListener('click', e=>{e.preventDefault();f.classList.toggle('active')}));
+
+/* ---------- RENDER TESTIMONIALS ---------- */
+document.getElementById('testiWrapper').innerHTML = TESTI.map(t => `
+  <div class="swiper-slide" style="height:auto">
+    <figure class="quote">
+      <div class="stars">★★★★★</div>
+      <p>${t.q}</p>
+      <figcaption class="who">
+        <span class="ava">${t.n.charAt(0)}</span>
+        <span><b>${t.n}</b><span>${t.c}</span></span>
+      </figcaption>
+    </figure>
+  </div>`).join('');
+
+/* ---------- RENDER FAQ ---------- */
+document.getElementById('faqWrap').innerHTML = FAQ.map(f => `
+  <div class="faq-item">
+    <button class="faq-q" aria-expanded="false">${f.q}<span class="ico"></span></button>
+    <div class="faq-a"><p>${f.a}</p></div>
+  </div>`).join('');
+
+document.querySelectorAll('.faq-item').forEach(item=>{
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  q.addEventListener('click', ()=>{
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(o=>{
+      o.classList.remove('open');
+      o.querySelector('.faq-q').setAttribute('aria-expanded','false');
+      o.querySelector('.faq-a').style.maxHeight = null;
+    });
+    if(!open){
+      item.classList.add('open');
+      q.setAttribute('aria-expanded','true');
+      a.style.maxHeight = a.scrollHeight + 'px';
+    }
+  });
+});
+
+/* ---------- SWIPERS ---------- */
+new Swiper('.prod-swiper', {
+  slidesPerView:1.15, spaceBetween:18, grabCursor:true,
+  pagination:{el:'.prod-swiper .swiper-pagination', clickable:true},
+  navigation:{nextEl:'#prodNext', prevEl:'#prodPrev'},
+  breakpoints:{600:{slidesPerView:2.1},900:{slidesPerView:3},1200:{slidesPerView:4}}
+});
+new Swiper('.testi-swiper', {
+  slidesPerView:1.05, spaceBetween:20, grabCursor:true, loop:true, centeredSlides:false,
+  autoplay:reduceMotion ? false : {delay:4200, disableOnInteraction:false},
+  pagination:{el:'.testi-swiper .swiper-pagination', clickable:true},
+  breakpoints:{700:{slidesPerView:2},1050:{slidesPerView:3}}
+});
+
+/* ---------- CART ---------- */
+const cart = [];
+const overlay = document.getElementById('overlay');
+const drawer = document.getElementById('drawer');
+const FREE_SHIP = 499, SHIP_COST = 49;
+
+function openDrawer(){overlay.classList.add('open');drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+function closeDrawer(){overlay.classList.remove('open');drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+document.getElementById('cartOpen').addEventListener('click', openDrawer);
+document.getElementById('cartOpenMobile').addEventListener('click', openDrawer);
+document.getElementById('drawerClose').addEventListener('click', closeDrawer);
+overlay.addEventListener('click', closeDrawer);
+document.addEventListener('keydown', e=>{if(e.key==='Escape')closeDrawer()});
+
+function addToCart(name, price, img){
+  const ex = cart.find(i=>i.name===name);
+  if(ex) ex.qty++;
+  else cart.push({name, price:+price, img, qty:1});
+  renderCart(true);
+}
+function renderCart(bump){
+  const count = cart.reduce((s,i)=>s+i.qty,0);
+  const cc = document.getElementById('cartCount');
+  cc.textContent = count;
+  cc.classList.toggle('show', count>0);
+  if(bump){cc.classList.add('bump');setTimeout(()=>cc.classList.remove('bump'),400)}
+  document.getElementById('drawerCount').textContent = count;
+
+  const items = document.getElementById('drawerItems');
+  const foot = document.getElementById('drawerFoot');
+  if(cart.length===0){
+    items.innerHTML = `<div class="drawer-empty"><div class="em">🪔</div><p>Your hamper is empty.<br>Add some festive goodness!</p></div>`;
+    foot.style.display='none';
+    return;
+  }
+  foot.style.display='block';
+  items.innerHTML = cart.map((i,idx)=>`
+    <div class="citem">
+      <img src="${i.img}" alt="${i.name}" />
+      <div class="ci-body">
+        <h5>${i.name}</h5>
+        <div class="ci-price">${fmt(i.price)}</div>
+        <div class="qty">
+          <button data-act="dec" data-i="${idx}" aria-label="Decrease">−</button>
+          <span>${i.qty}</span>
+          <button data-act="inc" data-i="${idx}" aria-label="Increase">+</button>
+        </div>
+      </div>
+      <button class="ci-remove" data-act="rm" data-i="${idx}">Remove</button>
+    </div>`).join('');
+
+  const subtotal = cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const ship = subtotal>=FREE_SHIP ? 0 : SHIP_COST;
+  document.getElementById('subtotal').textContent = fmt(subtotal);
+  document.getElementById('shipping').textContent = ship===0 ? 'FREE' : fmt(ship);
+  document.getElementById('grandtotal').textContent = fmt(subtotal+ship);
+  const note = document.getElementById('shipNote');
+  if(ship===0){note.textContent='🎉 You unlocked free shipping!';}
+  else{note.textContent=`Add ${fmt(FREE_SHIP-subtotal)} more for FREE shipping`;}
+}
+document.getElementById('drawerItems').addEventListener('click', e=>{
+  const b = e.target.closest('button[data-act]');
+  if(!b) return;
+  const i = +b.dataset.i, act = b.dataset.act;
+  if(act==='inc') cart[i].qty++;
+  else if(act==='dec'){cart[i].qty--; if(cart[i].qty<=0) cart.splice(i,1);}
+  else if(act==='rm') cart.splice(i,1);
+  renderCart(false);
+});
+
+/* delegate add-to-cart (covers injected + static) */
+document.addEventListener('click', e=>{
+  const btn = e.target.closest('.add-to-cart');
+  if(!btn) return;
+  e.preventDefault();
+  addToCart(btn.dataset.name, btn.dataset.price, btn.dataset.img);
+  burstAt(btn);
+  openDrawer();
+});
+renderCart(false);
+
+/* ---------- CONFETTI / SPARKLE ON ADD ---------- */
+const cfCanvas = document.getElementById('confetti');
+const cfCtx = cfCanvas.getContext('2d');
+let cfParts = [];
+function sizeCf(){cfCanvas.width=innerWidth;cfCanvas.height=innerHeight;}
+sizeCf(); addEventListener('resize', sizeCf);
+const CF_COLORS = ['#FFD24C','#F6A21E','#E63946','#118A7E','#FFF3D6'];
+function burstAt(el){
+  if(reduceMotion) return;
+  const r = el.getBoundingClientRect();
+  const x = r.left + r.width/2, y = r.top + r.height/2;
+  for(let i=0;i<46;i++){
+    const ang = Math.random()*Math.PI*2, sp = 3+Math.random()*7;
+    cfParts.push({x,y,vx:Math.cos(ang)*sp,vy:Math.sin(ang)*sp-3,
+      size:4+Math.random()*6, color:CF_COLORS[(Math.random()*CF_COLORS.length)|0],
+      life:1, rot:Math.random()*6, vr:(Math.random()-.5)*.4, shape:Math.random()>.5});
+  }
+  if(!cfRunning) animateCf();
+}
+let cfRunning=false;
+function animateCf(){
+  cfRunning=true;
+  cfCtx.clearRect(0,0,cfCanvas.width,cfCanvas.height);
+  cfParts.forEach(p=>{
+    p.vy+=0.18; p.x+=p.vx; p.y+=p.vy; p.rot+=p.vr; p.life-=0.012;
+    cfCtx.save(); cfCtx.translate(p.x,p.y); cfCtx.rotate(p.rot);
+    cfCtx.globalAlpha=Math.max(p.life,0); cfCtx.fillStyle=p.color;
+    if(p.shape) cfCtx.fillRect(-p.size/2,-p.size/2,p.size,p.size*0.55);
+    else{cfCtx.beginPath();cfCtx.arc(0,0,p.size/2,0,7);cfCtx.fill();}
+    cfCtx.restore();
+  });
+  cfParts = cfParts.filter(p=>p.life>0 && p.y<cfCanvas.height+40);
+  if(cfParts.length) requestAnimationFrame(animateCf);
+  else{cfCtx.clearRect(0,0,cfCanvas.width,cfCanvas.height);cfRunning=false;}
+}
+/* sparkle on generic CTAs */
+document.querySelectorAll('[data-sparkle]').forEach(el=>{
+  el.addEventListener('click', ()=>burstAt(el));
+});
+
+/* ---------- NEWSLETTER ---------- */
+document.getElementById('newsForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  document.getElementById('newsNote').innerHTML = '🎉 Welcome to the parivaar! Your ₹50 code: <b>CMAA50</b>';
+  e.target.querySelector('button').textContent='Subscribed ✓';
+});
+
+/* ---------- NAV / MENU ---------- */
+const nav = document.getElementById('nav');
+addEventListener('scroll', ()=>{ nav.classList.toggle('scrolled', scrollY>30); }, {passive:true});
+const ham = document.getElementById('hamburger');
+const mm = document.getElementById('mobileMenu');
+ham.addEventListener('click', ()=>{
+  const open = ham.classList.toggle('open');
+  mm.classList.toggle('open', open);
+  ham.setAttribute('aria-expanded', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
+  ham.classList.remove('open'); mm.classList.remove('open'); document.body.style.overflow='';
+}));
+
+/* ---------- BUILD DECORATIVE SVGS (fairy bulbs, toran, rangoli petals) ---------- */
+// fairy light bulbs along the curve
+(function(){
+  const g = document.getElementById('bulbs');
+  if(!g) return;
+  const cols = ['#FFD24C','#E63946','#118A7E','#F6A21E','#FFF3D6'];
+  for(let i=0;i<=24;i++){
+    const t = i/24;
+    const x = t*1200;
+    // approximate the sine-ish curve of the wire
+    const y = 14 + Math.abs(Math.sin(t*Math.PI*4))*30;
+    const c = cols[i%cols.length];
+    const line = `<line x1="${x}" y1="${y-9}" x2="${x}" y2="${y}" stroke="rgba(255,210,76,.4)" stroke-width="1"/>`;
+    const bulb = `<circle class="bulb" cx="${x}" cy="${y+3}" r="3.4" fill="${c}" style="animation-delay:${(i%6)*0.3}s"><animate attributeName="r" values="3.4;4.2;3.4" dur="2.4s" repeatCount="indefinite" begin="${(i%6)*0.3}s"/></circle>`;
+    const glow = `<circle cx="${x}" cy="${y+3}" r="7" fill="${c}" opacity="0.25"/>`;
+    g.insertAdjacentHTML('beforeend', line+glow+bulb);
+  }
+})();
+
+// toran (hanging marigold/leaf border) — reused via <use>
+(function(){
+  const g = document.getElementById('toranG');
+  if(!g) return;
+  let s = '';
+  const N = 40;
+  for(let i=0;i<=N;i++){
+    const x = (i/N)*1200;
+    const c = i%2 ? '#F6A21E' : '#FFD24C';
+    // hanging leaf/marigold drop
+    s += `<path d="M${x} 0 Q${x-7} 14 ${x} 30 Q${x+7} 14 ${x} 0 Z" fill="${c}" opacity="0.92"/>`;
+    s += `<circle cx="${x}" cy="3" r="2.4" fill="#E63946"/>`;
+  }
+  // connecting string
+  s = `<path d="M0 2 H1200" stroke="#E63946" stroke-width="2"/>` + s;
+  g.innerHTML = s;
+})();
+
+// hero rangoli petals + dots
+(function(){
+  const petals = document.getElementById('rangPetals');
+  const dots = document.getElementById('rangDots');
+  if(!petals) return;
+  let p='', d='';
+  for(let a=0;a<360;a+=15){
+    p += `<path d="M200 60 Q224 120 200 150 Q176 120 200 60 Z" transform="rotate(${a} 200 200)" stroke="var(--gold)" style="--len:340"/>`;
+  }
+  for(let a=0;a<360;a+=30){
+    const rad = (a*Math.PI)/180;
+    const x = 200 + Math.cos(rad)*168, y = 200 + Math.sin(rad)*168;
+    d += `<circle cx="${x}" cy="${y}" r="4" stroke="var(--marigold)" style="--len:26"/>`;
+  }
+  petals.innerHTML = p; dots.innerHTML = d;
+})();
+
+/* ---------- GOLD PARTICLES (drifting) ---------- */
+(function(){
+  const c = document.getElementById('particles');
+  const ctx = c.getContext('2d');
+  let parts=[], W, H;
+  function size(){W=c.width=innerWidth;H=c.height=innerHeight;}
+  size(); addEventListener('resize', size);
+  const COUNT = innerWidth<680 ? 26 : 54;
+  for(let i=0;i<COUNT;i++){
+    parts.push({x:Math.random()*W, y:Math.random()*H, r:Math.random()*2+0.6,
+      vy:-(Math.random()*0.4+0.12), vx:(Math.random()-0.5)*0.25,
+      a:Math.random()*0.6+0.2, tw:Math.random()*Math.PI*2});
+  }
+  function loop(){
+    if(reduceMotion){return;}
+    ctx.clearRect(0,0,W,H);
+    parts.forEach(p=>{
+      p.y+=p.vy; p.x+=p.vx; p.tw+=0.03;
+      if(p.y<-10){p.y=H+10; p.x=Math.random()*W;}
+      const fl = (Math.sin(p.tw)*0.4+0.6);
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r,0,7);
+      ctx.fillStyle=`rgba(255,210,76,${p.a*fl})`;
+      ctx.shadowBlur=8; ctx.shadowColor='rgba(255,210,76,.7)';
+      ctx.fill();
+    });
+    ctx.shadowBlur=0;
+    requestAnimationFrame(loop);
+  }
+  if(!reduceMotion) loop();
+})();
+
+/* ---------- LENIS SMOOTH SCROLL ---------- */
+let lenis;
+if(!reduceMotion && window.Lenis){
+  lenis = new Lenis({lerp:0.1, wheelMultiplier:1});
+  function raf(t){lenis.raf(t); requestAnimationFrame(raf);}
+  requestAnimationFrame(raf);
+  // anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      const id = a.getAttribute('href');
+      if(id.length>1){
+        const t = document.querySelector(id);
+        if(t){e.preventDefault(); lenis.scrollTo(t, {offset:-70});}
+      }
+    });
+  });
+}
+
+/* ---------- GSAP REVEALS + RANGOLI DRAW ---------- */
+if(window.gsap && window.ScrollTrigger){
+  gsap.registerPlugin(ScrollTrigger);
+  if(lenis){ lenis.on('scroll', ScrollTrigger.update); }
+
+  if(!reduceMotion){
+    // staggered reveals
+    gsap.utils.toArray('.reveal').forEach(el=>{
+      gsap.fromTo(el,{y:36,opacity:0},{
+        y:0,opacity:1,duration:.9,ease:'power3.out',
+        scrollTrigger:{trigger:el, start:'top 86%'}
+      });
+    });
+    // stagger grids
+    ['.builder-grid','.why-grid'].forEach(sel=>{
+      const grid = document.querySelector(sel);
+      if(grid){
+        gsap.fromTo(grid.children,{y:40,opacity:0},{
+          y:0,opacity:1,duration:.7,stagger:.12,ease:'power3.out',
+          scrollTrigger:{trigger:grid,start:'top 82%'}
+        });
+      }
+    });
+  } else {
+    document.querySelectorAll('.reveal').forEach(e=>{e.style.opacity=1;e.style.transform='none';});
+  }
+
+  // hero rangoli draws on load
+  const hr = document.getElementById('heroRangoli');
+  setTimeout(()=>hr.classList.add('drawn'), 350);
+  // CSS transition for the draw
+  hr.querySelectorAll('path,circle,line').forEach(s=>{ s.style.transition='stroke-dashoffset 2.2s ease'; });
+} else {
+  document.querySelectorAll('.reveal').forEach(e=>{e.style.opacity=1;e.style.transform='none';});
+  document.getElementById('heroRangoli').classList.add('drawn');
+}
+
+})();
+</script>
+</body>
+</html>
