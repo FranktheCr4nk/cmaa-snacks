@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CMAA — The Homemade Snack Press · Pune Edition</title>
+<meta name="description" content="Cmaa — homemade chakli & chivda, hand-pressed in small batches by a Maa in Pune. Bazaar Press edition.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' fill='%23F2E8D5'/%3E%3Cpath fill='none' stroke='%23C2311F' stroke-width='2' stroke-linecap='round' d='M12 12a1.6 1.6 0 0 1 3.2 0a3.2 3.2 0 0 1-6.4 0a4.8 4.8 0 0 1 9.6 0a6.4 6.4 0 0 1-12.8 0a8 8 0 0 1 16 0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Yatra+One&family=Tiro+Devanagari+Hindi&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Mulish:wght@400;600;700;800&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ================= BAZAAR PRESS — flat inks on aged paper ================= */
+:root{
+  --paper:#F2E8D5;
+  --paper-2:#EADCBF;   /* darker sheet for the label wall */
+  --paper-3:#F7EFDE;   /* brighter label stock */
+  --ink:#1E1A16;
+  --kumkum:#C2311F;
+  --marigold:#E89B1C;
+  --indigo:#2B3A67;
+  --leaf:#3F6B4F;
+  --gold:#C9A14A;
+  --burst:polygon(50.0% 0.0%, 55.4% 9.4%, 62.9% 1.7%, 65.7% 12.1%, 75.0% 6.7%, 75.0% 17.5%, 85.4% 14.6%, 82.5% 25.0%, 93.3% 25.0%, 87.9% 34.3%, 98.3% 37.1%, 90.6% 44.6%, 100.0% 50.0%, 90.6% 55.4%, 98.3% 62.9%, 87.9% 65.7%, 93.3% 75.0%, 82.5% 75.0%, 85.4% 85.4%, 75.0% 82.5%, 75.0% 93.3%, 65.7% 87.9%, 62.9% 98.3%, 55.4% 90.6%, 50.0% 100.0%, 44.6% 90.6%, 37.1% 98.3%, 34.3% 87.9%, 25.0% 93.3%, 25.0% 82.5%, 14.6% 85.4%, 17.5% 75.0%, 6.7% 75.0%, 12.1% 65.7%, 1.7% 62.9%, 9.4% 55.4%, 0.0% 50.0%, 9.4% 44.6%, 1.7% 37.1%, 12.1% 34.3%, 6.7% 25.0%, 17.5% 25.0%, 14.6% 14.6%, 25.0% 17.5%, 25.0% 6.7%, 34.3% 12.1%, 37.1% 1.7%, 44.6% 9.4%);
+  --torn:polygon(0% 0%, 100% 0%, 100.0% 99.0%, 94.4% 99.5%, 88.9% 97.9%, 83.3% 99.8%, 77.8% 98.3%, 72.2% 98.8%, 66.7% 99.8%, 61.1% 98.4%, 55.6% 99.9%, 50.0% 98.6%, 44.4% 99.8%, 38.9% 99.7%, 33.3% 98.6%, 27.8% 97.4%, 22.2% 99.6%, 16.7% 99.3%, 11.1% 98.0%, 5.6% 97.0%, 0.0% 98.2%);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Mulish',sans-serif;
+  font-size:16px;
+  line-height:1.55;
+  overflow-x:hidden;
+}
+/* aged-paper grain over everything (print varnish) — inline SVG, single raster */
+.grain-overlay{
+  position:fixed;inset:0;width:100%;height:100%;z-index:220;pointer-events:none;
+  opacity:.34;mix-blend-mode:multiply;
+}
+/* fold creases on the sheet */
+body::before{
+  content:'';position:fixed;inset:0;z-index:219;pointer-events:none;
+  background:
+    linear-gradient(90deg,transparent 0 61.8%,rgba(30,26,22,.055) 61.9%,rgba(255,255,255,.16) 62.15%,transparent 62.5%),
+    linear-gradient(180deg,transparent 0 38%,rgba(30,26,22,.045) 38.1%,rgba(255,255,255,.12) 38.32%,transparent 38.7%);
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+:focus-visible{outline:2.5px dashed var(--kumkum);outline-offset:3px}
+.container{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+.mono{font-family:'Courier Prime',monospace}
+.anton{font-family:'Anton',sans-serif;font-weight:400}
+.yatra{font-family:'Yatra One',cursive}
+.hindi{font-family:'Tiro Devanagari Hindi',serif}
+
+/* ---------- misregistration headline ---------- */
+.mr{position:relative;display:inline-block;z-index:1}
+.mr::before,.mr::after{content:attr(data-t);position:absolute;left:0;top:0;width:100%;z-index:-1;transition:transform .35s ease}
+.mr::before{color:var(--kumkum);transform:translate(-3px,2px)}
+.mr::after{color:var(--indigo);transform:translate(2.5px,-2px)}
+.mr:hover::before{transform:translate(-5px,3.5px)}
+.mr:hover::after{transform:translate(4px,-3.5px)}
+.mr.mr-mg::after{color:var(--marigold)}
+.mr.mr-lf::before{color:var(--leaf)}
+@media (prefers-reduced-motion:reduce){.mr::before,.mr::after{transition:none}}
+
+/* ---------- rubber stamps ---------- */
+.stamp{
+  display:inline-grid;place-items:center;text-align:center;
+  font-family:'Courier Prime',monospace;font-weight:700;text-transform:uppercase;
+  color:var(--kumkum);border:3px solid currentColor;border-radius:50%;
+  padding:.9em 1.5em;letter-spacing:.08em;line-height:1.25;
+  transform:rotate(-7deg);mix-blend-mode:multiply;opacity:.92;
+  filter:url(#inkbleed);position:relative;
+}
+.stamp::before{content:'';position:absolute;inset:4px;border:1.5px solid currentColor;border-radius:50%}
+.stamp.st-indigo{color:var(--indigo)}
+.stamp.st-leaf{color:var(--leaf)}
+.stamp small{display:block;font-size:.62em;letter-spacing:.18em;font-weight:400}
+
+/* ---------- ticket buttons ---------- */
+.ticket{
+  --notch:var(--paper);
+  position:relative;display:inline-flex;align-items:stretch;
+  background:var(--paper-3);border:2px solid var(--ink);
+  font-family:'Courier Prime',monospace;font-weight:700;text-transform:uppercase;
+  letter-spacing:.06em;text-decoration:none;color:var(--ink);
+  box-shadow:3px 3px 0 rgba(30,26,22,.28);
+  transition:transform .15s ease,box-shadow .15s ease;
+}
+.ticket:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 rgba(30,26,22,.3)}
+.ticket:active{transform:translate(1px,1px);box-shadow:1px 1px 0 rgba(30,26,22,.3)}
+.ticket::before,.ticket::after{
+  content:'';position:absolute;width:14px;height:14px;border-radius:50%;
+  background:var(--notch);border:2px solid var(--ink);top:50%;
+}
+.ticket::before{left:-9px;transform:translateY(-50%)}
+.ticket::after{right:-9px;transform:translateY(-50%)}
+.ticket .stub{
+  display:flex;align-items:center;padding:.45em .7em;
+  border-right:2px dashed var(--ink);
+  writing-mode:vertical-rl;text-orientation:mixed;transform:rotate(180deg);
+  font-size:.6em;letter-spacing:.28em;font-weight:400;background:rgba(200,161,74,.18);
+}
+.ticket .body{padding:.95em 1.5em;display:flex;align-items:center;gap:.6em}
+.ticket.tk-red{background:var(--kumkum);color:var(--paper-3)}
+.ticket.tk-red::before,.ticket.tk-red::after{border-color:var(--ink)}
+.ticket.tk-red .stub{border-right-color:rgba(242,232,213,.7);background:rgba(30,26,22,.18)}
+
+/* ---------- ornaments ---------- */
+.rule-dots{height:14px;background-image:radial-gradient(circle,var(--ink) 1.7px,transparent 2px);background-size:14px 14px;background-position:center;background-repeat:repeat-x}
+.dbl-rule{border-top:1px solid var(--ink);border-bottom:3px solid var(--ink);height:6px}
+.dbl-rule.thin{border-bottom-width:1px;height:4px}
+.halftone{background-image:radial-gradient(circle,rgba(30,26,22,.28) 1.1px,transparent 1.5px);background-size:7px 7px}
+.orn-divider{display:flex;align-items:center;gap:14px;margin:0 auto;max-width:520px}
+.orn-divider::before,.orn-divider::after{content:'';flex:1;border-top:1px solid var(--ink);box-shadow:0 3px 0 var(--ink)}
+.orn-divider svg{flex:none}
+
+/* ---------- vintage photo plates ---------- */
+.plate-frame{position:relative;border-radius:50%;padding:12px;flex:none}
+.plate-frame::before{content:'';position:absolute;inset:0;border-radius:inherit;border:2.5px solid var(--ink)}
+.plate-frame::after{content:'';position:absolute;inset:6px;border-radius:inherit;border:1.5px dotted var(--ink)}
+.plate{position:relative;border-radius:inherit;overflow:hidden;height:100%}
+.plate img{width:100%;height:100%;object-fit:cover;filter:grayscale(.85) sepia(.52) contrast(1.05) brightness(1.08)}
+.plate::after{content:'';position:absolute;inset:0;background:var(--tintc,rgba(43,58,103,.18));mix-blend-mode:multiply;border-radius:inherit}
+.plate::before{content:'';position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 34px rgba(30,26,22,.55);z-index:2}
+.arch{border-radius:50% 50% 6px 6px / 38% 38% 6px 6px}   /* arched window frame */
+
+/* ================= 1 · MASTHEAD ================= */
+.masthead{padding-top:10px}
+.topline{
+  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  font-family:'Courier Prime',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  border-top:2.5px solid var(--ink);border-bottom:1px solid var(--ink);padding:6px 0;
+}
+.mast-grid{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;padding:26px 0 18px;position:relative}
+.mast-left{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;line-height:1.9}
+.mast-left .press-mark{display:inline-block;vertical-align:-8px;margin-right:8px}
+.mast-name{text-align:center}
+.mast-name .cmaa{
+  font-family:'Anton',sans-serif;font-size:clamp(84px,15.5vw,196px);line-height:.9;
+  letter-spacing:.035em;display:inline-block;
+}
+.mast-name .hi-line{font-family:'Yatra One',cursive;font-size:clamp(19px,2.6vw,30px);color:var(--kumkum);margin-top:8px}
+.mast-name .en-line{font-family:'Courier Prime',monospace;font-size:clamp(10px,1.35vw,13.5px);letter-spacing:.32em;text-transform:uppercase;margin-top:6px}
+.mast-right{display:flex;justify-content:flex-end}
+.stamp-fresh{font-size:12.5px;transform:rotate(8deg)}
+.mast-nav{
+  display:flex;justify-content:center;gap:clamp(10px,2.4vw,28px);flex-wrap:wrap;
+  font-family:'Courier Prime',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  padding:9px 0;border-top:1px solid var(--ink);
+}
+.mast-nav a{text-decoration:none;border-bottom:2px solid transparent;padding-bottom:1px}
+.mast-nav a:hover{border-bottom-color:var(--kumkum);color:var(--kumkum)}
+.tin-btn{font-weight:700;color:var(--kumkum);border-bottom:2px solid var(--kumkum)}
+.tin-btn:hover{background:var(--kumkum);color:var(--paper-3)}
+
+/* ================= 2 · POSTER HERO ================= */
+.hero-wrap{padding:clamp(20px,3.5vw,44px) 0 0}
+.poster{
+  position:relative;border:3px solid var(--ink);background:var(--paper-3);
+  padding:clamp(22px,4vw,54px);overflow:hidden;
+}
+.poster::before{content:'';position:absolute;inset:7px;border:1px solid var(--ink);pointer-events:none;z-index:3}
+.poster::after{
+  content:'';position:absolute;inset:12px;pointer-events:none;z-index:3;
+  border:1px dotted var(--ink);
+}
+.poster .floret{position:absolute;z-index:4;width:30px;height:30px;color:var(--kumkum)}
+.poster .fl-tl{top:14px;left:14px}.poster .fl-tr{top:14px;right:14px;transform:rotate(90deg)}
+.poster .fl-bl{bottom:14px;left:14px;transform:rotate(-90deg)}.poster .fl-br{bottom:14px;right:14px;transform:rotate(180deg)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(20px,4vw,56px);align-items:center;position:relative;z-index:2}
+.hero-words{position:relative}
+.hero-words .kuru{
+  position:absolute;top:-8%;left:-4%;z-index:0;pointer-events:none;user-select:none;
+  font-family:'Tiro Devanagari Hindi',serif;font-size:clamp(120px,21vw,270px);line-height:1;
+  color:transparent;-webkit-text-stroke:1.5px rgba(30,26,22,.16);white-space:nowrap;
+}
+.hero-words h1{position:relative;z-index:1;font-family:'Anton',sans-serif;font-size:clamp(52px,8.6vw,118px);line-height:.93;letter-spacing:.015em;text-transform:uppercase}
+.hero-words h1 .w2{color:var(--kumkum)}
+.hero-words h1 .w3{color:var(--indigo)}
+.hero-words h1 .mr{display:block;width:fit-content}
+.hero-sub{font-family:'Courier Prime',monospace;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;margin-top:18px;border-top:1px solid var(--ink);padding-top:10px;max-width:420px}
+.hero-plate-zone{position:relative;display:grid;place-items:center;min-height:340px}
+.sunrays{
+  position:absolute;width:135%;aspect-ratio:1;border-radius:50%;
+  background:repeating-conic-gradient(from 4deg,rgba(200,161,74,.6) 0 2.6deg,transparent 2.6deg 8.4deg);
+  -webkit-mask:radial-gradient(circle,transparent 33%,#000 34%,#000 58%,transparent 72%);
+  mask:radial-gradient(circle,transparent 33%,#000 34%,#000 58%,transparent 72%);
+}
+.hero-plate{width:min(340px,78%);aspect-ratio:1;background:var(--paper)}
+.hero-plate .plate{--tintc:rgba(194,49,31,.14)}
+.hero-stamp-1{position:absolute;top:2%;right:0;font-size:12px;transform:rotate(11deg)}
+.hero-stamp-2{position:absolute;bottom:1%;left:2%;font-size:11.5px;transform:rotate(-9deg)}
+.hero-tickets{display:flex;gap:26px;flex-wrap:wrap;margin-top:clamp(26px,3.5vw,42px);position:relative;z-index:2}
+.hero-tickets .ticket{--notch:var(--paper-3);font-size:15px}
+.hero-corner-ht{position:absolute;width:190px;height:190px;z-index:1;opacity:.5}
+.ht-tr{top:0;right:0;-webkit-mask:radial-gradient(circle at top right,#000 30%,transparent 72%);mask:radial-gradient(circle at top right,#000 30%,transparent 72%)}
+.ht-bl{bottom:0;left:0;-webkit-mask:radial-gradient(circle at bottom left,#000 30%,transparent 72%);mask:radial-gradient(circle at bottom left,#000 30%,transparent 72%)}
+
+/* marquee rule */
+.marquee{border-top:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink);margin-top:clamp(28px,4vw,48px);overflow:hidden;background:var(--paper)}
+.marquee-track{display:flex;width:max-content;animation:mq 28s linear infinite}
+.marquee-track span{
+  display:inline-block;padding:9px 0;font-family:'Yatra One',cursive;
+  font-size:clamp(16px,2vw,22px);white-space:nowrap;color:var(--ink);
+}
+.marquee-track span b{color:var(--kumkum);font-weight:400}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marquee-track{animation:none}}
+
+/* ================= section headers ================= */
+.sec-head{text-align:center;padding:clamp(48px,7vw,84px) 0 clamp(26px,3.5vw,40px)}
+.sec-head .eyebrow{font-family:'Courier Prime',monospace;font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;display:block;margin-bottom:12px}
+.sec-head h2{font-family:'Anton',sans-serif;font-size:clamp(38px,6vw,74px);text-transform:uppercase;letter-spacing:.02em;line-height:1}
+.sec-head .hi{font-family:'Yatra One',cursive;color:var(--kumkum);font-size:clamp(16px,2.2vw,24px);margin-top:10px}
+.sec-head .orn-divider{margin-top:20px}
+
+/* ================= 3 · THE LABEL WALL ================= */
+.wall{background:var(--paper-2);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);position:relative;overflow:hidden;padding-bottom:clamp(48px,6vw,84px)}
+.wall .kuru-bg{
+  position:absolute;top:34%;left:50%;transform:translateX(-50%) rotate(-3deg);pointer-events:none;user-select:none;
+  font-family:'Tiro Devanagari Hindi',serif;font-size:clamp(200px,30vw,430px);line-height:1;white-space:nowrap;
+  color:transparent;-webkit-text-stroke:1.5px rgba(30,26,22,.09);
+}
+.wall-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2.4vw,28px);position:relative;z-index:1;align-items:start}
+.label{
+  position:relative;background:var(--lbl-bg,var(--paper-3));border:2.5px solid var(--lbl-ink,var(--ink));
+  padding:14px 14px 0;transform:rotate(var(--rot,0deg));
+  box-shadow:4px 5px 0 rgba(30,26,22,.22);color:var(--ink);
+  display:flex;flex-direction:column;
+}
+.label .lbl-inner{border:1px solid var(--lbl-ink,var(--ink));padding:14px 12px 12px;flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative}
+.label .brandline{font-family:'Courier Prime',monospace;font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--lbl-ink,var(--ink))}
+.label .motif{width:30px;height:30px;margin:8px 0 4px;color:var(--lbl-ac,var(--kumkum))}
+.label .lbl-plate{width:76%;aspect-ratio:1;margin:6px 0 10px;background:var(--paper)}
+.label h3{font-family:'Anton',sans-serif;font-size:clamp(19px,1.75vw,23px);text-transform:uppercase;letter-spacing:.03em;line-height:1.05}
+.label .devan{font-family:'Tiro Devanagari Hindi',serif;font-size:14px;color:var(--lbl-ac,var(--kumkum));margin-top:3px}
+.label .quip{font-size:12.5px;font-weight:600;line-height:1.45;margin:8px 0 10px;color:rgba(30,26,22,.82);max-width:24ch}
+.label .specline{font-family:'Courier Prime',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.75;margin-bottom:8px}
+.chilies{display:flex;gap:3px;margin-bottom:6px}
+.chilies svg{width:15px;height:15px}
+.chilies .off{opacity:.22;filter:grayscale(1)}
+.burst-price{
+  position:absolute;top:-16px;right:-14px;width:74px;height:74px;z-index:3;
+  clip-path:var(--burst);background:var(--lbl-ac,var(--kumkum));color:var(--paper-3);
+  display:grid;place-items:center;transform:rotate(10deg);
+  font-family:'Anton',sans-serif;font-size:19px;letter-spacing:.02em;
+}
+.burst-price small{display:block;font-family:'Courier Prime',monospace;font-size:7.5px;letter-spacing:.1em;margin-top:-3px}
+/* perforated ADD TO TIN tab */
+.add-tab{
+  margin:0 -14px;width:calc(100% + 28px);position:relative;
+  border-top:2px dashed var(--lbl-ink,var(--ink));
+  background:var(--lbl-tab,var(--paper));padding:11px 8px 12px;
+  font-family:'Courier Prime',monospace;font-weight:700;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;
+  transition:background .18s ease,color .18s ease,letter-spacing .18s ease;
+}
+.add-tab::before{
+  content:'';position:absolute;left:0;top:-4.5px;width:100%;height:9px;
+  background-image:radial-gradient(circle,var(--paper-2) 2.6px,transparent 3px);
+  background-size:15px 9px;background-position:center;
+}
+.add-tab:hover{background:var(--lbl-ink,var(--ink));color:var(--paper-3);letter-spacing:.26em}
+/* — the 8 distinct compositions — */
+.lbl-1{--rot:-1.4deg;--lbl-ac:var(--kumkum);--lbl-ink:var(--ink)}
+.lbl-1 .lbl-inner{border-style:double;border-width:4px}
+.lbl-2{--rot:1.2deg;--lbl-ac:var(--indigo);--lbl-ink:var(--indigo);--lbl-bg:#EFE3C8;margin-top:34px}
+.lbl-2 .lbl-inner{border-style:dashed}
+.lbl-3{--rot:-.8deg;--lbl-ac:var(--kumkum);--lbl-ink:var(--kumkum);--lbl-bg:var(--paper)}
+.lbl-3 .lbl-inner{border-width:2px;box-shadow:inset 0 0 0 4px var(--paper),inset 0 0 0 5px var(--lbl-ink)}
+.lbl-4{--rot:1.8deg;--lbl-ac:var(--leaf);--lbl-ink:var(--leaf);margin-top:20px}
+.lbl-4 .lbl-inner{border-style:dotted;border-width:2.5px}
+.lbl-5{--rot:1deg;--lbl-ac:var(--marigold);--lbl-ink:var(--ink);--lbl-bg:#F1E2BF}
+.lbl-5 .lbl-inner{border-bottom-width:4px}
+.lbl-6{--rot:-1.6deg;--lbl-ac:var(--leaf);--lbl-ink:var(--ink);--lbl-bg:#EDE8D8;margin-top:26px}
+.lbl-6 .burst-price{background:var(--leaf)}
+.lbl-7{--rot:.9deg;--lbl-ac:var(--indigo);--lbl-ink:var(--indigo);--lbl-bg:var(--paper-3);margin-top:-14px}
+.lbl-7 .lbl-inner{border-style:solid;border-width:1px;outline:1px solid var(--indigo);outline-offset:3px}
+.lbl-8{--rot:-1deg;--lbl-ac:var(--kumkum);--lbl-ink:var(--ink);--lbl-bg:#F4E9CF;margin-top:12px}
+.lbl-8 .lbl-inner{background:
+  linear-gradient(45deg,transparent 48%,rgba(194,49,31,.14) 48% 52%,transparent 52%) 0 0/16px 16px}
+.lbl-1 .lbl-plate .plate{--tintc:rgba(194,49,31,.16)}
+.lbl-2 .lbl-plate .plate,.lbl-7 .lbl-plate .plate{--tintc:rgba(43,58,103,.2)}
+.lbl-4 .lbl-plate .plate,.lbl-6 .lbl-plate .plate{--tintc:rgba(63,107,79,.2)}
+.lbl-5 .lbl-plate .plate{--tintc:rgba(232,155,28,.24)}
+.lbl-1 .lbl-plate{width:84%}
+.wall-foot{position:relative;z-index:1;text-align:center;margin-top:clamp(30px,4vw,44px);font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+
+/* ================= 4 · HOW THE PRESS WORKS ================= */
+.method{padding-bottom:clamp(48px,6vw,80px)}
+.comic{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,24px)}
+.panel{border:2.5px solid var(--ink);background:var(--paper-3);position:relative;padding:12px 12px 0}
+.panel .fig-no{
+  position:absolute;top:-14px;left:14px;background:var(--ink);color:var(--paper-3);
+  font-family:'Courier Prime',monospace;font-weight:700;font-size:11px;letter-spacing:.2em;padding:4px 10px;
+}
+.panel .art{border:1px solid var(--ink);background:var(--paper);position:relative;overflow:hidden}
+.panel .art svg{display:block;width:100%;height:auto}
+.woodcut *{stroke:var(--ink);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.woodcut .fill-k{fill:var(--kumkum);stroke-width:2.4}
+.woodcut .fill-m{fill:var(--marigold);stroke-width:2.4}
+.woodcut .thin{stroke-width:1.6}
+.woodcut .draw{stroke-dasharray:1}
+.panel .cap{
+  font-family:'Courier Prime',monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;
+  padding:12px 4px 14px;line-height:1.6;border-top:1px solid var(--ink);margin-top:12px;
+}
+.panel .cap b{color:var(--kumkum)}
+.panel-4 .mini-plate{
+  position:absolute;right:8px;bottom:8px;width:74px;height:74px;border-radius:50%;
+  border:2.5px solid var(--ink);overflow:hidden;box-shadow:0 0 0 3px var(--paper),0 0 0 4px var(--ink);
+}
+.panel-4 .mini-plate img{width:100%;height:100%;object-fit:cover;filter:grayscale(.85) sepia(.45) contrast(1.05)}
+
+/* ================= 5 · PUBLIC NOTICE ================= */
+.notice-wrap{padding-bottom:clamp(48px,6vw,84px)}
+.notice{
+  max-width:820px;margin:0 auto;border:3.5px double var(--ink);background:var(--paper-3);
+  padding:6px;position:relative;
+}
+.notice-inner{border:1px solid var(--ink);padding:clamp(24px,4vw,46px) clamp(20px,4.5vw,54px);position:relative}
+.notice-inner>.rule-dots{margin:14px 0 22px}
+.notice h2{font-family:'Anton',sans-serif;font-size:clamp(30px,4.4vw,48px);text-align:center;text-transform:uppercase;letter-spacing:.06em}
+.notice .not-sub{text-align:center;font-family:'Courier Prime',monospace;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;margin-top:8px}
+.clause{display:grid;grid-template-columns:auto 1fr;gap:16px;padding:13px 0;border-bottom:1px dotted rgba(30,26,22,.5);align-items:baseline}
+.clause:last-of-type{border-bottom:none}
+.clause .cno{font-family:'Courier Prime',monospace;font-weight:700;font-size:12px;letter-spacing:.12em;color:var(--kumkum);white-space:nowrap}
+.clause p{font-size:15.5px;line-height:1.6}
+.clause p b{font-weight:800}
+.notice-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-top:26px;flex-wrap:wrap}
+.signature{font-family:'Kalam',cursive;font-size:26px;color:var(--indigo);transform:rotate(-2deg)}
+.signature small{display:block;font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);transform:none;margin-top:2px}
+.wax{
+  width:92px;height:92px;flex:none;display:grid;place-items:center;position:relative;
+  background:radial-gradient(circle at 38% 32%,#C64B36,#A02310 62%,#8A1D0C 88%);
+  border-radius:46% 54% 51% 49% / 53% 47% 56% 44%;
+  box-shadow:inset 0 3px 5px rgba(255,255,255,.14),inset 0 -5px 9px rgba(0,0,0,.35),3px 4px 8px rgba(30,26,22,.35);
+  font-family:'Yatra One',cursive;font-size:32px;color:rgba(242,232,213,.85);
+  transform:rotate(-8deg);filter:url(#inkbleed2);
+}
+.wax::before{content:'';position:absolute;inset:9px;border:2px dotted rgba(242,232,213,.5);border-radius:50%}
+.wax::after{content:'';position:absolute;inset:3px;border:1.5px solid rgba(138,29,12,.9);border-radius:inherit}
+.notice .seal-stamp{position:absolute;top:-26px;right:-20px;font-size:10.5px;transform:rotate(12deg)}
+.notice-spice-plate{position:absolute;left:-52px;top:-34px;width:110px;height:110px;transform:rotate(-6deg);z-index:2}
+.notice-spice-plate .plate{--tintc:rgba(232,155,28,.22)}
+
+/* ================= 6 · LETTERS TO THE PRESS ================= */
+.letters{background:var(--paper-2);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);padding-bottom:clamp(48px,6vw,80px)}
+.post-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(18px,3vw,34px);max-width:980px;margin:0 auto}
+.postcard{
+  background:var(--paper-3);border:1px solid rgba(30,26,22,.45);padding:20px 22px 26px;position:relative;
+  clip-path:var(--torn);box-shadow:5px 6px 0 rgba(30,26,22,.2);transform:rotate(var(--rot,0deg));
+}
+.postcard .pc-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:14px;border-bottom:1px dashed rgba(30,26,22,.5);padding-bottom:12px}
+.postcard .addr{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;line-height:2;opacity:.8}
+.pstamp{
+  width:52px;height:62px;flex:none;border:1.5px solid var(--pk,var(--kumkum));color:var(--pk,var(--kumkum));
+  background:var(--paper);display:grid;place-items:center;gap:0;padding:4px;transform:rotate(4deg);position:relative;
+  font-family:'Courier Prime',monospace;font-size:7.5px;letter-spacing:.1em;text-align:center;
+}
+.pstamp::before{content:'';position:absolute;inset:-6px;background-image:radial-gradient(circle,var(--paper-2) 2px,transparent 2.4px);background-size:8px 8px;background-position:center;z-index:-1}
+.pstamp svg{width:22px;height:22px}
+.postmark{position:absolute;top:12px;right:66px;width:74px;height:74px;color:rgba(43,58,103,.75);mix-blend-mode:multiply;transform:rotate(-12deg)}
+.postcard blockquote{font-family:'Courier Prime',monospace;font-size:14px;line-height:1.75}
+.postcard cite{display:block;font-style:normal;font-family:'Courier Prime',monospace;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin-top:14px;color:var(--indigo)}
+.pc-1{--rot:-1.2deg}.pc-2{--rot:1deg;--pk:var(--indigo)}.pc-3{--rot:.8deg;--pk:var(--leaf)}.pc-4{--rot:-1deg;--pk:var(--marigold)}
+
+/* ================= 7 · DIWALI MELA ================= */
+.mela{background:var(--indigo);color:var(--paper);position:relative;overflow:hidden;border-bottom:3px solid var(--ink)}
+.mela::before{content:'';position:absolute;inset:10px;border:1.5px dotted rgba(242,232,213,.55);pointer-events:none;z-index:3}
+.mela .halftone-bg{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(242,232,213,.13) 1.2px,transparent 1.6px);background-size:9px 9px}
+.mela-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,5vw,64px);align-items:center;position:relative;z-index:2;padding:clamp(48px,7vw,88px) 0}
+.mela-plate-zone{position:relative;display:grid;place-items:center;min-height:320px}
+.mela .sunrays{background:repeating-conic-gradient(from 4deg,rgba(232,155,28,.75) 0 2.6deg,transparent 2.6deg 8.4deg)}
+.mela-plate{width:min(300px,80%);aspect-ratio:1;background:var(--indigo)}
+.mela-plate .plate-frame::before,.mela-plate .plate-frame::after{border-color:var(--marigold)}
+.mela-plate .plate{--tintc:rgba(232,155,28,.22)}
+.mela-diwali{position:absolute;bottom:-6px;right:4%;width:104px;height:104px;border-radius:50%;overflow:hidden;border:2.5px solid var(--marigold);box-shadow:0 0 0 4px var(--indigo),0 0 0 5.5px var(--marigold)}
+.mela-diwali img{width:100%;height:100%;object-fit:cover;filter:grayscale(.7) sepia(.5) contrast(1.06)}
+.mela-copy .eyebrow{font-family:'Courier Prime',monospace;font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--marigold);display:block;margin-bottom:14px}
+.mela-copy h2{font-family:'Anton',sans-serif;font-size:clamp(40px,6vw,76px);line-height:.95;text-transform:uppercase;color:var(--paper-3)}
+.mela-copy h2 .mr::before{color:var(--marigold)}
+.mela-copy h2 .mr::after{color:var(--kumkum)}
+.mela-copy .hi{font-family:'Yatra One',cursive;color:var(--marigold);font-size:clamp(17px,2.3vw,24px);margin:12px 0 16px}
+.mela-copy p{max-width:46ch;color:rgba(242,232,213,.88);font-size:15.5px}
+.mela-cta-row{display:flex;align-items:center;gap:30px;margin-top:26px;flex-wrap:wrap}
+.mela .ticket{--notch:var(--indigo);background:var(--marigold);color:var(--ink);border-color:var(--ink)}
+.mela .stamp{color:var(--marigold);font-size:12px;transform:rotate(9deg);mix-blend-mode:normal;opacity:1}
+
+/* ================= 9 · GRIEVANCE WINDOW ================= */
+.grievance{padding-bottom:clamp(52px,7vw,92px)}
+.gw-list{max-width:780px;margin:0 auto}
+.gw{border:2px solid var(--ink);background:var(--paper-3);margin-bottom:14px;position:relative}
+.gw::before{content:'';position:absolute;top:0;left:0;width:100%;height:7px;background:repeating-linear-gradient(90deg,var(--ink) 0 14px,transparent 14px 28px)}
+.gw summary{
+  list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:14px;
+  padding:18px 20px 15px;font-weight:800;font-size:15.5px;
+}
+.gw summary::-webkit-details-marker{display:none}
+.gw summary .wno{font-family:'Courier Prime',monospace;font-weight:700;font-size:10.5px;letter-spacing:.16em;color:var(--paper-3);background:var(--indigo);padding:3px 8px;white-space:nowrap}
+.gw summary .q{flex:1}
+.gw summary .tok{font-family:'Courier Prime',monospace;font-weight:700;font-size:18px;color:var(--kumkum);transition:transform .25s ease}
+.gw[open] summary .tok{transform:rotate(45deg)}
+.gw .ans{padding:0 20px 20px 20px;font-size:14.5px;line-height:1.7;border-top:1px dashed rgba(30,26,22,.4);margin:0 20px;padding:14px 0 20px;color:rgba(30,26,22,.85)}
+.gw .ans{margin:0 20px}
+.gw:hover{background:#F9F2E2}
+
+/* ================= 10 · COLOPHON ================= */
+.colophon{background:var(--ink);color:var(--paper);padding:clamp(44px,6vw,72px) 0 110px;text-align:center}
+.colophon .press-spiral{width:46px;height:46px;color:var(--gold);margin:0 auto 18px}
+.colophon .cmaa-sm{font-family:'Anton',sans-serif;font-size:34px;letter-spacing:.12em}
+.colophon .hi{font-family:'Yatra One',cursive;color:var(--marigold);font-size:16px;margin:8px 0 20px}
+.colophon .colo-rule{max-width:340px;margin:0 auto 20px;border-top:1px solid rgba(242,232,213,.4);border-bottom:3px solid rgba(242,232,213,.4);height:6px}
+.colophon p{font-family:'Courier Prime',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;line-height:2.2;color:rgba(242,232,213,.75);max-width:640px;margin:0 auto}
+.colophon .barcode{height:34px;width:180px;margin:26px auto 8px;background:repeating-linear-gradient(90deg,var(--paper) 0 2px,transparent 2px 5px,var(--paper) 5px 7px,transparent 7px 8px,var(--paper) 8px 12px,transparent 12px 16px,var(--paper) 16px 17px,transparent 17px 21px);opacity:.8}
+.colophon .bc-no{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:.5em;color:rgba(242,232,213,.6)}
+
+/* ================= 8 · CART / BILL OF SUPPLY ================= */
+.drawer-overlay{position:fixed;inset:0;background:rgba(30,26,22,.55);z-index:230;opacity:0;pointer-events:none;transition:opacity .3s ease}
+.drawer-overlay.show{opacity:1;pointer-events:auto}
+.drawer{
+  position:fixed;top:0;right:0;height:100dvh;width:min(430px,100vw);z-index:240;
+  background:#FAF3E3;border-left:3px solid var(--ink);
+  transform:translateX(103%);transition:transform .38s cubic-bezier(.22,.9,.3,1);
+  display:flex;flex-direction:column;
+  box-shadow:-8px 0 24px rgba(30,26,22,.25);
+}
+.drawer.open{transform:translateX(0)}
+@media (prefers-reduced-motion:reduce){.drawer{transition:none}.drawer-overlay{transition:none}}
+.bill-head{padding:46px 24px 0;text-align:center;font-family:'Courier Prime',monospace}
+.bill-head .bh-title{font-weight:700;font-size:17px;letter-spacing:.24em}
+.bill-head .bh-sub{font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-top:4px;opacity:.75;line-height:1.9}
+.bill-head .dashes{border-top:2px dashed var(--ink);margin-top:14px}
+.bill-close{position:absolute;top:10px;right:12px;font-family:'Courier Prime',monospace;font-weight:700;font-size:13px;letter-spacing:.1em;border:1.5px solid var(--ink);padding:6px 10px;background:var(--paper-3)}
+.bill-close:hover{background:var(--kumkum);color:var(--paper-3)}
+.bill-body{flex:1;overflow-y:auto;padding:16px 24px;font-family:'Courier Prime',monospace}
+.bill-empty{text-align:center;padding:44px 10px;font-size:13px;line-height:2;letter-spacing:.06em}
+.bill-empty svg{width:40px;height:40px;margin:0 auto 12px;color:rgba(30,26,22,.5)}
+.bill-row{display:flex;align-items:baseline;gap:8px;font-size:13.5px;padding:9px 0}
+.bill-row .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:17ch}
+.bill-row .dots{flex:1;border-bottom:2px dotted rgba(30,26,22,.45);transform:translateY(-3px)}
+.bill-row .amt{font-weight:700;white-space:nowrap}
+.qty-ctl{display:inline-flex;align-items:center;gap:0;border:1.5px solid var(--ink);margin-right:6px}
+.qty-ctl button{width:22px;height:22px;line-height:1;font-family:'Courier Prime',monospace;font-weight:700;font-size:14px;display:grid;place-items:center}
+.qty-ctl button:hover{background:var(--ink);color:var(--paper-3)}
+.qty-ctl .q{width:24px;text-align:center;font-size:12px;font-weight:700;border-left:1.5px solid var(--ink);border-right:1.5px solid var(--ink);line-height:22px}
+.bill-totals{border-top:2px dashed var(--ink);padding:14px 24px;font-family:'Courier Prime',monospace;font-size:13px}
+.bill-totals .bill-row{padding:4px 0}
+.bill-totals .grand{font-size:16.5px;font-weight:700;padding-top:8px}
+.ship-note{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--kumkum);padding:6px 0 2px;line-height:1.8}
+.bill-foot{padding:0 24px 20px}
+.bill-foot .ticket{--notch:#FAF3E3;width:100%;justify-content:center;font-size:14px}
+.bill-foot .ticket .body{width:100%;justify-content:center}
+.bill-barcode{height:30px;margin:14px auto 4px;width:170px;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 5px,var(--ink) 5px 7px,transparent 7px 8px,var(--ink) 8px 12px,transparent 12px 15px,var(--ink) 15px 16px,transparent 16px 21px)}
+.bill-thanks{text-align:center;font-family:'Courier Prime',monospace;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;opacity:.7;padding-bottom:4px}
+.drawer::after{
+  content:'';position:absolute;bottom:-1px;left:0;width:100%;height:14px;
+  background:linear-gradient(-45deg,transparent 9px,#FAF3E3 0) 0 0/22px 100% repeat-x,
+             linear-gradient(45deg,transparent 9px,#FAF3E3 0) 0 0/22px 100% repeat-x;
+}
+
+/* ================= sticky mobile ticket bar ================= */
+.mob-bar{
+  position:fixed;left:0;bottom:0;width:100%;z-index:210;display:none;
+  background:var(--kumkum);color:var(--paper-3);border-top:2.5px solid var(--ink);
+  font-family:'Courier Prime',monospace;font-weight:700;text-transform:uppercase;letter-spacing:.1em;
+  -webkit-mask:radial-gradient(circle 5px at 12px 0,transparent 5px,#000 5.5px) -12px 0/24px 100% repeat-x;
+  mask:radial-gradient(circle 5px at 12px 0,transparent 5px,#000 5.5px) -12px 0/24px 100% repeat-x;
+}
+.mob-bar .mb-in{display:flex}
+.mob-bar button,.mob-bar a{flex:1;padding:17px 8px 15px;font-size:12.5px;text-align:center;text-decoration:none;color:inherit}
+.mob-bar .mb-tin{border-right:2px dashed rgba(242,232,213,.6)}
+.mob-bar .mb-wa{background:var(--ink)}
+
+/* toast */
+.toast{
+  position:fixed;left:50%;bottom:86px;transform:translateX(-50%) translateY(20px);z-index:250;
+  background:var(--ink);color:var(--paper-3);font-family:'Courier Prime',monospace;font-size:12px;
+  letter-spacing:.16em;text-transform:uppercase;padding:11px 22px;border:1.5px solid var(--paper-3);
+  opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ================= responsive ================= */
+@media (max-width:1020px){
+  .wall-grid{grid-template-columns:repeat(2,1fr)}
+  .lbl-1{grid-row:auto}
+  .lbl-7{margin-top:0}
+  .comic{grid-template-columns:repeat(2,1fr);gap:26px}
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .hero-plate-zone{min-height:300px}
+  .mela-grid{grid-template-columns:1fr;text-align:center}
+  .mela-copy p{margin:0 auto}
+  .mela-cta-row{justify-content:center}
+  .mela-plate-zone{min-height:300px}
+  .notice-spice-plate{display:none}
+  .notice .seal-stamp{right:-6px}
+}
+@media (max-width:768px){
+  .mob-bar{display:block}
+  body{padding-bottom:66px}
+  .mast-grid{grid-template-columns:1fr;text-align:center;gap:16px;padding-top:18px}
+  .mast-left{display:none}
+  .mast-right{justify-content:center}
+  .post-grid{grid-template-columns:1fr}
+  .hero-tickets .ticket{width:100%}
+  .hero-tickets .ticket .body{flex:1;justify-content:center}
+  .topline{justify-content:center;text-align:center;font-size:10px;gap:4px 14px}
+}
+@media (max-width:520px){
+  .wall-grid{grid-template-columns:1fr;gap:30px}
+  .label{--rot:0deg;margin-top:0 !important}
+  .comic{grid-template-columns:1fr}
+  .hero-words .kuru{font-size:clamp(110px,30vw,160px)}
+  .burst-price{right:-8px}
+  .clause{grid-template-columns:1fr;gap:4px}
+  .mela-diwali{width:80px;height:80px;right:0}
+}
+</style>
+</head>
+<body>
+
+<!-- aged-paper grain varnish -->
+<svg class="grain-overlay" aria-hidden="true" focusable="false" preserveAspectRatio="none">
+  <filter id="paperGrain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="7"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0.12  0 0 0 0 0.10  0 0 0 0 0.08  0 0 0 0.6 0"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#paperGrain)"/>
+</svg>
+
+<!-- ======== SVG DEFS: ink-bleed filter + woodcut symbols ======== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="inkbleed" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.055" numOctaves="2" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2"/>
+    </filter>
+    <filter id="inkbleed2" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.09" numOctaves="2" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/>
+    </filter>
+    <symbol id="m-spiral" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        d="M12 12a1.6 1.6 0 0 1 3.2 0a3.2 3.2 0 0 1-6.4 0a4.8 4.8 0 0 1 9.6 0a6.4 6.4 0 0 1-12.8 0a8 8 0 0 1 16 0"/>
+    </symbol>
+    <symbol id="m-hand" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7.5 21v-5.4L5.2 12c-.6-.9.6-1.9 1.4-1.1l2.4 2.3V5.4c0-.8.5-1.4 1.2-1.4s1.2.6 1.2 1.4V11h.9V3.9c0-.8.5-1.4 1.2-1.4s1.2.6 1.2 1.4V11h.9V5.1c0-.8.5-1.4 1.2-1.4s1.2.6 1.2 1.4V13c0 1.6-.3 3.2-.9 4.6L16.5 21"/>
+        <path d="M10 15.5h6" stroke-width="1.1"/>
+      </g>
+    </symbol>
+    <symbol id="m-kadhai" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <path d="M4 9h16M5.5 9c0 4.6 2.7 7.5 6.5 7.5S18.5 13.6 18.5 9"/>
+        <path d="M4 9c-1.6 0-1.6 2.2 0 2.2M20 9c1.6 0 1.6 2.2 0 2.2"/>
+        <path d="M9 21c.8-1.4-.5-2 .4-3.4M12 21.4c.8-1.4-.5-2 .4-3.4M15 21c.8-1.4-.5-2 .4-3.4" stroke-width="1.3"/>
+      </g>
+    </symbol>
+    <symbol id="m-peacock" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+        <path d="M10 21c-1-5.5 0-10.5 4.4-12.6"/>
+        <circle cx="15.5" cy="7" r="1.8"/>
+        <path d="M15.8 4.8l.6-1.8M17 5.8l1.6-1.2M17.4 7.4h2"/>
+        <path d="M10 21c-4.4-.8-6.6-4-6-8" stroke-width="1.3"/>
+        <path d="M10 21c-6-2.4-7.4-8-4.6-12.4" stroke-width="1.3"/>
+        <circle cx="4" cy="13" r=".9" fill="currentColor" stroke="none"/>
+        <circle cx="5.4" cy="8.6" r=".9" fill="currentColor" stroke="none"/>
+      </g>
+    </symbol>
+    <symbol id="m-diya" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 14.5h16c-.4 3-3.6 5-8 5s-7.6-2-8-5Z"/>
+        <path d="M12 12.4c-1.7-1.7-.9-3.6 0-5.2.9 1.6 1.7 3.5 0 5.2Z"/>
+        <path d="M6.5 11.4l-1.4-1M17.5 11.4l1.4-1M12 4.6V3.2" stroke-width="1.2"/>
+      </g>
+    </symbol>
+    <symbol id="m-leaf" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 4C6.4 7.6 4.8 13.6 6 19c5.4 1.2 11.4-1.8 12.4-9 .4-3.2-1.4-6-6.4-6Z"/>
+        <path d="M7.5 17.5C10 13.8 13 9.8 16.2 7" stroke-width="1.2"/>
+        <path d="M9.4 14.6l3 .8M11.5 11.6l2.8.7" stroke-width="1.1"/>
+      </g>
+    </symbol>
+    <symbol id="m-sun" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+        <path d="M4 16.5a8 8 0 0 1 16 0"/>
+        <path d="M12 4.5V2.4M6.7 6.6L5.2 5.1M17.3 6.6l1.5-1.5M4.4 11.2l-2-.6M19.6 11.2l2-.6" stroke-width="1.4"/>
+        <path d="M2.5 19.5h19M5.5 22h13" stroke-width="1.4"/>
+      </g>
+    </symbol>
+    <symbol id="m-press" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <circle cx="12" cy="13" r="8"/>
+        <path d="M12 13a1.2 1.2 0 0 1 2.4 0a2.4 2.4 0 0 1-4.8 0a3.6 3.6 0 0 1 7.2 0a4.8 4.8 0 0 1-9.6 0" stroke-width="1.4"/>
+        <path d="M12 5V2.6M9 2.6h6" stroke-width="1.8"/>
+      </g>
+    </symbol>
+    <symbol id="m-chili" viewBox="0 0 24 24">
+      <path fill="#C2311F" stroke="#1E1A16" stroke-width="1.4" stroke-linejoin="round"
+        d="M17 7.5c2 2.6 1.4 8-3.6 10.9-3.6 2.1-7.4 1.4-8.9.3 4.6-.4 9.2-3.5 10.4-9.8Z"/>
+      <path fill="none" stroke="#3F6B4F" stroke-width="1.7" stroke-linecap="round" d="M17.1 7.3c.2-2.3 1.7-3.2 3.6-3.2"/>
+    </symbol>
+    <symbol id="m-floret" viewBox="0 0 24 24">
+      <g fill="currentColor">
+        <path d="M12 3.4c1.8 2.7 1.8 5 0 7.7-1.8-2.7-1.8-5 0-7.7Z"/>
+        <path d="M12 20.6c1.8-2.7 1.8-5 0-7.7-1.8 2.7-1.8 5 0 7.7Z"/>
+        <path d="M3.4 12c2.7-1.8 5-1.8 7.7 0-2.7 1.8-5 1.8-7.7 0Z"/>
+        <path d="M20.6 12c-2.7-1.8-5-1.8-7.7 0 2.7 1.8 5 1.8 7.7 0Z"/>
+        <circle cx="12" cy="12" r="1.6"/>
+      </g>
+    </symbol>
+    <symbol id="m-tin" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4.5" y="7" width="15" height="13" rx="1.4"/>
+        <path d="M4.5 10.4h15M9 7V5.2A1.2 1.2 0 0 1 10.2 4h3.6A1.2 1.2 0 0 1 15 5.2V7"/>
+        <path d="M12 13.4a1 1 0 0 1 2 0 2 2 0 0 1-4 0 3 3 0 0 1 6 0" stroke-width="1.3"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ================= 1 · MASTHEAD ================= -->
+<header class="masthead">
+  <div class="container">
+    <div class="topline mono">
+      <span>Reg. No. CMAA-2026</span>
+      <span>Pune Edition · Vol. I</span>
+      <span>Second edition, revised — now with extra sesame</span>
+      <span>Price: one happy evening</span>
+    </div>
+    <div class="mast-grid">
+      <div class="mast-left">
+        <span class="press-mark"><svg width="26" height="26" aria-hidden="true"><use href="#m-press"/></svg></span>
+        Printed &amp; published<br>from one kitchen,<br>Kothrud, Pune 411038
+      </div>
+      <div class="mast-name">
+        <span class="cmaa mr" data-t="CMAA">CMAA</span>
+        <div class="hi-line yatra">घर का स्वाद प्रेस</div>
+        <div class="en-line">The Homemade Snack Press — est. by a Maa</div>
+      </div>
+      <div class="mast-right">
+        <span class="stamp stamp-fresh stamp-in"><span>Fresh Today<small>02 · JUL · 2026</small></span></span>
+      </div>
+    </div>
+    <div class="dbl-rule"></div>
+    <nav class="mast-nav" aria-label="Sections of the press">
+      <a href="#labels">The Label Wall</a>
+      <a href="#method">The Method</a>
+      <a href="#notice">Public Notice</a>
+      <a href="#letters">Letters</a>
+      <a href="#mela">Diwali Mela</a>
+      <a href="#grievance">Grievances</a>
+      <button class="tin-btn" id="tinBtn" aria-haspopup="dialog">Your Tin (<span id="tinCount">0</span>)</button>
+    </nav>
+    <div class="dbl-rule thin"></div>
+  </div>
+</header>
+
+<!-- ================= 2 · POSTER HERO ================= -->
+<section class="hero-wrap">
+  <div class="container">
+    <div class="poster">
+      <svg class="floret fl-tl" aria-hidden="true"><use href="#m-floret"/></svg>
+      <svg class="floret fl-tr" aria-hidden="true"><use href="#m-floret"/></svg>
+      <svg class="floret fl-bl" aria-hidden="true"><use href="#m-floret"/></svg>
+      <svg class="floret fl-br" aria-hidden="true"><use href="#m-floret"/></svg>
+      <div class="hero-corner-ht ht-tr halftone" aria-hidden="true"></div>
+      <div class="hero-corner-ht ht-bl halftone" aria-hidden="true"></div>
+      <div class="hero-grid">
+        <div class="hero-words">
+          <span class="kuru" aria-hidden="true">कुरकुरे</span>
+          <h1>
+            <span class="mr" data-t="KADAK">KADAK</span>
+            <span class="mr w2 mr-mg" data-t="CRUNCH">CRUNCH</span>
+            <span class="mr w3" data-t="HONEST">HONEST</span>
+            <span class="mr mr-lf" data-t="NAMKEEN">NAMKEEN</span>
+          </h1>
+          <p class="hero-sub mono">Chakli &amp; chivda hand-pressed in small morning batches by Seema — a Maa in Pune whose press has one setting: properly kadak.</p>
+        </div>
+        <div class="hero-plate-zone">
+          <div class="sunrays" aria-hidden="true"></div>
+          <div class="plate-frame hero-plate">
+            <div class="plate"><img src="../../assets/images/chakli-2.jpg" alt="Bhajani chakli spirals, the house speciality"></div>
+          </div>
+          <span class="stamp hero-stamp-1 stamp-in"><span>Hand-<br>Pressed</span></span>
+          <span class="stamp st-indigo hero-stamp-2 stamp-in"><span>No Maida<small>No Nonsense</small></span></span>
+        </div>
+      </div>
+      <div class="hero-tickets">
+        <a class="ticket" href="#labels"><span class="stub">Admit One</span><span class="body">Shop the Press →</span></a>
+        <a class="ticket tk-red" href="https://wa.me/910000000000?text=Namaste%20Cmaa!%20Ek%20order%20chhapna%20hai." target="_blank" rel="noopener"><span class="stub">Ticket №2</span><span class="body">Order by WhatsApp</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>&nbsp;चकली · <b>CHAKLI</b> · चिवड़ा · <b>CHIVDA</b> · सेव · <b>SEV</b> · मुरुक्कू · <b>MURUKKU</b> · भाजणी · <b>BHAJANI</b> ·</span>
+      <span>&nbsp;चकली · <b>CHAKLI</b> · चिवड़ा · <b>CHIVDA</b> · सेव · <b>SEV</b> · मुरुक्कू · <b>MURUKKU</b> · भाजणी · <b>BHAJANI</b> ·</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3 · THE LABEL WALL ================= -->
+<section class="wall" id="labels">
+  <span class="kuru-bg" aria-hidden="true">कुरकुरे</span>
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow mono">Page 3 · The Classifieds — Every tin, its own label</span>
+      <h2><span class="mr" data-t="THE LABEL WALL">THE LABEL WALL</span></h2>
+      <div class="hi yatra">हर डिब्बे की अपनी कहानी</div>
+      <div class="orn-divider"><svg width="22" height="22" style="color:var(--kumkum)" aria-hidden="true"><use href="#m-floret"/></svg></div>
+    </div>
+
+    <div class="wall-grid">
+      <!-- 1 · BHAJANI CHAKLI -->
+      <article class="label lbl-1">
+        <div class="burst-price" aria-hidden="true"><span>₹199<small>250 G</small></span></div>
+        <div class="lbl-inner">
+          <span class="brandline">Cmaa Press · Series №1</span>
+          <svg class="motif" aria-hidden="true"><use href="#m-spiral"/></svg>
+          <div class="plate-frame lbl-plate"><div class="plate"><img src="../../assets/images/chakli-2.jpg" alt="Bhajani chakli"></div></div>
+          <h3>Bhajani Chakli</h3>
+          <div class="devan hindi">भाजणी चकली</div>
+          <p class="quip">The classic. Seven grains, one opinionated grandmother of a recipe.</p>
+          <div class="specline mono">Net wt. 250 g · Lot №7 · Morning batch</div>
+          <div class="chilies" role="img" aria-label="Spice level 2 of 3">
+            <svg aria-hidden="true"><use href="#m-chili"/></svg><svg aria-hidden="true"><use href="#m-chili"/></svg><svg class="off" aria-hidden="true"><use href="#m-chili"/></svg>
+          </div>
+        </div>
+        <button class="add-tab" data-add="bhajani">Add to Tin — ₹199</button>
+      </article>
+
+      <!-- 2 · BUTTER CHAKLI -->
+      <article class="label lbl-2">
+        <div class="burst-price" style="background:var(--indigo)" aria-hidden="true"><span>₹219<small>250 G</small></span></div>
+        <div class="lbl-inner">
+          <span class="brandline">Cmaa Press · Series №2</span>
+          <svg class="motif" aria-hidden="true"><use href="#m-hand"/></svg>
+          <div class="plate-frame lbl-plate arch"><div class="plate arch"><img src="../../assets/images/chakli-1.jpg" alt="Butter chakli"></div></div>
+          <h3>Butter Chakli</h3>
+          <div class="devan hindi">बटर चकली</div>
+          <p class="quip">So short it crumbles if you look at it sternly.</p>
+          <div class="specline mono">Net wt. 250 g · Extra makkhan</div>
+          <div class="chilies" role="img" aria-label="Spice level 1 of 3">
+            <svg aria-hidden="true"><use href="#m-chili"/></svg><svg class="off" aria-hidden="true"><use href="#m-chili"/></svg><svg class="off" aria-hidden="true"><use href="#m-chili"/></svg>
+          </div>
+        </div>
+        <button class="add-tab" data-add="butter-chakli">Add to Tin — ₹219</button>
+      </article>
+
+      <!-- 3 · MASALA CHAKLI -->
+      <article class="label lbl-3">
+        <div class="burst-price" aria-hidden="true"><span>₹219<small>250 G</small></span></div>
+        <div class="lbl-inner">
+          <span class="brandline">Cmaa Press · Series №3</span>
+          <svg class="motif" aria-hidden="true"><use href="#m-kadhai"/></svg>
+          <div class="plate-frame lbl-plate"><div class="plate"><img src="../../assets/images/chakli-1.jpg" alt="Masala chakli"></div></div>
+          <h3>Masala Chakli</h3>
+          <div class="devan hindi">मसाला चकली</div>
+          <p class="quip">Front-page heat. Reads spicy, ends spicier.</p>
+          <div class="specline mono">Net wt. 250 g · Handle with chai</div>
+          <div class="chilies" role="img" aria-label="Spice level 3 of 3">
+            <svg aria-hidden="true"><use href="#m-chili"/></svg><svg aria-hidden="true"><use href="#m-chili"/></svg><svg aria-hidden="true"><use href="#m-chili"/></svg>
+          </div>
+        </div>
+        <button class="add-tab" data-add="masala-chakli">Add to Tin — ₹219</button>
+      </article>
+
+      <!-- 4 · BUTTER MURUKKU -->
+      <article class="label lbl-4">
+        <div class="burst-price" style="background:var(--leaf)" aria-hidden="true"><span>₹209<small>250 G</small></span></div>
+        <div class="lbl-inner">
+          <span class="brandline">Cmaa Press · Series №4</span>
+          <svg class="motif" aria-hidden="true"><use href="#m-peacock"/></svg>
+          <div class="plate-frame lbl-plate arch"><div class="plate arch"><img src="../../assets/images/murukku.jpg" alt="Butter murukku"></div></div>
+          <h3>Butter Murukku</h3>
+          <div class="devan hindi">बटर मुरुक्कू</div>
+          <p class="quip">Chakli&rsquo;s soft-spoken cousin from the south. Melts, then vanishes.</p>
+          <div class="specline mono">Net wt. 250 g · Urad-rice blend</div>
+          <div class="chilies" role="img" aria-label="Spice level 1 of 3">
+            <svg aria-hidden="true"><use href="#m-chili"/></svg><svg class="off" aria-hidden="true"><use href="#m-chili"/></svg><svg class="off" aria-hidden="true"><use href="#m-chili"/></svg>
+          </div>
+        </div>
+        <button class="add-tab" data-add="murukku">Add to Tin — ₹209</button>
+      </article>
+
+      <!-- 5 · POHA CHIVDA -->
+      <article class="label lbl-5">
+        <div class="burst-price" style="background:var(--marigold);color:var(--ink)" aria-hidden="true"><span>₹119<small>200 G</small></span></div>
+        <div class="lbl-inner">
+          <span class="brandline">Cmaa Press · Series №5</span>
+          <svg class="motif" aria-hidden="true"><use href="#m-leaf"/></svg>
+          <div class="plate-frame lbl-plate"><div class="plate"><img src="../../assets/images/chivda-1.jpg" alt="Poha chivda"></div></div>
+          <h3>Poha Chivda</h3>
+          <div class="devan hindi">पोहा चिवड़ा</div>
+          <p class="quip">Flattened rice, elevated manners. Peanuts negotiate the corners.</p>
+          <div class="specline mono">Net wt. 200 g · Curry-leaf forward</div>
+          <div class="chilies" role="img" aria-label="Spice level 2 of 3">
+            <svg aria-hidden="true"><use href="#m-chili"/></svg><svg aria-hidden="true"><use href="#m-chili"/></svg><svg class="off" aria-hidden="true"><use href="#m-chili"/></svg>
+          </div>
+        </div>
+        <button class="add-tab" data-add="poha-chivda">Add to Tin — ₹119</button>
+      </article>
+
+      <!-- 6 · ROASTED DIET CHIVDA -->
+      <article class="label lbl-6">
+        <div class="burst-price" aria-hidden="true"><span>₹129<small>200 G</small></span></div>
+        <div class="lbl-inner">
+          <span class="brandline">Cmaa Press · Series №6</span>
+          <svg class="motif" aria-hidden="true"><use href="#m-diya"/></svg>
+          <div class="plate-frame lbl-plate"><div class="plate"><img src="../../assets/images/chivda-1.jpg" alt="Roasted diet chivda"></div></div>
+          <h3>Roasted Diet Chivda</h3>
+          <div class="devan hindi">डाइट चिवड़ा</div>
+          <p class="quip">Zero frying. All of the gossip, none of the guilt.</p>
+          <div class="specline mono">Net wt. 200 g · Roasted, never fried</div>
+          <div class="chilies" role="img" aria-label="Spice level 1 of 3">
+            <svg aria-hidden="true"><use href="#m-chili"/></svg><svg class="off" aria-hidden="true"><use href="#m-chili"/></svg><svg class="off" aria-hidden="true"><use href="#m-chili"/></svg>
+          </div>
+        </div>
+        <button class="add-tab" data-add="diet-chivda">Add to Tin — ₹129</button>
+      </article>
+
+      <!-- 7 · BOMBAY MIX -->
+      <article class="label lbl-7">
+        <div class="burst-price" style="background:var(--indigo)" aria-hidden="true"><span>₹119<small>200 G</small></span></div>
+        <div class="lbl-inner">
+          <span class="brandline">Cmaa Press · Series №7</span>
+          <svg class="motif" aria-hidden="true"><use href="#m-sun"/></svg>
+          <div class="plate-frame lbl-plate"><div class="plate"><img src="../../assets/images/chivda-2.jpg" alt="Bombay mix"></div></div>
+          <h3>Bombay Mix</h3>
+          <div class="devan hindi">बॉम्बे मिक्स</div>
+          <p class="quip">Everything, everywhere, all in one tin. Locals eat it faster than the local.</p>
+          <div class="specline mono">Net wt. 200 g · 11 ingredients, 0 arguments</div>
+          <div class="chilies" role="img" aria-label="Spice level 2 of 3">
+            <svg aria-hidden="true"><use href="#m-chili"/></svg><svg aria-hidden="true"><use href="#m-chili"/></svg><svg class="off" aria-hidden="true"><use href="#m-chili"/></svg>
+          </div>
+        </div>
+        <button class="add-tab" data-add="bombay-mix">Add to Tin — ₹119</button>
+      </article>
+
+      <!-- 8 · CRISPY SEV -->
+      <article class="label lbl-8">
+        <div class="burst-price" aria-hidden="true"><span>₹99<small>200 G</small></span></div>
+        <div class="lbl-inner">
+          <span class="brandline">Cmaa Press · Series №8</span>
+          <svg class="motif" aria-hidden="true"><use href="#m-press"/></svg>
+          <div class="plate-frame lbl-plate arch"><div class="plate arch"><img src="../../assets/images/sev.jpg" alt="Crispy sev"></div></div>
+          <h3>Crispy Sev</h3>
+          <div class="devan hindi">कुरकुरी सेव</div>
+          <p class="quip">Thin as a rumour and twice as fast to spread.</p>
+          <div class="specline mono">Net wt. 200 g · Topping rights included</div>
+          <div class="chilies" role="img" aria-label="Spice level 2 of 3">
+            <svg aria-hidden="true"><use href="#m-chili"/></svg><svg aria-hidden="true"><use href="#m-chili"/></svg><svg class="off" aria-hidden="true"><use href="#m-chili"/></svg>
+          </div>
+        </div>
+        <button class="add-tab" data-add="sev">Add to Tin — ₹99</button>
+      </article>
+    </div>
+    <p class="wall-foot mono">— Collect the full series · Free dispatch above ₹499 —</p>
+  </div>
+</section>
+
+<!-- ================= 4 · HOW THE PRESS WORKS ================= -->
+<section class="method" id="method">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow mono">Page 4 · Illustrated Supplement</span>
+      <h2><span class="mr" data-t="HOW THE PRESS WORKS">HOW THE PRESS WORKS</span></h2>
+      <div class="hi yatra">चार चित्रों में पूरी कहानी</div>
+      <div class="orn-divider"><svg width="22" height="22" style="color:var(--indigo)" aria-hidden="true"><use href="#m-floret"/></svg></div>
+    </div>
+    <div class="comic">
+      <div class="panel">
+        <span class="fig-no mono">FIG. 1</span>
+        <div class="art">
+          <svg class="woodcut" viewBox="0 0 220 170" role="img" aria-label="Woodcut: grains soaking in a bowl beside a hand mill">
+            <path class="draw" pathLength="1" d="M52 20a13 13 0 1 0 12 20a11 11 0 1 1-12-20Z"/>
+            <path class="draw" pathLength="1" d="M30 78h104M38 78c0 22 15 36 48 36s48-14 48-36"/>
+            <path class="draw thin" pathLength="1" d="M52 92c7-5 13 5 20 0s13 5 20 0"/>
+            <circle class="draw thin" pathLength="1" cx="62" cy="102" r="2.4"/>
+            <circle class="draw thin" pathLength="1" cx="86" cy="104" r="2.4"/>
+            <circle class="draw thin" pathLength="1" cx="104" cy="100" r="2.4"/>
+            <circle class="draw" pathLength="1" cx="172" cy="102" r="26"/>
+            <circle class="draw" pathLength="1" cx="172" cy="102" r="7"/>
+            <path class="draw" pathLength="1" d="M180 78l12-18"/>
+            <circle class="draw" pathLength="1" cx="193" cy="58" r="4"/>
+            <path class="draw thin" pathLength="1" d="M34 132l16-10M48 138l16-10M62 144l16-10"/>
+          </svg>
+        </div>
+        <p class="cap mono"><b>Soak &amp; grind.</b> Seven grains bathe overnight; at dawn they are ground into bhajani, the house flour.</p>
+      </div>
+      <div class="panel">
+        <span class="fig-no mono">FIG. 2</span>
+        <div class="art">
+          <svg class="woodcut" viewBox="0 0 220 170" role="img" aria-label="Woodcut: two hands kneading a mound of dough">
+            <path class="draw" pathLength="1" d="M45 122c0-24 22-40 65-40s65 16 65 40"/>
+            <path class="draw" pathLength="1" d="M30 122h160"/>
+            <path class="draw" pathLength="1" d="M74 58c-4 12-1 20 8 25l17 9c7-15 3-28-8-34-7-4-14-3-17 0Z"/>
+            <path class="draw" pathLength="1" d="M146 58c4 12 1 20-8 25l-17 9c-7-15-3-28 8-34 7-4 14-3 17 0Z"/>
+            <path class="draw thin" pathLength="1" d="M84 66l10 5M80 74l10 5M136 66l-10 5M140 74l-10 5"/>
+            <path class="draw thin" pathLength="1" d="M52 44l-6-8M110 36v-10M168 44l6-8"/>
+            <circle class="draw thin" pathLength="1" cx="60" cy="140" r="2"/>
+            <circle class="draw thin" pathLength="1" cx="158" cy="142" r="2"/>
+          </svg>
+        </div>
+        <p class="cap mono"><b>Knead.</b> The dough is worked until it confesses softness. No shortcuts, no maida, no mercy.</p>
+      </div>
+      <div class="panel">
+        <span class="fig-no mono">FIG. 3</span>
+        <div class="art">
+          <svg class="woodcut" viewBox="0 0 220 170" role="img" aria-label="Woodcut: a brass chakli press extruding a perfect spiral">
+            <path class="draw" pathLength="1" d="M110 34V16M92 16h36"/>
+            <circle class="draw" pathLength="1" cx="88" cy="16" r="4"/>
+            <circle class="draw" pathLength="1" cx="132" cy="16" r="4"/>
+            <rect class="draw" pathLength="1" x="85" y="34" width="50" height="46" rx="6"/>
+            <path class="draw thin" pathLength="1" d="M92 44h36M92 54h36M92 64h36"/>
+            <path class="draw" pathLength="1" d="M80 80h60M110 80v16"/>
+            <path class="draw" pathLength="1" d="M110 124a2.5 2.5 0 0 1 5 0a5 5 0 0 1-10 0a7.5 7.5 0 0 1 15 0a10 10 0 0 1-20 0a12.5 12.5 0 0 1 25 0"/>
+            <path class="draw" pathLength="1" d="M74 148c10 9 62 9 72 0"/>
+          </svg>
+        </div>
+        <p class="cap mono"><b>Press.</b> The brass press turns its screw and the dough surrenders in perfect spirals.</p>
+      </div>
+      <div class="panel panel-4">
+        <span class="fig-no mono">FIG. 4</span>
+        <div class="art">
+          <svg class="woodcut" viewBox="0 0 220 170" role="img" aria-label="Woodcut: a spiral frying in a kadhai over flames">
+            <path class="draw" pathLength="1" d="M36 66h148"/>
+            <path class="draw" pathLength="1" d="M52 66c0 30 24 48 58 48s58-18 58-48"/>
+            <path class="draw" pathLength="1" d="M36 66c-9 0-9 12 0 12M184 66c9 0 9 12 0 12"/>
+            <path class="draw" pathLength="1" d="M110 92a2 2 0 0 1 4 0a4 4 0 0 1-8 0a6 6 0 0 1 12 0a8 8 0 0 1-16 0"/>
+            <circle class="draw thin" pathLength="1" cx="82" cy="84" r="3.4"/>
+            <circle class="draw thin" pathLength="1" cx="146" cy="88" r="3"/>
+            <circle class="draw thin" pathLength="1" cx="128" cy="76" r="2.4"/>
+            <path class="draw" pathLength="1" d="M88 146c-5-8 3-11 0-18 6 5 6 13 0 18ZM112 150c-5-8 3-11 0-18 6 5 6 13 0 18ZM136 146c-5-8 3-11 0-18 6 5 6 13 0 18Z"/>
+          </svg>
+          <span class="mini-plate"><img src="../../assets/images/cooking.jpg" alt="Chakli frying in the kadhai, photographed mid-batch"></span>
+        </div>
+        <p class="cap mono"><b>Fry.</b> Groundnut oil, morning shift only. Golden means done; Maa&rsquo;s ear knows the sound.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5 · PUBLIC NOTICE ================= -->
+<section class="notice-wrap" id="notice">
+  <div class="container">
+    <div class="notice">
+      <span class="stamp seal-stamp stamp-in"><span>Lot №7<small>Passed</small></span></span>
+      <div class="plate-frame notice-spice-plate"><div class="plate"><img src="../../assets/images/spices.jpg" alt="The house masalas, ground in-house"></div></div>
+      <div class="notice-inner">
+        <h2>Public Notice</h2>
+        <p class="not-sub mono">Standing orders of the proprietor · In force since the first batch</p>
+        <div class="rule-dots" aria-hidden="true"></div>
+        <div class="clause">
+          <span class="cno mono">Clause 1 —</span>
+          <p>No batch leaves this kitchen before <b>Maa has eaten from it.</b> Quality control is a spoon.</p>
+        </div>
+        <div class="clause">
+          <span class="cno mono">Clause 2 —</span>
+          <p><b>Afternoon oil is tired oil.</b> Morning batches only. The press keeps bakery hours.</p>
+        </div>
+        <div class="clause">
+          <span class="cno mono">Clause 3 —</span>
+          <p>If a chakli does not <b>snap in one clean break,</b> the whole tray is demoted to family snacks. The family does not complain.</p>
+        </div>
+        <div class="clause">
+          <span class="cno mono">Clause 4 —</span>
+          <p>Besan is weighed. <b>Love is not.</b> Both are added generously, in that order.</p>
+        </div>
+        <div class="notice-foot">
+          <div class="signature">S. (Maa)<small>Proprietor · Cmaa Press, Pune</small></div>
+          <div class="wax" aria-hidden="true">C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6 · LETTERS TO THE PRESS ================= -->
+<section class="letters" id="letters">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow mono">Page 5 · Correspondence Received</span>
+      <h2><span class="mr" data-t="LETTERS TO THE PRESS">LETTERS TO THE PRESS</span></h2>
+      <div class="hi yatra">डाक से आया प्यार</div>
+      <div class="orn-divider"><svg width="22" height="22" style="color:var(--leaf)" aria-hidden="true"><use href="#m-floret"/></svg></div>
+    </div>
+    <div class="post-grid">
+      <article class="postcard pc-1">
+        <svg class="postmark" viewBox="0 0 74 74" aria-hidden="true">
+          <circle cx="37" cy="37" r="33" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 4"/>
+          <text x="37" y="30" text-anchor="middle" font-family="Courier Prime" font-size="8.5" fill="currentColor">PUNE G.P.O.</text>
+          <text x="37" y="44" text-anchor="middle" font-family="Courier Prime" font-size="8" fill="currentColor">14 JUN 26</text>
+          <path d="M14 52c8-3 14 3 22 0s14 3 24 0" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+        <div class="pc-head">
+          <div class="addr mono">To: The Editor,<br>Cmaa Snack Press, Pune</div>
+          <div class="pstamp"><svg aria-hidden="true"><use href="#m-spiral"/></svg>CMAA POST · ₹5</div>
+        </div>
+        <blockquote class="mono">&ldquo;Ordered one tin for Diwali. Hid it from my own children. Am I sorry? I am not.&rdquo;</blockquote>
+        <cite>— R. Kulkarni, Pune</cite>
+      </article>
+      <article class="postcard pc-2">
+        <svg class="postmark" viewBox="0 0 74 74" aria-hidden="true">
+          <circle cx="37" cy="37" r="33" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 4"/>
+          <text x="37" y="30" text-anchor="middle" font-family="Courier Prime" font-size="8.5" fill="currentColor">MUMBAI R.M.S.</text>
+          <text x="37" y="44" text-anchor="middle" font-family="Courier Prime" font-size="8" fill="currentColor">02 MAY 26</text>
+          <path d="M14 52c8-3 14 3 22 0s14 3 24 0" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+        <div class="pc-head">
+          <div class="addr mono">To: Quality Dept.,<br>Cmaa Snack Press, Pune</div>
+          <div class="pstamp"><svg aria-hidden="true"><use href="#m-diya"/></svg>CMAA POST · ₹5</div>
+        </div>
+        <blockquote class="mono">&ldquo;The chakli survived the courier. My self-control did not. Please print more Butter Murukku.&rdquo;</blockquote>
+        <cite>— A. Mehta, Mumbai</cite>
+      </article>
+      <article class="postcard pc-3">
+        <svg class="postmark" viewBox="0 0 74 74" aria-hidden="true">
+          <circle cx="37" cy="37" r="33" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 4"/>
+          <text x="37" y="30" text-anchor="middle" font-family="Courier Prime" font-size="8.5" fill="currentColor">NAGPUR G.P.O.</text>
+          <text x="37" y="44" text-anchor="middle" font-family="Courier Prime" font-size="8" fill="currentColor">21 APR 26</text>
+          <path d="M14 52c8-3 14 3 22 0s14 3 24 0" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+        <div class="pc-head">
+          <div class="addr mono">To: The Proprietor,<br>Cmaa Snack Press, Pune</div>
+          <div class="pstamp"><svg aria-hidden="true"><use href="#m-leaf"/></svg>CMAA POST · ₹5</div>
+        </div>
+        <blockquote class="mono">&ldquo;Tastes exactly like my aji&rsquo;s — which is legally awkward, because my aji swears she never shared the recipe.&rdquo;</blockquote>
+        <cite>— S. Joshi, Nagpur</cite>
+      </article>
+      <article class="postcard pc-4">
+        <svg class="postmark" viewBox="0 0 74 74" aria-hidden="true">
+          <circle cx="37" cy="37" r="33" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 4"/>
+          <text x="37" y="30" text-anchor="middle" font-family="Courier Prime" font-size="8.5" fill="currentColor">BENGALURU H.O.</text>
+          <text x="37" y="44" text-anchor="middle" font-family="Courier Prime" font-size="8" fill="currentColor">30 MAR 26</text>
+          <path d="M14 52c8-3 14 3 22 0s14 3 24 0" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+        <div class="pc-head">
+          <div class="addr mono">To: Circulation Dept.,<br>Cmaa Snack Press, Pune</div>
+          <div class="pstamp"><svg aria-hidden="true"><use href="#m-kadhai"/></svg>CMAA POST · ₹5</div>
+        </div>
+        <blockquote class="mono">&ldquo;Amma sent one tin to my PG. I called home for the first time in three weeks. Coincidence? The tin knows.&rdquo;</blockquote>
+        <cite>— V. Deshpande, Bengaluru</cite>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 7 · DIWALI MELA SPECIAL ================= -->
+<section class="mela" id="mela">
+  <div class="halftone-bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="mela-grid">
+      <div class="mela-plate-zone">
+        <div class="sunrays" aria-hidden="true"></div>
+        <div class="plate-frame mela-plate">
+          <div class="plate"><img src="../../assets/images/faral.jpg" alt="The full Diwali faral spread — chakli, chivda, ladoo and more"></div>
+        </div>
+        <span class="mela-diwali" aria-hidden="true"><img src="../../assets/images/diwali.jpg" alt=""></span>
+      </div>
+      <div class="mela-copy">
+        <span class="eyebrow mono">Special Supplement · Festive Edition</span>
+        <h2><span class="mr" data-t="DIWALI MELA">DIWALI MELA</span></h2>
+        <div class="hi yatra">फराळ स्पेशल — पूरा डब्बा, पूरी रौनक</div>
+        <p>The Faral Box: bhajani chakli, poha chivda, crispy sev and the festival regulars, pressed to order and packed like a parcel worth waiting at the door for. Limited tins — the press is small and Maa refuses to hurry.</p>
+        <div class="mela-cta-row">
+          <button class="ticket" data-add="faral" id="faralTicket"><span class="stub">Festive</span><span class="body">Faral Box ₹549 — Book Your Tin</span></button>
+          <span class="stamp stamp-in"><span>Orders close<small>25 · OCT · 2026</small></span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 9 · GRIEVANCE WINDOW ================= -->
+<section class="grievance" id="grievance">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow mono">Page 6 · Queries, Complaints &amp; Compliments</span>
+      <h2><span class="mr" data-t="GRIEVANCE WINDOW">GRIEVANCE WINDOW</span></h2>
+      <div class="hi yatra">लाइन में लगिए, जवाब पक्का मिलेगा</div>
+      <div class="orn-divider"><svg width="22" height="22" style="color:var(--marigold)" aria-hidden="true"><use href="#m-floret"/></svg></div>
+    </div>
+    <div class="gw-list">
+      <details class="gw">
+        <summary><span class="wno mono">WINDOW №1</span><span class="q">Why is there no maida in anything?</span><span class="tok" aria-hidden="true">+</span></summary>
+        <p class="ans">Because Maa said so, and the press does not argue with the proprietor. Everything is built on bhajani — a seven-grain flour ground in-house. It tastes better, sits lighter, and wins every argument by default.</p>
+      </details>
+      <details class="gw">
+        <summary><span class="wno mono">WINDOW №2</span><span class="q">How long does a tin stay fresh?</span><span class="tok" aria-hidden="true">+</span></summary>
+        <p class="ans">Three weeks in an airtight tin, away from sunlight and siblings. In field tests conducted by our readers, no tin has survived past day four.</p>
+      </details>
+      <details class="gw">
+        <summary><span class="wno mono">WINDOW №3</span><span class="q">Where do you deliver, and what does it cost?</span><span class="tok" aria-hidden="true">+</span></summary>
+        <p class="ans">Pune in 1–2 days, the rest of India in 3–5. Dispatch is ₹49 flat, and free on orders above ₹499 — the press believes in round numbers and full tins.</p>
+      </details>
+      <details class="gw">
+        <summary><span class="wno mono">WINDOW №4</span><span class="q">Can I book the Faral Box for Diwali gifting?</span><span class="tok" aria-hidden="true">+</span></summary>
+        <p class="ans">Yes — and please do it early. Festive tins are pressed strictly in order of booking, and the list closes on 25 October. Corporate orders welcome; the press enjoys impressing your boss.</p>
+      </details>
+      <details class="gw">
+        <summary><span class="wno mono">WINDOW №5</span><span class="q">Is it really homemade, or "homemade"?</span><span class="tok" aria-hidden="true">+</span></summary>
+        <p class="ans">One kitchen, one brass press, one Maa. Small batches mean we sometimes sell out by noon — inconvenient for you, but the queue is the proof.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 10 · COLOPHON ================= -->
+<footer class="colophon">
+  <div class="container">
+    <svg class="press-spiral" aria-hidden="true"><use href="#m-press"/></svg>
+    <div class="cmaa-sm">CMAA</div>
+    <div class="hi yatra">सुनने में सीमा, अंदर से माँ</div>
+    <div class="colo-rule" aria-hidden="true"></div>
+    <p>Printed with ghee-proof ink · Photos: Wikimedia Commons (CC) · FSSAI 11526XXXXXXXXX<br>
+    Set in Anton, Yatra One &amp; Courier Prime on 90 GSM digital paper<br>
+    This is a design demo — the press opens for orders soon.</p>
+    <div class="barcode" aria-hidden="true"></div>
+    <div class="bc-no">8·906026·411038</div>
+  </div>
+</footer>
+
+<!-- ================= 8 · CART: BILL OF SUPPLY ================= -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Your tin — bill of supply">
+  <button class="bill-close mono" id="billClose" aria-label="Close the bill">CLOSE ×</button>
+  <div class="bill-head">
+    <div class="bh-title">CMAA — BILL OF SUPPLY</div>
+    <div class="bh-sub">Original for recipient · Kothrud, Pune 411038<br>GSTIN: PRESS-OF-ONE-MAA</div>
+    <div class="dashes" aria-hidden="true"></div>
+  </div>
+  <div class="bill-body" id="billBody"></div>
+  <div class="bill-totals" id="billTotals"></div>
+  <div class="bill-foot">
+    <button class="ticket tk-red" id="waCheckout"><span class="body">Checkout by WhatsApp →</span></button>
+    <div class="bill-barcode" aria-hidden="true"></div>
+    <p class="bill-thanks">Thank you, come again — and return the tin</p>
+  </div>
+</aside>
+
+<!-- sticky mobile ticket bar -->
+<div class="mob-bar" aria-hidden="false">
+  <div class="mb-in">
+    <button class="mb-tin" id="mobTin">Tin (<span id="barCount">0</span>) · <span id="barTotal">₹0</span></button>
+    <a class="mb-wa" href="https://wa.me/910000000000?text=Namaste%20Cmaa!%20Ek%20order%20chhapna%20hai." target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</div>
+
+<div class="toast mono" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
+<script>
+(function(){
+  'use strict';
+  /* ============ CATALOG & CART (Bill of Supply) ============ */
+  var CATALOG = {
+    'bhajani':       {n:'Bhajani Chakli',     p:199},
+    'butter-chakli': {n:'Butter Chakli',      p:219},
+    'masala-chakli': {n:'Masala Chakli',      p:219},
+    'murukku':       {n:'Butter Murukku',     p:209},
+    'poha-chivda':   {n:'Poha Chivda',        p:119},
+    'diet-chivda':   {n:'Roasted Diet Chivda',p:129},
+    'bombay-mix':    {n:'Bombay Mix',         p:119},
+    'sev':           {n:'Crispy Sev',         p:99},
+    'faral':         {n:'Diwali Faral Box',   p:549}
+  };
+  var FREE_SHIP_AT = 499, SHIP = 49, WA = '910000000000';
+  var cart = {};
+  try { cart = JSON.parse(localStorage.getItem('cmaa-press-tin') || '{}') || {}; } catch(e) { cart = {}; }
+
+  var drawer = document.getElementById('drawer'),
+      overlay = document.getElementById('drawerOverlay'),
+      billBody = document.getElementById('billBody'),
+      billTotals = document.getElementById('billTotals'),
+      toast = document.getElementById('toast'),
+      toastTimer = null;
+
+  function save(){ try{ localStorage.setItem('cmaa-press-tin', JSON.stringify(cart)); }catch(e){} }
+  function inr(n){ return '₹' + n.toLocaleString('en-IN'); }
+  function items(){ return Object.keys(cart).filter(function(k){ return CATALOG[k] && cart[k] > 0; }); }
+  function count(){ return items().reduce(function(s,k){ return s + cart[k]; }, 0); }
+  function subtotal(){ return items().reduce(function(s,k){ return s + cart[k]*CATALOG[k].p; }, 0); }
+
+  function render(){
+    var ks = items(), sub = subtotal();
+    document.getElementById('tinCount').textContent = count();
+    document.getElementById('barCount').textContent = count();
+    document.getElementById('barTotal').textContent = inr(sub);
+
+    if(!ks.length){
+      billBody.innerHTML =
+        '<div class="bill-empty"><svg aria-hidden="true"><use href="#m-tin"/></svg>' +
+        'THE TIN IS EMPTY.<br>A fixable tragedy —<br>the label wall is one page up.</div>';
+      billTotals.innerHTML = '';
+      return;
+    }
+    billBody.innerHTML = ks.map(function(k){
+      var it = CATALOG[k];
+      return '<div class="bill-row">' +
+        '<span class="qty-ctl"><button data-dec="'+k+'" aria-label="One less '+it.n+'">−</button>' +
+        '<span class="q">'+cart[k]+'</span>' +
+        '<button data-inc="'+k+'" aria-label="One more '+it.n+'">+</button></span>' +
+        '<span class="nm">'+it.n+'</span><span class="dots"></span>' +
+        '<span class="amt">'+inr(it.p*cart[k])+'</span></div>';
+    }).join('');
+    var ship = sub >= FREE_SHIP_AT ? 0 : SHIP;
+    billTotals.innerHTML =
+      '<div class="bill-row"><span class="nm">Subtotal</span><span class="dots"></span><span class="amt">'+inr(sub)+'</span></div>' +
+      '<div class="bill-row"><span class="nm">Dispatch</span><span class="dots"></span><span class="amt">'+(ship===0?'FREE':inr(ship))+'</span></div>' +
+      (ship>0 ? '<div class="ship-note">Add '+inr(FREE_SHIP_AT-sub)+' more — dispatch goes free at '+inr(FREE_SHIP_AT)+'</div>'
+              : '<div class="ship-note">Free dispatch unlocked. The press salutes you.</div>') +
+      '<div class="bill-row grand"><span class="nm">TOTAL</span><span class="dots"></span><span class="amt">'+inr(sub+ship)+'</span></div>';
+  }
+
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 1800);
+  }
+  function openDrawer(){ drawer.classList.add('open'); overlay.classList.add('show'); document.getElementById('billClose').focus(); }
+  function closeDrawer(){ drawer.classList.remove('open'); overlay.classList.remove('show'); }
+
+  document.addEventListener('click', function(ev){
+    var t = ev.target.closest('[data-add],[data-inc],[data-dec]');
+    if(!t) return;
+    var id;
+    if(t.hasAttribute('data-add')){
+      id = t.getAttribute('data-add');
+      cart[id] = (cart[id]||0) + 1;
+      save(); render();
+      showToast(CATALOG[id].n.toUpperCase() + ' — PRESSED INTO THE TIN');
+      if(window.matchMedia('(min-width: 769px)').matches) openDrawer();
+    } else if(t.hasAttribute('data-inc')){
+      id = t.getAttribute('data-inc'); cart[id] = (cart[id]||0)+1; save(); render();
+    } else {
+      id = t.getAttribute('data-dec');
+      cart[id] = (cart[id]||0)-1;
+      if(cart[id] <= 0) delete cart[id];
+      save(); render();
+    }
+  });
+
+  document.getElementById('tinBtn').addEventListener('click', openDrawer);
+  document.getElementById('mobTin').addEventListener('click', openDrawer);
+  document.getElementById('billClose').addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeDrawer(); });
+
+  document.getElementById('waCheckout').addEventListener('click', function(){
+    var ks = items();
+    var lines = ['Namaste Cmaa! Order from the press:', ''];
+    if(!ks.length){ lines.push('(Tin is empty — recommend me something kadak.)'); }
+    else {
+      ks.forEach(function(k){ lines.push('- ' + CATALOG[k].n + ' x' + cart[k] + ' — ' + inr(CATALOG[k].p*cart[k])); });
+      var sub = subtotal(), ship = sub >= FREE_SHIP_AT ? 0 : SHIP;
+      lines.push('', 'Dispatch: ' + (ship===0 ? 'FREE' : inr(ship)), 'TOTAL: ' + inr(sub+ship));
+    }
+    window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
+  });
+
+  render();
+
+  /* ============ MOTION (restrained; honors reduced motion) ============ */
+  if(window.gsap && window.ScrollTrigger){
+    gsap.registerPlugin(ScrollTrigger);
+    var mm = gsap.matchMedia();
+    mm.add('(prefers-reduced-motion: no-preference)', function(){
+
+      /* stamp-thunk reveals */
+      document.querySelectorAll('.stamp-in').forEach(function(el){
+        var tl = gsap.timeline({
+          scrollTrigger:{ trigger: el, start: 'top 88%' }
+        });
+        tl.from(el, {scale:1.15, opacity:0, rotation:'+=3', duration:.3, ease:'power3.in'})
+          .to(el, {x:2, duration:.05}).to(el, {x:-2, duration:.05}).to(el, {x:0, duration:.05});
+      });
+
+      /* labels rise like pasted-up posters */
+      document.querySelectorAll('.label').forEach(function(el, i){
+        gsap.from(el, {
+          y:34, opacity:0, duration:.6, ease:'power2.out', delay:(i%4)*.07,
+          scrollTrigger:{ trigger: el, start: 'top 90%' }
+        });
+      });
+
+      /* woodcut comic draws itself on */
+      document.querySelectorAll('.panel').forEach(function(panel, i){
+        var paths = panel.querySelectorAll('.draw');
+        if(!paths.length) return;
+        gsap.fromTo(paths, {strokeDashoffset:1}, {
+          strokeDashoffset:0, duration:1.5, ease:'power1.inOut', stagger:.08, delay: i*.12,
+          scrollTrigger:{ trigger: panel, start: 'top 82%' }
+        });
+      });
+
+      /* postcards drift in from the sorting office */
+      document.querySelectorAll('.postcard').forEach(function(el, i){
+        gsap.from(el, {
+          y:28, opacity:0, rotation:'+=1.5', duration:.55, ease:'power2.out', delay:(i%2)*.1,
+          scrollTrigger:{ trigger: el, start: 'top 90%' }
+        });
+      });
+
+      /* public notice: rules print themselves line by line */
+      gsap.from('.clause', {
+        opacity:0, y:14, duration:.45, stagger:.12, ease:'power1.out',
+        scrollTrigger:{ trigger: '.notice', start: 'top 74%' }
+      });
+    });
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Cmaa — Packaging Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Mulish:ital,wght@0,300..900;1,300..900&family=Caveat:wght@500;700&family=Courier+Prime:ital,wght@0,400;0,700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F4ECDD;--paper:#FBF5E9;--terracotta:#B5512E;--deep:#8C3D22;--mustard:#D99A2B;
+  --gold:#E9B949;--ink:#2E2017;--ink-soft:#5b4636;--curry:#5E6B3B;--kraft:#D9C2A3;--chilli:#C2311F;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'Mulish',sans-serif;line-height:1.55;
+  background-image:radial-gradient(circle at 10% 4%,rgba(217,194,163,.35),transparent 40%),
+                   radial-gradient(circle at 92% 90%,rgba(217,154,43,.10),transparent 42%)}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* ---------- hero ---------- */
+header.wrap{padding:74px 24px 40px;position:relative}
+.eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:var(--terracotta);margin-bottom:14px}
+h1{font-family:'Fraunces',serif;font-size:clamp(38px,6.4vw,66px);font-weight:560;line-height:1.04;margin:0 0 16px}
+h1 em{font-style:italic;color:var(--terracotta)}
+.lede{max-width:640px;color:var(--ink-soft);font-size:17.5px;margin:0}
+.hero-rule{display:flex;align-items:center;gap:14px;margin-top:30px}
+.hero-rule span{height:1.5px;flex:0 0 90px;background:var(--deep);opacity:.5}
+.hero-rule b{font-size:11px;font-weight:800;letter-spacing:.24em;color:var(--deep)}
+
+/* ---------- section chrome ---------- */
+section.wrap{padding:54px 24px 26px}
+.sec-head{margin-bottom:26px}
+.sec-eyebrow{font-family:'Courier Prime',monospace;font-size:12.5px;font-weight:700;letter-spacing:.22em;color:var(--deep);text-transform:uppercase}
+h2{font-family:'Fraunces',serif;font-size:clamp(26px,3.6vw,40px);font-weight:560;margin:6px 0 8px}
+.sec-sub{color:var(--ink-soft);max-width:660px;font-size:15.5px;margin:0}
+
+/* ---------- reveals ---------- */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .foil-card:hover .foil-shine{animation:none !important}
+}
+
+/* ---------- label slots ---------- */
+.label-slot svg{display:block}
+.mock .window-ph{display:none}   /* mockups: hide die-line, real photo shows through the cut */
+
+/* ---------- shelf lineup ---------- */
+.stage{position:relative;border-radius:22px;overflow:hidden;border:1px solid rgba(46,32,23,.14);
+  background:linear-gradient(180deg,#F3E8D2 0%,#EBDDBE 58%,#E2D0AA 74%,#C8B189 74.4%,#D8C49F 100%);
+  box-shadow:0 30px 60px -40px rgba(46,32,23,.55)}
+.stage::before{content:'';position:absolute;left:0;right:0;bottom:84px;height:2px;background:rgba(46,32,23,.22)}
+.stage::after{content:'';position:absolute;left:0;right:0;bottom:0;height:84px;
+  background:linear-gradient(180deg,rgba(46,32,23,.14),rgba(46,32,23,0) 70%)}
+.shelf{display:flex;gap:38px;justify-content:center;align-items:flex-end;padding:64px 34px 84px;position:relative;z-index:1}
+.pouch{position:relative;width:var(--w,236px);flex:0 0 auto;margin:0}
+.pouch-inner{position:relative;width:100%}
+.pouch-inner::before{content:'';display:block;padding-top:143.3%}
+.pouch-body,.pouch-shine{position:absolute;inset:0;width:100%;height:100%}
+.pouch-shine{pointer-events:none;z-index:4}
+.pouch-front{position:absolute;left:14%;top:13.95%;width:72%;height:70.3%;z-index:2}
+.pouch-front .win-photo{position:absolute;left:26%;top:40%;width:48%;height:34%;object-fit:cover;z-index:0}
+.pouch-front .label-slot{position:absolute;inset:0;z-index:1}
+.pouch-front .label-slot svg{width:100%;height:100%}
+.pouch-inner::after{content:'';position:absolute;left:4%;right:4%;bottom:-8px;height:18px;z-index:-1;
+  background:radial-gradient(ellipse at 50% 50%,rgba(46,32,23,.5),rgba(46,32,23,0) 72%);filter:blur(3px)}
+.pouch figcaption{margin-top:20px;text-align:center;font-size:12.5px;font-weight:800;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-soft)}
+.pouch figcaption i{display:block;font-style:normal;font-family:'Caveat',cursive;font-size:17px;
+  letter-spacing:0;text-transform:none;font-weight:600;color:var(--deep)}
+
+/* ---------- label flats ---------- */
+.direction{margin-bottom:40px}
+.direction-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:6px}
+.direction-head h3{font-family:'Fraunces',serif;font-size:25px;font-weight:600;margin:0}
+.direction-head .tag{font-family:'Courier Prime',monospace;font-size:12px;font-weight:700;letter-spacing:.16em;
+  color:var(--paper);background:var(--deep);padding:3px 10px;border-radius:99px}
+.rationale{color:var(--ink-soft);font-size:14.5px;max-width:780px;margin:0 0 20px}
+.flat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.flat{background:var(--paper);border:1px solid rgba(46,32,23,.13);border-radius:14px;padding:16px 16px 12px;
+  box-shadow:0 18px 36px -28px rgba(46,32,23,.55)}
+.flat a{display:block;line-height:0}
+.flat .label-slot svg{width:100%;height:auto;box-shadow:0 8px 22px -14px rgba(46,32,23,.5)}
+.flat figcaption{margin-top:10px;font-family:'Courier Prime',monospace;font-size:11.5px;color:var(--ink-soft);
+  display:flex;align-items:center;gap:8px}
+.flat .chip{width:11px;height:11px;border-radius:3px;flex:0 0 auto;border:1px solid rgba(46,32,23,.25)}
+
+/* ---------- format mockups ---------- */
+.formats{display:flex;gap:64px;justify-content:center;align-items:flex-end;padding:64px 30px 92px;position:relative;z-index:1}
+.fmt{position:relative;text-align:center}
+.fmt-cap{margin-top:22px;font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+/* tin */
+.tin{position:relative;width:250px;height:334px}
+.tin-body{position:absolute;left:0;right:0;top:28px;bottom:0;background:#C9B291;
+  border-radius:10px 10px 16px 16px;overflow:hidden;
+  box-shadow:0 24px 30px -22px rgba(46,32,23,.6)}
+.tin-label{position:absolute;left:14%;width:72%;top:6.4%;height:87%}
+.tin-label svg{width:100%;height:100%}
+.tin-photo{position:absolute;left:33%;top:41.6%;width:34.2%;height:29%;object-fit:cover}
+.tin-cyl{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,rgba(46,32,23,.45) 0%,rgba(46,32,23,.10) 11%,rgba(255,255,255,.32) 30%,rgba(255,255,255,.04) 52%,rgba(46,32,23,.08) 76%,rgba(46,32,23,.5) 100%)}
+.tin-lid{position:absolute;left:-5px;right:-5px;top:0;height:58px;border-radius:50%;
+  background:linear-gradient(180deg,#EFE8D8 0%,#C8BA9D 55%,#94856C 100%);
+  box-shadow:inset 0 -8px 12px rgba(46,32,23,.35),0 4px 10px rgba(46,32,23,.35)}
+.tin-lid::after{content:'';position:absolute;inset:8px 16px;border-radius:50%;
+  background:linear-gradient(180deg,#E2D8C2,#C3B497);box-shadow:inset 0 3px 5px rgba(255,255,255,.65)}
+/* jar */
+.jar{position:relative;width:232px;height:330px}
+.jar-lid{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:158px;height:40px;border-radius:10px;
+  background:linear-gradient(180deg,#9A8B71,#6E6250);box-shadow:0 3px 8px rgba(46,32,23,.4);z-index:2}
+.jar-lid::after{content:'';position:absolute;inset:0;border-radius:10px;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.16) 0 3px,rgba(0,0,0,.14) 3px 6px);mix-blend-mode:overlay}
+.jar-neck{position:absolute;top:42px;left:20%;right:20%;height:14px;background:#E8DCC2;border-radius:5px;opacity:.9}
+.jar-body{position:absolute;top:48px;left:0;right:0;bottom:0;border-radius:20px 20px 36px 36px;overflow:hidden;
+  background:#EDE2CB;box-shadow:0 24px 30px -22px rgba(46,32,23,.55)}
+.jar-fill{position:absolute;top:0;left:0;width:100%;height:57%;object-fit:cover}
+.jar-band{position:absolute;left:0;right:0;top:56.6%;height:43%;overflow:hidden;background:var(--cream)}
+.jar-band svg{width:100%;height:auto;display:block}
+.glass{position:absolute;inset:0;pointer-events:none;border-radius:20px 20px 36px 36px;
+  background:linear-gradient(90deg,rgba(255,255,255,0) 4%,rgba(255,255,255,.5) 7.5%,rgba(255,255,255,.14) 13%,rgba(255,255,255,0) 18%),
+             linear-gradient(90deg,transparent 82%,rgba(255,255,255,.38) 88%,transparent 94%),
+             linear-gradient(90deg,rgba(46,32,23,.20) 0%,transparent 7%,transparent 93%,rgba(46,32,23,.24) 100%),
+             linear-gradient(180deg,rgba(255,255,255,.28),transparent 9%)}
+.fmt .shadow{position:absolute;left:6%;right:6%;bottom:-9px;height:18px;
+  background:radial-gradient(ellipse at 50% 50%,rgba(46,32,23,.5),rgba(46,32,23,0) 72%);filter:blur(3px)}
+
+/* ---------- sticker & finish sheet ---------- */
+.finish-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.fcard{border-radius:16px;border:1px solid rgba(46,32,23,.14);min-height:300px;padding:26px 20px 18px;position:relative;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;overflow:hidden;
+  box-shadow:0 18px 38px -28px rgba(46,32,23,.6)}
+.fcard h4{position:absolute;left:18px;top:12px;margin:0;font-family:'Courier Prime',monospace;font-size:11.5px;
+  font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+.fcard.kraft{background:linear-gradient(160deg,#E2CFAF,#D2BB93)}
+.fcard.box{background:linear-gradient(180deg,#C8A87C,#B99668)}
+.fcard.box::before{content:'';position:absolute;top:0;bottom:0;left:50%;width:2px;background:rgba(46,32,23,.25)}
+.fcard.paper{background:var(--paper)}
+.fcard.dark{background:radial-gradient(circle at 30% 20%,#3a2b1e,#241a12 70%)}
+.fcard.dark h4{color:rgba(244,236,221,.55)}
+.sticker-img{width:76%;max-width:230px;transform:rotate(-6deg);filter:drop-shadow(0 10px 14px rgba(46,32,23,.4))}
+.tape-img{width:118%;max-width:none;transform:rotate(-3.2deg);filter:drop-shadow(0 8px 10px rgba(46,32,23,.38))}
+.stamp{transform:rotate(-3deg);border:2px dashed #9C3B24;border-radius:9px;color:#9C3B24;padding:16px 20px;
+  font-family:'Courier Prime',monospace;font-weight:700;font-size:12.5px;letter-spacing:.08em;line-height:2;position:relative;z-index:1;background:transparent}
+.stamp .hand{font-family:'Caveat',cursive;font-size:22px;letter-spacing:0;font-weight:700}
+.stamp small{display:block;font-size:9px;letter-spacing:.12em;line-height:1.4;opacity:.85}
+.stamp-ghost{position:absolute;transform:rotate(2.4deg) translate(14px,-10px);opacity:.22;z-index:0}
+.foil{position:relative;width:210px;height:210px;background:linear-gradient(125deg,#8a5a17 0%,#E9B949 34%,#FFF3C4 50%,#E9B949 66%,#8a5a17 100%);
+  -webkit-mask:url('../assets/logos/emblem-2-mono.svg') center/contain no-repeat;
+          mask:url('../assets/logos/emblem-2-mono.svg') center/contain no-repeat}
+.foil-shine{position:absolute;inset:-20%;background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.95) 50%,transparent 58%);
+  transform:translateX(-130%)}
+.foil-card:hover .foil-shine{animation:sweep 1.1s ease}
+@keyframes sweep{from{transform:translateX(-130%)}to{transform:translateX(130%)}}
+.fcard p.note{font-size:11.5px;color:inherit;opacity:.75;margin:10px 0 0;text-align:center}
+.fcard.dark p.note{color:var(--cream)}
+
+/* ---------- logos in context ---------- */
+.context-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ctx{border-radius:16px;border:1px solid rgba(46,32,23,.14);min-height:320px;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;box-shadow:0 18px 38px -28px rgba(46,32,23,.6)}
+.ctx h4{position:absolute;left:18px;top:12px;margin:0;font-family:'Courier Prime',monospace;font-size:11.5px;
+  font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);z-index:5}
+/* embossed tin lid */
+.ctx.lid-ctx{background:linear-gradient(160deg,#EFE3CB,#DCC9A4)}
+.tinlid{position:relative;width:244px;height:244px;border-radius:50%;
+  background:radial-gradient(circle at 38% 30%,#D5C3A0,#BCA57E 62%,#A08862 100%);
+  box-shadow:inset 0 6px 12px rgba(255,255,255,.5),inset 0 -10px 18px rgba(46,32,23,.35),0 16px 26px -14px rgba(46,32,23,.55)}
+.tinlid::before{content:'';position:absolute;inset:14px;border-radius:50%;
+  box-shadow:inset 0 2px 4px rgba(46,32,23,.3),inset 0 -2px 4px rgba(255,255,255,.45)}
+.emboss{position:absolute;inset:46px}
+.emboss span{position:absolute;inset:0;-webkit-mask:url('../assets/logos/emblem-2-mono.svg') center/contain no-repeat;
+  mask:url('../assets/logos/emblem-2-mono.svg') center/contain no-repeat}
+.emboss .lo{background:rgba(255,251,240,.6);transform:translateY(2px)}
+.emboss .hi{background:rgba(46,32,23,.55);transform:translateY(-1.5px)}
+.emboss .mid{background:#A78E66}
+/* signboard */
+.ctx.sign-ctx{background:linear-gradient(180deg,#4a3524,#2f2115);}
+.signboard{position:relative;width:86%;max-width:360px;padding:34px 24px;border-radius:8px;
+  background:repeating-linear-gradient(90deg,#5b3d26 0 26px,#634428 26px 52px,#573a24 52px 78px);
+  border:6px solid #3b2817;box-shadow:inset 0 0 30px rgba(0,0,0,.5),0 18px 30px -14px rgba(0,0,0,.7)}
+.signboard::after{content:'';position:absolute;inset:0;border-radius:2px;
+  background:radial-gradient(ellipse at 50% -30%,rgba(233,185,73,.4),transparent 62%)}
+.signboard img{display:block;width:100%;height:auto;filter:drop-shadow(0 2px 2px rgba(0,0,0,.6))}
+.signboard i{position:absolute;width:9px;height:9px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#d9c9a5,#6e5a3c);box-shadow:0 1px 2px rgba(0,0,0,.7)}
+.signboard i:nth-child(1){left:8px;top:8px}.signboard i:nth-child(2){right:8px;top:8px}
+.signboard i:nth-child(3){left:8px;bottom:8px}.signboard i:nth-child(4){right:8px;bottom:8px}
+/* app icon + swing tag */
+.ctx.tag-ctx{background:linear-gradient(160deg,#F6EEDC,#E7D8B9)}
+.tag-duo{display:flex;align-items:center;gap:38px}
+.appicon{position:relative;width:124px;height:124px;border-radius:30px;overflow:hidden;
+  background:radial-gradient(circle at 32% 26%,#FBF5E9,#EDDFC2 70%,#DFCCA5);
+  border:1px solid rgba(46,32,23,.2);box-shadow:0 14px 24px -12px rgba(46,32,23,.55)}
+.appicon img{position:absolute;inset:17px;width:calc(100% - 34px);height:calc(100% - 34px)}
+.appicon::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.35),transparent 46%)}
+.swing{position:relative;padding-top:44px}
+.twine{position:absolute;top:0;left:50%;width:2.5px;height:52px;transform:translateX(-50%) rotate(7deg);transform-origin:top;
+  background:repeating-linear-gradient(180deg,#8a6f4b 0 4px,#a58a61 4px 8px);border-radius:2px}
+.swingtag{position:relative;width:118px;padding:36px 12px 20px;text-align:center;transform:rotate(7deg);
+  background:linear-gradient(160deg,#E0CDA9,#D2BC92);border-radius:12px;border:1px solid rgba(46,32,23,.22);
+  box-shadow:0 12px 20px -10px rgba(46,32,23,.5)}
+.swingtag::before{content:'';position:absolute;top:12px;left:50%;transform:translateX(-50%);width:14px;height:14px;
+  border-radius:50%;background:var(--cream);box-shadow:inset 0 1px 3px rgba(46,32,23,.5)}
+.swingtag img{width:52px;height:52px}
+.swingtag b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:19px;margin-top:6px}
+.swingtag span{display:block;font-family:'Caveat',cursive;font-size:15.5px;color:var(--deep)}
+
+/* ---------- footer ---------- */
+footer{margin-top:70px;padding:34px 0 46px;border-top:1.5px solid rgba(46,32,23,.18)}
+footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center}
+footer p{margin:0;font-size:13px;color:var(--ink-soft)}
+footer a{color:var(--terracotta);font-weight:800;text-decoration:none;border-bottom:1.5px solid rgba(181,81,46,.4)}
+footer a:hover{border-bottom-color:var(--terracotta)}
+
+/* ---------- responsive ---------- */
+@media(max-width:1020px){
+  .flat-grid{grid-template-columns:repeat(2,1fr)}
+  .finish-grid{grid-template-columns:repeat(2,1fr)}
+  .context-grid{grid-template-columns:1fr}
+  .formats{gap:36px}
+}
+@media(max-width:700px){
+  .shelf{justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;padding:48px 22px 84px;
+    scrollbar-width:thin}
+  .pouch{scroll-snap-align:center;--w:210px !important}
+  .formats{flex-direction:column;align-items:center;padding:48px 22px 70px;gap:64px}
+  .flat-grid{grid-template-columns:1fr}
+  .finish-grid{grid-template-columns:1fr}
+  .tag-duo{flex-direction:column;gap:26px}
+  header.wrap{padding:52px 24px 26px}
+  section.wrap{padding:40px 24px 20px}
+}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="eyebrow">Cmaa · Homemade Chakli &amp; Chivda · Pune</div>
+  <h1>Cmaa — <em>Packaging Studio</em></h1>
+  <p class="lede">A print-ready front-of-pack label system for Seema's hand-pressed snacks — two design directions,
+  four flavours, real die-cut windows, and the finishing details that make a pouch feel like it came from Maa's kitchen.</p>
+  <div class="hero-rule"><span></span><b>LABEL SYSTEM · V1 · FOR TEAM VOTE</b><span></span></div>
+</header>
+
+<!-- 1 · SHELF LINEUP -->
+<section class="wrap" id="shelf">
+  <div class="sec-head reveal">
+    <div class="sec-eyebrow">01 — The Shelf Lineup</div>
+    <h2>Four flavours, one family</h2>
+    <p class="sec-sub">Direction A applied to stand-up pouches. The arch is a true die-cut — what you see in each
+    window is the real product photograph showing through the aperture.</p>
+  </div>
+  <div class="stage reveal">
+    <div class="shelf" id="shelf-row"></div>
+  </div>
+</section>
+
+<!-- 2 · LABEL FLATS -->
+<section class="wrap" id="flats">
+  <div class="sec-head reveal">
+    <div class="sec-eyebrow">02 — Label Flats</div>
+    <h2>Two directions, side by side</h2>
+    <p class="sec-sub">The same information architecture — brand band, bilingual product name, die-cut window, spice meter,
+    veg mark, batch stamp, FSSAI &amp; barcode — composed in two very different voices. Click any flat to open the SVG.</p>
+  </div>
+
+  <div class="direction reveal">
+    <div class="direction-head"><h3>Direction A — Warm Editorial</h3><span class="tag">CREAM · GOLD · FRAUNCES</span></div>
+    <p class="rationale">Cream paper, high-contrast serif and gold hairlines. Flavour is coded through the band colour and
+    headline while every brand element stays fixed across the range — so the shelf reads as one warm, premium family.
+    The arched window nods to old Pune storefront doorways.</p>
+    <div class="flat-grid" id="flats-a"></div>
+  </div>
+
+  <div class="direction reveal">
+    <div class="direction-head"><h3>Direction B — Kraft Press</h3><span class="tag">KRAFT · INK · LETTERPRESS</span></div>
+    <p class="rationale">One colour of ink on unbleached kraft, letterpress rules, mono details and a hand-stamped batch block.
+    Flavour appears only as a single spot-colour band and a small diamond chip — honest, utilitarian, straight from the
+    stamp room. The circular window feels like a tin viewing port.</p>
+    <div class="flat-grid" id="flats-b"></div>
+  </div>
+</section>
+
+<!-- 3 · FORMAT MOCKUPS -->
+<section class="wrap" id="formats">
+  <div class="sec-head reveal">
+    <div class="sec-eyebrow">03 — Format Mockups</div>
+    <h2>One label, three formats</h2>
+    <p class="sec-sub">The Bhajani Chakli label (Direction A) applied to a resealable pouch, a round gifting tin and a
+    glass jar — the three formats on the team's shortlist.</p>
+  </div>
+  <div class="stage reveal">
+    <div class="formats">
+      <div class="fmt" id="fmt-pouch"></div>
+      <div class="fmt">
+        <div class="tin">
+          <div class="tin-body">
+            <img class="tin-photo" src="../assets/images/chakli-2.jpg" alt="Bhajani chakli visible through the tin label window">
+            <div class="label-slot mock tin-label" data-label="label-a-bhajani"></div>
+            <div class="tin-cyl"></div>
+          </div>
+          <div class="tin-lid"></div>
+          <div class="shadow"></div>
+        </div>
+        <div class="fmt-cap">Round Tin · 500 g</div>
+      </div>
+      <div class="fmt">
+        <div class="jar">
+          <div class="jar-lid"></div>
+          <div class="jar-neck"></div>
+          <div class="jar-body">
+            <img class="jar-fill" src="../assets/images/chakli-1.jpg" alt="Chakli spirals filled to the neck of the jar">
+            <div class="label-slot mock jar-band" data-label="label-a-bhajani"></div>
+            <div class="glass"></div>
+          </div>
+          <div class="shadow"></div>
+        </div>
+        <div class="fmt-cap">Glass Jar · 400 g</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · STICKER & FINISH SHEET -->
+<section class="wrap" id="finish">
+  <div class="sec-head reveal">
+    <div class="sec-eyebrow">04 — Sticker &amp; Finish Sheet</div>
+    <h2>The finishing touches</h2>
+    <p class="sec-sub">The small pieces that close a pack: the flap seal, the carton tape, the hand-inked batch stamp,
+    and a gold-foil crest for the festive tins. Hover the crest.</p>
+  </div>
+  <div class="finish-grid">
+    <div class="fcard kraft reveal">
+      <h4>Seal Sticker</h4>
+      <img class="sticker-img" src="../assets/packaging/seal-sticker.svg" alt="Round scalloped sticker reading Hand-pressed by Maa">
+      <p class="note">70 mm scalloped seal — pouch flaps &amp; jar lids</p>
+    </div>
+    <div class="fcard box reveal">
+      <h4>Packing Tape</h4>
+      <img class="tape-img" src="../assets/packaging/tape-strip.svg" alt="Kraft packing tape with repeating Cmaa wordmark and chakli spiral">
+      <p class="note">48 mm carton tape — spiral + wordmark repeat</p>
+    </div>
+    <div class="fcard paper reveal">
+      <h4>Batch Stamp</h4>
+      <div class="stamp stamp-ghost" aria-hidden="true">
+        BATCH NO. <span class="hand">SB-11</span><br>PACKED ON <span class="hand">02·07·26</span>
+        <small>USE WITHIN 60 DAYS OF PACKING</small>
+      </div>
+      <div class="stamp">
+        BATCH NO. <span class="hand">SB-11</span><br>PACKED ON <span class="hand">02·07·26</span>
+        <small>USE WITHIN 60 DAYS OF PACKING</small>
+      </div>
+      <p class="note">Rubber stamp, red-brown ink — filled in by hand</p>
+    </div>
+    <div class="fcard dark foil-card reveal">
+      <h4>Foil Crest</h4>
+      <div class="foil"><div class="foil-shine"></div></div>
+      <p class="note">Gold hot-foil wax seal — festive tin lids</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · LOGOS IN CONTEXT -->
+<section class="wrap" id="context">
+  <div class="sec-head reveal">
+    <div class="sec-eyebrow">05 — Logos in Context</div>
+    <h2>The marks, out in the world</h2>
+    <p class="sec-sub">Three quick environment checks: the wax-seal emblem embossed into a tin lid, the wordmark as a
+    painted storefront board, and the chakli-sun as app icon and swing tag.</p>
+  </div>
+  <div class="context-grid">
+    <div class="ctx lid-ctx reveal">
+      <h4>Embossed Tin Lid</h4>
+      <div class="tinlid">
+        <div class="emboss"><span class="lo"></span><span class="hi"></span><span class="mid"></span></div>
+      </div>
+    </div>
+    <div class="ctx sign-ctx reveal">
+      <h4>Storefront Board</h4>
+      <div class="signboard"><i></i><i></i><i></i><i></i>
+        <img src="../assets/logos/typo-1-rev.svg" alt="Cmaa wordmark painted on a wooden storefront board">
+      </div>
+    </div>
+    <div class="ctx tag-ctx reveal">
+      <h4>App Icon · Swing Tag</h4>
+      <div class="tag-duo">
+        <div class="appicon"><img src="../assets/logos/symbol-2-icon.svg" alt="Cmaa chakli-sun app icon"></div>
+        <div class="swing">
+          <div class="twine"></div>
+          <div class="swingtag">
+            <img src="../assets/logos/symbol-2-icon.svg" alt="">
+            <b>Cmaa</b><span>thank you!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>All packaging concepts are drafts for the team vote · Photos: Wikimedia Commons (CC)</p>
+    <p><a href="../index.html">Back to the Cmaa brand hub</a></p>
+  </div>
+</footer>
+
+<script>
+const FLAVOURS = [
+  {slug:'bhajani',     name:'Bhajani Chakli', dev:'भाजणी चकली', accent:'#B5512E', photo:'chakli-2.jpg'},
+  {slug:'butter',      name:'Butter Chakli',  dev:'बटर चकली',  accent:'#D99A2B', photo:'murukku.jpg'},
+  {slug:'masala',      name:'Masala Chivda',  dev:'मसाला चिवडा', accent:'#C2311F', photo:'namkeen-mix.jpg'},
+  {slug:'poha-chivda', name:'Poha Chivda',    dev:'पोहा चिवडा', accent:'#5E6B3B', photo:'chivda-1.jpg'},
+];
+
+function pouchHTML(f, i, w, caption=true){
+  const crimpLines = Array.from({length:37},(_,k)=>
+    `<line x1="${22+k*7}" y1="10" x2="${22+k*7}" y2="36" stroke="rgba(46,32,23,.13)" stroke-width="1.4"/>`).join('');
+  const bodyPath = 'M24 38 H276 V384 Q276 407 246 413 H54 Q24 407 24 384 Z';
+  const fullPath = 'M18 8 H282 V38 H276 V384 Q276 407 246 413 H54 Q24 407 24 384 V38 H18 Z';
+  return `<figure class="pouch reveal" style="--w:${w}px">
+    <div class="pouch-inner">
+      <svg class="pouch-body" viewBox="0 0 300 430" aria-hidden="true">
+        <defs>
+          <linearGradient id="pgB${i}" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#C8B592"/><stop offset=".1" stop-color="#EFE4CB"/>
+            <stop offset=".5" stop-color="#F8F0DD"/><stop offset=".9" stop-color="#E5D7B9"/>
+            <stop offset="1" stop-color="#BCA983"/>
+          </linearGradient>
+          <linearGradient id="pgS${i}" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="rgba(46,32,23,.30)"/><stop offset="1" stop-color="rgba(46,32,23,0)"/>
+          </linearGradient>
+        </defs>
+        <path d="${bodyPath}" fill="url(#pgB${i})"/>
+        <rect x="24" y="38" width="252" height="13" fill="url(#pgS${i})"/>
+        <line x1="41" y1="42" x2="41" y2="406" stroke="rgba(46,32,23,.15)"/>
+        <line x1="259" y1="42" x2="259" y2="406" stroke="rgba(46,32,23,.15)"/>
+        <path d="M24 384 Q150 402 276 384 Q276 407 246 413 L54 413 Q24 407 24 384 Z" fill="rgba(46,32,23,.13)"/>
+        <g>
+          <rect x="18" y="8" width="264" height="30" rx="3" fill="${f.accent}"/>
+          ${crimpLines}
+          <rect x="18" y="8" width="264" height="9" rx="3" fill="rgba(255,255,255,.28)"/>
+          <rect x="18" y="30" width="264" height="8" fill="rgba(46,32,23,.22)"/>
+        </g>
+      </svg>
+      <div class="pouch-front">
+        <img class="win-photo" src="../assets/images/${f.photo}" alt="${f.name} showing through the die-cut window" loading="lazy">
+        <div class="label-slot mock" data-label="label-a-${f.slug}"></div>
+      </div>
+      <svg class="pouch-shine" viewBox="0 0 300 430" aria-hidden="true">
+        <defs>
+          <linearGradient id="shW${i}" x1="0" x2="1" y1="0" y2="0" gradientTransform="rotate(7)">
+            <stop offset=".16" stop-color="rgba(255,255,255,0)"/>
+            <stop offset=".28" stop-color="rgba(255,255,255,.34)"/>
+            <stop offset=".38" stop-color="rgba(255,255,255,.08)"/>
+            <stop offset=".52" stop-color="rgba(255,255,255,0)"/>
+          </linearGradient>
+          <linearGradient id="shE${i}" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="rgba(46,32,23,.28)"/><stop offset=".07" stop-color="rgba(46,32,23,0)"/>
+            <stop offset=".9" stop-color="rgba(46,32,23,0)"/><stop offset="1" stop-color="rgba(46,32,23,.36)"/>
+          </linearGradient>
+        </defs>
+        <path d="${fullPath}" fill="url(#shW${i})"/>
+        <path d="${fullPath}" fill="url(#shE${i})"/>
+      </svg>
+    </div>
+    ${caption ? `<figcaption>${f.name}<i>${f.dev}</i></figcaption>` : ''}
+  </figure>`;
+}
+
+/* build shelf */
+document.getElementById('shelf-row').innerHTML =
+  FLAVOURS.map((f,i)=>pouchHTML(f,i,236)).join('');
+
+/* build format pouch (bhajani, larger) */
+document.getElementById('fmt-pouch').innerHTML =
+  pouchHTML(FLAVOURS[0],'F',252,false) + '<div class="fmt-cap">Stand-up Pouch · 200 g</div>';
+
+/* build label flats */
+function flatHTML(dir, f){
+  const file = `label-${dir}-${f.slug}`;
+  return `<figure class="flat reveal" style="margin:0">
+    <a href="../assets/packaging/${file}.svg" target="_blank" rel="noopener" title="Open ${file}.svg">
+      <div class="label-slot" data-label="${file}"></div>
+    </a>
+    <figcaption><span class="chip" style="background:${f.accent}"></span>${file}.svg</figcaption>
+  </figure>`;
+}
+document.getElementById('flats-a').innerHTML = FLAVOURS.map(f=>flatHTML('a',f)).join('');
+document.getElementById('flats-b').innerHTML = FLAVOURS.map(f=>flatHTML('b',f)).join('');
+
+/* fetch + inline every label SVG (so page fonts apply and die-cut holes are real) */
+(async function inlineLabels(){
+  const slots=[...document.querySelectorAll('.label-slot')];
+  const names=[...new Set(slots.map(s=>s.dataset.label))];
+  const texts={};
+  await Promise.all(names.map(async n=>{
+    try{ texts[n]=await (await fetch('../assets/packaging/'+n+'.svg')).text(); }
+    catch(e){ texts[n]=''; }
+  }));
+  slots.forEach(s=>{
+    s.innerHTML=texts[s.dataset.label]||'';
+    const svg=s.querySelector('svg');
+    if(svg){ svg.removeAttribute('width'); svg.removeAttribute('height'); }
+  });
+})();
+
+/* scroll reveals */
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(reduced){
+  document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
+}else{
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  }),{threshold:.1,rootMargin:'0px 0px -5% 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+}
+</script>
+</body>
+</html>

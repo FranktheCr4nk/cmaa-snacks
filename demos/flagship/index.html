@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cmaa — Homemade Chakli &amp; Chivda, Hand-pressed in Pune</title>
+<meta name="description" content="Chakli and chivda made the slow way by Seema in Pune — soaked, ground, hand-pressed and ghee-fried in small morning batches.">
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path d="M60 64a6 6 0 0 1 12 0 12 12 0 0 1-24 0 18 18 0 0 1 36 0 24 24 0 0 1-48 0 30 30 0 0 1 60 0" fill="none" stroke="%23B5512E" stroke-width="7" stroke-linecap="round"/></svg>'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Mulish:ital,wght@0,300..900;1,300..900&family=Caveat:wght@400..700&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --cream:#F4ECDD; --paper:#FBF5E9; --terra:#B5512E; --deep:#8C3D22;
+  --mustard:#D99A2B; --gold:#E9B949; --ink:#2E2017; --leaf:#5E6B3B; --kraft:#D9C2A3;
+  --ink-60:rgba(46,32,23,.6); --ink-40:rgba(46,32,23,.4); --ink-15:rgba(46,32,23,.15);
+  --fr:"Fraunces",serif; --mu:"Mulish",sans-serif; --cv:"Caveat",cursive; --dev:"Tiro Devanagari Hindi",serif;
+  --ease:cubic-bezier(.22,.61,.21,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto}
+body{
+  background:var(--cream); color:var(--ink); font-family:var(--mu);
+  font-size:16.5px; line-height:1.6; overflow-x:clip;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+::selection{background:var(--terra);color:var(--paper)}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--fr);font-weight:560;line-height:1.02;letter-spacing:-.015em}
+.dev{font-family:var(--dev)}
+
+/* ============ FILM GRAIN ============ */
+.grain{position:fixed;inset:0;z-index:1500;pointer-events:none;opacity:.05;mix-blend-mode:multiply;
+  background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="280" height="280"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.82" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="280" height="280" filter="url(%23n)"/></svg>');
+  background-repeat:repeat}
+
+/* ============ CURSOR ============ */
+#cursor{position:fixed;top:0;left:0;width:10px;height:10px;border-radius:50%;
+  background:var(--terra);z-index:2600;pointer-events:none;
+  transform:translate(-50%,-50%);transition:width .25s var(--ease),height .25s var(--ease),background .25s,border .25s;
+  display:none}
+#cursor.big{width:44px;height:44px;background:rgba(181,81,46,.12);border:1.5px solid var(--terra)}
+html.cur, html.cur a, html.cur button{cursor:none}
+
+/* ============ PRELOADER ============ */
+#preloader{position:fixed;inset:0;z-index:3000;background:var(--cream);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;
+  transition:transform .65s cubic-bezier(.7,0,.3,1)}
+#preloader.done{transform:translateY(-102%)}
+#preloader svg{width:92px;height:92px;color:var(--terra)}
+#preloader .pre-path{stroke-dasharray:100;stroke-dashoffset:100;animation:predraw .95s var(--ease) .1s forwards}
+@keyframes predraw{to{stroke-dashoffset:0}}
+#preloader .pre-word{font-family:var(--fr);font-size:26px;font-weight:600;letter-spacing:.02em}
+#preloader .pre-skip{font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-40);position:absolute;bottom:34px}
+@media (prefers-reduced-motion:reduce){#preloader{display:none}}
+
+/* ============ NAV ============ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:900;
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+  padding:26px 4.5vw;transition:padding .45s var(--ease),background .45s,box-shadow .45s;
+  background:transparent}
+.nav.scrolled{padding:12px 4.5vw;background:rgba(244,236,221,.82);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 1px 0 var(--ink-15)}
+.wordmark{display:flex;align-items:center;gap:8px;font-family:var(--fr);font-size:27px;font-weight:640;letter-spacing:-.01em}
+.wordmark svg{width:19px;height:19px;color:var(--terra);transform:translateY(1px)}
+.nav-links{display:flex;gap:34px}
+.nav-links a{font-size:12px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;position:relative;padding:4px 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:1.5px;width:0;background:var(--terra);transition:width .3s var(--ease)}
+.nav-links a:hover::after{width:100%}
+.tin-btn{justify-self:end;display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;
+  border:1.5px solid var(--ink);border-radius:999px;padding:9px 20px;transition:background .3s,color .3s}
+.tin-btn:hover{background:var(--ink);color:var(--cream)}
+@media (max-width:860px){.nav-links{display:none}}
+
+/* ============ SHARED BITS ============ */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mu);
+  font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  padding:17px 30px;border-radius:999px;transition:background .3s,color .3s,transform .3s}
+.btn-solid{background:var(--terra);color:var(--paper)}
+.btn-solid:hover{background:var(--deep)}
+.btn svg{width:15px;height:15px}
+.link-und{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  border-bottom:1.5px solid var(--terra);padding-bottom:5px;transition:color .3s,border-color .3s}
+.link-und:hover{color:var(--terra)}
+.kicker{display:flex;align-items:center;gap:14px;font-size:11.5px;font-weight:800;
+  letter-spacing:.3em;text-transform:uppercase;color:var(--deep)}
+.kicker::before{content:"";width:44px;height:1.5px;background:var(--terra);flex:none}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-60)}
+
+/* photo grading — warm duotone */
+.ph{position:relative;overflow:hidden;background:var(--kraft)}
+.ph img{width:100%;height:100%;object-fit:cover;
+  filter:sepia(.32) saturate(1.14) contrast(1.05) brightness(.99)}
+.ph::after{content:"";position:absolute;inset:0;background:var(--terra);
+  mix-blend-mode:multiply;opacity:.14;pointer-events:none}
+.ph::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(160deg,rgba(233,185,73,.12),transparent 45%)}
+
+/* word reveal */
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.wi{display:inline-block}
+html.anim .wi{transform:translateY(118%);transition:transform .95s var(--ease)}
+html.anim .in .wi{transform:none}
+html.anim [data-fade]{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+html.anim [data-fade].in{opacity:1;transform:none}
+
+/* draw-on line illustrations (IO mode; GSAP overrides inline in pinned mode) */
+.illo{overflow:visible}
+.illo path,.illo ellipse,.illo circle,.illo line{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+html.anim .io-illo .illo path{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.6s var(--ease)}
+html.anim .io-illo.in .illo path{stroke-dashoffset:0}
+html.anim .io-illo .illo path:nth-child(2){transition-delay:.15s}
+html.anim .io-illo .illo path:nth-child(3){transition-delay:.3s}
+html.anim .io-illo .illo path:nth-child(4){transition-delay:.45s}
+html.anim .io-illo .illo path:nth-child(5){transition-delay:.6s}
+html.anim .io-illo .illo path:nth-child(6){transition-delay:.75s}
+html.anim .io-illo .illo path:nth-child(7){transition-delay:.9s}
+html.anim .io-illo .illo path:nth-child(8){transition-delay:1.05s}
+
+/* ============ HERO ============ */
+.hero{position:relative;min-height:100vh;display:grid;
+  grid-template-columns:repeat(12,1fr);align-items:center;
+  padding:150px 4vw 90px 86px;overflow:clip}
+.side-rail{position:absolute;left:0;top:0;bottom:0;width:66px;
+  border-right:1px solid var(--ink-15);display:flex;flex-direction:column;
+  align-items:center;justify-content:flex-end;gap:26px;padding:110px 0 44px}
+.side-rail span{writing-mode:vertical-rl;transform:rotate(180deg);
+  font-size:10px;font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:var(--ink-40)}
+.side-rail svg{width:15px;height:15px;color:var(--terra);opacity:.7}
+.maa{position:absolute;z-index:1;top:-2%;right:-3%;
+  font-family:var(--dev);font-size:clamp(280px,38vw,600px);line-height:1;
+  color:transparent;-webkit-text-stroke:2px rgba(140,61,34,.42);opacity:.38;
+  pointer-events:none;user-select:none}
+.hero-copy{grid-column:2/9;grid-row:1;position:relative;z-index:4}
+.hero-h{font-size:clamp(54px,8.3vw,118px);font-weight:520;margin:30px 0 34px;
+  font-variation-settings:"opsz" 144}
+.hero-h em{font-style:italic;font-weight:480;color:var(--terra)}
+.hero-sub{max-width:47ch;font-size:17.5px;line-height:1.7;color:var(--ink-60);font-weight:500}
+.hero-cta{display:flex;align-items:center;gap:36px;margin-top:44px;flex-wrap:wrap}
+.hero-visual{grid-column:8/13;grid-row:1;position:relative;z-index:2;align-self:center}
+.arch{border-radius:999px 999px 26px 26px;aspect-ratio:4/5.4;max-height:76vh;width:100%;
+  box-shadow:0 30px 60px -30px rgba(46,32,23,.4)}
+.steam{position:absolute;top:-56px;left:50%;transform:translateX(-50%);width:120px;height:90px;
+  color:var(--ink-40);pointer-events:none;z-index:3}
+.steam path{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;opacity:0;
+  animation:steam 4.5s ease-in-out infinite}
+.steam path:nth-child(2){animation-delay:1.4s}
+.steam path:nth-child(3){animation-delay:2.8s}
+@keyframes steam{
+  0%{opacity:0;transform:translateY(16px)}
+  35%{opacity:.6}
+  100%{opacity:0;transform:translateY(-26px)}
+}
+.note-anno{position:absolute;top:1%;right:-30px;z-index:5;text-align:left;width:150px;transform:rotate(4deg)}
+.note-anno span{font-family:var(--cv);font-size:23px;line-height:1.15;color:var(--ink);display:block}
+.note-anno svg{width:44px;height:58px;color:var(--terra);margin:6px 0 0 26px}
+.note-anno svg path{fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.polaroid{position:absolute;bottom:-34px;left:-86px;z-index:5;width:196px;
+  background:#fff;padding:10px 10px 12px;border-radius:3px;transform:rotate(-6deg);
+  box-shadow:0 18px 40px -14px rgba(46,32,23,.45)}
+.polaroid .ph{aspect-ratio:1/1;border-radius:2px}
+.polaroid figcaption{font-family:var(--cv);font-size:19px;text-align:center;padding-top:9px;color:var(--ink)}
+@media (max-width:1100px){.side-rail{display:none}.hero{padding-left:4vw}}
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;padding:130px 6vw 70px;min-height:auto;row-gap:76px}
+  .hero-copy{grid-column:1;grid-row:1}
+  .hero-visual{grid-column:1;grid-row:2;max-width:430px;margin:0 auto;width:88%}
+  .polaroid{left:-26px;width:150px;bottom:-30px}
+  .note-anno{right:-12px}
+  .maa{font-size:300px;top:auto;bottom:22%;right:-16%}
+}
+
+/* ============ DIVIDERS ============ */
+.tear{display:block;width:100%;height:26px;margin-bottom:-1px}
+.tear.flip{transform:scaleY(-1);margin:-1px 0 0}
+.scallop{display:block;width:100%;height:22px;margin-bottom:-1px}
+.scallop.flip{transform:scaleY(-1);margin:-1px 0 0}
+
+/* ============ MARQUEE ============ */
+.marquee{background:var(--terra);color:var(--cream);padding:20px 0;overflow:hidden}
+.mq-track{display:flex;gap:54px;width:max-content;animation:mq 26s linear infinite}
+.mq-track > *{flex:none}
+.mq-track span{font-size:14px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;white-space:nowrap}
+.mq-track em{font-family:var(--fr);font-style:italic;font-size:19px;letter-spacing:.04em;text-transform:none;white-space:nowrap}
+.mq-track .dev{font-size:17px;letter-spacing:.1em;white-space:nowrap}
+.mq-track svg{width:17px;height:17px;color:var(--gold);align-self:center}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.mq-track{animation:none}}
+
+/* ============ THE MORNING BATCH (signature) ============ */
+.batch{background:var(--paper);position:relative}
+.batch-stage{position:relative;padding:100px 6vw 80px;max-width:1500px;margin:0 auto}
+.batch-head{margin-bottom:70px}
+.batch-head h2{font-size:clamp(38px,4.6vw,68px);margin-top:16px;font-weight:540}
+.batch-head h2 em{font-style:italic;color:var(--terra)}
+.batch-head .dev{display:inline-block;margin-left:14px;font-size:.55em;color:var(--ink-40);transform:translateY(-.35em)}
+.step{display:grid;grid-template-columns:1fr;gap:34px;position:relative;
+  padding:54px 0 54px 34px;border-left:1.5px solid var(--ink-15)}
+.step::before{content:"";position:absolute;left:-7px;top:66px;width:13px;height:13px;
+  border-radius:50%;background:var(--terra)}
+.step-no{font-family:var(--fr);font-size:clamp(64px,7vw,110px);font-weight:400;
+  line-height:.9;color:transparent;-webkit-text-stroke:1.5px var(--terra);opacity:.85}
+.step-time{font-size:12px;font-weight:800;letter-spacing:.42em;color:var(--deep);
+  margin:18px 0 10px;font-variant-numeric:tabular-nums}
+.step-h{font-size:clamp(30px,3vw,46px);font-weight:560;margin-bottom:16px}
+.step-p{max-width:38ch;color:var(--ink-60);font-size:16.5px;line-height:1.75;font-weight:500}
+.step .illo{width:130px;height:104px;color:var(--deep);margin-top:26px;opacity:.9}
+.step-ph{max-width:430px;align-self:start}
+.step-ph .ph{width:100%}
+.m-arch{border-radius:999px 999px 22px 22px;aspect-ratio:4/4.9}
+.m-blob{border-radius:58% 42% 55% 45%/52% 55% 45% 48%;aspect-ratio:1/1.06}
+.m-oval{border-radius:50%/44%;aspect-ratio:4/4.7}
+.m-slab{border-radius:26px;aspect-ratio:4/4.5;transform:rotate(1.6deg)}
+.batch-progress{display:none}
+@media (min-width:861px){
+  .step{grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:center;gap:6vw}
+  .step-ph{justify-self:end;width:min(430px,100%)}
+}
+/* pinned mode (desktop + motion) */
+.batch.gpin .batch-stage{height:100vh;padding:0 6vw;display:flex;align-items:center}
+.batch.gpin .batch-head{position:absolute;top:54px;left:6vw;margin:0;z-index:3}
+.batch.gpin .batch-steps{position:relative;width:100%;height:min(66vh,640px)}
+.batch.gpin .step{position:absolute;inset:0;border-left:none;padding:0;margin:0;
+  grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:center;gap:6vw;will-change:transform,opacity}
+.batch.gpin .step::before{display:none}
+.batch.gpin .step:not(:first-child){opacity:0;visibility:hidden}
+.batch.gpin .step .illo path{transition:none}
+.batch.gpin .step-ph{align-self:center}
+.batch.gpin .step-ph .ph img{will-change:transform}
+.batch.gpin .batch-progress{display:flex;position:absolute;right:6vw;bottom:44px;
+  align-items:center;gap:16px;z-index:3}
+.batch-progress svg{width:52px;height:52px;color:var(--terra);transform:rotate(-90deg)}
+.batch-progress .prog-path{stroke-dasharray:100;stroke-dashoffset:100}
+.batch-progress .prog-count{font-size:12px;font-weight:800;letter-spacing:.3em;color:var(--ink-60);font-variant-numeric:tabular-nums}
+
+/* ============ THE SHELF ============ */
+.shelf{background:var(--cream);position:relative;overflow:hidden}
+.shelf-head{padding:96px 6vw 24px;display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.shelf-head h2{font-size:clamp(36px,4.2vw,62px);font-weight:540;max-width:16ch}
+.shelf-head h2 em{font-style:italic;color:var(--terra)}
+.shelf-hint{font-size:11px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-40);
+  display:flex;align-items:center;gap:12px;padding-bottom:14px}
+.shelf-hint svg{width:26px;height:12px}
+.shelf-viewport{overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;
+  scrollbar-width:none;padding:30px 0 90px}
+.shelf-viewport::-webkit-scrollbar{display:none}
+.shelf-track{display:flex;align-items:flex-end;gap:5.5vw;width:max-content;
+  padding:0 8vw 34px;position:relative}
+.shelf-board{position:absolute;left:-10vw;right:-10vw;bottom:0;height:15px;border-radius:3px;
+  background:linear-gradient(180deg,#c9a97e,#a97e50 55%,#8a6136);
+  box-shadow:0 10px 22px -8px rgba(46,32,23,.5)}
+.shelf-board::after{content:"";position:absolute;inset:0;border-radius:3px;
+  background:repeating-linear-gradient(90deg,transparent 0 90px,rgba(46,32,23,.14) 90px 92px)}
+.prod{position:relative;flex:none;width:var(--w,300px);scroll-snap-align:center;
+  display:flex;flex-direction:column;gap:0;padding-bottom:6px;
+  transform:rotate(var(--tilt,0deg));transform-origin:bottom center;
+  filter:drop-shadow(0 22px 16px rgba(46,32,23,.22))}
+.prod-vig{position:relative;z-index:2;width:78%;margin:0 auto -46px}
+.prod-vig .ph{border-radius:50%/46%;aspect-ratio:1/1.08}
+.stamp{position:absolute;z-index:3;top:8px;right:-14px;transform:rotate(9deg);
+  font-size:9.5px;font-weight:800;letter-spacing:.22em;color:var(--deep);
+  border:1.5px solid var(--deep);border-radius:5px;padding:5px 9px;opacity:.75;
+  background:rgba(251,245,233,.55);text-transform:uppercase;white-space:nowrap}
+.prod-label{position:relative;background:var(--paper);border:1px solid var(--ink-15);
+  border-radius:10px 10px 4px 4px;padding:60px 24px 22px;text-align:center;
+  box-shadow:inset 0 0 0 4px var(--paper),inset 0 0 0 5.5px var(--ink-15)}
+.flavor-tab{position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+  width:74px;height:26px;border-radius:6px 6px 0 0;background:var(--tab,var(--terra))}
+.flavor-tab::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:34px;height:5px;border-radius:3px;background:rgba(251,245,233,.55)}
+.prod-name{font-family:var(--fr);font-size:24px;font-weight:600;line-height:1.1;margin-bottom:8px}
+.prod-story{font-size:13.5px;color:var(--ink-60);line-height:1.55;min-height:2.8em;font-weight:500}
+.spice{display:flex;justify-content:center;gap:5px;margin:13px 0 4px}
+.spice svg{width:17px;height:17px;color:var(--kraft);opacity:.75}
+.spice svg.on{color:var(--terra);opacity:1}
+.prod-meta{display:flex;justify-content:center;align-items:baseline;gap:12px;
+  font-size:13px;font-weight:700;color:var(--ink-60);margin-bottom:16px}
+.prod-meta b{font-family:var(--fr);font-size:21px;color:var(--ink);font-weight:600}
+.add-btn{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;
+  letter-spacing:.18em;text-transform:uppercase;border:1.5px solid var(--ink);
+  border-radius:999px;padding:10px 20px;transition:background .25s,color .25s}
+.add-btn:hover{background:var(--terra);border-color:var(--terra);color:var(--paper)}
+.add-btn.added{background:var(--leaf);border-color:var(--leaf);color:var(--paper)}
+.prod.tall .prod-vig{width:86%;margin-bottom:-52px}
+.prod.tall .prod-vig .ph{border-radius:50% 50% 12% 12%/42% 42% 9% 9%;aspect-ratio:1/1.25}
+.prod.low .prod-vig{width:70%;margin-bottom:-40px}
+.prod.low .prod-vig .ph{border-radius:50%;aspect-ratio:1/1}
+/* pinned horizontal mode */
+.shelf.gpin{height:100vh;display:flex;flex-direction:column;justify-content:flex-end}
+.shelf.gpin .shelf-head{position:absolute;top:0;left:0;right:0;z-index:5;padding:86px 6vw 0}
+.shelf.gpin .shelf-head h2{font-size:clamp(28px,3.2vw,44px);max-width:none}
+.shelf.gpin .shelf-head h2 br{display:none}
+.shelf.gpin .shelf-viewport{overflow:visible;padding:10px 0 5vh}
+.shelf.gpin .shelf-track{will-change:transform}
+.shelf.gpin .prod-label{padding:52px 22px 20px}
+.shelf.gpin .prod-vig{margin-bottom:-52px}
+.shelf.gpin .prod.tall .prod-vig{margin-bottom:-58px}
+
+/* ============ ORBIT ============ */
+.orbit-sec{background:var(--paper);padding:130px 6vw 150px;text-align:center;position:relative;overflow:clip}
+.orbit-sec h2{font-size:clamp(34px,4vw,58px);font-weight:540;margin:14px 0 8px}
+.orbit-sec h2 em{font-style:italic;color:var(--terra)}
+.orbit-wrap{position:relative;width:min(680px,86vw);aspect-ratio:1/1;margin:70px auto 40px}
+.orbit-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:41%;aspect-ratio:1/1;z-index:2}
+.orbit-core .ph{border-radius:50%;width:100%;height:100%;box-shadow:0 24px 50px -20px rgba(46,32,23,.45)}
+.orbit-core::after{content:"";position:absolute;inset:-14px;border:1.5px dashed var(--ink-40);border-radius:50%;opacity:.5}
+.orbit-ring{position:absolute;inset:0;animation:spin 74s linear infinite}
+.orbit-lines{position:absolute;inset:0;width:100%;height:100%}
+.orbit-lines line{stroke:var(--ink-40);stroke-width:.35;stroke-dasharray:1.6 2.4;opacity:.8}
+.chip{position:absolute;transform:translate(-50%,-50%);z-index:3}
+.chip-spin{display:flex;flex-direction:column;align-items:center;gap:7px;
+  animation:spinR 74s linear infinite}
+.chip-dot{width:66px;height:66px;border-radius:50%;overflow:hidden;background:var(--paper);
+  border:1.5px solid var(--ink-15);box-shadow:0 10px 24px -10px rgba(46,32,23,.4);
+  display:flex;align-items:center;justify-content:center}
+.chip-dot .ph{width:100%;height:100%;border-radius:50%}
+.chip-dot svg{width:34px;height:34px;color:var(--deep)}
+.chip-dot svg path{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.chip b{font-family:var(--cv);font-weight:600;font-size:21px;line-height:1.05;color:var(--ink);
+  background:var(--paper);padding:2px 10px;border-radius:99px;white-space:nowrap;
+  box-shadow:0 4px 14px -6px rgba(46,32,23,.3)}
+.orbit-wrap:hover .orbit-ring,.orbit-wrap:hover .chip-spin{animation-play-state:paused}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes spinR{to{transform:rotate(-360deg)}}
+@media (prefers-reduced-motion:reduce){.orbit-ring,.chip-spin{animation:none}}
+.orbit-tag{font-size:16.5px;color:var(--ink-60);font-weight:600}
+.orbit-tag em{font-family:var(--fr);font-style:italic;color:var(--ink)}
+@media (max-width:640px){
+  .chip-dot{width:48px;height:48px}
+  .chip b{font-size:16px}
+  .orbit-wrap{margin-top:50px}
+}
+
+/* ============ MAA'S RULES ============ */
+.rules{background:var(--cream);padding:130px 0 120px;position:relative;overflow:clip}
+.rules-head{padding:0 6vw;margin-bottom:80px;display:grid;grid-template-columns:repeat(12,1fr)}
+.rules-head > div{grid-column:2/12}
+.rules-head h2{font-size:clamp(38px,4.6vw,66px);font-weight:540;margin-top:14px}
+.rules-head h2 em{font-style:italic;color:var(--terra)}
+.rule{display:grid;grid-template-columns:repeat(12,1fr);align-items:baseline;
+  padding:52px 6vw;border-top:1px solid var(--ink-15)}
+.rule-no{font-family:var(--fr);font-size:clamp(70px,8vw,128px);line-height:.85;font-weight:380;
+  color:transparent;-webkit-text-stroke:1.5px var(--deep);opacity:.75}
+.rule-q{font-family:var(--fr);font-size:clamp(26px,3.2vw,46px);font-weight:520;line-height:1.18;
+  letter-spacing:-.01em;max-width:22ch}
+.rule-q em{font-style:italic;color:var(--terra)}
+.rule .rule-no{grid-column:2/4}
+.rule .rule-q{grid-column:4/11}
+.rule.alt .rule-no{grid-column:10/12;grid-row:1;justify-self:end}
+.rule.alt .rule-q{grid-column:3/10;grid-row:1}
+.seema{display:grid;grid-template-columns:repeat(12,1fr);align-items:center;
+  padding:90px 6vw;margin:40px 0}
+.seema-ph{grid-column:2/6;position:relative}
+.seema-ph .ph{border-radius:999px 999px 24px 24px;aspect-ratio:4/5;
+  box-shadow:0 26px 60px -26px rgba(46,32,23,.5)}
+.seema-anno{position:absolute;bottom:-20px;right:-34px;transform:rotate(-3deg);
+  font-family:var(--cv);font-size:22px;color:var(--ink);background:var(--paper);
+  padding:6px 16px;border-radius:99px;box-shadow:0 10px 26px -12px rgba(46,32,23,.4)}
+.seema-note{grid-column:7/12;background:var(--paper);border-radius:4px 30px 4px 30px;
+  padding:54px 56px 46px;position:relative;box-shadow:0 30px 60px -34px rgba(46,32,23,.35);
+  border:1px solid var(--ink-15)}
+.seema-note::before{content:"“";position:absolute;top:-14px;left:34px;font-family:var(--fr);
+  font-size:120px;line-height:1;color:var(--terra);opacity:.35}
+.seema-note p{font-size:17px;line-height:1.85;color:var(--ink);font-weight:500}
+.seema-sig{font-family:var(--cv);font-size:38px;color:var(--terra);margin-top:22px;transform:rotate(-2deg);display:inline-block}
+@media (max-width:900px){
+  .rule .rule-no,.rule.alt .rule-no{grid-column:1/13;grid-row:auto;justify-self:start;margin-bottom:10px}
+  .rule .rule-q,.rule.alt .rule-q{grid-column:1/13;grid-row:auto}
+  .seema{row-gap:70px;padding:60px 6vw}
+  .seema-ph{grid-column:1/13;max-width:380px;margin:0 auto;width:100%}
+  .seema-note{grid-column:1/13;padding:44px 8vw 40px}
+  .rules-head > div{grid-column:1/13}
+}
+
+/* ============ GIFTING ============ */
+.gift{background:var(--ink);color:var(--cream);position:relative;overflow:clip;
+  display:grid;grid-template-columns:repeat(12,1fr);align-items:center;
+  padding:130px 6vw 150px;row-gap:70px}
+.gift-copy{grid-column:2/7;position:relative;z-index:2}
+.gift .eyebrow{color:rgba(244,236,221,.55)}
+.gift h2{font-size:clamp(42px,5.2vw,80px);font-weight:520;margin:20px 0 26px;line-height:1.02;
+  background:linear-gradient(105deg,#E9B949 0%,#F8E6A8 22%,#C98F1E 40%,#E9B949 58%,#FBF0C4 78%,#E9B949 100%);
+  background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:foil 6s ease-in-out infinite}
+@keyframes foil{0%,100%{background-position:0% 0}50%{background-position:100% 0}}
+@media (prefers-reduced-motion:reduce){.gift h2{animation:none}}
+.gift-p{color:rgba(244,236,221,.75);max-width:44ch;font-size:16.5px;line-height:1.75;font-weight:500}
+.gift-price{display:inline-block;position:relative;font-family:var(--fr);font-size:44px;
+  font-weight:560;margin:30px 0 8px;padding:6px 20px}
+.gift-price svg{position:absolute;inset:-8px -14px;width:calc(100% + 28px);height:calc(100% + 16px);color:var(--gold)}
+.gift-price svg path{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round}
+.gift-date{font-size:12px;font-weight:800;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--gold);margin:6px 0 36px}
+.gift .btn-solid{background:var(--gold);color:var(--ink)}
+.gift .btn-solid:hover{background:#f2cd6f}
+.gift-visual{grid-column:7/12;position:relative;z-index:1}
+.gift-visual .g1{border-radius:26px;aspect-ratio:4/4.6;width:88%;margin-left:auto;
+  box-shadow:0 34px 70px -28px rgba(0,0,0,.7)}
+.gift-visual .g1 img{filter:sepia(.25) saturate(1.2) contrast(1.03) brightness(.92)}
+.gift-visual .g2{position:absolute;bottom:-46px;left:-8%;width:46%;background:var(--paper);
+  padding:9px 9px 30px;border-radius:3px;transform:rotate(5deg);
+  box-shadow:0 22px 50px -16px rgba(0,0,0,.75)}
+.gift-visual .g2 .ph{aspect-ratio:1/1;border-radius:2px}
+.gift-visual .g2 figcaption{font-family:var(--cv);font-size:18px;color:var(--ink);text-align:center;padding-top:8px}
+.gift-anno{position:absolute;top:-42px;right:6%;font-family:var(--cv);font-size:22px;
+  color:var(--gold);transform:rotate(-4deg)}
+@media (max-width:900px){
+  .gift{padding:100px 7vw 130px}
+  .gift-copy{grid-column:1/13}
+  .gift-visual{grid-column:1/13;max-width:460px;margin:0 auto;width:100%}
+}
+
+/* ============ FRIDGE NOTES ============ */
+.notes{background:var(--cream);padding:120px 6vw 130px;position:relative}
+.notes-head{max-width:1240px;margin:0 auto 70px}
+.notes-head h2{font-size:clamp(36px,4.2vw,60px);font-weight:540;margin-top:14px}
+.notes-head h2 em{font-style:italic;color:var(--terra)}
+.notes-wall{max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;gap:34px;justify-content:center;align-items:flex-start}
+.note{position:relative;width:230px;padding:44px 24px 28px;min-height:210px;
+  box-shadow:0 16px 34px -14px rgba(46,32,23,.35);transform:rotate(var(--r,0deg))}
+.note::before{content:"";position:absolute;top:-13px;left:50%;transform:translateX(-50%) rotate(var(--tr,-2deg));
+  width:88px;height:26px;background:rgba(217,194,163,.55);border-left:1px dashed rgba(46,32,23,.18);
+  border-right:1px dashed rgba(46,32,23,.18)}
+.note p{font-family:var(--cv);font-size:23px;line-height:1.25;color:var(--ink);font-weight:500}
+.note cite{display:block;margin-top:18px;font-style:normal;font-family:var(--mu);
+  font-size:10.5px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-60)}
+.note:nth-child(odd){margin-top:34px}
+.note:nth-child(3){margin-top:-6px}
+@media (max-width:640px){.note{width:min(260px,78vw)}.note:nth-child(odd){margin-top:10px}}
+
+/* ============ FAQ ============ */
+.faq{background:var(--paper);padding:120px 6vw 140px}
+.faq-inner{max-width:780px;margin:0 auto}
+.faq-inner h2{font-size:clamp(34px,4vw,54px);font-weight:540;margin:14px 0 54px}
+.faq-inner h2 em{font-style:italic;color:var(--terra)}
+.faq-item{border-top:1px solid var(--ink-15)}
+.faq-item:last-child{border-bottom:1px solid var(--ink-15)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;
+  padding:26px 4px;text-align:left}
+.faq-q h3{font-size:21px;font-weight:560}
+.faq-q svg{width:17px;height:17px;flex:none;color:var(--terra);transition:transform .4s var(--ease)}
+.faq-item.open .faq-q svg{transform:rotate(45deg)}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease)}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+.faq-a > div{overflow:hidden}
+.faq-a p{padding:0 4px 28px;color:var(--ink-60);max-width:60ch;font-weight:500;line-height:1.75}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--ink);color:var(--cream);padding:110px 6vw 60px;position:relative;overflow:clip}
+.sig{display:block;width:min(560px,80vw);margin:0 auto;overflow:visible}
+.sig text{font-family:var(--cv);font-size:150px;font-weight:600;
+  fill:var(--cream);stroke:var(--gold);stroke-width:1.2}
+html.anim .sig text{fill-opacity:0;stroke-dasharray:700;stroke-dashoffset:700}
+html.anim .sig.in text{animation:sigdraw 2.4s var(--ease) forwards}
+@keyframes sigdraw{
+  0%{stroke-dashoffset:700;fill-opacity:0}
+  62%{stroke-dashoffset:0;fill-opacity:0}
+  100%{stroke-dashoffset:0;fill-opacity:1}
+}
+.foot-tag{text-align:center;font-family:var(--fr);font-style:italic;font-size:21px;
+  color:rgba(244,236,221,.7);margin:8px 0 70px}
+.foot-grid{display:flex;justify-content:space-between;gap:44px;flex-wrap:wrap;
+  border-top:1px solid rgba(244,236,221,.16);padding-top:48px;max-width:1240px;margin:0 auto}
+.foot-col b{display:block;font-size:11px;font-weight:800;letter-spacing:.3em;
+  text-transform:uppercase;color:rgba(244,236,221,.5);margin-bottom:18px}
+.foot-col a{display:block;font-size:14.5px;font-weight:600;padding:5px 0;color:rgba(244,236,221,.85)}
+.foot-col a:hover{color:var(--gold)}
+.foot-legal{max-width:1240px;margin:64px auto 0;display:flex;justify-content:space-between;
+  gap:20px;flex-wrap:wrap;font-size:12px;color:rgba(244,236,221,.45);font-weight:600;letter-spacing:.04em}
+.foot-legal span{display:block}
+
+/* ============ CART DRAWER ============ */
+.overlay{position:fixed;inset:0;z-index:1050;background:rgba(46,32,23,.5);
+  opacity:0;pointer-events:none;transition:opacity .4s}
+.overlay.show{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:1100;width:min(430px,94vw);
+  background:var(--paper);transform:translateX(104%);transition:transform .55s cubic-bezier(.7,0,.25,1);
+  display:flex;flex-direction:column;box-shadow:-20px 0 60px rgba(46,32,23,.25)}
+.drawer.show{transform:none}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;
+  padding:26px 28px;border-bottom:1px solid var(--ink-15)}
+.drawer-head h3{font-size:26px;font-weight:600}
+.drawer-head h3 span{font-family:var(--cv);font-size:.75em;color:var(--terra);margin-left:8px}
+.drawer-close{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--ink-15);
+  display:flex;align-items:center;justify-content:center;transition:background .25s}
+.drawer-close:hover{background:var(--cream)}
+.drawer-close svg{width:14px;height:14px}
+.ship-bar{padding:18px 28px;border-bottom:1px solid var(--ink-15);background:var(--cream)}
+.ship-bar p{font-size:12.5px;font-weight:700;color:var(--ink-60);margin-bottom:10px}
+.ship-bar p b{color:var(--leaf)}
+.ship-track{height:6px;border-radius:99px;background:var(--ink-15);overflow:hidden}
+.ship-fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--mustard),var(--leaf));transition:width .5s var(--ease)}
+.drawer-items{flex:1;overflow-y:auto;padding:10px 28px}
+.d-item{display:grid;grid-template-columns:58px 1fr auto;gap:16px;align-items:center;
+  padding:18px 0;border-bottom:1px dashed var(--ink-15)}
+.d-item .ph{width:58px;height:58px;border-radius:50%}
+.d-item h4{font-family:var(--fr);font-size:16.5px;font-weight:600;line-height:1.2}
+.d-item .d-price{font-size:13px;color:var(--ink-60);font-weight:700;margin-top:3px}
+.qty{display:flex;align-items:center;gap:10px;border:1.5px solid var(--ink-15);border-radius:99px;padding:5px 10px}
+.qty button{width:22px;height:22px;display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:800;color:var(--terra);line-height:1}
+.qty span{font-size:13.5px;font-weight:800;min-width:16px;text-align:center;font-variant-numeric:tabular-nums}
+.drawer-empty{padding:60px 30px;text-align:center;color:var(--ink-60)}
+.drawer-empty svg{width:56px;height:56px;color:var(--kraft);margin:0 auto 18px}
+.drawer-empty p{font-family:var(--cv);font-size:26px;color:var(--ink)}
+.drawer-empty small{font-size:13px;font-weight:600}
+.drawer-foot{padding:22px 28px 26px;border-top:1px solid var(--ink-15);background:var(--cream)}
+.d-total{display:flex;justify-content:space-between;font-family:var(--fr);font-size:21px;
+  font-weight:600;margin-bottom:16px}
+.wa-btn{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;
+  background:var(--leaf);color:var(--paper);border-radius:999px;padding:17px;
+  font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;transition:background .3s}
+.wa-btn:hover{background:#4c5730}
+.wa-btn svg{width:19px;height:19px}
+.d-note{text-align:center;font-size:11px;color:var(--ink-40);margin-top:12px;font-weight:600}
+
+/* ============ MOBILE DOCK ============ */
+.dock{display:none}
+@media (max-width:768px){
+  .dock{display:grid;grid-template-columns:1fr 1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:1000;
+    background:rgba(251,245,233,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-top:1px solid var(--ink-15);padding:10px 8px calc(10px + env(safe-area-inset-bottom))}
+  .dock a,.dock button{display:flex;flex-direction:column;align-items:center;gap:4px;
+    font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:6px}
+  .dock svg{width:21px;height:21px;color:var(--terra)}
+  .dock svg path,.dock svg circle{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .footer{padding-bottom:120px}
+}
+@media (max-width:640px){
+  .hero-h{font-size:clamp(46px,13vw,70px)}
+  .batch-stage{padding:80px 7vw 60px}
+  .step{padding-left:26px}
+  .tear{height:14px}
+  .scallop{height:12px}
+}
+</style>
+</head>
+<body>
+
+<!-- shared svg defs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="spiral" viewBox="0 0 120 120">
+      <path d="M60 64a6 6 0 0 1 12 0 12 12 0 0 1-24 0 18 18 0 0 1 36 0 24 24 0 0 1-48 0 30 30 0 0 1 60 0"
+        fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="chili" viewBox="0 0 24 24">
+      <path d="M19.2 3.6c.6 1.5.1 2.7-1.3 3.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M17.9 7.2c1 1.6.6 3.8-1.2 6-2.8 3.4-8 6.2-12.3 6.2-.9 0-1.4-1-.8-1.7C6.7 14.2 9 8.9 13.1 7.1c1.9-.8 3.9-.6 4.8.1Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="arrow-r" viewBox="0 0 24 24">
+      <path d="M3 12h17M14 5.5 20.5 12 14 18.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="wa" viewBox="0 0 24 24">
+      <path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.2 20.8l4.6-1.2A8.8 8.8 0 1 0 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M8.6 8.9c-.3 2.6 3.3 6.3 6.1 6.4.8 0 1.7-.5 1.7-1.2 0-.5-1.1-1.3-1.6-1.3-.4 0-.7.5-1.2.4-1-.3-2.4-1.6-2.6-2.5-.1-.5.5-.8.5-1.3 0-.4-.7-1.6-1.2-1.7-.6-.1-1.6.6-1.7 1.2Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- film grain -->
+<div class="grain" aria-hidden="true"></div>
+
+<div id="cursor" aria-hidden="true"></div>
+
+<!-- ============ PRE-LOADER ============ -->
+<div id="preloader" role="presentation">
+  <svg viewBox="0 0 120 120" aria-hidden="true">
+    <path class="pre-path" pathLength="100" d="M60 64a6 6 0 0 1 12 0 12 12 0 0 1-24 0 18 18 0 0 1 36 0 24 24 0 0 1-48 0 30 30 0 0 1 60 0"
+      fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+  </svg>
+  <div class="pre-word">Cmaa</div>
+  <span class="pre-skip">tap anywhere to skip</span>
+</div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav" aria-label="Main">
+  <a class="wordmark" href="#top">Cmaa<svg aria-hidden="true"><use href="#spiral"/></svg></a>
+  <div class="nav-links">
+    <a href="#batch">The Batch</a>
+    <a href="#shelf">The Shelf</a>
+    <a href="#rules">Maa&rsquo;s Rules</a>
+    <a href="#gifting">Gifting</a>
+  </div>
+  <button class="tin-btn magnetic" id="tinBtn" aria-haspopup="dialog">Tin (<span id="tinCount">0</span>)</button>
+</nav>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="side-rail" aria-hidden="true">
+    <span>EST. 2026 &middot; PUNE &middot; SMALL BATCH</span>
+    <svg><use href="#spiral"/></svg>
+  </div>
+  <div class="maa" aria-hidden="true">माँ</div>
+
+  <div class="hero-copy">
+    <p class="kicker" data-fade>hand-pressed in Pune since always</p>
+    <h1 class="hero-h" data-reveal>The taste of<br><em>someone&rsquo;s</em><br>whole morning.</h1>
+    <p class="hero-sub" data-fade>Chakli &amp; chivda made the slow way — soaked, ground, hand-pressed and ghee-fried by Seema, in batches small enough to have her name on them.</p>
+    <div class="hero-cta" data-fade>
+      <a class="btn btn-solid magnetic" href="#shelf">Taste the batch <svg><use href="#arrow-r"/></svg></a>
+      <a class="link-und" href="#seema">Meet Seema</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <svg class="steam" viewBox="0 0 120 90" aria-hidden="true">
+      <path d="M38 78c-7-10 8-16 2-26-5-8 3-14 1-22"/>
+      <path d="M62 82c-6-12 9-17 3-28-5-9 4-15 1-24"/>
+      <path d="M86 78c-7-10 8-16 2-26-5-8 3-14 1-22"/>
+    </svg>
+    <div class="note-anno" aria-hidden="true">
+      <span>5:00&thinsp;AM, the first batch</span>
+      <svg viewBox="0 0 80 90"><path d="M14 6c26 10 38 30 33 66"/><path d="M35 60l12 16 11-17"/></svg>
+    </div>
+    <figure class="arch ph">
+      <img src="../../assets/images/cooking.jpg" alt="Seema frying the morning batch of chakli in her Pune kitchen" fetchpriority="high">
+    </figure>
+    <figure class="polaroid">
+      <div class="ph"><img src="../../assets/images/chakli-2.jpg" alt="A single hand-pressed chakli spiral" loading="lazy"></div>
+      <figcaption>pressed by hand, counted by eye</figcaption>
+    </figure>
+  </div>
+</header>
+
+<!-- ============ MARQUEE ============ -->
+<svg class="tear" viewBox="0 0 1200 30" preserveAspectRatio="none" aria-hidden="true"><path fill="#B5512E" d="M0 30V18L50 12l55 8 55-11 55 8 55-6 60 8 55-11 55 8 55-6 55 8 60-9 55 8 55-4 55 8 55-10 55 8 55-6 55 7 55-10 55 7 50-5 45 4V30Z"/></svg>
+<div class="marquee" aria-hidden="true">
+  <div class="mq-track">
+    <span>Ghar ka swaad</span><svg><use href="#spiral"/></svg>
+    <span class="dev">माँ के हाथ का</span><svg><use href="#spiral"/></svg>
+    <em>pressed, never poured</em><svg><use href="#spiral"/></svg>
+    <span>Small batch &middot; Pune</span><svg><use href="#spiral"/></svg>
+    <span>Ghar ka swaad</span><svg><use href="#spiral"/></svg>
+    <span class="dev">माँ के हाथ का</span><svg><use href="#spiral"/></svg>
+    <em>pressed, never poured</em><svg><use href="#spiral"/></svg>
+    <span>Small batch &middot; Pune</span><svg><use href="#spiral"/></svg>
+    <span>Ghar ka swaad</span><svg><use href="#spiral"/></svg>
+    <span class="dev">माँ के हाथ का</span><svg><use href="#spiral"/></svg>
+    <em>pressed, never poured</em><svg><use href="#spiral"/></svg>
+    <span>Small batch &middot; Pune</span><svg><use href="#spiral"/></svg>
+    <span>Ghar ka swaad</span><svg><use href="#spiral"/></svg>
+    <span class="dev">माँ के हाथ का</span><svg><use href="#spiral"/></svg>
+    <em>pressed, never poured</em><svg><use href="#spiral"/></svg>
+    <span>Small batch &middot; Pune</span><svg><use href="#spiral"/></svg>
+  </div>
+</div>
+<svg class="tear flip" viewBox="0 0 1200 30" preserveAspectRatio="none" aria-hidden="true"><path fill="#B5512E" d="M0 30V18L50 12l55 8 55-11 55 8 55-6 60 8 55-11 55 8 55-6 55 8 60-9 55 8 55-4 55 8 55-10 55 8 55-6 55 7 55-10 55 7 50-5 45 4V30Z"/></svg>
+
+<!-- ============ THE MORNING BATCH — signature pinned chapter ============ -->
+<section class="batch" id="batch">
+  <div class="batch-pinwrap">
+    <div class="batch-stage">
+      <div class="batch-head">
+        <p class="kicker">Chapter one — while you were asleep</p>
+        <h2>The Morning <em>Batch</em><span class="dev">पहली घाणी</span></h2>
+      </div>
+
+      <div class="batch-steps">
+
+        <article class="step io-illo">
+          <div class="step-txt">
+            <div class="step-no" aria-hidden="true">01</div>
+            <div class="step-time">04:30 — SOAK &amp; GRIND</div>
+            <h3 class="step-h">Soak &amp; grind</h3>
+            <p class="step-p">Rice, chana, urad — soaked overnight, ground while the street is still dark. Fresh bhajani smells like rain landing on a hot stone.</p>
+            <svg class="illo" viewBox="0 0 200 160" aria-hidden="true">
+              <path pathLength="1" d="M45 66a55 17 0 0 1 110 0 55 17 0 0 1-110 0"/>
+              <path pathLength="1" d="M45 66v34a55 17 0 0 0 110 0V66"/>
+              <path pathLength="1" d="M45 100a55 17 0 0 0 110 0"/>
+              <path pathLength="1" d="M132 58l17-33"/>
+              <path pathLength="1" d="M149 25a6 6 0 1 1 5 9"/>
+              <path pathLength="1" d="M74 132c4 4 10 4 14 0M104 138c4 4 10 4 14 0M60 141c3 3 7 3 10 0"/>
+            </svg>
+          </div>
+          <figure class="step-ph"><div class="ph m-arch"><img src="../../assets/images/spices.jpg" alt="Whole spices and grains laid out before grinding" loading="lazy"></div></figure>
+        </article>
+
+        <article class="step io-illo">
+          <div class="step-txt">
+            <div class="step-no" aria-hidden="true">02</div>
+            <div class="step-time">05:10 — KNEAD</div>
+            <h3 class="step-h">Knead</h3>
+            <p class="step-p">Hot water, a spoon of ghee, and Seema&rsquo;s knuckles. The dough is ready when it stops sticking and starts listening.</p>
+            <svg class="illo" viewBox="0 0 200 160" aria-hidden="true">
+              <path pathLength="1" d="M30 96a70 44 0 0 0 140 0"/>
+              <path pathLength="1" d="M30 96a70 12 0 0 1 140 0"/>
+              <path pathLength="1" d="M68 92c0-18 14-30 32-30s32 12 32 30"/>
+              <path pathLength="1" d="M52 46c8-8 20-10 30-5M148 46c-8-8-20-10-30-5"/>
+              <path pathLength="1" d="M78 30c6-4 12-4 18 0M104 30c6-4 12-4 18 0"/>
+            </svg>
+          </div>
+          <figure class="step-ph"><div class="ph m-blob"><img src="../../assets/images/cooking.jpg" alt="Hands working warm bhajani dough" loading="lazy"></div></figure>
+        </article>
+
+        <article class="step io-illo">
+          <div class="step-txt">
+            <div class="step-no" aria-hidden="true">03</div>
+            <div class="step-time">05:40 — PRESS</div>
+            <h3 class="step-h">Press the spirals</h3>
+            <p class="step-p">One steady wrist-turn per chakli. Machines press circles; hands press spirals with a beginning and an end.</p>
+            <svg class="illo" viewBox="0 0 200 160" aria-hidden="true">
+              <path pathLength="1" d="M60 18h80M60 18v10M140 18v10"/>
+              <path pathLength="1" d="M96 18v-8M104 18v-8"/>
+              <path pathLength="1" d="M74 28h52v46a26 8 0 0 1-52 0Z"/>
+              <path pathLength="1" d="M74 40h52"/>
+              <path pathLength="1" d="M100 86v14"/>
+              <path pathLength="1" d="M100 122a5 5 0 0 1 10 0 10 10 0 0 1-20 0 15 15 0 0 1 30 0 20 20 0 0 1-40 0"/>
+            </svg>
+          </div>
+          <figure class="step-ph"><div class="ph m-oval"><img src="../../assets/images/chakli-1.jpg" alt="Freshly pressed chakli spirals waiting for the kadhai" loading="lazy"></div></figure>
+        </article>
+
+        <article class="step io-illo">
+          <div class="step-txt">
+            <div class="step-no" aria-hidden="true">04</div>
+            <div class="step-time">06:15 — GHEE-FRY</div>
+            <h3 class="step-h">Ghee-fry &amp; drain</h3>
+            <p class="step-p">Into ghee that is hot but never angry. Out at the first deep gold, onto old newspaper — the way it has always been done.</p>
+            <svg class="illo" viewBox="0 0 200 160" aria-hidden="true">
+              <path pathLength="1" d="M36 84a64 11 0 0 0 128 0"/>
+              <path pathLength="1" d="M36 84c4 34 26 50 64 50s60-16 64-50"/>
+              <path pathLength="1" d="M36 84c-10-2-18-8-16-16M164 84c10-2 18-8 16-16"/>
+              <path pathLength="1" d="M100 88a4 4 0 0 1 8 0 8 8 0 0 1-16 0 12 12 0 0 1 24 0"/>
+              <path pathLength="1" d="M78 56c-5-8 6-12 2-20M122 56c-5-8 6-12 2-20"/>
+            </svg>
+          </div>
+          <figure class="step-ph"><div class="ph m-slab"><img src="../../assets/images/murukku.jpg" alt="Golden murukku fresh out of the ghee" loading="lazy"></div></figure>
+        </article>
+
+      </div>
+
+      <div class="batch-progress" aria-hidden="true">
+        <span class="prog-count" id="progCount">01 / 04</span>
+        <svg viewBox="0 0 120 120">
+          <path d="M60 64a6 6 0 0 1 12 0 12 12 0 0 1-24 0 18 18 0 0 1 36 0 24 24 0 0 1-48 0 30 30 0 0 1 60 0"
+            fill="none" stroke="rgba(46,32,23,.15)" stroke-width="7" stroke-linecap="round"/>
+          <path class="prog-path" id="progSpiral" pathLength="100" d="M60 64a6 6 0 0 1 12 0 12 12 0 0 1-24 0 18 18 0 0 1 36 0 24 24 0 0 1-48 0 30 30 0 0 1 60 0"
+            fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE SHELF ============ -->
+<svg class="scallop" viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path fill="#F4ECDD" d="M0 24V12a12 12 0 0 1 24 0 12 12 0 0 1 24 0 12 12 0 0 1 24 0 12 12 0 0 1 24 0 12 12 0 0 1 24 0 12 12 0 0 1 24 0 12 12 0 0 1 24 0 12 12 0 0 1 24 0 12 12 0 0 1 24 0 12 12 0 0 1 24 0v12Z"/></svg>
+<section class="shelf" id="shelf">
+  <div class="shelf-head">
+    <div>
+      <p class="kicker" data-fade>Everything ships in a stamped tin</p>
+      <h2 data-reveal>The Shelf — eight things, <em>made properly.</em></h2>
+    </div>
+    <p class="shelf-hint" aria-hidden="true">scroll sideways <svg viewBox="0 0 26 12"><path d="M0 6h23M18 1.5 24.5 6 18 10.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
+  </div>
+
+  <div class="shelf-viewport">
+    <div class="shelf-track" id="shelfTrack">
+      <div class="shelf-board" aria-hidden="true"></div>
+
+      <article class="prod tall" style="--w:310px;--tilt:-.8deg;--tab:#B5512E">
+        <div class="prod-vig"><span class="stamp">Batch № 214</span><div class="ph"><img src="../../assets/images/chakli-1.jpg" alt="The Classic Bhajani Chakli" loading="lazy"></div></div>
+        <div class="prod-label">
+          <span class="flavor-tab" aria-hidden="true"></span>
+          <h3 class="prod-name">The Classic Bhajani Chakli</h3>
+          <p class="prod-story">The one the whole building fights over come Diwali.</p>
+          <div class="spice" aria-label="Spice level 2 of 3"><svg class="on"><use href="#chili"/></svg><svg class="on"><use href="#chili"/></svg><svg><use href="#chili"/></svg></div>
+          <p class="prod-meta">250 g <b>₹199</b></p>
+          <button class="add-btn" data-id="bhajani" data-name="The Classic Bhajani Chakli" data-price="199" data-img="chakli-1.jpg">Add to tin</button>
+        </div>
+      </article>
+
+      <article class="prod low" style="--w:280px;--tilt:.9deg;--tab:#D99A2B">
+        <div class="prod-vig"><span class="stamp">Batch № 209</span><div class="ph"><img src="../../assets/images/chakli-2.jpg" alt="Butter Chakli" loading="lazy"></div></div>
+        <div class="prod-label">
+          <span class="flavor-tab" aria-hidden="true"></span>
+          <h3 class="prod-name">Butter Chakli</h3>
+          <p class="prod-story">Rounder, softer, gone first at every kids&rsquo; table.</p>
+          <div class="spice" aria-label="Spice level 1 of 3"><svg class="on"><use href="#chili"/></svg><svg><use href="#chili"/></svg><svg><use href="#chili"/></svg></div>
+          <p class="prod-meta">250 g <b>₹219</b></p>
+          <button class="add-btn" data-id="butter-chakli" data-name="Butter Chakli" data-price="219" data-img="chakli-2.jpg">Add to tin</button>
+        </div>
+      </article>
+
+      <article class="prod" style="--w:300px;--tilt:-.5deg;--tab:#8C3D22">
+        <div class="prod-vig"><span class="stamp">Batch № 217</span><div class="ph"><img src="../../assets/images/chakli-1.jpg" alt="Masala Chakli" style="object-position:20% 70%" loading="lazy"></div></div>
+        <div class="prod-label">
+          <span class="flavor-tab" aria-hidden="true"></span>
+          <h3 class="prod-name">Masala Chakli</h3>
+          <p class="prod-story">For the ones who say <em>thoda aur tikhat</em> and mean it.</p>
+          <div class="spice" aria-label="Spice level 3 of 3"><svg class="on"><use href="#chili"/></svg><svg class="on"><use href="#chili"/></svg><svg class="on"><use href="#chili"/></svg></div>
+          <p class="prod-meta">250 g <b>₹219</b></p>
+          <button class="add-btn" data-id="masala-chakli" data-name="Masala Chakli" data-price="219" data-img="chakli-1.jpg">Add to tin</button>
+        </div>
+      </article>
+
+      <article class="prod tall" style="--w:290px;--tilt:1.1deg;--tab:#E9B949">
+        <div class="prod-vig"><span class="stamp">Batch № 198</span><div class="ph"><img src="../../assets/images/murukku.jpg" alt="Butter Murukku" loading="lazy"></div></div>
+        <div class="prod-label">
+          <span class="flavor-tab" aria-hidden="true"></span>
+          <h3 class="prod-name">Butter Murukku</h3>
+          <p class="prod-story">The south-of-the-Vindhyas cousin who stayed for good.</p>
+          <div class="spice" aria-label="Spice level 1 of 3"><svg class="on"><use href="#chili"/></svg><svg><use href="#chili"/></svg><svg><use href="#chili"/></svg></div>
+          <p class="prod-meta">250 g <b>₹209</b></p>
+          <button class="add-btn" data-id="murukku" data-name="Butter Murukku" data-price="209" data-img="murukku.jpg">Add to tin</button>
+        </div>
+      </article>
+
+      <article class="prod low" style="--w:300px;--tilt:-1.2deg;--tab:#5E6B3B">
+        <div class="prod-vig"><span class="stamp">Batch № 221</span><div class="ph"><img src="../../assets/images/chivda-1.jpg" alt="Poha Chivda" loading="lazy"></div></div>
+        <div class="prod-label">
+          <span class="flavor-tab" aria-hidden="true"></span>
+          <h3 class="prod-name">Poha Chivda</h3>
+          <p class="prod-story">Thin poha, hard peanuts, curry leaf — chai&rsquo;s oldest friend.</p>
+          <div class="spice" aria-label="Spice level 2 of 3"><svg class="on"><use href="#chili"/></svg><svg class="on"><use href="#chili"/></svg><svg><use href="#chili"/></svg></div>
+          <p class="prod-meta">200 g <b>₹119</b></p>
+          <button class="add-btn" data-id="poha-chivda" data-name="Poha Chivda" data-price="119" data-img="chivda-1.jpg">Add to tin</button>
+        </div>
+      </article>
+
+      <article class="prod" style="--w:285px;--tilt:.7deg;--tab:#5E6B3B">
+        <div class="prod-vig"><span class="stamp">Batch № 216</span><div class="ph"><img src="../../assets/images/chivda-2.jpg" alt="Roasted Diet Chivda" loading="lazy"></div></div>
+        <div class="prod-label">
+          <span class="flavor-tab" aria-hidden="true"></span>
+          <h3 class="prod-name">Roasted Diet Chivda</h3>
+          <p class="prod-story">Roasted, never fried. Crunch with a clean conscience.</p>
+          <div class="spice" aria-label="Spice level 1 of 3"><svg class="on"><use href="#chili"/></svg><svg><use href="#chili"/></svg><svg><use href="#chili"/></svg></div>
+          <p class="prod-meta">200 g <b>₹129</b></p>
+          <button class="add-btn" data-id="diet-chivda" data-name="Roasted Diet Chivda" data-price="129" data-img="chivda-2.jpg">Add to tin</button>
+        </div>
+      </article>
+
+      <article class="prod tall" style="--w:305px;--tilt:-.9deg;--tab:#D99A2B">
+        <div class="prod-vig"><span class="stamp">Batch № 203</span><div class="ph"><img src="../../assets/images/namkeen-mix.jpg" alt="Bombay Mix" loading="lazy"></div></div>
+        <div class="prod-label">
+          <span class="flavor-tab" aria-hidden="true"></span>
+          <h3 class="prod-name">Bombay Mix</h3>
+          <p class="prod-story">A little of everything, like the city it&rsquo;s named after.</p>
+          <div class="spice" aria-label="Spice level 2 of 3"><svg class="on"><use href="#chili"/></svg><svg class="on"><use href="#chili"/></svg><svg><use href="#chili"/></svg></div>
+          <p class="prod-meta">200 g <b>₹119</b></p>
+          <button class="add-btn" data-id="bombay-mix" data-name="Bombay Mix" data-price="119" data-img="namkeen-mix.jpg">Add to tin</button>
+        </div>
+      </article>
+
+      <article class="prod low" style="--w:275px;--tilt:1.3deg;--tab:#B5512E">
+        <div class="prod-vig"><span class="stamp">Batch № 226</span><div class="ph"><img src="../../assets/images/sev.jpg" alt="Crispy Sev" loading="lazy"></div></div>
+        <div class="prod-label">
+          <span class="flavor-tab" aria-hidden="true"></span>
+          <h3 class="prod-name">Crispy Sev</h3>
+          <p class="prod-story">Fine as monsoon rain. Goes on top of everything.</p>
+          <div class="spice" aria-label="Spice level 2 of 3"><svg class="on"><use href="#chili"/></svg><svg class="on"><use href="#chili"/></svg><svg><use href="#chili"/></svg></div>
+          <p class="prod-meta">150 g <b>₹99</b></p>
+          <button class="add-btn" data-id="sev" data-name="Crispy Sev" data-price="99" data-img="sev.jpg">Add to tin</button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT GOES IN ============ -->
+<svg class="scallop" viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path fill="#FBF5E9" d="M0 24V12a12 12 0 0 1 24 0 12 12 0 0 1 24 0 12 12 0 0 1 24 0 12 12 0 0 1 24 0 12 12 0 0 1 24 0 12 12 0 0 1 24 0 12 12 0 0 1 24 0 12 12 0 0 1 24 0 12 12 0 0 1 24 0 12 12 0 0 1 24 0v12Z"/></svg>
+<section class="orbit-sec" id="ingredients">
+  <p class="kicker" style="justify-content:center" data-fade>What goes in</p>
+  <h2 data-reveal>Six things. <em>Countable on one hand,</em><br>plus a thumb.</h2>
+
+  <div class="orbit-wrap">
+    <div class="orbit-ring" aria-hidden="true">
+      <svg class="orbit-lines" viewBox="0 0 100 100">
+        <line x1="50" y1="50" x2="50" y2="6"/>
+        <line x1="50" y1="50" x2="89.8" y2="27"/>
+        <line x1="50" y1="50" x2="86.4" y2="71"/>
+        <line x1="50" y1="50" x2="46.2" y2="93.8"/>
+        <line x1="50" y1="50" x2="11.9" y2="72"/>
+        <line x1="50" y1="50" x2="10.2" y2="27"/>
+      </svg>
+      <div class="chip" style="left:50%;top:6%"><div class="chip-spin">
+        <span class="chip-dot"><svg viewBox="0 0 24 24"><path d="M12 3v18M12 3c-3 3-3 6 0 9M12 3c3 3 3 6 0 9M12 12c-3 3-3 6 0 9M12 12c3 3 3 6 0 9"/></svg></span><b>rice flour, home-ground</b>
+      </div></div>
+      <div class="chip" style="left:89.8%;top:27%"><div class="chip-spin">
+        <span class="chip-dot"><svg viewBox="0 0 24 24"><path d="M7 10h10l-1.5 10h-7L7 10Z"/><path d="M9 10c0-5 6-5 6-9"/></svg></span><b>ghee, the good kind</b>
+      </div></div>
+      <div class="chip" style="left:86.4%;top:71%"><div class="chip-spin">
+        <span class="chip-dot"><svg viewBox="0 0 24 24"><path d="M12 4c2 3 2 5 0 7-2-2-2-4 0-7Z"/><path d="M6 12c3-1 5 0 6 2-2 2-4 2-6-2Z"/><path d="M18 12c-3-1-5 0-6 2 2 2 4 2 6-2Z"/><path d="M12 14v6"/></svg></span><b>white sesame</b>
+      </div></div>
+      <div class="chip" style="left:46.2%;top:93.8%"><div class="chip-spin">
+        <span class="chip-dot"><div class="ph"><img src="../../assets/images/spices.jpg" alt="" loading="lazy"></div></span><b>jeera &amp; ajwain</b>
+      </div></div>
+      <div class="chip" style="left:11.9%;top:72%"><div class="chip-spin">
+        <span class="chip-dot"><svg viewBox="0 0 24 24"><path d="M12 21V7"/><path d="M12 9C8 9 6 6 6 3c4 0 6 2 6 6Z"/><path d="M12 13c4 0 6-3 6-6-4 0-6 2-6 6Z"/><path d="M12 17c-4 0-5-2-5-5 3 0 5 2 5 5Z"/></svg></span><b>curry leaves, next door&rsquo;s tree</b>
+      </div></div>
+      <div class="chip" style="left:10.2%;top:27%"><div class="chip-spin">
+        <span class="chip-dot"><div class="ph"><img src="../../assets/images/peanuts.jpg" alt="" loading="lazy"></div></span><b>peanuts, roasted hard</b>
+      </div></div>
+    </div>
+    <div class="orbit-core"><div class="ph"><img src="../../assets/images/chakli-2.jpg" alt="A chakli spiral, the sum of six ingredients" loading="lazy"></div></div>
+  </div>
+
+  <p class="orbit-tag" data-fade>That&rsquo;s the whole list. <em>Nothing you&rsquo;d need to google.</em></p>
+</section>
+
+<!-- ============ MAA'S RULES ============ -->
+<section class="rules" id="rules">
+  <div class="rules-head">
+    <div>
+      <p class="kicker" data-fade>House law, non-negotiable</p>
+      <h2 data-reveal>Maa&rsquo;s Rules — <em>the kitchen constitution.</em></h2>
+    </div>
+  </div>
+
+  <div class="rule" data-fade>
+    <div class="rule-no" aria-hidden="true">01</div>
+    <p class="rule-q">If the ghee isn&rsquo;t hot enough, <em>we wait.</em></p>
+  </div>
+  <div class="rule alt" data-fade>
+    <div class="rule-no" aria-hidden="true">02</div>
+    <p class="rule-q">The spiral is <em>pressed,</em> never poured.</p>
+  </div>
+
+  <div class="seema" id="seema">
+    <div class="seema-ph" data-fade>
+      <div class="ph"><img src="../../assets/images/cooking.jpg" alt="Seema at her kadhai, early morning" style="object-position:60% 30%" loading="lazy"></div>
+      <span class="seema-anno">the boss, 4:55&thinsp;AM</span>
+    </div>
+    <div class="seema-note" data-fade>
+      <p>I started with one kadhai and my mother&rsquo;s bhajani recipe, written in Marathi on the back of a calendar page. Every batch still begins the same way — I taste the flour before I knead it. If the sesame is even a little bitter, it goes back to the shop. People ask why I don&rsquo;t make more. Because at forty tins a morning, I still know whose tin is whose. Yours has my name on it — and I mean that literally. Check the lid.</p>
+      <span class="seema-sig">— Seema</span>
+    </div>
+  </div>
+
+  <div class="rule" data-fade>
+    <div class="rule-no" aria-hidden="true">03</div>
+    <p class="rule-q">Morning batches only. Afternoon oil is <em>tired oil.</em></p>
+  </div>
+  <div class="rule alt" data-fade style="border-bottom:1px solid var(--ink-15)">
+    <div class="rule-no" aria-hidden="true">04</div>
+    <p class="rule-q">If Seema wouldn&rsquo;t serve it to family, <em>it doesn&rsquo;t ship.</em></p>
+  </div>
+</section>
+
+<!-- ============ GIFTING ============ -->
+<svg class="tear" viewBox="0 0 1200 30" preserveAspectRatio="none" aria-hidden="true"><path fill="#2E2017" d="M0 30V15l45-5 52 8 58-11 46 7 55-10 50 12 60-8 42 4 56-11 47 7 53-9 45 10 58-7 49 5 44-10 56 8 48-6 53 10 47-7 41 4 56-8 44 7 50-5 45 3V30Z"/></svg>
+<section class="gift" id="gifting">
+  <div class="gift-copy">
+    <p class="eyebrow" data-fade>Diwali 2026 &middot; ships in a kraft tin</p>
+    <h2 data-reveal>The Diwali Faral Box</h2>
+    <p class="gift-p" data-fade>Chakli, two chivdas, sev and shankarpali — packed the way faral is meant to travel: in a stamped tin with a handwritten name tag, not a ribbon printed to look handwritten.</p>
+    <span class="gift-price" data-fade>₹549
+      <svg viewBox="0 0 160 70" aria-hidden="true"><path d="M18 38C14 16 90 6 130 16c30 8 24 40-24 46C58 68 8 58 16 36 22 20 60 10 104 12"/></svg>
+    </span>
+    <p class="gift-date" data-fade>Order by 28 October — boxes travel in Diwali week</p>
+    <div data-fade>
+      <a class="btn btn-solid magnetic" href="#" id="giftAdd">Build a box <svg><use href="#arrow-r"/></svg></a>
+    </div>
+  </div>
+  <div class="gift-visual">
+    <span class="gift-anno" aria-hidden="true">the tin does the talking</span>
+    <figure class="g1 ph"><img src="../../assets/images/faral.jpg" alt="The Diwali faral box — chakli, chivda, sev and shankarpali" loading="lazy"></figure>
+    <figure class="g2">
+      <div class="ph"><img src="../../assets/images/diwali.jpg" alt="Diwali lamps beside the faral tin" loading="lazy"></div>
+      <figcaption>lamps lit, tin opened</figcaption>
+    </figure>
+  </div>
+</section>
+<svg class="tear flip" viewBox="0 0 1200 30" preserveAspectRatio="none" aria-hidden="true"><path fill="#2E2017" d="M0 30V15l45-5 52 8 58-11 46 7 55-10 50 12 60-8 42 4 56-11 47 7 53-9 45 10 58-7 49 5 44-10 56 8 48-6 53 10 47-7 41 4 56-8 44 7 50-5 45 3V30Z"/></svg>
+
+<!-- ============ FRIDGE NOTES ============ -->
+<section class="notes" id="notes">
+  <div class="notes-head">
+    <p class="kicker" data-fade>Stuck on fridges, forwarded on WhatsApp</p>
+    <h2 data-reveal>Fridge notes <em>from the tin&rsquo;s first owners.</em></h2>
+  </div>
+  <div class="notes-wall">
+    <div class="note" style="--r:-3deg;--tr:2deg;background:#FFF3C9" data-fade>
+      <p>&ldquo;Finished the whole tin before the guests came. Ordered two more, hiding one.&rdquo;</p>
+      <cite>Prachi &middot; Andheri</cite>
+    </div>
+    <div class="note" style="--r:2.4deg;--tr:-3deg;background:#FBF5E9" data-fade>
+      <p>&ldquo;My aji asked who made this. That is the review.&rdquo;</p>
+      <cite>Kunal &middot; Toronto</cite>
+    </div>
+    <div class="note" style="--r:-1.6deg;--tr:1deg;background:#FDE7D2" data-fade>
+      <p>&ldquo;The chakli actually snaps. You can hear it on a video call.&rdquo;</p>
+      <cite>Meera &middot; Baner</cite>
+    </div>
+    <div class="note" style="--r:3.2deg;--tr:-2deg;background:#E8EDD8" data-fade>
+      <p>&ldquo;Sent the faral box to my in-laws. Suddenly I&rsquo;m the favourite.&rdquo;</p>
+      <cite>Arjun &middot; Gurgaon</cite>
+    </div>
+    <div class="note" style="--r:-2.2deg;--tr:3deg;background:#F6E3DC" data-fade>
+      <p>&ldquo;Poha chivda at 4&thinsp;pm with chai. Every day since March.&rdquo;</p>
+      <cite>Shruti &middot; Kothrud</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <p class="kicker" data-fade>Sensible questions</p>
+    <h2 data-reveal>Asked before, <em>answered honestly.</em></h2>
+
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false"><h3>How fresh is fresh, exactly?</h3><svg viewBox="0 0 17 17" aria-hidden="true"><path d="M8.5 1v15M1 8.5h15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <div class="faq-a"><div><p>Your tin is fried the same week it ships — usually the same morning. The batch date is stamped on the lid in ink, not hidden in a code you&rsquo;d need a decoder ring for.</p></div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false"><h3>How long does chakli keep?</h3><svg viewBox="0 0 17 17" aria-hidden="true"><path d="M8.5 1v15M1 8.5h15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <div class="faq-a"><div><p>Three weeks sealed, ten days once opened — in theory. No tin has survived that long in testing, so this remains an estimate.</p></div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false"><h3>Do you use palm oil?</h3><svg viewBox="0 0 17 17" aria-hidden="true"><path d="M8.5 1v15M1 8.5h15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <div class="faq-a"><div><p>Never. Ghee for the butter range, cold-pressed groundnut oil for everything else. That&rsquo;s the whole story, and it&rsquo;s on every label.</p></div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false"><h3>Where do you deliver?</h3><svg viewBox="0 0 17 17" aria-hidden="true"><path d="M8.5 1v15M1 8.5h15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <div class="faq-a"><div><p>All of Pune in 1–2 days, most Indian metros in 3–5. The couriers handle the tin like it&rsquo;s theirs — mostly because we told them it is.</p></div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false"><h3>Is everything vegetarian?</h3><svg viewBox="0 0 17 17" aria-hidden="true"><path d="M8.5 1v15M1 8.5h15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <div class="faq-a"><div><p>Yes — everything, always. A no-onion-no-garlic batch of the classic bhajani runs most weeks; just say so on WhatsApp when you order.</p></div></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <svg class="sig" viewBox="0 0 560 190" aria-hidden="true">
+    <text x="280" y="138" text-anchor="middle">Cmaa</text>
+  </svg>
+  <p class="foot-tag">Made by hand. Made for you.</p>
+
+  <div class="foot-grid">
+    <div class="foot-col">
+      <b>Shop</b>
+      <a href="#shelf">The Shelf</a>
+      <a href="#gifting">Diwali Faral Box</a>
+      <a href="#batch">The Morning Batch</a>
+    </div>
+    <div class="foot-col">
+      <b>The house</b>
+      <a href="#seema">Meet Seema</a>
+      <a href="#rules">Maa&rsquo;s Rules</a>
+      <a href="#ingredients">What goes in</a>
+    </div>
+    <div class="foot-col">
+      <b>Help</b>
+      <a href="#faq">Questions</a>
+      <a href="https://wa.me/910000000000" target="_blank" rel="noopener">WhatsApp us</a>
+    </div>
+  </div>
+
+  <div class="foot-legal">
+    <span>© 2026 Cmaa &middot; Pune, Maharashtra &middot; FSSAI Lic. 11526XXXXXXXXX</span>
+    <span>Photos: Wikimedia Commons (CC) — full credits in repo</span>
+    <span>This is a design demo — ordering opens soon.</span>
+  </div>
+</footer>
+
+<!-- ============ CART DRAWER ============ -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Your tin">
+  <div class="drawer-head">
+    <h3>Your Tin <span>packed by Seema</span></h3>
+    <button class="drawer-close" id="drawerClose" aria-label="Close cart">
+      <svg viewBox="0 0 14 14"><path d="M1 1l12 12M13 1 1 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="ship-bar">
+    <p id="shipMsg">Add ₹499 more for free shipping</p>
+    <div class="ship-track"><div class="ship-fill" id="shipFill"></div></div>
+  </div>
+  <div class="drawer-items" id="drawerItems"></div>
+  <div class="drawer-foot">
+    <div class="d-total"><span>Subtotal</span><span id="dTotal">₹0</span></div>
+    <a class="wa-btn" id="waCheckout" href="https://wa.me/910000000000" target="_blank" rel="noopener">
+      <svg><use href="#wa"/></svg> Checkout on WhatsApp
+    </a>
+    <p class="d-note">This is a design demo — ordering opens soon.</p>
+  </div>
+</aside>
+
+<!-- ============ MOBILE DOCK ============ -->
+<div class="dock" aria-label="Quick actions">
+  <a href="#shelf"><svg viewBox="0 0 24 24"><path d="M3 9h18M3 9l1.5-5h15L21 9M5 9v11h14V9"/></svg>Shop</a>
+  <button id="dockTin"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M8 9V7a4 4 0 0 1 8 0v2"/></svg><span>Tin (<span id="dockCount">0</span>)</span></button>
+  <a href="https://wa.me/910000000000" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>WhatsApp</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" integrity="sha384-O55L/6rhHr9CFvrxqv5luxOCcmVaBmETbZbJDP+Do8T0pztTACsFBD/IXCNkj7DV" crossorigin="anonymous"></script>
+<script>
+(function(){
+'use strict';
+var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var hasGsap = typeof gsap !== 'undefined';
+var docEl = document.documentElement;
+
+/* ---------- PRELOADER ---------- */
+var pre = document.getElementById('preloader');
+var preDone = false;
+function closePre(){
+  if(preDone) return; preDone = true;
+  pre.classList.add('done');
+  setTimeout(function(){ pre.remove(); heroIn(); }, 660);
+}
+if(reduced){ pre.remove(); preDone = true; }
+else{
+  pre.addEventListener('click', closePre);
+  setTimeout(closePre, 1200);
+}
+
+/* ---------- MOTION SETUP ---------- */
+if(!reduced) docEl.classList.add('anim');
+
+/* word-by-word split for [data-reveal] */
+function splitWords(el){
+  function walk(node){
+    var kids = Array.prototype.slice.call(node.childNodes);
+    kids.forEach(function(k){
+      if(k.nodeType === 3){
+        var frag = document.createDocumentFragment();
+        k.textContent.split(/(\s+)/).forEach(function(part){
+          if(!part) return;
+          if(/^\s+$/.test(part)){ frag.appendChild(document.createTextNode(part)); return; }
+          var w = document.createElement('span'); w.className = 'w';
+          var wi = document.createElement('span'); wi.className = 'wi';
+          wi.textContent = part; w.appendChild(wi); frag.appendChild(w);
+        });
+        node.replaceChild(frag, k);
+      } else if(k.nodeType === 1 && k.tagName !== 'BR'){ walk(k); }
+    });
+  }
+  walk(el);
+  Array.prototype.forEach.call(el.querySelectorAll('.wi'), function(wi, i){
+    wi.style.transitionDelay = (i * 55) + 'ms';
+  });
+}
+if(!reduced){
+  Array.prototype.forEach.call(document.querySelectorAll('[data-reveal]'), splitWords);
+}
+
+/* IntersectionObserver reveals (also the reduced-motion-safe fallback path) */
+if(!reduced && 'IntersectionObserver' in window){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:.25, rootMargin:'0px 0px -6% 0px'});
+  Array.prototype.forEach.call(document.querySelectorAll('[data-reveal],[data-fade],.io-illo,.sig'), function(el){
+    io.observe(el);
+  });
+}
+function heroIn(){
+  Array.prototype.forEach.call(document.querySelectorAll('.hero [data-reveal],.hero [data-fade]'), function(el){
+    el.classList.add('in');
+  });
+}
+if(reduced || document.readyState === 'complete'){ /* no-op, CSS shows content */ }
+
+/* ---------- LENIS SMOOTH SCROLL ---------- */
+var lenis = null;
+if(!reduced && typeof Lenis !== 'undefined' && hasGsap){
+  lenis = new Lenis({ lerp:.11 });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(function(t){ lenis.raf(t * 1000); });
+  gsap.ticker.lagSmoothing(0);
+}
+/* anchor scrolling */
+document.addEventListener('click', function(ev){
+  var a = ev.target.closest('a[href^="#"]');
+  if(!a) return;
+  var id = a.getAttribute('href');
+  if(id.length < 2) return;
+  var target = document.querySelector(id);
+  if(!target) return;
+  ev.preventDefault();
+  if(lenis) lenis.scrollTo(target, {offset:-64, duration:1.4});
+  else target.scrollIntoView({behavior: reduced ? 'auto' : 'smooth'});
+});
+
+/* ---------- NAV SHRINK ---------- */
+var nav = document.getElementById('nav');
+function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 40); }
+window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+/* ---------- GSAP CHAPTERS (desktop + motion) ---------- */
+if(hasGsap && !reduced){
+  gsap.registerPlugin(ScrollTrigger);
+  var gmm = gsap.matchMedia();
+  gmm.add('(min-width: 861px)', function(){
+
+    /* hero parallax */
+    gsap.to('.maa', { yPercent:26, ease:'none',
+      scrollTrigger:{ trigger:'.hero', start:'top top', end:'bottom top', scrub:true }});
+    gsap.to('.arch img', { yPercent:7, ease:'none',
+      scrollTrigger:{ trigger:'.hero', start:'top top', end:'bottom top', scrub:true }});
+
+    /* ----- pinned Morning Batch ----- */
+    document.querySelector('.batch').classList.add('gpin');
+    var steps = gsap.utils.toArray('.batch .step');
+    var progSpiral = document.getElementById('progSpiral');
+    var progCount = document.getElementById('progCount');
+    steps.forEach(function(s,i){ if(i>0) gsap.set(s,{autoAlpha:0}); });
+
+    var tl = gsap.timeline({
+      scrollTrigger:{
+        trigger:'.batch-pinwrap', start:'top top', end:'+=3000',
+        scrub:.55, pin:true, anticipatePin:1,
+        onUpdate:function(self){
+          progSpiral.style.strokeDashoffset = String(100 - self.progress * 100);
+          var idx = Math.min(3, Math.floor(self.progress * 4));
+          progCount.textContent = '0' + (idx + 1) + ' / 04';
+        }
+      }
+    });
+    function drawIllo(step, at){
+      tl.fromTo(step.querySelectorAll('.illo path'),
+        {strokeDasharray:1, strokeDashoffset:1},
+        {strokeDashoffset:0, duration:.3, stagger:.045, ease:'none'}, at);
+    }
+    tl.fromTo(steps[0].querySelector('.ph img'), {scale:1.14},{scale:1,duration:1,ease:'none'}, 0);
+    drawIllo(steps[0], .02);
+    for(var i=1;i<4;i++){
+      tl.to(steps[i-1], {autoAlpha:0, y:-46, duration:.3, ease:'none'}, i);
+      tl.fromTo(steps[i], {autoAlpha:0, y:56},{autoAlpha:1, y:0, duration:.38, ease:'none'}, i + .16);
+      tl.fromTo(steps[i].querySelector('.ph img'), {scale:1.14},{scale:1,duration:.84,ease:'none'}, i + .16);
+      drawIllo(steps[i], i + .24);
+    }
+    tl.to({}, {duration:.55});
+
+    /* ----- horizontal shelf ----- */
+    var shelf = document.querySelector('.shelf');
+    shelf.classList.add('gpin');
+    var track = document.getElementById('shelfTrack');
+    function amt(){ return Math.max(0, track.scrollWidth - window.innerWidth); }
+    gsap.to(track, { x:function(){ return -amt(); }, ease:'none',
+      scrollTrigger:{ trigger:shelf, start:'top top', end:function(){ return '+=' + amt(); },
+        scrub:.5, pin:true, anticipatePin:1, invalidateOnRefresh:true }});
+
+    /* gift photos drift */
+    gsap.from('.gift-visual .g1', { yPercent:9, ease:'none',
+      scrollTrigger:{ trigger:'.gift', start:'top bottom', end:'bottom top', scrub:true }});
+
+    return function(){
+      document.querySelector('.batch').classList.remove('gpin');
+      shelf.classList.remove('gpin');
+      gsap.set(track, {clearProps:'x'});
+      steps.forEach(function(s){ gsap.set(s,{clearProps:'all'}); });
+    };
+  });
+}
+
+/* ---------- CURSOR + MAGNETIC (fine pointers, desktop, motion) ---------- */
+if(!reduced && window.matchMedia('(pointer:fine) and (min-width:1024px)').matches){
+  var cur = document.getElementById('cursor');
+  cur.style.display = 'block';
+  docEl.classList.add('cur');
+  var cx = -100, cy = -100, tx = -100, ty = -100;
+  window.addEventListener('mousemove', function(e){ tx = e.clientX; ty = e.clientY; }, {passive:true});
+  (function loop(){
+    cx += (tx - cx) * .22; cy += (ty - cy) * .22;
+    cur.style.left = cx + 'px'; cur.style.top = cy + 'px';
+    requestAnimationFrame(loop);
+  })();
+  document.addEventListener('mouseover', function(e){
+    cur.classList.toggle('big', !!e.target.closest('a,button,.faq-q,.prod'));
+  });
+  /* magnetic buttons */
+  Array.prototype.forEach.call(document.querySelectorAll('.magnetic'), function(btn){
+    btn.addEventListener('mousemove', function(e){
+      var r = btn.getBoundingClientRect();
+      var mx = e.clientX - r.left - r.width/2, my = e.clientY - r.top - r.height/2;
+      btn.style.transform = 'translate(' + (mx*.22) + 'px,' + (my*.28) + 'px)';
+    });
+    btn.addEventListener('mouseleave', function(){
+      btn.style.transition = 'transform .5s cubic-bezier(.2,.7,.3,1.4)';
+      btn.style.transform = '';
+      setTimeout(function(){ btn.style.transition = ''; }, 500);
+    });
+  });
+}
+
+/* ---------- FAQ ---------- */
+Array.prototype.forEach.call(document.querySelectorAll('.faq-item'), function(item){
+  var q = item.querySelector('.faq-q');
+  q.addEventListener('click', function(){
+    var open = item.classList.toggle('open');
+    q.setAttribute('aria-expanded', String(open));
+  });
+});
+
+/* ---------- CART ---------- */
+var cart = {}; /* id -> {name, price, qty, img} */
+var FREE_AT = 499;
+var drawer = document.getElementById('drawer'),
+    overlay = document.getElementById('overlay'),
+    itemsEl = document.getElementById('drawerItems'),
+    tinCount = document.getElementById('tinCount'),
+    dockCount = document.getElementById('dockCount'),
+    dTotal = document.getElementById('dTotal'),
+    shipMsg = document.getElementById('shipMsg'),
+    shipFill = document.getElementById('shipFill'),
+    waBtn = document.getElementById('waCheckout');
+
+function cartCount(){ var n=0; for(var k in cart) n += cart[k].qty; return n; }
+function cartTotal(){ var t=0; for(var k in cart) t += cart[k].qty * cart[k].price; return t; }
+
+function renderCart(){
+  var n = cartCount(), total = cartTotal();
+  tinCount.textContent = n; if(dockCount) dockCount.textContent = n;
+  dTotal.textContent = '₹' + total;
+  var left = Math.max(0, FREE_AT - total);
+  shipMsg.innerHTML = total === 0 ? 'Free shipping over ₹' + FREE_AT
+    : left > 0 ? 'Add ₹' + left + ' more for <b>free shipping</b>'
+    : '<b>Free shipping unlocked</b> — Seema approves';
+  shipFill.style.width = Math.min(100, total / FREE_AT * 100) + '%';
+
+  if(n === 0){
+    itemsEl.innerHTML = '<div class="drawer-empty">' +
+      '<svg viewBox="0 0 120 120"><path d="M60 64a6 6 0 0 1 12 0 12 12 0 0 1-24 0 18 18 0 0 1 36 0 24 24 0 0 1-48 0 30 30 0 0 1 60 0" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/></svg>' +
+      '<p>The tin is empty.</p><small>That never lasts long around here.</small></div>';
+  } else {
+    var html = '';
+    for(var id in cart){
+      var it = cart[id];
+      html += '<div class="d-item">' +
+        '<div class="ph"><img src="../../assets/images/' + it.img + '" alt=""></div>' +
+        '<div><h4>' + it.name + '</h4><div class="d-price">₹' + it.price + ' each</div></div>' +
+        '<div class="qty">' +
+          '<button data-dec="' + id + '" aria-label="One less">−</button>' +
+          '<span>' + it.qty + '</span>' +
+          '<button data-inc="' + id + '" aria-label="One more">+</button>' +
+        '</div></div>';
+    }
+    itemsEl.innerHTML = html;
+  }
+  /* WhatsApp message */
+  var lines = ['Namaste Seema! I’d like to order:'];
+  for(var id2 in cart){
+    var c = cart[id2];
+    lines.push('• ' + c.name + ' × ' + c.qty + ' — ₹' + (c.qty * c.price));
+  }
+  lines.push('Total: ₹' + total);
+  waBtn.href = 'https://wa.me/910000000000?text=' + encodeURIComponent(lines.join('\n'));
+}
+function addToCart(d){
+  var id = d.id;
+  if(!cart[id]) cart[id] = { name:d.name, price:+d.price, img:d.img, qty:0 };
+  cart[id].qty++;
+  renderCart();
+}
+document.addEventListener('click', function(e){
+  var add = e.target.closest('.add-btn');
+  if(add){
+    addToCart(add.dataset);
+    add.classList.add('added'); var old = add.textContent;
+    add.textContent = 'In the tin';
+    setTimeout(function(){ add.classList.remove('added'); add.textContent = old; }, 1200);
+    return;
+  }
+  var inc = e.target.closest('[data-inc]'), dec = e.target.closest('[data-dec]');
+  if(inc){ cart[inc.dataset.inc].qty++; renderCart(); }
+  if(dec){
+    var id = dec.dataset.dec;
+    if(--cart[id].qty <= 0) delete cart[id];
+    renderCart();
+  }
+});
+document.getElementById('giftAdd').addEventListener('click', function(e){
+  e.preventDefault();
+  addToCart({id:'faral-box', name:'Diwali Faral Box', price:'549', img:'faral.jpg'});
+  openDrawer();
+});
+
+function openDrawer(){
+  drawer.classList.add('show'); overlay.classList.add('show');
+  drawer.setAttribute('aria-hidden','false');
+  if(lenis) lenis.stop();
+}
+function closeDrawer(){
+  drawer.classList.remove('show'); overlay.classList.remove('show');
+  if(lenis) lenis.start();
+}
+document.getElementById('tinBtn').addEventListener('click', openDrawer);
+var dockTin = document.getElementById('dockTin');
+if(dockTin) dockTin.addEventListener('click', openDrawer);
+document.getElementById('drawerClose').addEventListener('click', closeDrawer);
+overlay.addEventListener('click', closeDrawer);
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeDrawer(); });
+renderCart();
+})();
+</script>
+</body>
+</html>
