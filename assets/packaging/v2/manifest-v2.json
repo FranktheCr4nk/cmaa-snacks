@@ -1,0 +1,57 @@
+[
+  {
+    "flavor": "bhajani",
+    "dev": "भाजणी चकली",
+    "latin": "BHAJANI CHAKLI",
+    "sku": "#7A1E2B",
+    "skuDark": "#57121E",
+    "photo": "chakli-1.jpg",
+    "files": [
+      "pouch-bhajani.svg",
+      "matchbox-bhajani.svg"
+    ]
+  },
+  {
+    "flavor": "butter",
+    "dev": "बटर चकली",
+    "latin": "BUTTER CHAKLI",
+    "sku": "#C98A3B",
+    "skuDark": "#8F5E20",
+    "photo": "murukku.jpg",
+    "files": [
+      "pouch-butter.svg",
+      "matchbox-butter.svg"
+    ]
+  },
+  {
+    "flavor": "masala",
+    "dev": "मसाला चिवडा",
+    "latin": "MASALA CHIVDA",
+    "sku": "#B3372B",
+    "skuDark": "#7E1F1A",
+    "photo": "chivda-2.jpg",
+    "files": [
+      "pouch-masala.svg",
+      "matchbox-masala.svg"
+    ]
+  },
+  {
+    "flavor": "poha",
+    "dev": "पोहा चिवडा",
+    "latin": "POHA CHIVDA",
+    "sku": "#5F7A4A",
+    "skuDark": "#3E5530",
+    "photo": "chivda-1.jpg",
+    "files": [
+      "pouch-poha.svg",
+      "matchbox-poha.svg"
+    ]
+  },
+  {
+    "flavor": "gift",
+    "files": [
+      "tin-gift.svg"
+    ],
+    "palette": "Kalichandrakala"
+  }
+]
