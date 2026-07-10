@@ -1,0 +1,62 @@
+[
+  {
+    "id": "A1",
+    "name": "Heritage Contrast",
+    "concept": "High-contrast serif Cmaa drawn as variable-width ribbon geometry; the C's counter is a gold chakli spiral, a gold sesame seed sets the period.",
+    "files": [
+      "brand/logo-lab/wordmarks/A1-color.svg",
+      "brand/logo-lab/wordmarks/A1-mono.svg",
+      "brand/logo-lab/wordmarks/A1-rev.svg"
+    ]
+  },
+  {
+    "id": "A2",
+    "name": "Soft Roundhand",
+    "concept": "Warm rounded monoline lowercase; the two a's link with a swash that sprouts a curry leaf, sesame-seed tittle floats above.",
+    "files": [
+      "brand/logo-lab/wordmarks/A2-color.svg",
+      "brand/logo-lab/wordmarks/A2-mono.svg",
+      "brand/logo-lab/wordmarks/A2-rev.svg"
+    ]
+  },
+  {
+    "id": "A3",
+    "name": "Bilingual Twin",
+    "concept": "CMAA locked over चमा (real Yatra One outlines); the drawn shirorekha doubles as the Latin underline — one shared bar, Devanagari as hero.",
+    "files": [
+      "brand/logo-lab/wordmarks/A3-color.svg",
+      "brand/logo-lab/wordmarks/A3-mono.svg",
+      "brand/logo-lab/wordmarks/A3-rev.svg"
+    ]
+  },
+  {
+    "id": "A4",
+    "name": "Signboard Painter",
+    "concept": "Pune storefront hand-paint: fat bouncing brush caps, haldi inline stripe, hard ink drop-shadow — KADAK energy.",
+    "files": [
+      "brand/logo-lab/wordmarks/A4-color.svg",
+      "brand/logo-lab/wordmarks/A4-mono.svg",
+      "brand/logo-lab/wordmarks/A4-rev.svg"
+    ]
+  },
+  {
+    "id": "A5",
+    "name": "Dabba Stencil",
+    "concept": "Stencil-cut caps as if punched on a steel tiffin — butt-cut bridges, brass rivet dots; industrial-warm.",
+    "files": [
+      "brand/logo-lab/wordmarks/A5-color.svg",
+      "brand/logo-lab/wordmarks/A5-mono.svg",
+      "brand/logo-lab/wordmarks/A5-rev.svg"
+    ]
+  },
+  {
+    "id": "A6",
+    "name": "Spiral Ligature",
+    "concept": "Minimal monoline cmaa; the final a resolves into a continuous tapering Archimedean spiral — one-stroke chakli ligature.",
+    "files": [
+      "brand/logo-lab/wordmarks/A6-color.svg",
+      "brand/logo-lab/wordmarks/A6-mono.svg",
+      "brand/logo-lab/wordmarks/A6-rev.svg"
+    ]
+  }
+]

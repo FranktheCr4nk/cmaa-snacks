@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 660" font-family="'Mulish',system-ui,sans-serif">
+<defs>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Anton&amp;family=Yatra+One&amp;family=Mulish:wght@400;700;800&amp;family=Fraunces:ital,opsz,wght@1,9..144,400..600&amp;display=swap');</style>
+  <clipPath id="ph-bhajani-f"><circle cx="306" cy="436" r="110"/></clipPath>
+  <filter id="gr-bhajani-f"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".05"/></feComponentTransfer><feComposite operator="over" in2="SourceGraphic"/></filter>
+</defs>
+<g filter="url(#gr-bhajani-f)">
+  <rect x="0" y="0" width="460" height="660" fill="#7A1E2B"/>
+  
+  <!-- header strip -->
+  <path d="M41 25 L41.21 24.93 L41.45 24.89 L41.7 24.89 L41.95 24.93 L42.21 25.01 L42.46 25.13 L42.7 25.29 L42.92 25.5 L43.12 25.74 L43.28 26.01 L43.41 26.32 L43.5 26.66 L43.53 27.01 L43.52 27.38 L43.45 27.75 L43.33 28.12 L43.15 28.47 L42.91 28.81 L42.62 29.12 L42.29 29.39 L41.91 29.62 L41.49 29.8 L41.04 29.92 L40.56 29.97 L40.07 29.96 L39.58 29.88 L39.09 29.73 L38.62 29.5 L38.17 29.21 L37.76 28.85 L37.4 28.43 L37.09 27.95 L36.85 27.43 L36.68 26.86 L36.59 26.27 L36.58 25.66 L36.66 25.04 L36.82 24.43 L37.07 23.83 L37.41 23.27 L37.83 22.74 L38.32 22.28 L38.88 21.88 L39.51 21.55 L40.18 21.31 L40.89 21.17 L41.62 21.12 L42.37 21.17 L43.11 21.33 L43.83 21.59 L44.52 21.96 L45.17 22.42 L45.75 22.97 L46.26 23.61 L46.68 24.32 L47 25.09 L47.22 25.91 L47.33 26.77 L47.32 27.64 L47.18 28.51 L46.93 29.37 L46.55 30.19 L46.06 30.96 L45.47 31.67 L44.77 32.3 L43.98 32.83 L43.12 33.26 L42.2 33.57 L41.23 33.75 L40.23 33.79 L39.23 33.7 L38.24 33.47 L37.28 33.11 L36.36 32.61 L35.52 31.98 L34.76 31.24 L34.1 30.39 L33.56 29.44 L33.15 28.43 L32.88 27.35 L32.75 26.24 L32.78 25.11 L32.97 23.98 L33.31 22.88 L33.8 21.83 L34.44 20.84 L35.21 19.94 L36.11 19.14 L37.12 18.47 L38.22 17.94 L39.39 17.56 L40.62 17.34 L41.87 17.29 L43.13 17.41 L44.37 17.71 L45.58 18.18 L46.71 18.81 L47.76 19.59 L48.7 20.52 L49.52 21.58 L50.18 22.75 L50.69 24.01 L51.02 25.34 L51.16 26.71 L51.12 28.1 L50.89 29.49 L50.47 30.84 L49.87 32.13 L49.08 33.33 L48.14 34.43 L47.04 35.39 L45.82 36.2 L44.48 36.85 L43.06 37.31 L41.58 37.57 L40.07 37.63 L38.55 37.48 L37.05 37.12 L35.61 36.56 L34.24 35.8" fill="none" stroke="#F6EDDB" stroke-width="2.6" stroke-linecap="round"/>
+  <text x="58" y="36" font-family="'Anton','Arial Narrow',Impact,sans-serif" font-size="26" letter-spacing="1" fill="#F6EDDB">CMAA</text>
+  <text x="432" y="36" text-anchor="end" font-family="'Yatra One','Noto Sans Devanagari',serif" font-size="16" fill="#F6EDDB">आजीचा फराळ</text>
+  <path d="M28 52 H432" stroke="#F6EDDB" stroke-width="2.5"/>
+  
+  <!-- circular die-cut photo window -->
+  <circle cx="314" cy="444" r="110" fill="#33241A"/>
+  <circle cx="306" cy="436" r="110" fill="#57121E"/>
+  <g clip-path="url(#ph-bhajani-f)">
+    <image href="../../../images/chakli-1.jpg" x="176" y="306" width="260" height="260" preserveAspectRatio="xMidYMid slice" style="filter:saturate(1.3) contrast(1.1) brightness(1.08)"/>
+    <circle cx="306" cy="436" r="110" fill="#7A1E2B" style="mix-blend-mode:multiply" opacity=".08"/>
+  </g>
+  <circle cx="306" cy="436" r="103" fill="none" stroke="#E3A72F" stroke-width="2"/>
+  <circle cx="306" cy="436" r="110" fill="none" stroke="#33241A" stroke-width="5.5"/>
+  
+  <text x="28" y="199.44" font-family="'Yatra One','Noto Sans Devanagari',serif" font-size="144.18" fill="#33241A" transform="translate(8 0)">भाजणी</text>
+  <text x="28" y="191.44" font-family="'Yatra One','Noto Sans Devanagari',serif" font-size="144.18" fill="#F6EDDB">भाजणी</text>
+  <text x="28" y="363.78" font-family="'Yatra One','Noto Sans Devanagari',serif" font-size="157.75" fill="#33241A" transform="translate(9 0)">चकली</text>
+  <text x="28" y="354.78" font-family="'Yatra One','Noto Sans Devanagari',serif" font-size="157.75" fill="#F6EDDB">चकली</text>
+  
+  <!-- sticker: aaji approved seal -->
+  <g transform="translate(142 470) rotate(-12)">
+    <path d="M0 -64 L9.03 -51.21 L21.89 -60.14 L26 -45.03 L41.14 -49.03 L39.83 -33.42 L55.43 -32 L48.86 -17.79 L63.03 -11.11 L52 0 L63.03 11.11 L48.86 17.79 L55.43 32 L39.83 33.42 L41.14 49.03 L26 45.03 L21.89 60.14 L9.03 51.21 L0 64 L-9.03 51.21 L-21.89 60.14 L-26 45.03 L-41.14 49.03 L-39.83 33.42 L-55.43 32 L-48.86 17.79 L-63.03 11.11 L-52 0 L-63.03 -11.11 L-48.86 -17.79 L-55.43 -32 L-39.83 -33.42 L-41.14 -49.03 L-26 -45.03 L-21.89 -60.14 L-9.03 -51.21 Z" transform="translate(6 6)" fill="#33241A"/>
+    <path d="M0 -64 L9.03 -51.21 L21.89 -60.14 L26 -45.03 L41.14 -49.03 L39.83 -33.42 L55.43 -32 L48.86 -17.79 L63.03 -11.11 L52 0 L63.03 11.11 L48.86 17.79 L55.43 32 L39.83 33.42 L41.14 49.03 L26 45.03 L21.89 60.14 L9.03 51.21 L0 64 L-9.03 51.21 L-21.89 60.14 L-26 45.03 L-41.14 49.03 L-39.83 33.42 L-55.43 32 L-48.86 17.79 L-63.03 11.11 L-52 0 L-63.03 -11.11 L-48.86 -17.79 L-55.43 -32 L-39.83 -33.42 L-41.14 -49.03 L-26 -45.03 L-21.89 -60.14 L-9.03 -51.21 Z" fill="#E3A72F" stroke="#33241A" stroke-width="3"/>
+    <circle r="43" fill="none" stroke="#33241A" stroke-width="1.6"/>
+    <text y="-28" text-anchor="middle" font-size="8.5" fill="#33241A">★</text>
+    <text y="-4" text-anchor="middle" font-family="'Anton','Arial Narrow',Impact,sans-serif" font-size="20" letter-spacing="1.5" fill="#33241A">AAJI</text>
+    <text y="13" text-anchor="middle" font-family="'Anton','Arial Narrow',Impact,sans-serif" font-size="12.5" letter-spacing="1.2" fill="#33241A">APPROVED</text>
+    <text y="28" text-anchor="middle" font-family="'Mulish',system-ui,sans-serif" font-weight="800" font-size="6" letter-spacing=".8" fill="#33241A">KOTHRUD · PUNE</text>
+  </g>
+  
+  <!-- cream type block -->
+  <rect x="35" y="559" width="404" height="74" fill="#33241A"/>
+  <rect x="28" y="552" width="404" height="74" fill="#F6EDDB" stroke="#33241A" stroke-width="3.5"/>
+  <text x="46" y="579" font-family="'Anton','Arial Narrow',Impact,sans-serif" font-size="24" letter-spacing="1" fill="#33241A">BHAJANI CHAKLI</text>
+  <text x="46" y="600" font-family="'Yatra One','Noto Sans Devanagari',serif" font-size="13" fill="#7A1E2B">तांदूळ · डाळी · तीळ · देशी तूप — बस्स.</text>
+  <text x="46" y="617" font-family="'Fraunces',Georgia,serif" font-style="italic" font-size="10" fill="#6B573F">rice · four dals · sesame · ghee — that’s all.</text>
+  <path d="M348 564 V614" stroke="#33241A" stroke-width="2.5"/>
+  <text x="391" y="582" text-anchor="middle" font-family="'Mulish',system-ui,sans-serif" font-weight="800" font-size="8" letter-spacing="2" fill="#6B573F">NET WT</text>
+  <text x="391" y="610" text-anchor="middle" font-family="'Anton','Arial Narrow',Impact,sans-serif" font-size="21" fill="#33241A">200 g</text>
+  
+  <rect x="0" y="634" width="460" height="26" fill="#33241A"/>
+  <text x="230" y="651.5" text-anchor="middle" font-family="'Mulish',system-ui,sans-serif" font-weight="800" font-size="9.5" letter-spacing="1.8" fill="#F6EDDB">NO MAIDA · NO MACHINES · NOT SORRY — BATCH SB-11</text>
+</g>
+</svg>

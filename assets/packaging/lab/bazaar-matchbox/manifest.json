@@ -1,0 +1,42 @@
+[
+  {
+    "id": "bazaar-matchbox-bhajani-flat",
+    "name": "Bhajani Chakli — matchbox label flat (No. 1 of 4)",
+    "concept": "Giant vintage matchbox label: maroon+gold+ink on paper, off-rotated sunburst, spiral emblem in framed circle, rope border, KADAK & HONEST slogan strip, deliberate 1px misregistration on the maroon channel.",
+    "files": [
+      "label-bhajani-flat.svg"
+    ]
+  },
+  {
+    "id": "bazaar-matchbox-bhajani-pouch",
+    "name": "Bhajani Chakli — pouch application",
+    "concept": "The pack IS the label: same print chassis on a crimped pouch, plus a matchbox-drawer die-cut window with the real chakli photo and a striker strip (\"strike here when hunger hits\").",
+    "files": [
+      "pouch-bhajani.svg"
+    ]
+  },
+  {
+    "id": "bazaar-matchbox-masala-flat",
+    "name": "Masala Chivda — matchbox label flat (No. 3 of 4)",
+    "concept": "Chili-red channel, fanned chili-pod emblem, KOLHAPURI HEAT slogan strip; same collectible chassis, series-numbered.",
+    "files": [
+      "label-masala-flat.svg"
+    ]
+  },
+  {
+    "id": "bazaar-matchbox-masala-pouch",
+    "name": "Masala Chivda — pouch application",
+    "concept": "Masala label on the crimped pouch with the real chivda photo in the drawer window and striker strip.",
+    "files": [
+      "pouch-masala.svg"
+    ]
+  },
+  {
+    "id": "bazaar-matchbox-series-sheet",
+    "name": "Collect-the-series sheet (4-up)",
+    "concept": "Uncut printer sheet from \"The Cmaa Press\": all four flavor labels with perforations, crop marks, checkboxes (\"save all four, trade with cousins\").",
+    "files": [
+      "series-sheet.svg"
+    ]
+  }
+]

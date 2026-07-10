@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" font-family="'Mulish',system-ui,sans-serif">
+<title>Cmaa — BHAJANI CHAKLI — illustrated cartouche label</title>
+<defs>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&amp;family=Yatra+One&amp;family=Mulish:wght@400;600;700;800&amp;family=Courier+Prime:wght@400;700&amp;family=Caveat:wght@600&amp;family=Noto+Sans+Devanagari:wght@400;600&amp;display=swap');</style>
+  <clipPath id="arch-bhajani-flat"><path d="M105 422 L105 276.4 A51.9 51.9 0 0 1 132.69 197.4 A54.19 54.19 0 0 1 205.19 148.58 A55.56 55.56 0 0 1 294.81 148.58 A54.19 54.19 0 0 1 367.31 197.4 A51.9 51.9 0 0 1 395 276.4 L395 422 Z"/></clipPath>
+  <filter id="grain-bhajani-flat"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".05"/></feComponentTransfer><feComposite operator="over" in2="SourceGraphic"/></filter><filter id="press-bhajani-flat" x="-8%" y="-8%" width="116%" height="116%"><feOffset dx="0" dy="1" in="SourceAlpha" result="o"/><feGaussianBlur stdDeviation=".5" in="o" result="b"/><feComposite in="b" in2="SourceAlpha" operator="out" result="s"/><feFlood flood-color="#000" flood-opacity=".26"/><feComposite in2="s" operator="in" result="sh"/><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="sh"/></feMerge></filter>
+</defs>
+<g filter="url(#grain-bhajani-flat)">
+  <rect width="500" height="700" fill="#F6EDDB"/>
+  <rect x="14" y="14" width="472" height="672" fill="none" stroke="#7A1E2B" stroke-width="2.5"/>
+  <rect x="22" y="22" width="456" height="656" fill="none" stroke="#C8922A" stroke-width="1"/>
+  <rect x="18.75" y="18.75" width="6.5" height="6.5" transform="rotate(45 22 22)" fill="#7A1E2B"/><rect x="474.75" y="18.75" width="6.5" height="6.5" transform="rotate(45 478 22)" fill="#7A1E2B"/><rect x="18.75" y="674.75" width="6.5" height="6.5" transform="rotate(45 22 678)" fill="#7A1E2B"/><rect x="474.75" y="674.75" width="6.5" height="6.5" transform="rotate(45 478 678)" fill="#7A1E2B"/>
+
+  <!-- brand header -->
+  <g>
+    <circle cx="250" cy="60" r="20" fill="none" stroke="#7A1E2B" stroke-width="1.6"/>
+    <path d="M250 58.2 L250.25 58.14 L250.52 58.11 L250.8 58.13 L251.08 58.18 L251.37 58.29 L251.64 58.43 L251.9 58.62 L252.14 58.85 L252.35 59.12 L252.52 59.42 L252.65 59.76 L252.74 60.12 L252.78 60.5 L252.76 60.9 L252.68 61.29 L252.55 61.68 L252.36 62.06 L252.11 62.42 L251.81 62.75 L251.46 63.04 L251.07 63.28 L250.63 63.47 L250.16 63.6 L249.67 63.67 L249.16 63.67 L248.65 63.6 L248.14 63.45 L247.65 63.24 L247.18 62.95 L246.75 62.59 L246.36 62.17 L246.03 61.7 L245.77 61.17 L245.57 60.6 L245.45 60 L245.41 59.38 L245.46 58.75 L245.6 58.12 L245.82 57.51 L246.14 56.92 L246.53 56.37 L247 55.87 L247.55 55.44 L248.15 55.08 L248.81 54.8 L249.51 54.61 L250.25 54.51 L250.99 54.52 L251.75 54.63 L252.49 54.84 L253.2 55.15 L253.87 55.57 L254.49 56.08 L255.04 56.67 L255.52 57.34 L255.9 58.08 L256.18 58.88 L256.35 59.71 L256.41 60.58 L256.35 61.45 L256.17 62.32 L255.87 63.16 L255.46 63.97 L254.94 64.72 L254.31 65.4 L253.58 66 L252.78 66.5 L251.9 66.89 L250.97 67.16 L250 67.3 L249.01 67.31 L248.02 67.19 L247.04 66.93 L246.09 66.54 L245.2 66.01 L244.38 65.37 L243.65 64.61 L243.02 63.76 L242.5 62.81 L242.12 61.8 L241.87 60.73 L241.77 59.63 L241.81 58.51 L242.01 57.4 L242.36 56.32 L242.86 55.29 L243.5 54.32 L244.27 53.44 L245.16 52.66 L246.15 52.01 L247.23 51.49 L248.39 51.12 L249.59 50.9 L250.82 50.85 L252.06 50.97 L253.28 51.25 L254.46 51.7 L255.58 52.31 L256.62 53.08 L257.55 53.98 L258.36 55.01 L259.02 56.14 L259.54 57.37 L259.88 58.66 L260.05 60 L260.04 61.36 L259.84 62.72 L259.46 64.04 L258.9 65.32 L258.16 66.51 L257.27 67.6 L256.23 68.58 L255.06 69.4 L253.78 70.07 L252.41 70.56 L250.98 70.87 L249.51 70.98 L248.02 70.89 L246.55 70.6 L245.13 70.12 L243.77 69.44 L242.51 68.57 L241.37 67.54 L240.37 66.36 L239.53 65.04 L238.87 63.62 L238.41 62.1 L238.15 60.53 L238.11 58.93 L238.29 57.33 L238.68 55.75 L239.28 54.23 L240.09 52.8 L241.09 51.48 L242.26 50.3 L243.6 49.28 L245.06 48.45 L246.64 47.81 L248.29 47.39 L250 47.2" fill="none" stroke="#33241A" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M250.22 59.64 L252.01 56.75 M250.67 59.67 L253.71 58.15 M251.07 60.1 L254.45 60.41 M251.11 60.84 L253.83 62.89 M250.62 61.6 L251.85 64.77 M249.62 62.01 L249 65.35 M248.41 61.75 L246.12 64.26 M247.41 60.74 L244.14 61.67 M247.1 59.18 L243.83 58.25 M247.75 57.54 L245.46 55.02 M249.33 56.4 L248.7 53.06 M251.44 56.29 L252.67 53.12 M253.44 57.41 L256.15 55.36 M254.61 59.57 L258 59.26 M254.43 62.21 L257.48 63.72 M252.78 64.49 L254.57 67.38 M250 65.6 L250 69 M246.88 65.04 L245.09 67.93 M244.41 62.78 L241.36 64.3 M243.46 59.39 L240.07 59.08 M244.5 55.85 L241.79 53.8 M247.39 53.27 L246.16 50.1 M251.39 52.59 L252.01 49.25 M255.3 54.19 L257.59 51.68 M257.88 57.76 L261.15 56.83 M258.19 62.33 L261.46 63.26 M255.95 66.53 L258.24 69.04 M251.68 69 L252.31 72.34 M246.57 68.84 L245.35 72.01 M242.17 65.91 L239.46 67.96 M239.91 60.93 L236.53 61.25 M240.64 55.34 L237.6 53.83 M244.33 50.84 L242.54 47.95 " stroke="#33241A" stroke-width=".9" opacity=".8"/>
+  </g>
+  <text x="250" y="105" text-anchor="middle" font-family="'Fraunces',serif" font-weight="600" font-size="27" letter-spacing="7" fill="#33241A">CMAA</text>
+  <text x="250" y="122" text-anchor="middle" font-size="9.5" fill="#33241A" opacity=".78"><tspan font-family="'Yatra One','Noto Sans Devanagari',serif" font-size="10.5">आजीचा फराळ</tspan><tspan font-family="'Mulish',sans-serif" font-weight="700" letter-spacing="2.2" dx="5"> · KOTHRUD, PUNE · EST 2026</tspan></text>
+
+  <!-- illustrated cartouche -->
+  
+  <path d="M105 422 L105 276.4 A51.9 51.9 0 0 1 132.69 197.4 A54.19 54.19 0 0 1 205.19 148.58 A55.56 55.56 0 0 1 294.81 148.58 A54.19 54.19 0 0 1 367.31 197.4 A51.9 51.9 0 0 1 395 276.4 L395 422 Z" fill="#F6EDDB"/>
+  <path d="M105 422 L105 276.4 A51.9 51.9 0 0 1 132.69 197.4 A54.19 54.19 0 0 1 205.19 148.58 A55.56 55.56 0 0 1 294.81 148.58 A54.19 54.19 0 0 1 367.31 197.4 A51.9 51.9 0 0 1 395 276.4 L395 422 Z" fill="#7A1E2B" opacity=".1"/>
+  <g clip-path="url(#arch-bhajani-flat)">
+    <g transform="translate(105 138.73) scale(0.97)"><g fill="#7A1E2B" opacity="0.09"><path d="M184 146 L400 146 L398.15 176.36 L183.75 150.13 Z"/><path d="M181.41 159.01 L380.97 241.67 L367.64 269.01 L179.6 162.73 Z"/><path d="M174.04 170.04 L326.78 322.78 L304 342.94 L170.94 172.78 Z"/><path d="M163.01 177.41 L245.67 376.97 L216.91 386.88 L159.1 178.76 Z"/><path d="M150 180 L150 396 L119.64 394.15 L145.87 179.75 Z"/><path d="M136.99 177.41 L54.33 376.97 L26.99 363.64 L133.27 175.6 Z"/><path d="M125.96 170.04 L-26.78 322.78 L-46.94 300 L123.22 166.94 Z"/><path d="M118.59 159.01 L-80.97 241.67 L-90.88 212.91 L117.24 155.1 Z"/><path d="M116 146 L-100 146 L-98.15 115.64 L116.25 141.87 Z"/><path d="M118.59 132.99 L-80.97 50.33 L-67.64 22.99 L120.4 129.27 Z"/><path d="M125.96 121.96 L-26.78 -30.78 L-4 -50.94 L129.06 119.22 Z"/><path d="M136.99 114.59 L54.33 -84.97 L83.09 -94.88 L140.9 113.24 Z"/><path d="M150 112 L150 -104 L180.36 -102.15 L154.13 112.25 Z"/><path d="M163.01 114.59 L245.67 -84.97 L273.01 -71.64 L166.73 116.4 Z"/><path d="M174.04 121.96 L326.78 -30.78 L346.94 -8 L176.78 125.06 Z"/><path d="M181.41 132.99 L380.97 50.33 L390.88 79.09 L182.76 136.9 Z"/></g>
+<rect x="54" y="78" width="8" height="8" transform="rotate(45 58 82)" fill="#C8922A" opacity="0.85"/><rect x="240.5" y="66.5" width="7" height="7" transform="rotate(45 244 70)" fill="#C8922A" opacity="0.85"/><circle cx="34" cy="112" r="2" fill="#B5512E" opacity=".5"/><circle cx="268" cy="100" r="2" fill="#B5512E" opacity=".5"/>
+<g>
+    <rect x="-30" y="262" width="360" height="56" fill="#B5512E" opacity=".13"/>
+    <path d="M-86 262 L-30 318 M-86 262 L-142 318 M-60 262 L-4 318 M-60 262 L-116 318 M-34 262 L22 318 M-34 262 L-90 318 M-8 262 L48 318 M-8 262 L-64 318 M18 262 L74 318 M18 262 L-38 318 M44 262 L100 318 M44 262 L-12 318 M70 262 L126 318 M70 262 L14 318 M96 262 L152 318 M96 262 L40 318 M122 262 L178 318 M122 262 L66 318 M148 262 L204 318 M148 262 L92 318 M174 262 L230 318 M174 262 L118 318 M200 262 L256 318 M200 262 L144 318 M226 262 L282 318 M226 262 L170 318 M252 262 L308 318 M252 262 L196 318 M278 262 L334 318 M278 262 L222 318 M304 262 L360 318 M304 262 L248 318 M330 262 L386 318 M330 262 L274 318 M356 262 L412 318 M356 262 L300 318 M382 262 L438 318 M382 262 L326 318 " stroke="#B5512E" stroke-width="1" opacity=".3" fill="none"/>
+    <path d="M-30 262 L330 262" stroke="#33241A" stroke-width="1.2" opacity=".28"/>
+  </g>
+<path d="M170 240 L240 240 L248 262 L162 262 Z" fill="#B5512E"/>
+<path d="M170 240 L240 240" stroke="#93401F" stroke-width="2"/>
+<path d="M191 262 A 14 12 0 0 1 219 262 Z" fill="#33241A"/>
+<path d="M199 260 c -2.21 -2.38, -1.02 -5.1, 0 -7.22 c 1.02 2.13, 2.21 4.84, 0 7.22 Z" fill="#C8922A"/><path d="M205 261 c -2.99 -3.22, -1.38 -6.9, 0 -9.77 c 1.38 2.88, 2.99 6.55, 0 9.77 Z" fill="#C8922A"/><path d="M211 260 c -2.08 -2.24, -0.96 -4.8, 0 -6.8 c 0.96 2, 2.08 4.56, 0 6.8 Z" fill="#C8922A"/>
+<circle cx="146" cy="207" r="6" fill="none" stroke="#C8922A" stroke-width="2.4"/>
+<circle cx="264" cy="207" r="6" fill="none" stroke="#C8922A" stroke-width="2.4"/>
+<path d="M150 211 Q 205 252 260 211 Z" fill="#33241A"/>
+<ellipse cx="205" cy="211" rx="55" ry="9" fill="#33241A"/>
+<ellipse cx="205" cy="211.5" rx="45" ry="6.2" fill="#C8922A" opacity=".5"/>
+<ellipse cx="205" cy="211" rx="55" ry="9" fill="none" stroke="#C8922A" stroke-width="1.5"/>
+<path d="M180 208.5 L180.18 208.44 L180.38 208.41 L180.59 208.42 L180.81 208.47 L181.03 208.57 L181.24 208.71 L181.42 208.9 L181.58 209.13 L181.7 209.39 L181.77 209.69 L181.79 210 L181.75 210.32 L181.65 210.65 L181.49 210.96 L181.27 211.25 L181 211.51 L180.67 211.72 L180.3 211.88 L179.9 211.98 L179.47 212 L179.03 211.95 L178.6 211.82 L178.18 211.61 L177.79 211.33 L177.45 210.97 L177.17 210.55 L176.95 210.08 L176.82 209.57 L176.78 209.02 L176.83 208.47 L176.98 207.92 L177.22 207.39 L177.56 206.9 L177.98 206.46 L178.49 206.1 L179.05 205.82 L179.68 205.64 L180.33 205.56 L181 205.59 L181.67 205.74 L182.32 206.01 L182.92 206.39 L183.46 206.87 L183.92 207.45 L184.28 208.11 L184.53 208.83 L184.65 209.6 L184.65 210.39 L184.51 211.18 L184.23 211.94 L183.83 212.67 L183.3 213.32 L182.65 213.88 L181.91 214.33 L181.1 214.66 L180.22 214.85 L179.32 214.89 L178.41 214.78 L177.51 214.51 L176.67 214.08 L175.9 213.52 L175.22 212.82 L174.66 212.01 L174.24 211.11 L173.98 210.13 L173.88 209.11 L173.95 208.08 L174.2 207.06 L174.62 206.09 L175.21 205.19 L175.95 204.39 L176.82 203.72 L177.8 203.19 L178.87 202.84 L180 202.67 L181.15 202.69 L182.3 202.9 L183.4 203.31 L184.44 203.9 L185.37 204.67 L186.16 205.59 L186.8 206.64 L187.26 207.8 L187.52 209.03 L187.57 210.3 L187.41 211.57 L187.03 212.81 L186.44 213.98 L185.66 215.04 L184.7 215.97" fill="none" stroke="#93401F" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M232 209.5 L232.18 209.44 L232.39 209.42 L232.61 209.44 L232.83 209.5 L233.05 209.61 L233.25 209.76 L233.43 209.96 L233.57 210.2 L233.67 210.47 L233.73 210.77 L233.73 211.09 L233.66 211.42 L233.54 211.73 L233.36 212.04 L233.11 212.31 L232.81 212.55 L232.46 212.73 L232.07 212.85 L231.66 212.9 L231.23 212.88 L230.8 212.78 L230.38 212.59 L229.98 212.33 L229.64 212 L229.34 211.6 L229.12 211.14 L228.98 210.64 L228.92 210.11 L228.97 209.57 L229.1 209.02 L229.34 208.5 L229.67 208.02 L230.09 207.6 L230.59 207.24 L231.15 206.98 L231.77 206.81 L232.41 206.75 L233.07 206.8 L233.73 206.98 L234.35 207.26 L234.93 207.66 L235.43 208.17 L235.85 208.76 L236.16 209.43 L236.36 210.16 L236.43 210.92 L236.36 211.69 L236.16 212.46 L235.82 213.19 L235.36 213.86 L234.77 214.45 L234.09 214.93 L233.31 215.3 L232.48 215.53 L231.6 215.61 L230.71 215.54 L229.83 215.31 L228.99 214.92 L228.22 214.4 L227.55 213.73 L226.99 212.95 L226.57 212.08 L226.31 211.13 L226.21 210.14 L226.29 209.13 L226.54 208.14 L226.96 207.19 L227.55 206.32 L228.29 205.56 L229.16 204.93 L230.14 204.45 L231.2 204.15 L232.31 204.03 L233.43 204.11 L234.54 204.38 L235.59 204.84 L236.56 205.49 L237.41 206.3 L238.12 207.26 L238.66 208.34" fill="none" stroke="#93401F" stroke-width="2.4" stroke-linecap="round"/>
+<g fill="#F6EDDB" opacity=".65"><circle cx="192" cy="212.6" r="1.2"/><circle cx="220" cy="213.4" r="1.1"/><circle cx="206" cy="209" r="1"/></g>
+<path d="M170 201 c -6 -8, 7 -12, 1 -21 c -5 -7, 4 -10, 2 -18" fill="none" stroke="#33241A" stroke-width="2.2" stroke-linecap="round" opacity=".3"/><path d="M242 198 c -6 -8, 7 -12, 1 -21 c -5 -7, 4 -10, 2 -18" fill="none" stroke="#33241A" stroke-width="2.2" stroke-linecap="round" opacity=".3"/>
+<path d="M196 131 L158 145" stroke="#33241A" stroke-width="5" stroke-linecap="round"/>
+    <path d="M196 131 L158 145" stroke="#C8922A" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M214 130 L247 116" stroke="#33241A" stroke-width="5" stroke-linecap="round"/>
+    <path d="M214 130 L247 116" stroke="#C8922A" stroke-width="2.2" stroke-linecap="round"/>
+    <rect x="188" y="125" width="34" height="8" rx="2.5" fill="#C8922A" stroke="#33241A" stroke-width="1.3"/>
+    <rect x="191" y="133" width="28" height="36" rx="3" fill="#C8922A" stroke="#33241A" stroke-width="1.4"/>
+    <path d="M197 137 L197 165" stroke="#F6EDDB" stroke-width="2.4" opacity=".55"/>
+    <path d="M191 169 L201 177 L209 177 L219 169 Z" fill="#C8922A" stroke="#33241A" stroke-width="1.2"/>
+<path d="M205 178 L205 187" stroke="#B5512E" stroke-width="3" stroke-linecap="round"/>
+<path d="M205 195 L205.18 194.92 L205.38 194.88 L205.6 194.88 L205.83 194.92 L206.06 195.01 L206.28 195.14 L206.48 195.32 L206.66 195.55 L206.8 195.82 L206.9 196.12 L206.94 196.45 L206.92 196.79 L206.85 197.14 L206.7 197.48 L206.5 197.81 L206.23 198.11 L205.9 198.36 L205.52 198.57 L205.1 198.71 L204.65 198.78 L204.18 198.77 L203.7 198.68 L203.23 198.51 L202.78 198.25 L202.37 197.91 L202.01 197.5 L201.72 197.02 L201.51 196.49 L201.39 195.91 L201.37 195.31 L201.44 194.69 L201.62 194.09 L201.91 193.51 L202.3 192.97 L202.78 192.5 L203.34 192.1 L203.98 191.79 L204.67 191.59 L205.4 191.51 L206.14 191.54 L206.89 191.71 L207.61 192 L208.29 192.41 L208.9 192.94 L209.43 193.57 L209.85 194.29 L210.15 195.08 L210.32 195.93 L210.35 196.81 L210.23 197.7 L209.96 198.57 L209.55 199.4 L209 200.16 L208.32 200.83 L207.53 201.38 L206.65 201.81 L205.69 202.09 L204.69 202.21 L203.66 202.17 L202.64 201.95 L201.66 201.57 L200.74 201.02 L199.91 200.32 L199.2 199.48 L198.63 198.52 L198.22 197.47 L197.98 196.35 L197.93 195.2 L198.06 194.03 L198.39 192.89 L198.91 191.81 L199.61 190.81 L200.47 189.93 L201.48 189.2 L202.61 188.63 L203.82 188.25 L205.1 188.07 L206.4 188.1 L207.7 188.35 L208.95 188.81 L210.12 189.48 L211.18 190.34 L212.09 191.37 L212.83 192.55 L213.38 193.85 L213.71 195.23 L213.8 196.67 L213.67 198.11 L213.29 199.53 L212.68 200.88 L211.86 202.12 L210.82 203.22 L209.62 204.15 L208.26 204.88 L206.79 205.38 L205.24 205.64 L203.66 205.64 L202.08 205.38 L200.56 204.86 L199.12 204.09" fill="none" stroke="#B5512E" stroke-width="3" stroke-linecap="round"/>
+<ellipse cx="44" cy="257" rx="23" ry="5.5" fill="#C8922A" stroke="#93401F" stroke-width="1.2"/>
+<path d="M35 251 L35.19 250.94 L35.41 250.92 L35.63 250.95 L35.86 251.02 L36.08 251.15 L36.28 251.32 L36.45 251.54 L36.59 251.8 L36.67 252.09 L36.7 252.41 L36.67 252.74 L36.57 253.07 L36.41 253.39 L36.18 253.68 L35.89 253.93 L35.55 254.13 L35.16 254.27 L34.74 254.34 L34.31 254.32 L33.87 254.23 L33.44 254.05 L33.04 253.78 L32.69 253.44 L32.4 253.03 L32.18 252.56 L32.05 252.05 L32.02 251.5 L32.08 250.95 L32.25 250.41 L32.53 249.89 L32.9 249.42 L33.36 249.02 L33.9 248.7 L34.5 248.49 L35.14 248.38 L35.81 248.39 L36.47 248.52 L37.11 248.78 L37.71 249.16 L38.24 249.65 L38.67 250.24 L39 250.9 L39.21 251.64 L39.28 252.4 L39.21 253.19 L39 253.96 L38.64 254.69 L38.15 255.35 L37.54 255.93 L36.82 256.39 L36.02 256.72 L35.15 256.9 L34.26 256.92 L33.36 256.78 L32.5 256.47 L31.69 256.01 L30.96 255.39 L30.35 254.65 L29.88 253.8 L29.57 252.86 L29.43 251.87 L29.47 250.85 L29.69 249.85 L30.1 248.89 L30.69 248.01 L31.43 247.24 L32.31 246.61 L33.3 246.14 L34.37 245.86 L35.49 245.77 L36.62 245.89 L37.72 246.21 L38.76 246.73 L39.7 247.44 L40.51 248.32 L41.15 249.34 L41.6 250.47 L41.84 251.68 L41.86 252.92 L41.66 254.16" fill="none" stroke="#93401F" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M53 250.5 L53.18 250.45 L53.39 250.43 L53.6 250.45 L53.81 250.52 L54.02 250.63 L54.22 250.78 L54.39 250.98 L54.52 251.21 L54.62 251.47 L54.67 251.76 L54.66 252.07 L54.6 252.38 L54.48 252.68 L54.3 252.97 L54.06 253.23 L53.77 253.45 L53.44 253.62 L53.07 253.74 L52.68 253.78 L52.27 253.76 L51.86 253.66 L51.46 253.49 L51.09 253.24 L50.76 252.92 L50.49 252.54 L50.28 252.11 L50.15 251.63 L50.1 251.13 L50.14 250.62 L50.27 250.11 L50.5 249.62 L50.81 249.17 L51.21 248.77 L51.67 248.44 L52.2 248.19 L52.78 248.03 L53.39 247.98 L54.01 248.03 L54.62 248.19 L55.2 248.47 L55.74 248.84 L56.22 249.31 L56.61 249.87 L56.9 250.5 L57.08 251.18 L57.14 251.89 L57.08 252.62 L56.89 253.33 L56.57 254.01 L56.14 254.64 L55.59 255.19 L54.95 255.64 L54.23 255.98 L53.44 256.19 L52.62 256.27 L51.79 256.2 L50.98 255.98 L50.2 255.63 L49.48 255.13 L48.85 254.51 L48.34 253.78 L47.95 252.97 L47.7 252.09 L47.61 251.16 L47.68 250.22 L47.92 249.3 L48.31 248.42 L48.86 247.62 L49.55 246.91 L50.36 246.32 L51.27 245.88 L52.25 245.6 L53.28 245.49 L54.33 245.56 L55.36 245.81 L56.34 246.24 L57.24 246.84 L58.03 247.6 L58.68 248.49 L59.18 249.49" fill="none" stroke="#93401F" stroke-width="2" stroke-linecap="round"/>
+<g>
+    <g>
+    <path d="M96 129 L124.65 137.88 L176 138" fill="none" stroke="#9A4224" stroke-width="8.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M96 129 L116.63 135.4" stroke="#451016" stroke-width="9.8" stroke-linecap="round"/>
+    <path d="M162.66 132.77 L162.64 143.17 M168.31 132.78 L168.29 143.18 " stroke="#C8922A" stroke-width="1.8"/>
+  </g>
+    <path d="M99 129 C 82 139, 70 168, 68 207 C 67 227, 73 237, 70 246 L 84 241 C 87 202, 92 170, 107 141 Z" fill="#57121E"/>
+    <path d="M70 246 C 73 237, 67 227, 68 207 C 70 168, 82 139, 99 129" fill="none" stroke="#C8922A" stroke-width="1.5" opacity=".9"/>
+    <path d="M63 262 C 60 224, 73 191, 80 167 L 107 167 C 113 197, 118 229, 117 261 Q 90 267 63 262 Z" fill="#7A1E2B"/>
+    <path d="M86 170 C 89 200, 92 230, 91 259 M97 170 C 101 201, 104 229, 103 260" stroke="#57121E" stroke-width="1.3" fill="none" opacity=".6"/>
+    <path d="M63.5 257.5 Q 90 263.5 116.7 256.8" fill="none" stroke="#C8922A" stroke-width="2.4"/>
+    <path d="M63.8 251.5 Q 90 257.5 116.9 250.9" fill="none" stroke="#C8922A" stroke-width="1.1" opacity=".8"/>
+    <ellipse cx="109" cy="260.5" rx="7" ry="3.2" fill="#B5512E"/>
+    <path d="M103 124 L114 127 L111 139 L100 136 Z" fill="#B5512E"/>
+    <path d="M80 167 C 81 149, 89 138, 99 131 L 112 137 C 114 147, 111 158, 107 167 Z" fill="#7A1E2B"/>
+    <path d="M99 131 C 104 137, 108 146, 108 153" fill="none" stroke="#57121E" stroke-width="3" opacity=".6"/>
+    <circle cx="109" cy="112" r="12.4" fill="#33241A"/>
+    <circle cx="112" cy="115" r="12" fill="#B5512E"/>
+    <path d="M123 114 q 4.6 2.6 1 6.4 l -3.4 -1.2 Z" fill="#B5512E"/>
+    <circle cx="99" cy="107" r="6.4" fill="#33241A"/>
+    <circle cx="95.6" cy="104" r="2" fill="#C8922A"/>
+    <circle cx="118.5" cy="116" r="4.3" fill="none" stroke="#33241A" stroke-width="1.4"/>
+    <path d="M114.2 115.4 L106 114.4" stroke="#33241A" stroke-width="1.3"/>
+    <circle cx="110" cy="122" r="1.7" fill="#C8922A"/>
+    <g>
+    <path d="M101 136 L127.35 150.35 L161 145.5" fill="none" stroke="#B5512E" stroke-width="8.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M101 136 L119.97 146.33" stroke="#57121E" stroke-width="9.8" stroke-linecap="round"/>
+    <path d="M151.51 141.61 L152.99 151.91 M155.21 141.08 L156.69 151.37 " stroke="#C8922A" stroke-width="1.8"/>
+  </g>
+  </g>
+<g opacity=".82">
+    <text x="243" y="95" transform="rotate(-7 243 95)" text-anchor="middle" font-family="'Caveat',cursive" font-size="15" font-weight="600" fill="#33241A">aaji’s sorya</text>
+    <path d="M232 102 Q 231 110.5 216 119" fill="none" stroke="#33241A" stroke-width="1.3"/>
+    <path d="M219.54 113.08 L216 119 L222.9 119" fill="none" stroke="#33241A" stroke-width="1.3" stroke-linecap="round"/>
+  </g></g>
+    <g><polyline points="122.43 225.41 138.58 199.63 160.73 177.98 187.67 161.63 217.98 151.45 250 148 282.02 151.45 312.33 161.63 339.27 177.98 361.42 199.63 377.57 225.41" fill="none" stroke="#C8922A" stroke-width="1.1" opacity=".9"/><path d="M118.93 226.41 L125.93 226.41 L122.43 234.81 Z" fill="#7A1E2B"/><path d="M135.08 200.63 L142.08 200.63 L138.58 209.03 Z" fill="#C8922A"/><path d="M157.23 178.98 L164.23 178.98 L160.73 187.38 Z" fill="#7A1E2B"/><path d="M184.17 162.63 L191.17 162.63 L187.67 171.03 Z" fill="#C8922A"/><path d="M214.48 152.45 L221.48 152.45 L217.98 160.85 Z" fill="#7A1E2B"/><path d="M246.5 149 L253.5 149 L250 157.4 Z" fill="#C8922A"/><path d="M278.52 152.45 L285.52 152.45 L282.02 160.85 Z" fill="#7A1E2B"/><path d="M308.83 162.63 L315.83 162.63 L312.33 171.03 Z" fill="#C8922A"/><path d="M335.77 178.98 L342.77 178.98 L339.27 187.38 Z" fill="#7A1E2B"/><path d="M357.92 200.63 L364.92 200.63 L361.42 209.03 Z" fill="#C8922A"/><path d="M374.07 226.41 L381.07 226.41 L377.57 234.81 Z" fill="#7A1E2B"/><circle cx="129.7" cy="214.68" r="1.6" fill="#B5512E"/><circle cx="148.97" cy="190.81" r="1.6" fill="#B5512E"/><circle cx="173.69" cy="171.68" r="1.6" fill="#B5512E"/><circle cx="202.5" cy="158.33" r="1.6" fill="#B5512E"/><circle cx="233.88" cy="151.47" r="1.6" fill="#B5512E"/><circle cx="266.12" cy="151.47" r="1.6" fill="#B5512E"/><circle cx="297.5" cy="158.33" r="1.6" fill="#B5512E"/><circle cx="326.31" cy="171.68" r="1.6" fill="#B5512E"/><circle cx="351.03" cy="190.81" r="1.6" fill="#B5512E"/><circle cx="370.3" cy="214.68" r="1.6" fill="#B5512E"/></g>
+  </g>
+  <path d="M105 422 L105 276.4 A51.9 51.9 0 0 1 132.69 197.4 A54.19 54.19 0 0 1 205.19 148.58 A55.56 55.56 0 0 1 294.81 148.58 A54.19 54.19 0 0 1 367.31 197.4 A51.9 51.9 0 0 1 395 276.4 L395 422 Z" fill="none" stroke="#C8922A" stroke-width="1.2"/>
+  <path d="M97 430 L97 276.08 A54.85 54.85 0 0 1 126.22 192.57 A57.22 57.22 0 0 1 202.72 140.95 A58.63 58.63 0 0 1 297.28 140.95 A57.22 57.22 0 0 1 373.78 192.57 A54.85 54.85 0 0 1 403 276.08 L403 430 Z" fill="none" stroke="#7A1E2B" stroke-width="3"/>
+  <g opacity=".9"><circle cx="66" cy="186" r="2.1" fill="#C8922A"/><circle cx="63.95" cy="190.95" r="2.1" fill="#C8922A"/><circle cx="59" cy="193" r="2.1" fill="#C8922A"/><circle cx="54.05" cy="190.95" r="2.1" fill="#C8922A"/><circle cx="52" cy="186" r="2.1" fill="#C8922A"/><circle cx="54.05" cy="181.05" r="2.1" fill="#C8922A"/><circle cx="59" cy="179" r="2.1" fill="#C8922A"/><circle cx="63.95" cy="181.05" r="2.1" fill="#C8922A"/><circle cx="59" cy="186" r="2.94" fill="#7A1E2B"/></g><g opacity=".9"><circle cx="448" cy="186" r="2.1" fill="#C8922A"/><circle cx="445.95" cy="190.95" r="2.1" fill="#C8922A"/><circle cx="441" cy="193" r="2.1" fill="#C8922A"/><circle cx="436.05" cy="190.95" r="2.1" fill="#C8922A"/><circle cx="434" cy="186" r="2.1" fill="#C8922A"/><circle cx="436.05" cy="181.05" r="2.1" fill="#C8922A"/><circle cx="441" cy="179" r="2.1" fill="#C8922A"/><circle cx="445.95" cy="181.05" r="2.1" fill="#C8922A"/><circle cx="441" cy="186" r="2.94" fill="#7A1E2B"/></g>
+
+  <!-- bilingual name block -->
+  <g filter="url(#press-bhajani-flat)" font-family="'Yatra One','Noto Sans Devanagari',serif" text-anchor="middle" font-size="46">
+    <text x="252.2" y="482.2" fill="#57121E" opacity=".9">भाजणी चकली</text>
+    <text x="250" y="480" fill="#33241A">भाजणी चकली</text>
+  </g>
+  <g><path d="M150 493 L236 493 M264 493 L350 493" stroke="#C8922A" stroke-width="1.2"/><rect x="246.5" y="489.5" width="7" height="7" transform="rotate(45 250 493)" fill="#7A1E2B"/></g>
+  <text x="250" y="517" text-anchor="middle" font-weight="800" font-size="16" letter-spacing="5" fill="#7A1E2B">BHAJANI CHAKLI</text>
+  <text x="250" y="535" text-anchor="middle" font-weight="700" font-size="9" letter-spacing="2.4" fill="#33241A" opacity=".6">HAND-PRESSED · STONE-GROUND BHAJANI</text>
+
+  <!-- truth strip -->
+  <text x="250" y="565" text-anchor="middle" font-family="'Yatra One','Noto Sans Devanagari',serif" font-size="15.5" fill="#33241A">तांदूळ · डाळी · तीळ · देशी तूप — बस्स.</text>
+  <path d="M140 574 q 110 8 220 0" fill="none" stroke="#C8922A" stroke-width="1.4" stroke-linecap="round"/>
+  <text x="250" y="590" text-anchor="middle" font-size="10.5" font-style="italic" font-family="'Fraunces',serif" fill="#6B573F">rice · four dals · sesame · ghee — that’s all.</text>
+
+  <!-- meta row: photo porthole / caption / veg / batch stamp -->
+  <g>
+    <clipPath id="ph-bhajani-flat"><circle cx="110" cy="614" r="25"/></clipPath>
+    <circle cx="110" cy="614" r="28" fill="none" stroke="#7A1E2B" stroke-width="1.1"/>
+    <circle cx="110" cy="614" r="25" fill="#33241A"/>
+    <g clip-path="url(#ph-bhajani-flat)">
+      <image href="../../../images/chakli-1.jpg" x="78" y="582" width="64" height="64" preserveAspectRatio="xMidYMid slice" style="filter:saturate(1.25) contrast(1.06) brightness(1.04)"/>
+      <circle cx="110" cy="614" r="25" fill="#7A1E2B" style="mix-blend-mode:multiply" opacity=".12"/>
+    </g>
+    <circle cx="110" cy="614" r="25" fill="none" stroke="#C8922A" stroke-width="2"/>
+  </g>
+  <text x="146" y="608" font-family="'Yatra One','Noto Sans Devanagari',serif" font-size="11.5" fill="#33241A">आत हेच आहे —</text>
+  <text x="146" y="624" font-size="8.5" font-style="italic" font-family="'Fraunces',serif" fill="#6B573F">the real batch, un-retouched</text>
+  <g><rect x="284" y="606" width="15" height="15" fill="none" stroke="#2E7D32" stroke-width="1.6"/><circle cx="291.5" cy="613.5" r="4.05" fill="#2E7D32"/></g>
+  <g transform="rotate(-4 400 611)" opacity=".9">
+    <rect x="334" y="586" width="132" height="50" rx="5" fill="none" stroke="#93401F" stroke-width="2"/>
+    <rect x="338" y="590" width="124" height="42" rx="3" fill="none" stroke="#93401F" stroke-width=".8" stroke-dasharray="3 2.4"/>
+    <text x="400" y="601.5" text-anchor="middle" font-family="'Courier Prime',monospace" font-weight="700" font-size="10" letter-spacing="1.1" fill="#93401F">BATCH SB-11</text><text x="400" y="614.5" text-anchor="middle" font-family="'Courier Prime',monospace" font-weight="700" font-size="10" letter-spacing="1.1" fill="#93401F">PACKED 08·07·26</text><text x="400" y="627.5" text-anchor="middle" font-family="'Courier Prime',monospace" font-weight="700" font-size="10" letter-spacing="1.1" fill="#93401F">NET WT 200 g</text></g>
+
+  <!-- footer band -->
+  <rect x="22" y="645" width="456" height="33" fill="#7A1E2B"/>
+  <text x="250" y="666" text-anchor="middle" font-size="9.5" font-weight="800" letter-spacing="2.2" fill="#F6EDDB">MADE IN A HOME KITCHEN · KOTHRUD, PUNE · NO PRESERVATIVES</text>
+</g>
+</svg>

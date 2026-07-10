@@ -1,0 +1,34 @@
+[
+  {
+    "id": "cartouche-bhajani-flat",
+    "name": "BHAJANI CHAKLI — label flat",
+    "concept": "Illustrated cartouche (Paper Boat register), cream ground, flat 5-ink scene: Aaji at the brass sorya press, mid-squeeze: a fresh spiral drops toward the kadhai of hot oil, two more fry, steam curls, flames under the chulha, a thali of finished chaklis at her feet. Tiled floor hint, marigold toran, sunburst halo.",
+    "files": [
+      "label-flat-bhajani.svg"
+    ]
+  },
+  {
+    "id": "cartouche-bhajani-pouch",
+    "name": "BHAJANI CHAKLI — pouch application",
+    "concept": "Cartouche label applied to the crimp-top pouch chassis with sheen + grain. Aaji at the brass sorya press, mid-squeeze: a fresh spiral drops toward the kadhai of hot oil, two more fry, steam curls, flames under the chulha, a thali of finished chaklis at her feet. Tiled floor hint, marigold toran, sunburst halo.",
+    "files": [
+      "pouch-bhajani.svg"
+    ]
+  },
+  {
+    "id": "cartouche-butter-flat",
+    "name": "BUTTER CHAKLI — label flat",
+    "concept": "Illustrated cartouche (Paper Boat register), cream ground, flat 5-ink scene: Aaji churning white butter: the ravi spun by a pulled rope in a gold-banded clay pot, loni blobs at the mouth, a bowl of finished butter beside, milk pot at her feet. Same cartouche furniture, honey-gold flavor world.",
+    "files": [
+      "label-flat-butter.svg"
+    ]
+  },
+  {
+    "id": "cartouche-butter-pouch",
+    "name": "BUTTER CHAKLI — pouch application",
+    "concept": "Cartouche label applied to the crimp-top pouch chassis with sheen + grain. Aaji churning white butter: the ravi spun by a pulled rope in a gold-banded clay pot, loni blobs at the mouth, a bowl of finished butter beside, milk pot at her feet. Same cartouche furniture, honey-gold flavor world.",
+    "files": [
+      "pouch-butter.svg"
+    ]
+  }
+]

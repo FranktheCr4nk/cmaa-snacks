@@ -1,0 +1,18 @@
+[
+  {
+    "id": "heirloom-noir-bhajani-flat",
+    "name": "Bhajani Chakli — Heirloom Noir pouch",
+    "concept": "Premium gifting flagship. Soft-black ground, gold restricted to line-weight (foil-gradient hairlines, filigree corners, circumtext roundel), Paithani kuyri band with magenta micro-accents, maroon ribbon + footer, ivory Devanagari hero lettering with emboss, product visible through a gold-rimmed cusped-arch die-cut. Craft-chocolate / single-malt shelf register.",
+    "files": [
+      "assets/packaging/lab/heirloom-noir/pouch-bhajani.svg"
+    ]
+  },
+  {
+    "id": "heirloom-noir-gift-tin",
+    "name": "दिवाळी फराळ gift tin — Heirloom Noir (front, wrap band)",
+    "concept": "Black Diwali tin, front elevation with soft-black paper wrap band edged in gold foil hairlines. Curved Paithani kuyri row and curved caption follow the drum geometry; ivory दिवाळी फराळ lockup embossed; faral spread visible through gold-rimmed cusped arch; chakli-spiral gold monogram on the lid.",
+    "files": [
+      "assets/packaging/lab/heirloom-noir/tin-diwali-faral.svg"
+    ]
+  }
+]

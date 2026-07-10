@@ -1,0 +1,62 @@
+[
+  {
+    "id": "B1",
+    "name": "Pure Coil",
+    "concept": "A mathematically exact Archimedean spiral rendered as a tapered dough rope — thin where the press starts at the centre, full width outward, round-capped end, ridge grooves cut at equal arc spacing. The chakli itself, drawn like a monogram.",
+    "files": [
+      "b1-color.svg",
+      "b1-mono.svg",
+      "b1-rev.svg"
+    ]
+  },
+  {
+    "id": "B2",
+    "name": "Kuyri Tile",
+    "concept": "The spiral set in a 45-degree Paithani zari tile: maroon diamond field, die-cut hairline diamond and four zari dots, gold spiral inlay (mono/rev: the spiral is die-cut clean through — a single-plate stamp). Born to be an app icon.",
+    "files": [
+      "b2-color.svg",
+      "b2-mono.svg",
+      "b2-rev.svg"
+    ]
+  },
+  {
+    "id": "B3",
+    "name": "Spiral Sun",
+    "concept": "Matchbox-label sunburst: 24 wedge rays alternating long terracotta / short gold around a gold keyline ring; the maroon core carries the spiral knocked out of it. Festive shelf energy, prints in three inks.",
+    "files": [
+      "b3-color.svg",
+      "b3-mono.svg",
+      "b3-rev.svg"
+    ]
+  },
+  {
+    "id": "B4",
+    "name": "Sesame Orbit",
+    "concept": "The spiral drawn from nothing but sesame seeds — pointed ovals riding the curve tangent with a hand-sprinkled alternating skew, shrinking toward the centre, spaced proportionally to their own size. Color runs zari gold at the core to bhajani maroon at the rim so the silhouette holds on light grounds. Premium, particle-like.",
+    "files": [
+      "b4-color.svg",
+      "b4-mono.svg",
+      "b4-rev.svg"
+    ]
+  },
+  {
+    "id": "B5",
+    "name": "Warm Coil",
+    "concept": "The rope spiral set low with two gold steam wisps rising off it — the mark says fresh-and-hot, straight from the kadhai. Terracotta coil, zari steam.",
+    "files": [
+      "b5-color.svg",
+      "b5-mono.svg",
+      "b5-rev.svg"
+    ]
+  },
+  {
+    "id": "B6",
+    "name": "Pressed Thumb",
+    "concept": "One continuous 4.6-turn spiral (spiral FIRST) with two ridge-ending breaks and eight flanking ridge fragments in the winding gaps — look twice and it is a thumbprint: hand-pressed as literal identity. Slight squash and tilt make it a thumb pad.",
+    "files": [
+      "b6-color.svg",
+      "b6-mono.svg",
+      "b6-rev.svg"
+    ]
+  }
+]

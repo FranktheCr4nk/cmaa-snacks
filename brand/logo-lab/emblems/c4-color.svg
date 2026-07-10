@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="480" height="480">
+<defs><style>@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..900&amp;family=Marcellus&amp;family=Anton&amp;family=Yatra+One&amp;family=Mulish:wght@400;600;700;800&amp;family=Courier+Prime:wght@700&amp;family=Noto+Sans+Devanagari:wght@400;700&amp;display=swap');</style></defs>
+
+<g transform="translate(240 240) scale(1.06) translate(-240 -229)">
+  <path d="M193.6 100.28 a 46.4 46.4 0 0 1 92.8 0" fill="none" stroke="#33241A" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="240" cy="53.88" r="5" fill="#C8922A" stroke="#33241A" stroke-width="2"/>
+  <path d="M124 128 Q 240 62 356 128 Z" fill="#F6EDDB" stroke="#33241A" stroke-width="3"/>
+  <rect x="104" y="128" width="272" height="12" rx="4" fill="#F1E4CB" stroke="#33241A" stroke-width="2.6"/>
+  <rect x="112" y="140" width="256" height="72" rx="6" fill="#F6EDDB" stroke="#33241A" stroke-width="2.6"/>
+  <rect x="104" y="212" width="272" height="10" rx="4" fill="#F1E4CB" stroke="#33241A" stroke-width="2.6"/>
+  <g ><rect x="112" y="222" width="256" height="78" rx="6" fill="#7A1E2B"/></g>
+  <rect x="112" y="222" width="256" height="78" rx="6" fill="none" stroke="#33241A" stroke-width="2.6"/>
+  <text x="240" y="278" font-size="50" font-family="'Fraunces',Georgia,serif" font-weight="700" letter-spacing="8" fill="#F6EDDB" text-anchor="middle" font-variation-settings="'opsz' 100">CMAA</text>
+  <rect x="104" y="300" width="272" height="10" rx="4" fill="#F1E4CB" stroke="#33241A" stroke-width="2.6"/>
+  <rect x="112" y="310" width="256" height="68" rx="6" fill="#F6EDDB" stroke="#33241A" stroke-width="2.6"/>
+  <rect x="100" y="378" width="280" height="12" rx="5" fill="#F1E4CB" stroke="#33241A" stroke-width="2.6"/>
+  <line x1="136" y1="148" x2="136" y2="204" stroke="#33241A" stroke-width="1.4" opacity="0.16"/><line x1="344" y1="148" x2="344" y2="204" stroke="#33241A" stroke-width="1.4" opacity="0.16"/><line x1="136" y1="318" x2="136" y2="370" stroke="#33241A" stroke-width="1.4" opacity="0.16"/><line x1="344" y1="318" x2="344" y2="370" stroke="#33241A" stroke-width="1.4" opacity="0.16"/>
+  <path d="M240 174 L240.26 173.84 L240.56 173.73 L240.89 173.65 L241.25 173.62 L241.63 173.65 L242.01 173.74 L242.4 173.88 L242.78 174.09 L243.14 174.36 L243.48 174.69 L243.78 175.08 L244.03 175.53 L244.23 176.02 L244.37 176.55 L244.43 177.12 L244.43 177.71 L244.34 178.31 L244.17 178.91 L243.91 179.51 L243.57 180.09 L243.15 180.63 L242.64 181.13 L242.06 181.57 L241.41 181.95 L240.7 182.25 L239.94 182.46 L239.14 182.57 L238.31 182.59 L237.46 182.49 L236.62 182.29 L235.78 181.97 L234.97 181.55 L234.21 181.01 L233.51 180.37 L232.87 179.63 L232.32 178.8 L231.87 177.89 L231.54 176.92 L231.32 175.88 L231.22 174.81 L231.27 173.72 L231.45 172.61 L231.77 171.52 L232.23 170.46 L232.83 169.45 L233.56 168.5 L234.42 167.63 L235.4 166.87 L236.48 166.21 L237.65 165.69 L238.89 165.31 L240.2 165.09 L241.54 165.02 L242.9 165.12 L244.25 165.39 L245.59 165.83 L246.88 166.45 L248.1 167.22 L249.23 168.15 L250.25 169.23 L251.15 170.44 L251.9 171.78 L252.49 173.21 L252.91 174.72 L253.14 176.29 L253.18 177.91 L253.02 179.53 L252.65 181.14 L252.09 182.72 L251.33 184.23 L250.37 185.65 L249.24 186.97 L247.94 188.15 L246.49 189.17 L244.91 190.02 L243.21 190.68 L241.43 191.13 L239.59 191.37 L237.71 191.37 L235.82 191.15 L233.95 190.69 L232.14 190 L230.4 189.09 L228.77 187.96 L227.28 186.62 L225.94 185.1 L224.79 183.41 L223.85 181.57 L223.13 179.61 L222.64 177.56 L222.41 175.45 L222.44 173.3 L222.73 171.15 L223.28 169.03 L224.1 166.98 L225.17 165.02 L226.48 163.19 L228.02 161.51 L229.76 160.03 L231.69 158.75 L233.78 157.71 L236.01 156.93 L238.33 156.41 L240.71 156.18 L243.13 156.25 L245.54 156.6 L247.91 157.26 L250.2 158.2 L252.38 159.43 L254.41 160.92 L256.26 162.67 L257.9 164.64 L259.3 166.81 L260.43 169.16 L261.27 171.64 L261.81 174.23 L262.04 176.89 L261.94 179.58 L261.51 182.25 L260.76 184.87 L259.68 187.4 L258.29 189.8 L256.61 192.03 L254.66 194.05 L252.46 195.84 L250.05 197.35 L247.45 198.57 L244.7 199.48 L241.84 200.04 L238.91 200.26 L235.96 200.12 L233.02 199.62 L230.15 198.76 L227.39 197.55 L224.77 196 L222.34 194.14 L220.15 191.98 L218.21 189.55 L216.58 186.89 L215.27 184.03" fill="none" stroke="#7A1E2B" stroke-width="4.2" stroke-linecap="round"/>
+  <path d="M240.68 175.11 L242.87 172.25 M241.97 175.46 L245.45 174.52 M242.75 177.12 L246.08 178.48 M241.97 179.36 L243.8 182.46 M239.42 180.78 L238.99 184.35 M235.99 180.11 L233.48 182.68 M233.41 176.96 L229.85 177.48 M233.37 172.31 L230.23 170.56 M236.6 168.2 L235.16 164.9 M242.26 166.84 L243.12 163.35 M248.07 169.52 L250.88 167.26 M251.27 175.73 L254.87 175.64 M249.87 183.17 L252.78 185.29 M243.75 188.58 L244.78 192.02 M235.02 189.13 L233.74 192.5 M227.28 183.9 L224.23 185.8 M224.18 174.47 L220.6 174.12 M227.69 164.55 L225.05 162.1 M237.01 158.51 L236.41 154.97 M248.67 159.48 L250.35 156.29 M257.76 167.75 L261.03 166.23 M260.02 180.43 L263.54 181.2 M253.82 192.38 L256.14 195.13 M241.08 198.33 L241.25 201.92 M226.78 195.16 L224.73 198.12 " stroke="#C8922A" stroke-width="1.2"/>
+  <text x="240" y="346" font-size="25" font-family="'Yatra One','Noto Sans Devanagari',serif"  letter-spacing="0" fill="#33241A" text-anchor="middle" >आजीचा फराळ</text>
+  <text x="240" y="366" font-size="9" font-family="'Mulish','Avenir Next',system-ui,sans-serif" font-weight="700" letter-spacing="2.6" fill="#7A1E2B" text-anchor="middle" >KOTHRUD · PUNE · EST 2026</text>
+  
+    <rect x="90" y="124" width="22" height="18" rx="5" fill="#C8922A" stroke="#33241A" stroke-width="2.4"/>
+    <rect x="92" y="138" width="18" height="246" rx="9" fill="#C8922A" stroke="#33241A" stroke-width="2.4"/>
+    <rect x="90" y="376" width="22" height="12" rx="4" fill="#C8922A" stroke="#33241A" stroke-width="2.4"/>
+    <circle cx="101" cy="158" r="2.6" fill="#33241A"/>
+    <circle cx="101" cy="360" r="2.6" fill="#33241A"/>
+  
+    <rect x="368" y="124" width="22" height="18" rx="5" fill="#C8922A" stroke="#33241A" stroke-width="2.4"/>
+    <rect x="370" y="138" width="18" height="246" rx="9" fill="#C8922A" stroke="#33241A" stroke-width="2.4"/>
+    <rect x="368" y="376" width="22" height="12" rx="4" fill="#C8922A" stroke="#33241A" stroke-width="2.4"/>
+    <circle cx="379" cy="158" r="2.6" fill="#33241A"/>
+    <circle cx="379" cy="360" r="2.6" fill="#33241A"/>
+</g>
+</svg>

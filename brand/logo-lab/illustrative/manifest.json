@@ -1,0 +1,62 @@
+[
+  {
+    "id": "D1",
+    "name": "Aaji Mark",
+    "concept": "Continuous-line portrait of Seema aaji — hair bun drawn as a chakli spiral poking through an open embrace ring; round glasses, bindi, knowing half-smile. Seven strokes.",
+    "files": [
+      "D1-color.svg",
+      "D1-mono.svg",
+      "D1-rev.svg"
+    ]
+  },
+  {
+    "id": "D2",
+    "name": "Sorya Hands",
+    "concept": "Woodcut press: two fists bearing down on the brass sorya, one bhajani-dark chakli coiling out of the nozzle. Cut lines are transparent, so it prints in one ink.",
+    "files": [
+      "D2-color.svg",
+      "D2-mono.svg",
+      "D2-rev.svg"
+    ]
+  },
+  {
+    "id": "D3",
+    "name": "Kadhai Rising",
+    "concept": "The kadhai silhouette with ring handles; three steam curls lift one perfect chakli spiral off the oil. The frying moment as an emblem.",
+    "files": [
+      "D3-color.svg",
+      "D3-mono.svg",
+      "D3-rev.svg"
+    ]
+  },
+  {
+    "id": "D4",
+    "name": "Mor Coil",
+    "concept": "Paithani peacock whose tail feather flows tangent-perfect into the chakli spiral — the pallu motif becomes the product. Single-colour capable.",
+    "files": [
+      "D4-color.svg",
+      "D4-mono.svg",
+      "D4-rev.svg"
+    ]
+  },
+  {
+    "id": "D5",
+    "name": "Chakli Mandala",
+    "concept": "Eight-fold rangoli computed rotationally from tiny chakli spirals, scallop chalk arcs and sesame seeds — a Diwali doorstep drawn with the product itself.",
+    "files": [
+      "D5-color.svg",
+      "D5-mono.svg",
+      "D5-rev.svg"
+    ]
+  },
+  {
+    "id": "D6",
+    "name": "Cycle Courier",
+    "concept": "Side-view roadster with a three-tier dabba strapped to the carrier; both wheels are chakli spirals. The Kothrud delivery story in one mark.",
+    "files": [
+      "D6-color.svg",
+      "D6-mono.svg",
+      "D6-rev.svg"
+    ]
+  }
+]

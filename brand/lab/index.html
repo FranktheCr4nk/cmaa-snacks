@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cmaa — Brand Lab · logo & packaging review</title>
+<meta name="description" content="Cmaa Brand Lab — every new logo direction and packaging system in one place for the founder & team to review and vote.">
+<script>document.documentElement.className='js';</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Mulish:wght@400;500;600;700;800&family=Yatra+One&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1E1A17; --ink2:#141110; --cream:#F6EDDB; --paper:#F1E4CB;
+  --gold:#C8922A; --gold2:#D4A23C; --maroon:#7A1E2B; --muted:#B9A98D;
+  --line:rgba(200,146,42,.28); --packH:420px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0}
+[id]{scroll-margin-top:78px}
+@media(prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+body{
+  background:var(--ink); color:var(--cream);
+  font-family:'Mulish',system-ui,sans-serif; font-size:16px; line-height:1.6;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+body::before{ /* grain */
+  content:""; position:fixed; inset:0; z-index:9998; pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='150' height='150' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:150px 150px;
+  opacity:.06; mix-blend-mode:overlay;
+}
+img,object{display:block; border:0}
+a{color:inherit; text-decoration:none}
+h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif; font-weight:500; line-height:1.05; margin:0}
+.dev{font-family:'Yatra One','Noto Sans Devanagari',serif}
+
+/* mini nav */
+.mininav{
+  position:sticky; top:0; z-index:100;
+  display:flex; align-items:center; gap:18px; flex-wrap:wrap;
+  padding:11px clamp(16px,4vw,54px);
+  background:rgba(20,17,16,.86); backdrop-filter:blur(9px);
+  border-bottom:1px solid var(--line);
+}
+.mininav .brand{font-family:'Fraunces',serif; font-weight:600; letter-spacing:.02em; font-size:19px}
+.mininav .brand span{color:var(--gold2); font-style:italic; font-weight:400}
+.mininav__links{display:flex; gap:6px; flex-wrap:wrap}
+.mininav__links a{
+  font-size:12.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--muted); padding:6px 12px; border:1px solid transparent; border-radius:999px;
+  transition:color .2s, border-color .2s, background .2s;
+}
+.mininav__links a:hover{color:var(--cream); border-color:var(--line); background:rgba(200,146,42,.07)}
+.mininav__note{margin-left:auto; font-size:12px; color:var(--muted); font-style:italic}
+.mininav__note b{color:var(--gold2); font-style:normal}
+@media(max-width:820px){ .mininav__note{display:none} }
+
+.wrap{max-width:1240px; margin:0 auto; padding:0 clamp(16px,4vw,54px)}
+.rule{height:1px; background:linear-gradient(90deg,transparent,var(--line) 12%,var(--line) 88%,transparent); margin:0 clamp(16px,4vw,54px)}
+
+/* hero */
+.hero{padding:clamp(56px,9vw,120px) 0 clamp(30px,5vw,60px)}
+.kicker{font-size:12.5px; letter-spacing:.34em; text-transform:uppercase; color:var(--gold2); margin:0 0 18px}
+.hero h1{font-size:clamp(58px,12vw,150px); letter-spacing:-.02em; line-height:.92}
+.hero h1 em{font-style:italic; color:var(--gold2); font-weight:400}
+.hero__sub{max-width:56ch; font-size:clamp(17px,2.1vw,22px); color:#EADFC6; margin:26px 0 0}
+.hero__meta{margin:22px 0 0; font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+.hero__meta b{color:var(--cream)}
+.hero__vote{
+  margin:34px 0 0; max-width:64ch; font-size:14.5px; color:#E6DAC0;
+  border-left:2px solid var(--gold); padding:8px 0 8px 18px; background:linear-gradient(90deg,rgba(200,146,42,.08),transparent);
+}
+.hero__vote b{color:var(--gold2)}
+
+/* chapter head */
+.chapter{padding:clamp(46px,7vw,90px) 0 8px}
+.chapter__no{font-size:13px; letter-spacing:.34em; text-transform:uppercase; color:var(--gold2)}
+.chapter__ttl{font-size:clamp(34px,6vw,68px); margin:8px 0 0; letter-spacing:-.01em}
+.chapter__lead{max-width:66ch; color:#D8CBB0; margin:16px 0 0; font-size:16.5px}
+
+/* family */
+.family{padding:clamp(34px,5vw,60px) 0 0}
+.family__hd{display:flex; gap:20px; align-items:baseline; padding-bottom:22px}
+.family__key{
+  font-family:'Fraunces',serif; font-size:clamp(40px,6vw,72px); font-weight:600; line-height:.8;
+  color:var(--gold2); flex:0 0 auto; min-width:1.1em;
+}
+.family__title{font-size:clamp(22px,3vw,32px)}
+.family__title span{color:var(--muted); font-style:italic; font-weight:400; font-size:.62em}
+.family__blurb{max-width:74ch; color:#C9BB9E; margin:9px 0 0; font-size:14.5px}
+
+.specgrid{display:grid; gap:26px}
+.specgrid--wide{grid-template-columns:repeat(auto-fill,minmax(540px,1fr))}
+.specgrid--sq{grid-template-columns:repeat(auto-fill,minmax(440px,1fr))}
+@media(max-width:600px){ .specgrid--wide,.specgrid--sq{grid-template-columns:1fr} }
+
+.spec{
+  background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));
+  border:1px solid rgba(200,146,42,.18); border-radius:14px;
+  padding:18px 18px 20px; display:flex; flex-direction:column; gap:15px;
+}
+.spec__hd{display:flex; gap:14px; align-items:flex-start}
+.num{
+  font-family:'Fraunces',serif; font-weight:600; font-size:15px; letter-spacing:.04em;
+  color:var(--ink); background:var(--gold2); border-radius:7px;
+  padding:4px 9px; flex:0 0 auto; line-height:1.1;
+}
+.spec__name{font-size:19px; letter-spacing:.01em}
+.spec__concept{font-size:13px; color:#C4B593; margin:5px 0 0; line-height:1.5}
+
+.pair{display:flex; gap:12px}
+.chipwrap{flex:1; min-width:0; display:flex; flex-direction:column; gap:6px}
+.chip{
+  border-radius:10px; display:flex; align-items:center; justify-content:center;
+  padding:14px; overflow:hidden;
+}
+.pair--wide .chip{height:152px}
+.pair--sq .chip{height:188px}
+.chip--cream{background:var(--paper)}
+.chip--dark{background:#0F0C0A; border:1px solid rgba(200,146,42,.14)}
+.chip .art{width:100%; height:100%; object-fit:contain; pointer-events:none}
+object.art{pointer-events:none}
+.chiplab{font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); text-align:center}
+
+.fav{display:flex; align-items:center; gap:9px; margin-top:2px}
+.fav__k{font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-right:2px}
+.fav__chip{width:44px; height:44px; border-radius:8px; display:flex; align-items:center; justify-content:center}
+.fav--cream{background:var(--paper)}
+.fav--dark{background:#0F0C0A; border:1px solid rgba(200,146,42,.14)}
+.fav__chip img,.fav__chip object{width:32px; height:32px; pointer-events:none}
+
+/* packaging */
+.direction{padding:clamp(40px,6vw,76px) 0 0}
+.direction__hd{display:flex; gap:18px; align-items:baseline}
+.direction__key{
+  font-family:'Fraunces',serif; font-weight:600; font-size:clamp(34px,5vw,60px); line-height:.8;
+  color:var(--gold2); flex:0 0 auto;
+}
+.direction__title{font-size:clamp(24px,3.4vw,40px)}
+.direction__tag{font-size:12.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin:6px 0 0}
+.direction__concept{max-width:80ch; color:#D2C5AA; margin:16px 0 4px; font-size:15.5px; line-height:1.6}
+.packrow{
+  display:flex; flex-wrap:wrap; gap:clamp(20px,3vw,40px);
+  align-items:flex-end; justify-content:center; margin-top:26px;
+}
+.pack{margin:0; display:flex; flex-direction:column; align-items:center; gap:12px}
+.pack__art object{
+  filter:drop-shadow(0 26px 40px rgba(0,0,0,.55));
+  pointer-events:none; border-radius:6px;
+}
+.pack--sheet{flex-basis:100%; width:100%}
+.pack--sheet .pack__art{width:100%; display:flex; justify-content:center}
+.pack--sheet .pack__art object{filter:drop-shadow(0 20px 34px rgba(0,0,0,.5))}
+.pack figcaption{font-size:13px; color:#CFC1A5; text-align:center; letter-spacing:.02em}
+.pcap__id{
+  font-family:'Fraunces',serif; font-weight:600; color:var(--gold2);
+  margin-right:7px; letter-spacing:.03em;
+}
+
+/* vote board */
+.board{padding:clamp(50px,7vw,96px) 0 40px}
+.board h2{font-size:clamp(30px,5vw,52px)}
+.board__lead{max-width:64ch; color:#D2C5AA; margin:14px 0 26px; font-size:16px}
+.board__lead b{color:var(--gold2)}
+.board__grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px}
+.vfield{display:flex; flex-direction:column; gap:8px}
+.vfield label{font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--gold2)}
+.vfield textarea{
+  font-family:'Mulish',sans-serif; font-size:14px; color:var(--cream);
+  background:rgba(255,255,255,.03); border:1px solid rgba(200,146,42,.22); border-radius:10px;
+  padding:12px 13px; min-height:92px; resize:vertical;
+}
+.vfield textarea::placeholder{color:#8d7f66}
+.vfield textarea:focus{outline:none; border-color:var(--gold2); background:rgba(200,146,42,.06)}
+
+footer{padding:44px 0 70px; color:var(--muted); font-size:12.5px; letter-spacing:.06em}
+footer b{color:var(--cream)}
+
+/* reveal on scroll */
+.js .rv{opacity:0; transform:translateY(20px); transition:opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1; transform:none}
+@media(prefers-reduced-motion:reduce){
+  .js .rv{opacity:1 !important; transform:none !important; transition:none !important}
+}
+</style>
+</head>
+<body id="top">
+
+<nav class="mininav">
+  <a class="brand" href="#top">CMAA <span>Brand Lab</span></a>
+  <div class="mininav__links">
+    <a href="#logolab">01 · Logos</a>
+    <a href="#fam-A">A</a><a href="#fam-B">B</a><a href="#fam-C">C</a><a href="#fam-D">D</a>
+    <a href="#packlab">02 · Packaging</a>
+    <a href="#vote">Vote</a>
+  </div>
+  <span class="mininav__note">vote: WhatsApp us the numbers → <b>A3 · B2 · P2</b></span>
+</nav>
+
+<div class="wrap">
+  <header class="hero rv">
+    <p class="kicker">Cmaa · <span class="dev">आजीचा फराळ</span> · Kothrud, Pune</p>
+    <h1>Brand <em>Lab</em></h1>
+    <p class="hero__sub">Every new logo direction and every packaging system, assembled in one place — for the founder &amp; team to review, compare and pick the winners.</p>
+    <p class="hero__meta"><b>8</b> studios &nbsp;·&nbsp; <b>24</b> logo options &nbsp;·&nbsp; <b>4</b> packaging directions &nbsp;·&nbsp; 10 July 2026</p>
+    <p class="hero__vote"><b>How to vote →</b> reply on WhatsApp with the numbers you like (e.g. <b>A3 · B2 · C3 · P2</b>), or drop notes in the feedback boxes on the vote board at the bottom.</p>
+  </header>
+</div>
+
+<div class="rule"></div>
+
+<div class="wrap">
+  <section class="chapter rv" id="logolab">
+    <p class="chapter__no">Chapter 01</p>
+    <h2 class="chapter__ttl">Logo Lab</h2>
+    <p class="chapter__lead">Four families, six options each. Every specimen is shown in <b>colour on a cream card</b> and <b>reversed on black</b>, with a 32-pixel favicon strip so you can judge how the mark survives at app-icon size. Vote by number (A1–D6).</p>
+  </section>
+
+    <section class="family rv" id="fam-A">
+      <header class="family__hd">
+        <span class="family__key">A</span>
+        <div>
+          <h3 class="family__title">Wordmarks <span>· the name, drawn</span></h3>
+          <p class="family__blurb">“Cmaa” built as pure drawn lettering — ribbon serifs, warm monolines, a bilingual twin, sign-painter and stencil cuts. Zero font dependency; the name is the mark.</p>
+        </div>
+      </header>
+      <div class="specgrid specgrid--wide">
+      <article class="spec rv" id="opt-A1">
+        <div class="spec__hd">
+          <span class="num">A1</span>
+          <div class="spec__meta">
+            <h4 class="spec__name">Heritage Contrast</h4>
+            <p class="spec__concept">High-contrast serif Cmaa drawn as variable-width ribbon geometry; the C's counter is a gold chakli spiral, a gold sesame seed sets the period.</p>
+          </div>
+        </div>
+        <div class="pair pair--wide">
+          <div class="chipwrap">
+            <div class="chip chip--cream"><img class="art" loading="lazy" src="../logo-lab/wordmarks/A1-color.svg" alt="Heritage Contrast — colour"></div>
+            <span class="chiplab">colour · cream</span>
+          </div>
+          <div class="chipwrap">
+            <div class="chip chip--dark"><img class="art" loading="lazy" src="../logo-lab/wordmarks/A1-rev.svg" alt="Heritage Contrast — reversed"></div>
+            <span class="chiplab">reversed · black</span>
+          </div>
+        </div>
+        <div class="fav">
+          <span class="fav__k">favicon · 32px</span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/wordmarks/A1-color.svg" alt=""></span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/wordmarks/A1-mono.svg" alt=""></span>
+          <span class="fav__chip fav--dark"><img loading="lazy" src="../logo-lab/wordmarks/A1-rev.svg" alt=""></span>
+        </div>
+      </article>
+      <article class="spec rv" id="opt-A2">
+        <div class="spec__hd">
+          <span class="num">A2</span>
+          <div class="spec__meta">
+            <h4 class="spec__name">Soft Roundhand</h4>
+            <p class="spec__concept">Warm rounded monoline lowercase; the two a's link with a swash that sprouts a curry leaf, sesame-seed tittle floats above.</p>
+          </div>
+        </div>
+        <div class="pair pair--wide">
+          <div class="chipwrap">
+            <div class="chip chip--cream"><img class="art" loading="lazy" src="../logo-lab/wordmarks/A2-color.svg" alt="Soft Roundhand — colour"></div>
+            <span class="chiplab">colour · cream</span>
+          </div>
+          <div class="chipwrap">
+            <div class="chip chip--dark"><img class="art" loading="lazy" src="../logo-lab/wordmarks/A2-rev.svg" alt="Soft Roundhand — reversed"></div>
+            <span class="chiplab">reversed · black</span>
+          </div>
+        </div>
+        <div class="fav">
+          <span class="fav__k">favicon · 32px</span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/wordmarks/A2-color.svg" alt=""></span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/wordmarks/A2-mono.svg" alt=""></span>
+          <span class="fav__chip fav--dark"><img loading="lazy" src="../logo-lab/wordmarks/A2-rev.svg" alt=""></span>
+        </div>
+      </article>
+      <article class="spec rv" id="opt-A3">
+        <div class="spec__hd">
+          <span class="num">A3</span>
+          <div class="spec__meta">
+            <h4 class="spec__name">Bilingual Twin</h4>
+            <p class="spec__concept">CMAA locked over चमा (real Yatra One outlines); the drawn shirorekha doubles as the Latin underline — one shared bar, Devanagari as hero.</p>
+          </div>
+        </div>
+        <div class="pair pair--wide">
+          <div class="chipwrap">
+            <div class="chip chip--cream"><img class="art" loading="lazy" src="../logo-lab/wordmarks/A3-color.svg" alt="Bilingual Twin — colour"></div>
+            <span class="chiplab">colour · cream</span>
+          </div>
+          <div class="chipwrap">
+            <div class="chip chip--dark"><img class="art" loading="lazy" src="../logo-lab/wordmarks/A3-rev.svg" alt="Bilingual Twin — reversed"></div>
+            <span class="chiplab">reversed · black</span>
+          </div>
+        </div>
+        <div class="fav">
+          <span class="fav__k">favicon · 32px</span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/wordmarks/A3-color.svg" alt=""></span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/wordmarks/A3-mono.svg" alt=""></span>
+          <span class="fav__chip fav--dark"><img loading="lazy" src="../logo-lab/wordmarks/A3-rev.svg" alt=""></span>
+        </div>
+      </article>
+      <article class="spec rv" id="opt-A4">
+        <div class="spec__hd">
+          <span class="num">A4</span>
+          <div class="spec__meta">
+            <h4 class="spec__name">Signboard Painter</h4>
+            <p class="spec__concept">Pune storefront hand-paint: fat bouncing brush caps, haldi inline stripe, hard ink drop-shadow — KADAK energy.</p>
+          </div>
+        </div>
+        <div class="pair pair--wide">
+          <div class="chipwrap">
+            <div class="chip chip--cream"><img class="art" loading="lazy" src="../logo-lab/wordmarks/A4-color.svg" alt="Signboard Painter — colour"></div>
+            <span class="chiplab">colour · cream</span>
+          </div>
+          <div class="chipwrap">
+            <div class="chip chip--dark"><img class="art" loading="lazy" src="../logo-lab/wordmarks/A4-rev.svg" alt="Signboard Painter — reversed"></div>
+            <span class="chiplab">reversed · black</span>
+          </div>
+        </div>
+        <div class="fav">
+          <span class="fav__k">favicon · 32px</span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/wordmarks/A4-color.svg" alt=""></span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/wordmarks/A4-mono.svg" alt=""></span>
+          <span class="fav__chip fav--dark"><img loading="lazy" src="../logo-lab/wordmarks/A4-rev.svg" alt=""></span>
+        </div>
+      </article>
+      <article class="spec rv" id="opt-A5">
+        <div class="spec__hd">
+          <span class="num">A5</span>
+          <div class="spec__meta">
+            <h4 class="spec__name">Dabba Stencil</h4>
+            <p class="spec__concept">Stencil-cut caps as if punched on a steel tiffin — butt-cut bridges, brass rivet dots; industrial-warm.</p>
+          </div>
+        </div>
+        <div class="pair pair--wide">
+          <div class="chipwrap">
+            <div class="chip chip--cream"><img class="art" loading="lazy" src="../logo-lab/wordmarks/A5-color.svg" alt="Dabba Stencil — colour"></div>
+            <span class="chiplab">colour · cream</span>
+          </div>
+          <div class="chipwrap">
+            <div class="chip chip--dark"><img class="art" loading="lazy" src="../logo-lab/wordmarks/A5-rev.svg" alt="Dabba Stencil — reversed"></div>
+            <span class="chiplab">reversed · black</span>
+          </div>
+        </div>
+        <div class="fav">
+          <span class="fav__k">favicon · 32px</span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/wordmarks/A5-color.svg" alt=""></span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/wordmarks/A5-mono.svg" alt=""></span>
+          <span class="fav__chip fav--dark"><img loading="lazy" src="../logo-lab/wordmarks/A5-rev.svg" alt=""></span>
+        </div>
+      </article>
+      <article class="spec rv" id="opt-A6">
+        <div class="spec__hd">
+          <span class="num">A6</span>
+          <div class="spec__meta">
+            <h4 class="spec__name">Spiral Ligature</h4>
+            <p class="spec__concept">Minimal monoline cmaa; the final a resolves into a continuous tapering Archimedean spiral — one-stroke chakli ligature.</p>
+          </div>
+        </div>
+        <div class="pair pair--wide">
+          <div class="chipwrap">
+            <div class="chip chip--cream"><img class="art" loading="lazy" src="../logo-lab/wordmarks/A6-color.svg" alt="Spiral Ligature — colour"></div>
+            <span class="chiplab">colour · cream</span>
+          </div>
+          <div class="chipwrap">
+            <div class="chip chip--dark"><img class="art" loading="lazy" src="../logo-lab/wordmarks/A6-rev.svg" alt="Spiral Ligature — reversed"></div>
+            <span class="chiplab">reversed · black</span>
+          </div>
+        </div>
+        <div class="fav">
+          <span class="fav__k">favicon · 32px</span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/wordmarks/A6-color.svg" alt=""></span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/wordmarks/A6-mono.svg" alt=""></span>
+          <span class="fav__chip fav--dark"><img loading="lazy" src="../logo-lab/wordmarks/A6-rev.svg" alt=""></span>
+        </div>
+      </article>
+      </div>
+    </section>
+    <section class="family rv" id="fam-B">
+      <header class="family__hd">
+        <span class="family__key">B</span>
+        <div>
+          <h3 class="family__title">Marks & Spirals <span>· the chakli coil, abstracted</span></h3>
+          <p class="family__blurb">The chakli spiral distilled into one ownable monogram — an app-icon, favicon, stamp and embroidery unit. Judge these hardest at 32px.</p>
+        </div>
+      </header>
+      <div class="specgrid specgrid--sq">
+      <article class="spec rv" id="opt-B1">
+        <div class="spec__hd">
+          <span class="num">B1</span>
+          <div class="spec__meta">
+            <h4 class="spec__name">Pure Coil</h4>
+            <p class="spec__concept">A mathematically exact Archimedean spiral rendered as a tapered dough rope — thin where the press starts at the centre, full width outward, round-capped end, ridge grooves cut at equal arc spacing. The chakli itself, drawn like a monogram.</p>
+          </div>
+        </div>
+        <div class="pair pair--sq">
+          <div class="chipwrap">
+            <div class="chip chip--cream"><img class="art" loading="lazy" src="../logo-lab/spirals/b1-color.svg" alt="Pure Coil — colour"></div>
+            <span class="chiplab">colour · cream</span>
+          </div>
+          <div class="chipwrap">
+            <div class="chip chip--dark"><img class="art" loading="lazy" src="../logo-lab/spirals/b1-rev.svg" alt="Pure Coil — reversed"></div>
+            <span class="chiplab">reversed · black</span>
+          </div>
+        </div>
+        <div class="fav">
+          <span class="fav__k">favicon · 32px</span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/spirals/b1-color.svg" alt=""></span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/spirals/b1-mono.svg" alt=""></span>
+          <span class="fav__chip fav--dark"><img loading="lazy" src="../logo-lab/spirals/b1-rev.svg" alt=""></span>
+        </div>
+      </article>
+      <article class="spec rv" id="opt-B2">
+        <div class="spec__hd">
+          <span class="num">B2</span>
+          <div class="spec__meta">
+            <h4 class="spec__name">Kuyri Tile</h4>
+            <p class="spec__concept">The spiral set in a 45-degree Paithani zari tile: maroon diamond field, die-cut hairline diamond and four zari dots, gold spiral inlay (mono/rev: the spiral is die-cut clean through — a single-plate stamp). Born to be an app icon.</p>
+          </div>
+        </div>
+        <div class="pair pair--sq">
+          <div class="chipwrap">
+            <div class="chip chip--cream"><img class="art" loading="lazy" src="../logo-lab/spirals/b2-color.svg" alt="Kuyri Tile — colour"></div>
+            <span class="chiplab">colour · cream</span>
+          </div>
+          <div class="chipwrap">
+            <div class="chip chip--dark"><img class="art" loading="lazy" src="../logo-lab/spirals/b2-rev.svg" alt="Kuyri Tile — reversed"></div>
+            <span class="chiplab">reversed · black</span>
+          </div>
+        </div>
+        <div class="fav">
+          <span class="fav__k">favicon · 32px</span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/spirals/b2-color.svg" alt=""></span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/spirals/b2-mono.svg" alt=""></span>
+          <span class="fav__chip fav--dark"><img loading="lazy" src="../logo-lab/spirals/b2-rev.svg" alt=""></span>
+        </div>
+      </article>
+      <article class="spec rv" id="opt-B3">
+        <div class="spec__hd">
+          <span class="num">B3</span>
+          <div class="spec__meta">
+            <h4 class="spec__name">Spiral Sun</h4>
+            <p class="spec__concept">Matchbox-label sunburst: 24 wedge rays alternating long terracotta / short gold around a gold keyline ring; the maroon core carries the spiral knocked out of it. Festive shelf energy, prints in three inks.</p>
+          </div>
+        </div>
+        <div class="pair pair--sq">
+          <div class="chipwrap">
+            <div class="chip chip--cream"><img class="art" loading="lazy" src="../logo-lab/spirals/b3-color.svg" alt="Spiral Sun — colour"></div>
+            <span class="chiplab">colour · cream</span>
+          </div>
+          <div class="chipwrap">
+            <div class="chip chip--dark"><img class="art" loading="lazy" src="../logo-lab/spirals/b3-rev.svg" alt="Spiral Sun — reversed"></div>
+            <span class="chiplab">reversed · black</span>
+          </div>
+        </div>
+        <div class="fav">
+          <span class="fav__k">favicon · 32px</span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/spirals/b3-color.svg" alt=""></span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/spirals/b3-mono.svg" alt=""></span>
+          <span class="fav__chip fav--dark"><img loading="lazy" src="../logo-lab/spirals/b3-rev.svg" alt=""></span>
+        </div>
+      </article>
+      <article class="spec rv" id="opt-B4">
+        <div class="spec__hd">
+          <span class="num">B4</span>
+          <div class="spec__meta">
+            <h4 class="spec__name">Sesame Orbit</h4>
+            <p class="spec__concept">The spiral drawn from nothing but sesame seeds — pointed ovals riding the curve tangent with a hand-sprinkled alternating skew, shrinking toward the centre, spaced proportionally to their own size. Color runs zari gold at the core to bhajani maroon at the rim so the silhouette holds on light grounds. Premium, particle-like.</p>
+          </div>
+        </div>
+        <div class="pair pair--sq">
+          <div class="chipwrap">
+            <div class="chip chip--cream"><img class="art" loading="lazy" src="../logo-lab/spirals/b4-color.svg" alt="Sesame Orbit — colour"></div>
+            <span class="chiplab">colour · cream</span>
+          </div>
+          <div class="chipwrap">
+            <div class="chip chip--dark"><img class="art" loading="lazy" src="../logo-lab/spirals/b4-rev.svg" alt="Sesame Orbit — reversed"></div>
+            <span class="chiplab">reversed · black</span>
+          </div>
+        </div>
+        <div class="fav">
+          <span class="fav__k">favicon · 32px</span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/spirals/b4-color.svg" alt=""></span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/spirals/b4-mono.svg" alt=""></span>
+          <span class="fav__chip fav--dark"><img loading="lazy" src="../logo-lab/spirals/b4-rev.svg" alt=""></span>
+        </div>
+      </article>
+      <article class="spec rv" id="opt-B5">
+        <div class="spec__hd">
+          <span class="num">B5</span>
+          <div class="spec__meta">
+            <h4 class="spec__name">Warm Coil</h4>
+            <p class="spec__concept">The rope spiral set low with two gold steam wisps rising off it — the mark says fresh-and-hot, straight from the kadhai. Terracotta coil, zari steam.</p>
+          </div>
+        </div>
+        <div class="pair pair--sq">
+          <div class="chipwrap">
+            <div class="chip chip--cream"><img class="art" loading="lazy" src="../logo-lab/spirals/b5-color.svg" alt="Warm Coil — colour"></div>
+            <span class="chiplab">colour · cream</span>
+          </div>
+          <div class="chipwrap">
+            <div class="chip chip--dark"><img class="art" loading="lazy" src="../logo-lab/spirals/b5-rev.svg" alt="Warm Coil — reversed"></div>
+            <span class="chiplab">reversed · black</span>
+          </div>
+        </div>
+        <div class="fav">
+          <span class="fav__k">favicon · 32px</span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/spirals/b5-color.svg" alt=""></span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/spirals/b5-mono.svg" alt=""></span>
+          <span class="fav__chip fav--dark"><img loading="lazy" src="../logo-lab/spirals/b5-rev.svg" alt=""></span>
+        </div>
+      </article>
+      <article class="spec rv" id="opt-B6">
+        <div class="spec__hd">
+          <span class="num">B6</span>
+          <div class="spec__meta">
+            <h4 class="spec__name">Pressed Thumb</h4>
+            <p class="spec__concept">One continuous 4.6-turn spiral (spiral FIRST) with two ridge-ending breaks and eight flanking ridge fragments in the winding gaps — look twice and it is a thumbprint: hand-pressed as literal identity. Slight squash and tilt make it a thumb pad.</p>
+          </div>
+        </div>
+        <div class="pair pair--sq">
+          <div class="chipwrap">
+            <div class="chip chip--cream"><img class="art" loading="lazy" src="../logo-lab/spirals/b6-color.svg" alt="Pressed Thumb — colour"></div>
+            <span class="chiplab">colour · cream</span>
+          </div>
+          <div class="chipwrap">
+            <div class="chip chip--dark"><img class="art" loading="lazy" src="../logo-lab/spirals/b6-rev.svg" alt="Pressed Thumb — reversed"></div>
+            <span class="chiplab">reversed · black</span>
+          </div>
+        </div>
+        <div class="fav">
+          <span class="fav__k">favicon · 32px</span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/spirals/b6-color.svg" alt=""></span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/spirals/b6-mono.svg" alt=""></span>
+          <span class="fav__chip fav--dark"><img loading="lazy" src="../logo-lab/spirals/b6-rev.svg" alt=""></span>
+        </div>
+      </article>
+      </div>
+    </section>
+    <section class="family rv" id="fam-C">
+      <header class="family__hd">
+        <span class="family__key">C</span>
+        <div>
+          <h3 class="family__title">Emblems & Badges <span>· the full lockup</span></h3>
+          <p class="family__blurb">Complete crests that carry the whole story — a heritage roundel, matchbox label, molten wax seal, steel-dabba badge, arch shrine and a faral-republic postage stamp.</p>
+        </div>
+      </header>
+      <div class="specgrid specgrid--sq">
+      <article class="spec rv" id="opt-C1">
+        <div class="spec__hd">
+          <span class="num">C1</span>
+          <div class="spec__meta">
+            <h4 class="spec__name">Heritage Roundel</h4>
+            <p class="spec__concept">Concentric two-tone roundel: Marcellus CMAA crowns the top arc, आजीचा फराळ answers along the bottom, kunku-dot separators at 3 &amp; 9 o'clock, chakli spiral centre, notched EST 2026 · PUNE banner.</p>
+          </div>
+        </div>
+        <div class="pair pair--sq">
+          <div class="chipwrap">
+            <div class="chip chip--cream"><object class="art" type="image/svg+xml" data="../logo-lab/emblems/c1-color.svg" tabindex="-1" aria-label="Heritage Roundel — colour"></object></div>
+            <span class="chiplab">colour · cream</span>
+          </div>
+          <div class="chipwrap">
+            <div class="chip chip--dark"><object class="art" type="image/svg+xml" data="../logo-lab/emblems/c1-rev.svg" tabindex="-1" aria-label="Heritage Roundel — reversed"></object></div>
+            <span class="chiplab">reversed · black</span>
+          </div>
+        </div>
+        <div class="fav">
+          <span class="fav__k">favicon · 32px</span>
+          <span class="fav__chip fav--cream"><object type="image/svg+xml" data="../logo-lab/emblems/c1-color.svg" tabindex="-1" aria-hidden="true"></object></span>
+          <span class="fav__chip fav--cream"><object type="image/svg+xml" data="../logo-lab/emblems/c1-mono.svg" tabindex="-1" aria-hidden="true"></object></span>
+          <span class="fav__chip fav--dark"><object type="image/svg+xml" data="../logo-lab/emblems/c1-rev.svg" tabindex="-1" aria-hidden="true"></object></span>
+        </div>
+      </article>
+      <article class="spec rv" id="opt-C2">
+        <div class="spec__hd">
+          <span class="num">C2</span>
+          <div class="spec__meta">
+            <h4 class="spec__name">Matchbox Emblem</h4>
+            <p class="spec__concept">Vintage Sivakasi matchbox label: rope border between rails, sunburst spiral emblem, Anton CMAA, safety-snack pastiche, slogan strip — with a deliberate 2-colour gold misregistration plate.</p>
+          </div>
+        </div>
+        <div class="pair pair--sq">
+          <div class="chipwrap">
+            <div class="chip chip--cream"><object class="art" type="image/svg+xml" data="../logo-lab/emblems/c2-color.svg" tabindex="-1" aria-label="Matchbox Emblem — colour"></object></div>
+            <span class="chiplab">colour · cream</span>
+          </div>
+          <div class="chipwrap">
+            <div class="chip chip--dark"><object class="art" type="image/svg+xml" data="../logo-lab/emblems/c2-rev.svg" tabindex="-1" aria-label="Matchbox Emblem — reversed"></object></div>
+            <span class="chiplab">reversed · black</span>
+          </div>
+        </div>
+        <div class="fav">
+          <span class="fav__k">favicon · 32px</span>
+          <span class="fav__chip fav--cream"><object type="image/svg+xml" data="../logo-lab/emblems/c2-color.svg" tabindex="-1" aria-hidden="true"></object></span>
+          <span class="fav__chip fav--cream"><object type="image/svg+xml" data="../logo-lab/emblems/c2-mono.svg" tabindex="-1" aria-hidden="true"></object></span>
+          <span class="fav__chip fav--dark"><object type="image/svg+xml" data="../logo-lab/emblems/c2-rev.svg" tabindex="-1" aria-hidden="true"></object></span>
+        </div>
+      </article>
+      <article class="spec rv" id="opt-C3">
+        <div class="spec__hd">
+          <span class="num">C3</span>
+          <div class="spec__meta">
+            <h4 class="spec__name">Wax Seal</h4>
+            <p class="spec__concept">Irregular molten-wax blob with a pressed die: embossed chakli spiral, tiny Marcellus CMAA arc, PUNE counter-arc; radial-gradient relief in colour, honest knocked-out stamp in mono/rev.</p>
+          </div>
+        </div>
+        <div class="pair pair--sq">
+          <div class="chipwrap">
+            <div class="chip chip--cream"><object class="art" type="image/svg+xml" data="../logo-lab/emblems/c3-color.svg" tabindex="-1" aria-label="Wax Seal — colour"></object></div>
+            <span class="chiplab">colour · cream</span>
+          </div>
+          <div class="chipwrap">
+            <div class="chip chip--dark"><object class="art" type="image/svg+xml" data="../logo-lab/emblems/c3-rev.svg" tabindex="-1" aria-label="Wax Seal — reversed"></object></div>
+            <span class="chiplab">reversed · black</span>
+          </div>
+        </div>
+        <div class="fav">
+          <span class="fav__k">favicon · 32px</span>
+          <span class="fav__chip fav--cream"><object type="image/svg+xml" data="../logo-lab/emblems/c3-color.svg" tabindex="-1" aria-hidden="true"></object></span>
+          <span class="fav__chip fav--cream"><object type="image/svg+xml" data="../logo-lab/emblems/c3-mono.svg" tabindex="-1" aria-hidden="true"></object></span>
+          <span class="fav__chip fav--dark"><object type="image/svg+xml" data="../logo-lab/emblems/c3-rev.svg" tabindex="-1" aria-hidden="true"></object></span>
+        </div>
+      </article>
+      <article class="spec rv" id="opt-C4">
+        <div class="spec__hd">
+          <span class="num">C4</span>
+          <div class="spec__meta">
+            <h4 class="spec__name">Dabba Badge</h4>
+            <p class="spec__concept">Three-tier steel tiffin as the containing badge: spiral on the top tier, Fraunces CMAA reversed out of the maroon middle tier, Devanagari on the base tier, gold side clasps and wire handle.</p>
+          </div>
+        </div>
+        <div class="pair pair--sq">
+          <div class="chipwrap">
+            <div class="chip chip--cream"><object class="art" type="image/svg+xml" data="../logo-lab/emblems/c4-color.svg" tabindex="-1" aria-label="Dabba Badge — colour"></object></div>
+            <span class="chiplab">colour · cream</span>
+          </div>
+          <div class="chipwrap">
+            <div class="chip chip--dark"><object class="art" type="image/svg+xml" data="../logo-lab/emblems/c4-rev.svg" tabindex="-1" aria-label="Dabba Badge — reversed"></object></div>
+            <span class="chiplab">reversed · black</span>
+          </div>
+        </div>
+        <div class="fav">
+          <span class="fav__k">favicon · 32px</span>
+          <span class="fav__chip fav--cream"><object type="image/svg+xml" data="../logo-lab/emblems/c4-color.svg" tabindex="-1" aria-hidden="true"></object></span>
+          <span class="fav__chip fav--cream"><object type="image/svg+xml" data="../logo-lab/emblems/c4-mono.svg" tabindex="-1" aria-hidden="true"></object></span>
+          <span class="fav__chip fav--dark"><object type="image/svg+xml" data="../logo-lab/emblems/c4-rev.svg" tabindex="-1" aria-hidden="true"></object></span>
+        </div>
+      </article>
+      <article class="spec rv" id="opt-C5">
+        <div class="spec__hd">
+          <span class="num">C5</span>
+          <div class="spec__meta">
+            <h4 class="spec__name">Arch Shrine</h4>
+            <p class="spec__concept">Five-cusp Maratha arch as a storefront doorway: toran bunting across the face, spiral hanging inside, terracotta pilasters, three threshold steps with rangoli dots, ink nameplate आजीचा फराळ.</p>
+          </div>
+        </div>
+        <div class="pair pair--sq">
+          <div class="chipwrap">
+            <div class="chip chip--cream"><object class="art" type="image/svg+xml" data="../logo-lab/emblems/c5-color.svg" tabindex="-1" aria-label="Arch Shrine — colour"></object></div>
+            <span class="chiplab">colour · cream</span>
+          </div>
+          <div class="chipwrap">
+            <div class="chip chip--dark"><object class="art" type="image/svg+xml" data="../logo-lab/emblems/c5-rev.svg" tabindex="-1" aria-label="Arch Shrine — reversed"></object></div>
+            <span class="chiplab">reversed · black</span>
+          </div>
+        </div>
+        <div class="fav">
+          <span class="fav__k">favicon · 32px</span>
+          <span class="fav__chip fav--cream"><object type="image/svg+xml" data="../logo-lab/emblems/c5-color.svg" tabindex="-1" aria-hidden="true"></object></span>
+          <span class="fav__chip fav--cream"><object type="image/svg+xml" data="../logo-lab/emblems/c5-mono.svg" tabindex="-1" aria-hidden="true"></object></span>
+          <span class="fav__chip fav--dark"><object type="image/svg+xml" data="../logo-lab/emblems/c5-rev.svg" tabindex="-1" aria-hidden="true"></object></span>
+        </div>
+      </article>
+      <article class="spec rv" id="opt-C6">
+        <div class="spec__hd">
+          <span class="num">C6</span>
+          <div class="spec__meta">
+            <h4 class="spec__name">Postal Faral</h4>
+            <p class="spec__concept">Postage stamp from the faral republic: perforated scallop edge, ₹5 denomination, spiral specimen, आजीचा फराळ — cancelled with a PUNE G.P.O. 411038 postmark and wavy killer bars.</p>
+          </div>
+        </div>
+        <div class="pair pair--sq">
+          <div class="chipwrap">
+            <div class="chip chip--cream"><object class="art" type="image/svg+xml" data="../logo-lab/emblems/c6-color.svg" tabindex="-1" aria-label="Postal Faral — colour"></object></div>
+            <span class="chiplab">colour · cream</span>
+          </div>
+          <div class="chipwrap">
+            <div class="chip chip--dark"><object class="art" type="image/svg+xml" data="../logo-lab/emblems/c6-rev.svg" tabindex="-1" aria-label="Postal Faral — reversed"></object></div>
+            <span class="chiplab">reversed · black</span>
+          </div>
+        </div>
+        <div class="fav">
+          <span class="fav__k">favicon · 32px</span>
+          <span class="fav__chip fav--cream"><object type="image/svg+xml" data="../logo-lab/emblems/c6-color.svg" tabindex="-1" aria-hidden="true"></object></span>
+          <span class="fav__chip fav--cream"><object type="image/svg+xml" data="../logo-lab/emblems/c6-mono.svg" tabindex="-1" aria-hidden="true"></object></span>
+          <span class="fav__chip fav--dark"><object type="image/svg+xml" data="../logo-lab/emblems/c6-rev.svg" tabindex="-1" aria-hidden="true"></object></span>
+        </div>
+      </article>
+      </div>
+    </section>
+    <section class="family rv" id="fam-D">
+      <header class="family__hd">
+        <span class="family__key">D</span>
+        <div>
+          <h3 class="family__title">Illustrative <span>· the story, in one mark</span></h3>
+          <p class="family__blurb">Picture-marks: aaji herself, the two fists on the brass sorya, the rising kadhai, a Paithani peacock, a chakli mandala and the Kothrud delivery cycle.</p>
+        </div>
+      </header>
+      <div class="specgrid specgrid--sq">
+      <article class="spec rv" id="opt-D1">
+        <div class="spec__hd">
+          <span class="num">D1</span>
+          <div class="spec__meta">
+            <h4 class="spec__name">Aaji Mark</h4>
+            <p class="spec__concept">Continuous-line portrait of Seema aaji — hair bun drawn as a chakli spiral poking through an open embrace ring; round glasses, bindi, knowing half-smile. Seven strokes.</p>
+          </div>
+        </div>
+        <div class="pair pair--sq">
+          <div class="chipwrap">
+            <div class="chip chip--cream"><img class="art" loading="lazy" src="../logo-lab/illustrative/D1-color.svg" alt="Aaji Mark — colour"></div>
+            <span class="chiplab">colour · cream</span>
+          </div>
+          <div class="chipwrap">
+            <div class="chip chip--dark"><img class="art" loading="lazy" src="../logo-lab/illustrative/D1-rev.svg" alt="Aaji Mark — reversed"></div>
+            <span class="chiplab">reversed · black</span>
+          </div>
+        </div>
+        <div class="fav">
+          <span class="fav__k">favicon · 32px</span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/illustrative/D1-color.svg" alt=""></span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/illustrative/D1-mono.svg" alt=""></span>
+          <span class="fav__chip fav--dark"><img loading="lazy" src="../logo-lab/illustrative/D1-rev.svg" alt=""></span>
+        </div>
+      </article>
+      <article class="spec rv" id="opt-D2">
+        <div class="spec__hd">
+          <span class="num">D2</span>
+          <div class="spec__meta">
+            <h4 class="spec__name">Sorya Hands</h4>
+            <p class="spec__concept">Woodcut press: two fists bearing down on the brass sorya, one bhajani-dark chakli coiling out of the nozzle. Cut lines are transparent, so it prints in one ink.</p>
+          </div>
+        </div>
+        <div class="pair pair--sq">
+          <div class="chipwrap">
+            <div class="chip chip--cream"><img class="art" loading="lazy" src="../logo-lab/illustrative/D2-color.svg" alt="Sorya Hands — colour"></div>
+            <span class="chiplab">colour · cream</span>
+          </div>
+          <div class="chipwrap">
+            <div class="chip chip--dark"><img class="art" loading="lazy" src="../logo-lab/illustrative/D2-rev.svg" alt="Sorya Hands — reversed"></div>
+            <span class="chiplab">reversed · black</span>
+          </div>
+        </div>
+        <div class="fav">
+          <span class="fav__k">favicon · 32px</span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/illustrative/D2-color.svg" alt=""></span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/illustrative/D2-mono.svg" alt=""></span>
+          <span class="fav__chip fav--dark"><img loading="lazy" src="../logo-lab/illustrative/D2-rev.svg" alt=""></span>
+        </div>
+      </article>
+      <article class="spec rv" id="opt-D3">
+        <div class="spec__hd">
+          <span class="num">D3</span>
+          <div class="spec__meta">
+            <h4 class="spec__name">Kadhai Rising</h4>
+            <p class="spec__concept">The kadhai silhouette with ring handles; three steam curls lift one perfect chakli spiral off the oil. The frying moment as an emblem.</p>
+          </div>
+        </div>
+        <div class="pair pair--sq">
+          <div class="chipwrap">
+            <div class="chip chip--cream"><img class="art" loading="lazy" src="../logo-lab/illustrative/D3-color.svg" alt="Kadhai Rising — colour"></div>
+            <span class="chiplab">colour · cream</span>
+          </div>
+          <div class="chipwrap">
+            <div class="chip chip--dark"><img class="art" loading="lazy" src="../logo-lab/illustrative/D3-rev.svg" alt="Kadhai Rising — reversed"></div>
+            <span class="chiplab">reversed · black</span>
+          </div>
+        </div>
+        <div class="fav">
+          <span class="fav__k">favicon · 32px</span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/illustrative/D3-color.svg" alt=""></span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/illustrative/D3-mono.svg" alt=""></span>
+          <span class="fav__chip fav--dark"><img loading="lazy" src="../logo-lab/illustrative/D3-rev.svg" alt=""></span>
+        </div>
+      </article>
+      <article class="spec rv" id="opt-D4">
+        <div class="spec__hd">
+          <span class="num">D4</span>
+          <div class="spec__meta">
+            <h4 class="spec__name">Mor Coil</h4>
+            <p class="spec__concept">Paithani peacock whose tail feather flows tangent-perfect into the chakli spiral — the pallu motif becomes the product. Single-colour capable.</p>
+          </div>
+        </div>
+        <div class="pair pair--sq">
+          <div class="chipwrap">
+            <div class="chip chip--cream"><img class="art" loading="lazy" src="../logo-lab/illustrative/D4-color.svg" alt="Mor Coil — colour"></div>
+            <span class="chiplab">colour · cream</span>
+          </div>
+          <div class="chipwrap">
+            <div class="chip chip--dark"><img class="art" loading="lazy" src="../logo-lab/illustrative/D4-rev.svg" alt="Mor Coil — reversed"></div>
+            <span class="chiplab">reversed · black</span>
+          </div>
+        </div>
+        <div class="fav">
+          <span class="fav__k">favicon · 32px</span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/illustrative/D4-color.svg" alt=""></span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/illustrative/D4-mono.svg" alt=""></span>
+          <span class="fav__chip fav--dark"><img loading="lazy" src="../logo-lab/illustrative/D4-rev.svg" alt=""></span>
+        </div>
+      </article>
+      <article class="spec rv" id="opt-D5">
+        <div class="spec__hd">
+          <span class="num">D5</span>
+          <div class="spec__meta">
+            <h4 class="spec__name">Chakli Mandala</h4>
+            <p class="spec__concept">Eight-fold rangoli computed rotationally from tiny chakli spirals, scallop chalk arcs and sesame seeds — a Diwali doorstep drawn with the product itself.</p>
+          </div>
+        </div>
+        <div class="pair pair--sq">
+          <div class="chipwrap">
+            <div class="chip chip--cream"><img class="art" loading="lazy" src="../logo-lab/illustrative/D5-color.svg" alt="Chakli Mandala — colour"></div>
+            <span class="chiplab">colour · cream</span>
+          </div>
+          <div class="chipwrap">
+            <div class="chip chip--dark"><img class="art" loading="lazy" src="../logo-lab/illustrative/D5-rev.svg" alt="Chakli Mandala — reversed"></div>
+            <span class="chiplab">reversed · black</span>
+          </div>
+        </div>
+        <div class="fav">
+          <span class="fav__k">favicon · 32px</span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/illustrative/D5-color.svg" alt=""></span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/illustrative/D5-mono.svg" alt=""></span>
+          <span class="fav__chip fav--dark"><img loading="lazy" src="../logo-lab/illustrative/D5-rev.svg" alt=""></span>
+        </div>
+      </article>
+      <article class="spec rv" id="opt-D6">
+        <div class="spec__hd">
+          <span class="num">D6</span>
+          <div class="spec__meta">
+            <h4 class="spec__name">Cycle Courier</h4>
+            <p class="spec__concept">Side-view roadster with a three-tier dabba strapped to the carrier; both wheels are chakli spirals. The Kothrud delivery story in one mark.</p>
+          </div>
+        </div>
+        <div class="pair pair--sq">
+          <div class="chipwrap">
+            <div class="chip chip--cream"><img class="art" loading="lazy" src="../logo-lab/illustrative/D6-color.svg" alt="Cycle Courier — colour"></div>
+            <span class="chiplab">colour · cream</span>
+          </div>
+          <div class="chipwrap">
+            <div class="chip chip--dark"><img class="art" loading="lazy" src="../logo-lab/illustrative/D6-rev.svg" alt="Cycle Courier — reversed"></div>
+            <span class="chiplab">reversed · black</span>
+          </div>
+        </div>
+        <div class="fav">
+          <span class="fav__k">favicon · 32px</span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/illustrative/D6-color.svg" alt=""></span>
+          <span class="fav__chip fav--cream"><img loading="lazy" src="../logo-lab/illustrative/D6-mono.svg" alt=""></span>
+          <span class="fav__chip fav--dark"><img loading="lazy" src="../logo-lab/illustrative/D6-rev.svg" alt=""></span>
+        </div>
+      </article>
+      </div>
+    </section>
+</div>
+
+<div class="rule" style="margin-top:70px"></div>
+
+<div class="wrap">
+  <section class="chapter rv" id="packlab">
+    <p class="chapter__no">Chapter 02</p>
+    <h2 class="chapter__ttl">Packaging Lab</h2>
+    <p class="chapter__lead">Four complete pack systems. Each is shown large across its pouch and flat-label applications and its flavour range. Vote by direction (P1–P4) — and tell us which flavours sing.</p>
+  </section>
+
+    <section class="direction rv" id="dir-P1">
+      <header class="direction__hd">
+        <span class="direction__key">P1</span>
+        <div>
+          <h3 class="direction__title">KADAK Color-Block</h3>
+          <p class="direction__tag">loud pack · calm canvas</p>
+        </div>
+      </header>
+      <p class="direction__concept">The direction that grew out of the KADAK energy the team loved. A full-bleed SKU colour field carries a giant justified Devanagari stack (each line solved to fill the measure exactly), a circular die-cut photo window with a hard ink offset shadow, an AAJI-APPROVED starburst and a cream spec block. Maximum shelf shout.</p>
+      <div class="packrow">
+        <figure class="pack rv">
+          <div class="pack__art"><object type="image/svg+xml" data="../../assets/packaging/lab/kadak-colorblock/pouch-bhajani.svg" style="height:var(--packH);aspect-ratio:460/660;" tabindex="-1" aria-label="KADAK Color-Block — Pouch — Bhajani"></object></div>
+          <figcaption><span class="pcap__id">P1a</span> Pouch — Bhajani</figcaption>
+        </figure>
+        <figure class="pack rv">
+          <div class="pack__art"><object type="image/svg+xml" data="../../assets/packaging/lab/kadak-colorblock/pouch-butter.svg" style="height:var(--packH);aspect-ratio:460/660;" tabindex="-1" aria-label="KADAK Color-Block — Pouch — Butter"></object></div>
+          <figcaption><span class="pcap__id">P1b</span> Pouch — Butter</figcaption>
+        </figure>
+        <figure class="pack rv">
+          <div class="pack__art"><object type="image/svg+xml" data="../../assets/packaging/lab/kadak-colorblock/label-bhajani-flat.svg" style="height:var(--packH);aspect-ratio:460/660;" tabindex="-1" aria-label="KADAK Color-Block — Flat label — Bhajani"></object></div>
+          <figcaption><span class="pcap__id">P1c</span> Flat label — Bhajani</figcaption>
+        </figure>
+        <figure class="pack rv">
+          <div class="pack__art"><object type="image/svg+xml" data="../../assets/packaging/lab/kadak-colorblock/label-butter-flat.svg" style="height:var(--packH);aspect-ratio:460/660;" tabindex="-1" aria-label="KADAK Color-Block — Flat label — Butter"></object></div>
+          <figcaption><span class="pcap__id">P1d</span> Flat label — Butter</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="direction rv" id="dir-P2">
+      <header class="direction__hd">
+        <span class="direction__key">P2</span>
+        <div>
+          <h3 class="direction__title">Heirloom Noir</h3>
+          <p class="direction__tag">premium gifting flagship</p>
+        </div>
+      </header>
+      <p class="direction__concept">Soft-black ground with gold restricted to line-weight — foil hairlines, filigree corners, a circumtext roundel — a Paithani kuyri band with magenta micro-accents, ivory Devanagari hero lettering, and product seen through a gold-rimmed cusped-arch die-cut. Craft-chocolate / single-malt shelf register, built for gifting.</p>
+      <div class="packrow">
+        <figure class="pack rv">
+          <div class="pack__art"><object type="image/svg+xml" data="../../assets/packaging/lab/heirloom-noir/pouch-bhajani.svg" style="height:var(--packH);aspect-ratio:460/696;" tabindex="-1" aria-label="Heirloom Noir — Pouch — Bhajani"></object></div>
+          <figcaption><span class="pcap__id">P2a</span> Pouch — Bhajani</figcaption>
+        </figure>
+        <figure class="pack rv">
+          <div class="pack__art"><object type="image/svg+xml" data="../../assets/packaging/lab/heirloom-noir/tin-diwali-faral.svg" style="height:var(--packH);aspect-ratio:560/620;" tabindex="-1" aria-label="Heirloom Noir — Diwali gift tin — दिवाळी फराळ"></object></div>
+          <figcaption><span class="pcap__id">P2b</span> Diwali gift tin — दिवाळी फराळ</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="direction rv" id="dir-P3">
+      <header class="direction__hd">
+        <span class="direction__key">P3</span>
+        <div>
+          <h3 class="direction__title">Cartouche</h3>
+          <p class="direction__tag">illustrated · Paper Boat register</p>
+        </div>
+      </header>
+      <p class="direction__concept">Storytelling on a cream ground: a flat five-ink scene of aaji at the brass sorya press mid-squeeze — a fresh spiral dropping toward the kadhai of hot oil, steam curls, chulha flames, a thali of finished chaklis at her feet. Each flavour gets its own hand-drawn world inside the same cartouche furniture.</p>
+      <div class="packrow">
+        <figure class="pack rv">
+          <div class="pack__art"><object type="image/svg+xml" data="../../assets/packaging/lab/cartouche/pouch-bhajani.svg" style="height:var(--packH);aspect-ratio:460/660;" tabindex="-1" aria-label="Cartouche — Pouch — Bhajani"></object></div>
+          <figcaption><span class="pcap__id">P3a</span> Pouch — Bhajani</figcaption>
+        </figure>
+        <figure class="pack rv">
+          <div class="pack__art"><object type="image/svg+xml" data="../../assets/packaging/lab/cartouche/pouch-butter.svg" style="height:var(--packH);aspect-ratio:460/660;" tabindex="-1" aria-label="Cartouche — Pouch — Butter"></object></div>
+          <figcaption><span class="pcap__id">P3b</span> Pouch — Butter</figcaption>
+        </figure>
+        <figure class="pack rv">
+          <div class="pack__art"><object type="image/svg+xml" data="../../assets/packaging/lab/cartouche/label-flat-bhajani.svg" style="height:var(--packH);aspect-ratio:500/700;" tabindex="-1" aria-label="Cartouche — Flat label — Bhajani"></object></div>
+          <figcaption><span class="pcap__id">P3c</span> Flat label — Bhajani</figcaption>
+        </figure>
+        <figure class="pack rv">
+          <div class="pack__art"><object type="image/svg+xml" data="../../assets/packaging/lab/cartouche/label-flat-butter.svg" style="height:var(--packH);aspect-ratio:500/700;" tabindex="-1" aria-label="Cartouche — Flat label — Butter"></object></div>
+          <figcaption><span class="pcap__id">P3d</span> Flat label — Butter</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="direction rv" id="dir-P4">
+      <header class="direction__hd">
+        <span class="direction__key">P4</span>
+        <div>
+          <h3 class="direction__title">Bazaar Matchbox</h3>
+          <p class="direction__tag">collectible · vintage print</p>
+        </div>
+      </header>
+      <p class="direction__concept">Giant vintage matchbox labels — maroon, gold and ink on paper, an off-rotated sunburst, the spiral emblem in a rope-framed circle, a slogan strip and a deliberate 1px misregistration on the colour plate. The pack IS the label; a matchbox-drawer die-cut shows the real product, and there is a collect-the-series uncut printer sheet.</p>
+      <div class="packrow">
+        <figure class="pack rv">
+          <div class="pack__art"><object type="image/svg+xml" data="../../assets/packaging/lab/bazaar-matchbox/pouch-bhajani.svg" style="height:var(--packH);aspect-ratio:460/660;" tabindex="-1" aria-label="Bazaar Matchbox — Pouch — Bhajani"></object></div>
+          <figcaption><span class="pcap__id">P4a</span> Pouch — Bhajani</figcaption>
+        </figure>
+        <figure class="pack rv">
+          <div class="pack__art"><object type="image/svg+xml" data="../../assets/packaging/lab/bazaar-matchbox/pouch-masala.svg" style="height:var(--packH);aspect-ratio:460/660;" tabindex="-1" aria-label="Bazaar Matchbox — Pouch — Masala"></object></div>
+          <figcaption><span class="pcap__id">P4b</span> Pouch — Masala</figcaption>
+        </figure>
+        <figure class="pack rv">
+          <div class="pack__art"><object type="image/svg+xml" data="../../assets/packaging/lab/bazaar-matchbox/label-bhajani-flat.svg" style="height:var(--packH);aspect-ratio:480/640;" tabindex="-1" aria-label="Bazaar Matchbox — Flat label — Bhajani"></object></div>
+          <figcaption><span class="pcap__id">P4c</span> Flat label — Bhajani</figcaption>
+        </figure>
+        <figure class="pack rv">
+          <div class="pack__art"><object type="image/svg+xml" data="../../assets/packaging/lab/bazaar-matchbox/label-masala-flat.svg" style="height:var(--packH);aspect-ratio:480/640;" tabindex="-1" aria-label="Bazaar Matchbox — Flat label — Masala"></object></div>
+          <figcaption><span class="pcap__id">P4d</span> Flat label — Masala</figcaption>
+        </figure>
+        <figure class="pack pack--sheet rv">
+          <div class="pack__art"><object type="image/svg+xml" data="../../assets/packaging/lab/bazaar-matchbox/series-sheet.svg" style="width:100%;max-width:1040px;aspect-ratio:1120/700;" tabindex="-1" aria-label="Bazaar Matchbox — Collect-the-series sheet (4-up)"></object></div>
+          <figcaption><span class="pcap__id">P4e</span> Collect-the-series sheet (4-up)</figcaption>
+        </figure>
+      </div>
+    </section>
+</div>
+
+<div class="rule" style="margin-top:70px"></div>
+
+<div class="wrap">
+  <section class="board rv" id="vote">
+    <h2>Vote board</h2>
+    <p class="board__lead">Reply on <b>WhatsApp</b> with the numbers you like — e.g. “A3, B2, C3, P2 — love the Diwali tin”. Or jot notes here (saved on this device only, so we can screen-share).</p>
+    <div class="board__grid">
+      <div class="vfield"><label>Wordmarks (A)</label><textarea data-k="A" placeholder="favourite A#, why…"></textarea></div>
+      <div class="vfield"><label>Marks &amp; Spirals (B)</label><textarea data-k="B" placeholder="favourite B#, why…"></textarea></div>
+      <div class="vfield"><label>Emblems (C)</label><textarea data-k="C" placeholder="favourite C#, why…"></textarea></div>
+      <div class="vfield"><label>Illustrative (D)</label><textarea data-k="D" placeholder="favourite D#, why…"></textarea></div>
+      <div class="vfield"><label>Packaging (P)</label><textarea data-k="P" placeholder="favourite direction P#, flavours…"></textarea></div>
+      <div class="vfield"><label>Anything else</label><textarea data-k="X" placeholder="gut reactions, worries, must-haves…"></textarea></div>
+    </div>
+  </section>
+
+  <footer>
+    <p><b>Cmaa</b> — homemade Maharashtrian chakli &amp; chivda by Seema aaji, Kothrud, Pune. <span class="dev">आजीचा फराळ</span>.</p>
+    <p>Brand Lab review document · internal · product photos: Wikimedia Commons (CC) — see assets/images/ATTRIBUTIONS.md.</p>
+  </footer>
+</div>
+
+<script>
+// reveal on scroll (IO); reduced-motion handled in CSS
+(function(){
+  var els=[].slice.call(document.querySelectorAll('.rv'));
+  if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in');}); return; }
+  var io=new IntersectionObserver(function(en){
+    en.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('in'); io.unobserve(x.target);} });
+  },{rootMargin:'0px 0px -8% 0px', threshold:0.06});
+  els.forEach(function(e){io.observe(e);});
+})();
+// vote board persistence (local only)
+(function(){
+  try{
+    document.querySelectorAll('.vfield textarea').forEach(function(t){
+      var k='cmaa-lab-vote-'+t.dataset.k;
+      t.value=localStorage.getItem(k)||'';
+      t.addEventListener('input',function(){localStorage.setItem(k,t.value);});
+    });
+  }catch(e){}
+})();
+</script>
+</body>
+</html>

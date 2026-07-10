@@ -1,0 +1,34 @@
+[
+  {
+    "id": "kadak-colorblock-bhajani-flat",
+    "name": "BHAJANI CHAKLI — flat label (KADAK color-block)",
+    "concept": "Full-bleed bhajani color field; giant justified Devanagari stack (each line solved to the 404px measure); circular die-cut photo window with hard ink offset shadow; AAJI APPROVED starburst; cream spec block; ink credentials strip.",
+    "files": [
+      "label-bhajani-flat.svg"
+    ]
+  },
+  {
+    "id": "kadak-colorblock-bhajani-pouch",
+    "name": "BHAJANI CHAKLI — pouch application",
+    "concept": "Same artwork applied full-bleed to a crimp-top pouch silhouette: sawtooth crimp, euro-slot seal strip, gusset/sheen shading, grain.",
+    "files": [
+      "pouch-bhajani.svg"
+    ]
+  },
+  {
+    "id": "kadak-colorblock-butter-flat",
+    "name": "BUTTER CHAKLI — flat label (KADAK color-block)",
+    "concept": "Full-bleed butter color field; giant justified Devanagari stack (each line solved to the 404px measure); circular die-cut photo window with hard ink offset shadow; AAJI APPROVED starburst; cream spec block; ink credentials strip.",
+    "files": [
+      "label-butter-flat.svg"
+    ]
+  },
+  {
+    "id": "kadak-colorblock-butter-pouch",
+    "name": "BUTTER CHAKLI — pouch application",
+    "concept": "Same artwork applied full-bleed to a crimp-top pouch silhouette: sawtooth crimp, euro-slot seal strip, gusset/sheen shading, grain.",
+    "files": [
+      "pouch-butter.svg"
+    ]
+  }
+]

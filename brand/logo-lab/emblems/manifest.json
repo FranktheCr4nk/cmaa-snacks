@@ -1,0 +1,62 @@
+[
+  {
+    "id": "C1",
+    "name": "Heritage Roundel",
+    "concept": "Concentric two-tone roundel: Marcellus CMAA crowns the top arc, आजीचा फराळ answers along the bottom, kunku-dot separators at 3 & 9 o'clock, chakli spiral centre, notched EST 2026 · PUNE banner.",
+    "files": [
+      "c1-color.svg",
+      "c1-mono.svg",
+      "c1-rev.svg"
+    ]
+  },
+  {
+    "id": "C2",
+    "name": "Matchbox Emblem",
+    "concept": "Vintage Sivakasi matchbox label: rope border between rails, sunburst spiral emblem, Anton CMAA, safety-snack pastiche, slogan strip — with a deliberate 2-colour gold misregistration plate.",
+    "files": [
+      "c2-color.svg",
+      "c2-mono.svg",
+      "c2-rev.svg"
+    ]
+  },
+  {
+    "id": "C3",
+    "name": "Wax Seal",
+    "concept": "Irregular molten-wax blob with a pressed die: embossed chakli spiral, tiny Marcellus CMAA arc, PUNE counter-arc; radial-gradient relief in colour, honest knocked-out stamp in mono/rev.",
+    "files": [
+      "c3-color.svg",
+      "c3-mono.svg",
+      "c3-rev.svg"
+    ]
+  },
+  {
+    "id": "C4",
+    "name": "Dabba Badge",
+    "concept": "Three-tier steel tiffin as the containing badge: spiral on the top tier, Fraunces CMAA reversed out of the maroon middle tier, Devanagari on the base tier, gold side clasps and wire handle.",
+    "files": [
+      "c4-color.svg",
+      "c4-mono.svg",
+      "c4-rev.svg"
+    ]
+  },
+  {
+    "id": "C5",
+    "name": "Arch Shrine",
+    "concept": "Five-cusp Maratha arch as a storefront doorway: toran bunting across the face, spiral hanging inside, terracotta pilasters, three threshold steps with rangoli dots, ink nameplate आजीचा फराळ.",
+    "files": [
+      "c5-color.svg",
+      "c5-mono.svg",
+      "c5-rev.svg"
+    ]
+  },
+  {
+    "id": "C6",
+    "name": "Postal Faral",
+    "concept": "Postage stamp from the faral republic: perforated scallop edge, ₹5 denomination, spiral specimen, आजीचा फराळ — cancelled with a PUNE G.P.O. 411038 postmark and wavy killer bars.",
+    "files": [
+      "c6-color.svg",
+      "c6-mono.svg",
+      "c6-rev.svg"
+    ]
+  }
+]

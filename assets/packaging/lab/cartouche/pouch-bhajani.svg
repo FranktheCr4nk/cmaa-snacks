@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 660" font-family="'Mulish',system-ui,sans-serif">
+<title>Cmaa — BHAJANI CHAKLI — cartouche pouch</title>
+<defs>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&amp;family=Yatra+One&amp;family=Mulish:wght@400;600;700;800&amp;family=Courier+Prime:wght@400;700&amp;family=Caveat:wght@600&amp;family=Noto+Sans+Devanagari:wght@400;600&amp;display=swap');</style>
+  <clipPath id="arch-bhajani-pouch"><path d="M105 391 L105 273.48 A42.21 42.21 0 0 1 128.87 209.72 A45.81 45.81 0 0 1 191.37 170.31 A47.9 47.9 0 0 1 268.63 170.31 A45.81 45.81 0 0 1 331.13 209.72 A42.21 42.21 0 0 1 355 273.48 L355 391 Z"/></clipPath>
+  <clipPath id="body-bhajani-pouch"><rect x="26" y="22" width="408" height="626" rx="14"/></clipPath>
+  <filter id="grain-bhajani-pouch"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".05"/></feComponentTransfer><feComposite operator="over" in2="SourceGraphic"/></filter><filter id="press-bhajani-pouch" x="-8%" y="-8%" width="116%" height="116%"><feOffset dx="0" dy="1" in="SourceAlpha" result="o"/><feGaussianBlur stdDeviation=".5" in="o" result="b"/><feComposite in="b" in2="SourceAlpha" operator="out" result="s"/><feFlood flood-color="#000" flood-opacity=".26"/><feComposite in2="s" operator="in" result="sh"/><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="sh"/></feMerge></filter>
+  <linearGradient id="sheen-bhajani-pouch" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".18" stop-color="#fff" stop-opacity=".26"/><stop offset=".3" stop-color="#fff" stop-opacity="0"/><stop offset=".82" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".12"/></linearGradient>
+</defs>
+<g filter="url(#grain-bhajani-pouch)">
+<g clip-path="url(#body-bhajani-pouch)">
+  <rect x="26" y="22" width="408" height="626" rx="14" fill="#F6EDDB"/>
+
+  <rect x="46" y="66" width="368" height="514" fill="none" stroke="#C8922A" stroke-width="1"/>
+  <rect x="43.25" y="63.25" width="5.5" height="5.5" transform="rotate(45 46 66)" fill="#7A1E2B"/><rect x="411.25" y="63.25" width="5.5" height="5.5" transform="rotate(45 414 66)" fill="#7A1E2B"/><rect x="43.25" y="577.25" width="5.5" height="5.5" transform="rotate(45 46 580)" fill="#7A1E2B"/><rect x="411.25" y="577.25" width="5.5" height="5.5" transform="rotate(45 414 580)" fill="#7A1E2B"/>
+
+  <g>
+    <circle cx="230" cy="96" r="15" fill="none" stroke="#7A1E2B" stroke-width="1.6"/>
+    <path d="M230 94.2 L230.25 94.16 L230.51 94.16 L230.77 94.19 L231.04 94.26 L231.3 94.37 L231.54 94.53 L231.77 94.71 L231.98 94.94 L232.15 95.19 L232.3 95.48 L232.4 95.78 L232.47 96.11 L232.48 96.45 L232.45 96.8 L232.37 97.14 L232.25 97.48 L232.07 97.81 L231.84 98.11 L231.57 98.39 L231.26 98.63 L230.92 98.82 L230.54 98.98 L230.14 99.08 L229.72 99.12 L229.29 99.11 L228.86 99.04 L228.43 98.91 L228.03 98.72 L227.64 98.47 L227.29 98.16 L226.97 97.81 L226.71 97.41 L226.49 96.97 L226.34 96.5 L226.25 96 L226.23 95.49 L226.28 94.97 L226.4 94.46 L226.59 93.96 L226.85 93.49 L227.18 93.05 L227.57 92.65 L228.01 92.31 L228.51 92.02 L229.04 91.8 L229.61 91.65 L230.2 91.59 L230.8 91.6 L231.4 91.69 L231.99 91.87 L232.56 92.13 L233.09 92.46 L233.58 92.87 L234.01 93.35 L234.38 93.89 L234.68 94.48 L234.9 95.11 L235.03 95.77 L235.07 96.46 L235.01 97.14 L234.87 97.83 L234.63 98.49 L234.3 99.12 L233.88 99.71 L233.38 100.24 L232.81 100.7 L232.17 101.09 L231.49 101.39 L230.76 101.59 L230 101.7 L229.23 101.7 L228.45 101.6 L227.69 101.4 L226.96 101.08 L226.27 100.67 L225.64 100.17 L225.07 99.58 L224.59 98.91 L224.19 98.18 L223.9 97.39 L223.71 96.57 L223.64 95.71 L223.68 94.85 L223.84 94 L224.11 93.16 L224.5 92.37 L224.99 91.63 L225.59 90.95 L226.28 90.36 L227.04 89.86 L227.88 89.47 L228.76 89.19 L229.69 89.03 L230.63 88.99 L231.58 89.08 L232.51 89.31 L233.41 89.66 L234.27 90.13 L235.06 90.71 L235.76 91.4 L236.38 92.19 L236.88 93.06 L237.27 93.99 L237.53 94.98 L237.65 96 L237.64 97.03 L237.48 98.06 L237.19 99.07 L236.76 100.04 L236.2 100.94 L235.52 101.77 L234.73 102.5 L233.84 103.13 L232.86 103.63 L231.83 104 L230.74 104.23 L229.63 104.31 L228.5 104.24 L227.39 104.02 L226.32 103.65 L225.29 103.13 L224.34 102.47 L223.48 101.69 L222.73 100.8 L222.1 99.8 L221.61 98.73 L221.27 97.58 L221.08 96.4 L221.05 95.19 L221.18 93.99 L221.48 92.8 L221.94 91.66 L222.55 90.59 L223.3 89.6 L224.19 88.71 L225.19 87.95 L226.29 87.33 L227.48 86.85 L228.72 86.54 L230 86.4" fill="none" stroke="#33241A" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M230.17 95.72 L231.96 92.83 M230.5 95.75 L233.54 94.24 M230.78 96.07 L234.17 96.39 M230.81 96.61 L233.53 98.66 M230.45 97.16 L231.68 100.33 M229.73 97.45 L229.1 100.79 M228.85 97.26 L226.56 99.77 M228.14 96.53 L224.87 97.46 M227.92 95.41 L224.65 94.48 M228.39 94.23 L226.1 91.72 M229.52 93.42 L228.89 90.08 M231.03 93.34 L232.26 90.17 M232.46 94.14 L235.17 92.09 M233.3 95.69 L236.68 95.38 M233.17 97.58 L236.21 99.09 M231.98 99.21 L233.77 102.1 M230 100 L230 103.4 M227.77 99.6 L225.98 102.49 M226.01 97.99 L222.97 99.5 M225.33 95.57 L221.95 95.25 M226.08 93.04 L223.36 90.99 M228.14 91.2 L226.91 88.03 M230.99 90.72 L231.61 87.37 M233.78 91.86 L236.07 89.34 M235.61 94.4 L238.88 93.47 M235.83 97.66 L239.1 98.59 M234.24 100.65 L236.53 103.16 M231.2 102.41 L231.82 105.75 M227.56 102.3 L226.33 105.47 M224.43 100.21 L221.71 102.26 M222.82 96.67 L219.43 96.98 M223.34 92.68 L220.3 91.17 M225.96 89.48 L224.17 86.59 " stroke="#33241A" stroke-width=".9" opacity=".8"/>
+  </g>
+  <text x="230" y="128" text-anchor="middle" font-family="'Fraunces',serif" font-weight="600" font-size="19" letter-spacing="5" fill="#33241A">CMAA</text>
+  <text x="230" y="143" text-anchor="middle" font-size="8.5" fill="#33241A" opacity=".78"><tspan font-family="'Yatra One','Noto Sans Devanagari',serif" font-size="9.5">आजीचा फराळ</tspan><tspan font-family="'Mulish',sans-serif" font-weight="700" letter-spacing="2" dx="4"> · KOTHRUD, PUNE</tspan></text>
+
+  
+  <path d="M105 391 L105 273.48 A42.21 42.21 0 0 1 128.87 209.72 A45.81 45.81 0 0 1 191.37 170.31 A47.9 47.9 0 0 1 268.63 170.31 A45.81 45.81 0 0 1 331.13 209.72 A42.21 42.21 0 0 1 355 273.48 L355 391 Z" fill="#F6EDDB"/>
+  <path d="M105 391 L105 273.48 A42.21 42.21 0 0 1 128.87 209.72 A45.81 45.81 0 0 1 191.37 170.31 A47.9 47.9 0 0 1 268.63 170.31 A45.81 45.81 0 0 1 331.13 209.72 A42.21 42.21 0 0 1 355 273.48 L355 391 Z" fill="#7A1E2B" opacity=".1"/>
+  <g clip-path="url(#arch-bhajani-pouch)">
+    <g transform="translate(105 148.67) scale(0.83)"><g fill="#7A1E2B" opacity="0.09"><path d="M184 146 L400 146 L398.15 176.36 L183.75 150.13 Z"/><path d="M181.41 159.01 L380.97 241.67 L367.64 269.01 L179.6 162.73 Z"/><path d="M174.04 170.04 L326.78 322.78 L304 342.94 L170.94 172.78 Z"/><path d="M163.01 177.41 L245.67 376.97 L216.91 386.88 L159.1 178.76 Z"/><path d="M150 180 L150 396 L119.64 394.15 L145.87 179.75 Z"/><path d="M136.99 177.41 L54.33 376.97 L26.99 363.64 L133.27 175.6 Z"/><path d="M125.96 170.04 L-26.78 322.78 L-46.94 300 L123.22 166.94 Z"/><path d="M118.59 159.01 L-80.97 241.67 L-90.88 212.91 L117.24 155.1 Z"/><path d="M116 146 L-100 146 L-98.15 115.64 L116.25 141.87 Z"/><path d="M118.59 132.99 L-80.97 50.33 L-67.64 22.99 L120.4 129.27 Z"/><path d="M125.96 121.96 L-26.78 -30.78 L-4 -50.94 L129.06 119.22 Z"/><path d="M136.99 114.59 L54.33 -84.97 L83.09 -94.88 L140.9 113.24 Z"/><path d="M150 112 L150 -104 L180.36 -102.15 L154.13 112.25 Z"/><path d="M163.01 114.59 L245.67 -84.97 L273.01 -71.64 L166.73 116.4 Z"/><path d="M174.04 121.96 L326.78 -30.78 L346.94 -8 L176.78 125.06 Z"/><path d="M181.41 132.99 L380.97 50.33 L390.88 79.09 L182.76 136.9 Z"/></g>
+<rect x="54" y="78" width="8" height="8" transform="rotate(45 58 82)" fill="#C8922A" opacity="0.85"/><rect x="240.5" y="66.5" width="7" height="7" transform="rotate(45 244 70)" fill="#C8922A" opacity="0.85"/><circle cx="34" cy="112" r="2" fill="#B5512E" opacity=".5"/><circle cx="268" cy="100" r="2" fill="#B5512E" opacity=".5"/>
+<g>
+    <rect x="-30" y="262" width="360" height="56" fill="#B5512E" opacity=".13"/>
+    <path d="M-86 262 L-30 318 M-86 262 L-142 318 M-60 262 L-4 318 M-60 262 L-116 318 M-34 262 L22 318 M-34 262 L-90 318 M-8 262 L48 318 M-8 262 L-64 318 M18 262 L74 318 M18 262 L-38 318 M44 262 L100 318 M44 262 L-12 318 M70 262 L126 318 M70 262 L14 318 M96 262 L152 318 M96 262 L40 318 M122 262 L178 318 M122 262 L66 318 M148 262 L204 318 M148 262 L92 318 M174 262 L230 318 M174 262 L118 318 M200 262 L256 318 M200 262 L144 318 M226 262 L282 318 M226 262 L170 318 M252 262 L308 318 M252 262 L196 318 M278 262 L334 318 M278 262 L222 318 M304 262 L360 318 M304 262 L248 318 M330 262 L386 318 M330 262 L274 318 M356 262 L412 318 M356 262 L300 318 M382 262 L438 318 M382 262 L326 318 " stroke="#B5512E" stroke-width="1" opacity=".3" fill="none"/>
+    <path d="M-30 262 L330 262" stroke="#33241A" stroke-width="1.2" opacity=".28"/>
+  </g>
+<path d="M170 240 L240 240 L248 262 L162 262 Z" fill="#B5512E"/>
+<path d="M170 240 L240 240" stroke="#93401F" stroke-width="2"/>
+<path d="M191 262 A 14 12 0 0 1 219 262 Z" fill="#33241A"/>
+<path d="M199 260 c -2.21 -2.38, -1.02 -5.1, 0 -7.22 c 1.02 2.13, 2.21 4.84, 0 7.22 Z" fill="#C8922A"/><path d="M205 261 c -2.99 -3.22, -1.38 -6.9, 0 -9.77 c 1.38 2.88, 2.99 6.55, 0 9.77 Z" fill="#C8922A"/><path d="M211 260 c -2.08 -2.24, -0.96 -4.8, 0 -6.8 c 0.96 2, 2.08 4.56, 0 6.8 Z" fill="#C8922A"/>
+<circle cx="146" cy="207" r="6" fill="none" stroke="#C8922A" stroke-width="2.4"/>
+<circle cx="264" cy="207" r="6" fill="none" stroke="#C8922A" stroke-width="2.4"/>
+<path d="M150 211 Q 205 252 260 211 Z" fill="#33241A"/>
+<ellipse cx="205" cy="211" rx="55" ry="9" fill="#33241A"/>
+<ellipse cx="205" cy="211.5" rx="45" ry="6.2" fill="#C8922A" opacity=".5"/>
+<ellipse cx="205" cy="211" rx="55" ry="9" fill="none" stroke="#C8922A" stroke-width="1.5"/>
+<path d="M180 208.5 L180.18 208.44 L180.38 208.41 L180.59 208.42 L180.81 208.47 L181.03 208.57 L181.24 208.71 L181.42 208.9 L181.58 209.13 L181.7 209.39 L181.77 209.69 L181.79 210 L181.75 210.32 L181.65 210.65 L181.49 210.96 L181.27 211.25 L181 211.51 L180.67 211.72 L180.3 211.88 L179.9 211.98 L179.47 212 L179.03 211.95 L178.6 211.82 L178.18 211.61 L177.79 211.33 L177.45 210.97 L177.17 210.55 L176.95 210.08 L176.82 209.57 L176.78 209.02 L176.83 208.47 L176.98 207.92 L177.22 207.39 L177.56 206.9 L177.98 206.46 L178.49 206.1 L179.05 205.82 L179.68 205.64 L180.33 205.56 L181 205.59 L181.67 205.74 L182.32 206.01 L182.92 206.39 L183.46 206.87 L183.92 207.45 L184.28 208.11 L184.53 208.83 L184.65 209.6 L184.65 210.39 L184.51 211.18 L184.23 211.94 L183.83 212.67 L183.3 213.32 L182.65 213.88 L181.91 214.33 L181.1 214.66 L180.22 214.85 L179.32 214.89 L178.41 214.78 L177.51 214.51 L176.67 214.08 L175.9 213.52 L175.22 212.82 L174.66 212.01 L174.24 211.11 L173.98 210.13 L173.88 209.11 L173.95 208.08 L174.2 207.06 L174.62 206.09 L175.21 205.19 L175.95 204.39 L176.82 203.72 L177.8 203.19 L178.87 202.84 L180 202.67 L181.15 202.69 L182.3 202.9 L183.4 203.31 L184.44 203.9 L185.37 204.67 L186.16 205.59 L186.8 206.64 L187.26 207.8 L187.52 209.03 L187.57 210.3 L187.41 211.57 L187.03 212.81 L186.44 213.98 L185.66 215.04 L184.7 215.97" fill="none" stroke="#93401F" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M232 209.5 L232.18 209.44 L232.39 209.42 L232.61 209.44 L232.83 209.5 L233.05 209.61 L233.25 209.76 L233.43 209.96 L233.57 210.2 L233.67 210.47 L233.73 210.77 L233.73 211.09 L233.66 211.42 L233.54 211.73 L233.36 212.04 L233.11 212.31 L232.81 212.55 L232.46 212.73 L232.07 212.85 L231.66 212.9 L231.23 212.88 L230.8 212.78 L230.38 212.59 L229.98 212.33 L229.64 212 L229.34 211.6 L229.12 211.14 L228.98 210.64 L228.92 210.11 L228.97 209.57 L229.1 209.02 L229.34 208.5 L229.67 208.02 L230.09 207.6 L230.59 207.24 L231.15 206.98 L231.77 206.81 L232.41 206.75 L233.07 206.8 L233.73 206.98 L234.35 207.26 L234.93 207.66 L235.43 208.17 L235.85 208.76 L236.16 209.43 L236.36 210.16 L236.43 210.92 L236.36 211.69 L236.16 212.46 L235.82 213.19 L235.36 213.86 L234.77 214.45 L234.09 214.93 L233.31 215.3 L232.48 215.53 L231.6 215.61 L230.71 215.54 L229.83 215.31 L228.99 214.92 L228.22 214.4 L227.55 213.73 L226.99 212.95 L226.57 212.08 L226.31 211.13 L226.21 210.14 L226.29 209.13 L226.54 208.14 L226.96 207.19 L227.55 206.32 L228.29 205.56 L229.16 204.93 L230.14 204.45 L231.2 204.15 L232.31 204.03 L233.43 204.11 L234.54 204.38 L235.59 204.84 L236.56 205.49 L237.41 206.3 L238.12 207.26 L238.66 208.34" fill="none" stroke="#93401F" stroke-width="2.4" stroke-linecap="round"/>
+<g fill="#F6EDDB" opacity=".65"><circle cx="192" cy="212.6" r="1.2"/><circle cx="220" cy="213.4" r="1.1"/><circle cx="206" cy="209" r="1"/></g>
+<path d="M170 201 c -6 -8, 7 -12, 1 -21 c -5 -7, 4 -10, 2 -18" fill="none" stroke="#33241A" stroke-width="2.2" stroke-linecap="round" opacity=".3"/><path d="M242 198 c -6 -8, 7 -12, 1 -21 c -5 -7, 4 -10, 2 -18" fill="none" stroke="#33241A" stroke-width="2.2" stroke-linecap="round" opacity=".3"/>
+<path d="M196 131 L158 145" stroke="#33241A" stroke-width="5" stroke-linecap="round"/>
+    <path d="M196 131 L158 145" stroke="#C8922A" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M214 130 L247 116" stroke="#33241A" stroke-width="5" stroke-linecap="round"/>
+    <path d="M214 130 L247 116" stroke="#C8922A" stroke-width="2.2" stroke-linecap="round"/>
+    <rect x="188" y="125" width="34" height="8" rx="2.5" fill="#C8922A" stroke="#33241A" stroke-width="1.3"/>
+    <rect x="191" y="133" width="28" height="36" rx="3" fill="#C8922A" stroke="#33241A" stroke-width="1.4"/>
+    <path d="M197 137 L197 165" stroke="#F6EDDB" stroke-width="2.4" opacity=".55"/>
+    <path d="M191 169 L201 177 L209 177 L219 169 Z" fill="#C8922A" stroke="#33241A" stroke-width="1.2"/>
+<path d="M205 178 L205 187" stroke="#B5512E" stroke-width="3" stroke-linecap="round"/>
+<path d="M205 195 L205.18 194.92 L205.38 194.88 L205.6 194.88 L205.83 194.92 L206.06 195.01 L206.28 195.14 L206.48 195.32 L206.66 195.55 L206.8 195.82 L206.9 196.12 L206.94 196.45 L206.92 196.79 L206.85 197.14 L206.7 197.48 L206.5 197.81 L206.23 198.11 L205.9 198.36 L205.52 198.57 L205.1 198.71 L204.65 198.78 L204.18 198.77 L203.7 198.68 L203.23 198.51 L202.78 198.25 L202.37 197.91 L202.01 197.5 L201.72 197.02 L201.51 196.49 L201.39 195.91 L201.37 195.31 L201.44 194.69 L201.62 194.09 L201.91 193.51 L202.3 192.97 L202.78 192.5 L203.34 192.1 L203.98 191.79 L204.67 191.59 L205.4 191.51 L206.14 191.54 L206.89 191.71 L207.61 192 L208.29 192.41 L208.9 192.94 L209.43 193.57 L209.85 194.29 L210.15 195.08 L210.32 195.93 L210.35 196.81 L210.23 197.7 L209.96 198.57 L209.55 199.4 L209 200.16 L208.32 200.83 L207.53 201.38 L206.65 201.81 L205.69 202.09 L204.69 202.21 L203.66 202.17 L202.64 201.95 L201.66 201.57 L200.74 201.02 L199.91 200.32 L199.2 199.48 L198.63 198.52 L198.22 197.47 L197.98 196.35 L197.93 195.2 L198.06 194.03 L198.39 192.89 L198.91 191.81 L199.61 190.81 L200.47 189.93 L201.48 189.2 L202.61 188.63 L203.82 188.25 L205.1 188.07 L206.4 188.1 L207.7 188.35 L208.95 188.81 L210.12 189.48 L211.18 190.34 L212.09 191.37 L212.83 192.55 L213.38 193.85 L213.71 195.23 L213.8 196.67 L213.67 198.11 L213.29 199.53 L212.68 200.88 L211.86 202.12 L210.82 203.22 L209.62 204.15 L208.26 204.88 L206.79 205.38 L205.24 205.64 L203.66 205.64 L202.08 205.38 L200.56 204.86 L199.12 204.09" fill="none" stroke="#B5512E" stroke-width="3" stroke-linecap="round"/>
+<ellipse cx="44" cy="257" rx="23" ry="5.5" fill="#C8922A" stroke="#93401F" stroke-width="1.2"/>
+<path d="M35 251 L35.19 250.94 L35.41 250.92 L35.63 250.95 L35.86 251.02 L36.08 251.15 L36.28 251.32 L36.45 251.54 L36.59 251.8 L36.67 252.09 L36.7 252.41 L36.67 252.74 L36.57 253.07 L36.41 253.39 L36.18 253.68 L35.89 253.93 L35.55 254.13 L35.16 254.27 L34.74 254.34 L34.31 254.32 L33.87 254.23 L33.44 254.05 L33.04 253.78 L32.69 253.44 L32.4 253.03 L32.18 252.56 L32.05 252.05 L32.02 251.5 L32.08 250.95 L32.25 250.41 L32.53 249.89 L32.9 249.42 L33.36 249.02 L33.9 248.7 L34.5 248.49 L35.14 248.38 L35.81 248.39 L36.47 248.52 L37.11 248.78 L37.71 249.16 L38.24 249.65 L38.67 250.24 L39 250.9 L39.21 251.64 L39.28 252.4 L39.21 253.19 L39 253.96 L38.64 254.69 L38.15 255.35 L37.54 255.93 L36.82 256.39 L36.02 256.72 L35.15 256.9 L34.26 256.92 L33.36 256.78 L32.5 256.47 L31.69 256.01 L30.96 255.39 L30.35 254.65 L29.88 253.8 L29.57 252.86 L29.43 251.87 L29.47 250.85 L29.69 249.85 L30.1 248.89 L30.69 248.01 L31.43 247.24 L32.31 246.61 L33.3 246.14 L34.37 245.86 L35.49 245.77 L36.62 245.89 L37.72 246.21 L38.76 246.73 L39.7 247.44 L40.51 248.32 L41.15 249.34 L41.6 250.47 L41.84 251.68 L41.86 252.92 L41.66 254.16" fill="none" stroke="#93401F" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M53 250.5 L53.18 250.45 L53.39 250.43 L53.6 250.45 L53.81 250.52 L54.02 250.63 L54.22 250.78 L54.39 250.98 L54.52 251.21 L54.62 251.47 L54.67 251.76 L54.66 252.07 L54.6 252.38 L54.48 252.68 L54.3 252.97 L54.06 253.23 L53.77 253.45 L53.44 253.62 L53.07 253.74 L52.68 253.78 L52.27 253.76 L51.86 253.66 L51.46 253.49 L51.09 253.24 L50.76 252.92 L50.49 252.54 L50.28 252.11 L50.15 251.63 L50.1 251.13 L50.14 250.62 L50.27 250.11 L50.5 249.62 L50.81 249.17 L51.21 248.77 L51.67 248.44 L52.2 248.19 L52.78 248.03 L53.39 247.98 L54.01 248.03 L54.62 248.19 L55.2 248.47 L55.74 248.84 L56.22 249.31 L56.61 249.87 L56.9 250.5 L57.08 251.18 L57.14 251.89 L57.08 252.62 L56.89 253.33 L56.57 254.01 L56.14 254.64 L55.59 255.19 L54.95 255.64 L54.23 255.98 L53.44 256.19 L52.62 256.27 L51.79 256.2 L50.98 255.98 L50.2 255.63 L49.48 255.13 L48.85 254.51 L48.34 253.78 L47.95 252.97 L47.7 252.09 L47.61 251.16 L47.68 250.22 L47.92 249.3 L48.31 248.42 L48.86 247.62 L49.55 246.91 L50.36 246.32 L51.27 245.88 L52.25 245.6 L53.28 245.49 L54.33 245.56 L55.36 245.81 L56.34 246.24 L57.24 246.84 L58.03 247.6 L58.68 248.49 L59.18 249.49" fill="none" stroke="#93401F" stroke-width="2" stroke-linecap="round"/>
+<g>
+    <g>
+    <path d="M96 129 L124.65 137.88 L176 138" fill="none" stroke="#9A4224" stroke-width="8.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M96 129 L116.63 135.4" stroke="#451016" stroke-width="9.8" stroke-linecap="round"/>
+    <path d="M162.66 132.77 L162.64 143.17 M168.31 132.78 L168.29 143.18 " stroke="#C8922A" stroke-width="1.8"/>
+  </g>
+    <path d="M99 129 C 82 139, 70 168, 68 207 C 67 227, 73 237, 70 246 L 84 241 C 87 202, 92 170, 107 141 Z" fill="#57121E"/>
+    <path d="M70 246 C 73 237, 67 227, 68 207 C 70 168, 82 139, 99 129" fill="none" stroke="#C8922A" stroke-width="1.5" opacity=".9"/>
+    <path d="M63 262 C 60 224, 73 191, 80 167 L 107 167 C 113 197, 118 229, 117 261 Q 90 267 63 262 Z" fill="#7A1E2B"/>
+    <path d="M86 170 C 89 200, 92 230, 91 259 M97 170 C 101 201, 104 229, 103 260" stroke="#57121E" stroke-width="1.3" fill="none" opacity=".6"/>
+    <path d="M63.5 257.5 Q 90 263.5 116.7 256.8" fill="none" stroke="#C8922A" stroke-width="2.4"/>
+    <path d="M63.8 251.5 Q 90 257.5 116.9 250.9" fill="none" stroke="#C8922A" stroke-width="1.1" opacity=".8"/>
+    <ellipse cx="109" cy="260.5" rx="7" ry="3.2" fill="#B5512E"/>
+    <path d="M103 124 L114 127 L111 139 L100 136 Z" fill="#B5512E"/>
+    <path d="M80 167 C 81 149, 89 138, 99 131 L 112 137 C 114 147, 111 158, 107 167 Z" fill="#7A1E2B"/>
+    <path d="M99 131 C 104 137, 108 146, 108 153" fill="none" stroke="#57121E" stroke-width="3" opacity=".6"/>
+    <circle cx="109" cy="112" r="12.4" fill="#33241A"/>
+    <circle cx="112" cy="115" r="12" fill="#B5512E"/>
+    <path d="M123 114 q 4.6 2.6 1 6.4 l -3.4 -1.2 Z" fill="#B5512E"/>
+    <circle cx="99" cy="107" r="6.4" fill="#33241A"/>
+    <circle cx="95.6" cy="104" r="2" fill="#C8922A"/>
+    <circle cx="118.5" cy="116" r="4.3" fill="none" stroke="#33241A" stroke-width="1.4"/>
+    <path d="M114.2 115.4 L106 114.4" stroke="#33241A" stroke-width="1.3"/>
+    <circle cx="110" cy="122" r="1.7" fill="#C8922A"/>
+    <g>
+    <path d="M101 136 L127.35 150.35 L161 145.5" fill="none" stroke="#B5512E" stroke-width="8.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M101 136 L119.97 146.33" stroke="#57121E" stroke-width="9.8" stroke-linecap="round"/>
+    <path d="M151.51 141.61 L152.99 151.91 M155.21 141.08 L156.69 151.37 " stroke="#C8922A" stroke-width="1.8"/>
+  </g>
+  </g>
+<g opacity=".82">
+    <text x="243" y="95" transform="rotate(-7 243 95)" text-anchor="middle" font-family="'Caveat',cursive" font-size="15" font-weight="600" fill="#33241A">aaji’s sorya</text>
+    <path d="M232 102 Q 231 110.5 216 119" fill="none" stroke="#33241A" stroke-width="1.3"/>
+    <path d="M219.54 113.08 L216 119 L222.9 119" fill="none" stroke="#33241A" stroke-width="1.3" stroke-linecap="round"/>
+  </g></g>
+    <g><polyline points="120.79 232.78 134.61 212.21 153.57 194.93 176.64 181.88 202.58 173.76 230 171 257.42 173.76 283.36 181.88 306.43 194.93 325.39 212.21 339.21 232.78" fill="none" stroke="#C8922A" stroke-width="1.1" opacity=".9"/><path d="M117.29 233.78 L124.29 233.78 L120.79 242.18 Z" fill="#7A1E2B"/><path d="M131.11 213.21 L138.11 213.21 L134.61 221.61 Z" fill="#C8922A"/><path d="M150.07 195.93 L157.07 195.93 L153.57 204.33 Z" fill="#7A1E2B"/><path d="M173.14 182.88 L180.14 182.88 L176.64 191.28 Z" fill="#C8922A"/><path d="M199.08 174.76 L206.08 174.76 L202.58 183.16 Z" fill="#7A1E2B"/><path d="M226.5 172 L233.5 172 L230 180.4 Z" fill="#C8922A"/><path d="M253.92 174.76 L260.92 174.76 L257.42 183.16 Z" fill="#7A1E2B"/><path d="M279.86 182.88 L286.86 182.88 L283.36 191.28 Z" fill="#C8922A"/><path d="M302.93 195.93 L309.93 195.93 L306.43 204.33 Z" fill="#7A1E2B"/><path d="M321.89 213.21 L328.89 213.21 L325.39 221.61 Z" fill="#C8922A"/><path d="M335.71 233.78 L342.71 233.78 L339.21 242.18 Z" fill="#7A1E2B"/><circle cx="127.01" cy="224.75" r="1.6" fill="#B5512E"/><circle cx="143.51" cy="205.69" r="1.6" fill="#B5512E"/><circle cx="164.67" cy="190.43" r="1.6" fill="#B5512E"/><circle cx="189.34" cy="179.77" r="1.6" fill="#B5512E"/><circle cx="216.2" cy="174.29" r="1.6" fill="#B5512E"/><circle cx="243.8" cy="174.29" r="1.6" fill="#B5512E"/><circle cx="270.66" cy="179.77" r="1.6" fill="#B5512E"/><circle cx="295.33" cy="190.43" r="1.6" fill="#B5512E"/><circle cx="316.49" cy="205.69" r="1.6" fill="#B5512E"/><circle cx="332.99" cy="224.75" r="1.6" fill="#B5512E"/></g>
+  </g>
+  <path d="M105 391 L105 273.48 A42.21 42.21 0 0 1 128.87 209.72 A45.81 45.81 0 0 1 191.37 170.31 A47.9 47.9 0 0 1 268.63 170.31 A45.81 45.81 0 0 1 331.13 209.72 A42.21 42.21 0 0 1 355 273.48 L355 391 Z" fill="none" stroke="#C8922A" stroke-width="1.2"/>
+  <path d="M98 398 L98 273.2 A44.8 44.8 0 0 1 123.21 205.49 A48.45 48.45 0 0 1 189.21 163.64 A50.58 50.58 0 0 1 270.79 163.64 A48.45 48.45 0 0 1 336.79 205.49 A44.8 44.8 0 0 1 362 273.2 L362 398 Z" fill="none" stroke="#7A1E2B" stroke-width="2.6"/>
+  <g opacity=".9"><circle cx="72" cy="196" r="1.8" fill="#C8922A"/><circle cx="70.24" cy="200.24" r="1.8" fill="#C8922A"/><circle cx="66" cy="202" r="1.8" fill="#C8922A"/><circle cx="61.76" cy="200.24" r="1.8" fill="#C8922A"/><circle cx="60" cy="196" r="1.8" fill="#C8922A"/><circle cx="61.76" cy="191.76" r="1.8" fill="#C8922A"/><circle cx="66" cy="190" r="1.8" fill="#C8922A"/><circle cx="70.24" cy="191.76" r="1.8" fill="#C8922A"/><circle cx="66" cy="196" r="2.52" fill="#7A1E2B"/></g><g opacity=".9"><circle cx="400" cy="196" r="1.8" fill="#C8922A"/><circle cx="398.24" cy="200.24" r="1.8" fill="#C8922A"/><circle cx="394" cy="202" r="1.8" fill="#C8922A"/><circle cx="389.76" cy="200.24" r="1.8" fill="#C8922A"/><circle cx="388" cy="196" r="1.8" fill="#C8922A"/><circle cx="389.76" cy="191.76" r="1.8" fill="#C8922A"/><circle cx="394" cy="190" r="1.8" fill="#C8922A"/><circle cx="398.24" cy="191.76" r="1.8" fill="#C8922A"/><circle cx="394" cy="196" r="2.52" fill="#7A1E2B"/></g>
+
+  <g filter="url(#press-bhajani-pouch)" font-family="'Yatra One','Noto Sans Devanagari',serif" text-anchor="middle" font-size="38">
+    <text x="232" y="441.8" fill="#57121E" opacity=".9">भाजणी चकली</text>
+    <text x="230" y="440" fill="#33241A">भाजणी चकली</text>
+  </g>
+  <g><path d="M144 459 L216 459 M244 459 L316 459" stroke="#C8922A" stroke-width="1.2"/><rect x="226.5" y="455.5" width="7" height="7" transform="rotate(45 230 459)" fill="#7A1E2B"/></g>
+  <text x="230" y="480" text-anchor="middle" font-weight="800" font-size="13" letter-spacing="4" fill="#7A1E2B">BHAJANI CHAKLI</text>
+  <text x="230" y="496" text-anchor="middle" font-weight="700" font-size="8.5" letter-spacing="2" fill="#33241A" opacity=".6">HAND-PRESSED · STONE-GROUND BHAJANI</text>
+
+  <text x="230" y="522" text-anchor="middle" font-family="'Yatra One','Noto Sans Devanagari',serif" font-size="13.5" fill="#33241A">तांदूळ · डाळी · तीळ · देशी तूप — बस्स.</text>
+  <path d="M134 530 q 96 7 192 0" fill="none" stroke="#C8922A" stroke-width="1.3" stroke-linecap="round"/>
+  <text x="230" y="545" text-anchor="middle" font-size="9.5" font-style="italic" font-family="'Fraunces',serif" fill="#6B573F">rice · four dals · sesame · ghee — that’s all.</text>
+
+  <g>
+    <clipPath id="ph-bhajani-pouch"><circle cx="98" cy="566" r="21"/></clipPath>
+    <circle cx="98" cy="566" r="24" fill="none" stroke="#7A1E2B" stroke-width="1.1"/>
+    <circle cx="98" cy="566" r="21" fill="#33241A"/>
+    <g clip-path="url(#ph-bhajani-pouch)">
+      <image href="../../../images/chakli-1.jpg" x="70" y="538" width="56" height="56" preserveAspectRatio="xMidYMid slice" style="filter:saturate(1.25) contrast(1.06) brightness(1.04)"/>
+      <circle cx="98" cy="566" r="21" fill="#7A1E2B" style="mix-blend-mode:multiply" opacity=".12"/>
+    </g>
+    <circle cx="98" cy="566" r="21" fill="none" stroke="#C8922A" stroke-width="2"/>
+  </g>
+  <text x="128" y="562" font-family="'Yatra One','Noto Sans Devanagari',serif" font-size="10" fill="#33241A">आत हेच आहे —</text>
+  <text x="128" y="576" font-size="8" font-style="italic" font-family="'Fraunces',serif" fill="#6B573F">the real batch, un-retouched</text>
+  <g><rect x="248" y="558" width="13" height="13" fill="none" stroke="#2E7D32" stroke-width="1.6"/><circle cx="254.5" cy="564.5" r="3.51" fill="#2E7D32"/></g>
+  <g transform="rotate(-3.5 352 565)" opacity=".9">
+    <rect x="291" y="543" width="122" height="44" rx="5" fill="none" stroke="#93401F" stroke-width="2"/>
+    <rect x="295" y="547" width="114" height="36" rx="3" fill="none" stroke="#93401F" stroke-width=".8" stroke-dasharray="3 2.4"/>
+    <text x="352" y="556.93" text-anchor="middle" font-family="'Courier Prime',monospace" font-weight="700" font-size="8.5" letter-spacing="1.1" fill="#93401F">BATCH SB-11</text><text x="352" y="567.98" text-anchor="middle" font-family="'Courier Prime',monospace" font-weight="700" font-size="8.5" letter-spacing="1.1" fill="#93401F">PACKED 08·07·26</text><text x="352" y="579.02" text-anchor="middle" font-family="'Courier Prime',monospace" font-weight="700" font-size="8.5" letter-spacing="1.1" fill="#93401F">NET WT 200 g</text></g>
+
+  <rect x="26" y="610" width="408" height="38" fill="#7A1E2B"/>
+  <text x="230" y="633" text-anchor="middle" font-size="9" font-weight="800" letter-spacing="1.8" fill="#F6EDDB">MADE IN A HOME KITCHEN · NO PRESERVATIVES</text>
+
+  <rect x="26" y="22" width="408" height="626" rx="14" fill="url(#sheen-bhajani-pouch)"/>
+</g>
+<path d="M26 30 l7.85 -7 l7.85 7 l7.85 7 l7.85 -7 l7.85 -7 l7.85 7 l7.85 7 l7.85 -7 l7.85 -7 l7.85 7 l7.85 7 l7.85 -7 l7.85 -7 l7.85 7 l7.85 7 l7.85 -7 l7.85 -7 l7.85 7 l7.85 7 l7.85 -7 l7.85 -7 l7.85 7 l7.85 7 l7.85 -7 l7.85 -7 l7.85 7 l7.85 7 l7.85 -7 l7.85 -7 l7.85 7 l7.85 7 l7.85 -7 l7.85 -7 l7.85 7 l7.85 7 l7.85 -7 l7.85 -7 l7.85 7 l7.85 7 l7.85 -7 l7.85 -7 l7.85 7 l7.85 7 l7.85 -7 l7.85 -7 l7.85 7 l7.85 7 l7.85 -7 l7.85 -7 l7.85 7 l7.85 7 l7.85 -7" fill="none" stroke="#57121E" stroke-width="2.2"/>
+<rect x="26" y="12" width="408" height="15" rx="6" fill="#F1E4CB" stroke="#57121E" stroke-width="1.4"/>
+<circle cx="230" cy="19.5" r="3.4" fill="none" stroke="#57121E" stroke-width="1.3"/>
+</g>
+</svg>
