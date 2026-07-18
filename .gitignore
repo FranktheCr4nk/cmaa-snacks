@@ -11,3 +11,6 @@ node_modules/
 
 # claude-notify hook artifacts (mangled Windows paths)
 C*Usersswara*
+
+# secrets
+.env
