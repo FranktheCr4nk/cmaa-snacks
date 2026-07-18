@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seema v3 — styleguide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Devanagari&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<style>
+  /* ---- styleguide scaffolding only (not shipped to site) ---- */
+  .sg-section { padding-block: var(--sp-16); border-top: 1px solid var(--roast-25); }
+  .sg-head { display: flex; align-items: baseline; gap: var(--sp-4); margin-bottom: var(--sp-12); }
+  .sg-num { font-family: var(--font-mono); font-size: var(--fs-mono); letter-spacing: var(--ls-mono); color: var(--chili); }
+  .sg-note { max-width: 44rem; color: var(--roast-70); margin-top: var(--sp-2); }
+  .sg-row { display: flex; flex-wrap: wrap; gap: var(--sp-6); align-items: flex-start; }
+  .sg-row > * { max-width: 100%; }
+  .sg-col { display: flex; flex-direction: column; gap: var(--sp-6); }
+  .sg-label { font-family: var(--font-mono); font-size: var(--fs-mono); letter-spacing: var(--ls-mono); color: var(--roast-70); margin: 0 0 var(--sp-2); }
+  .sg-swatch { width: 12.5rem; }
+  .sg-swatch__chip { height: 6.5rem; border-radius: var(--r-card); border: 1px solid var(--roast-25); }
+  .sg-swatch .ledger { margin-top: var(--sp-2); }
+  .sg-stage { position: relative; min-height: 16rem; border: 1px dashed var(--roast-45); border-radius: var(--r-card); overflow: hidden; }
+  .sg-stage .chrome, .sg-stage .scroll-cue { position: absolute; }
+  .sg-ease { width: 9.5rem; }
+  .sg-ease__track { position: relative; height: 2.5rem; border-bottom: 1px solid var(--roast-25); }
+  .sg-ease__ball { position: absolute; left: 0; top: 50%; width: 1rem; height: 1rem; margin-top: -0.5rem; border-radius: 50%; background: var(--haldi); }
+  .sg-ease:hover .sg-ease__ball { transform: translateX(8rem); }
+  .sg-ease--enter .sg-ease__ball { transition: transform 0.9s var(--ease-enter); }
+  .sg-ease--scrub .sg-ease__ball { transition: transform 0.9s var(--ease-scrub); }
+  .sg-ease--scrub-out .sg-ease__ball { transition: transform 0.9s var(--ease-scrub-out); }
+  .sg-ease--slap .sg-ease__ball { transition: transform 0.5s var(--ease-slap); background: var(--chili); }
+  @keyframes sg-slap {
+    0% { transform: rotate(var(--stamp-rot)) scale(1.4); opacity: 0; }
+    100% { transform: rotate(var(--stamp-rot)) scale(1); opacity: 1; }
+  }
+  .sg-slap-replay .stamp { animation: sg-slap var(--t-burst) var(--ease-slap) both; }
+  .sg-grid-demo > div { background: var(--roast-10); outline: 1px dashed var(--roast-45); font-family: var(--font-mono); font-size: var(--fs-mono); text-align: center; padding-block: var(--sp-3); color: var(--roast-70); }
+  .sg-cards { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: var(--gutter); max-width: 62rem; }
+  @media (max-width: 767px) { .sg-cards { grid-template-columns: 1fr; max-width: 22rem; } }
+  .sg-manifesto { max-width: 56rem; }
+  .sg-zlist { columns: 2; max-width: 40rem; }
+  @media (max-width: 640px) { .sg-zlist { columns: 1; } }
+</style>
+</head>
+<body class="u-grain u-grain--fixed">
+
+<main class="container" style="padding-block: var(--sp-16);">
+
+  <!-- ================= INTRO ================= -->
+  <header style="max-width: 56rem;">
+    <p class="t-mono t-mono--up t-mono--dim">seema v3 · "unwind" · ui tokens + components · agent c</p>
+    <h1 class="t-display" style="margin-top: var(--sp-4);">One world. One light. <span class="u-underline">One line.</span></h1>
+    <p class="t-body sg-note">Every token and component on this page ships in <span class="t-mono" style="font-size:1em;">site/tokens.css</span>. Grey boxes stand at the exact aspect ratios of the section 5 shot list, so nothing here waits on renders. Redlines live in docs/v3-ui-spec.md.</p>
+  </header>
+
+  <!-- ================= 1 PALETTE ================= -->
+  <section class="sg-section">
+    <div class="sg-head"><span class="sg-num">01</span><h2 class="t-chapter">Palette</h2></div>
+    <p class="t-body sg-note" style="margin-bottom: var(--sp-8);">Five values, use fewer per screen. No gradients, no pure white, no pure black. The world never flips dark.</p>
+    <div class="sg-row">
+      <div class="sg-swatch">
+        <div class="sg-swatch__chip" style="background: var(--khadi);"></div>
+        <div class="ledger"><div class="ledger__row"><span>khadi cream</span><span class="ledger__dots"></span><span class="ledger__val">#F5EEE3</span></div></div>
+      </div>
+      <div class="sg-swatch">
+        <div class="sg-swatch__chip" style="background: var(--roast);"></div>
+        <div class="ledger"><div class="ledger__row"><span>roast brown</span><span class="ledger__dots"></span><span class="ledger__val">#2E1F16</span></div></div>
+      </div>
+      <div class="sg-swatch">
+        <div class="sg-swatch__chip" style="background: var(--haldi);"></div>
+        <div class="ledger"><div class="ledger__row"><span>haldi</span><span class="ledger__dots"></span><span class="ledger__val">#DA8A1D</span></div></div>
+      </div>
+      <div class="sg-swatch">
+        <div class="sg-swatch__chip" style="background: var(--chili);"></div>
+        <div class="ledger"><div class="ledger__row"><span>dried chili</span><span class="ledger__dots"></span><span class="ledger__val">#A93B26</span></div></div>
+      </div>
+      <div class="sg-swatch">
+        <div class="sg-swatch__chip" style="background: var(--ghee);"></div>
+        <div class="ledger"><div class="ledger__row"><span>ghee</span><span class="ledger__dots"></span><span class="ledger__val">#F3C877</span></div></div>
+      </div>
+    </div>
+    <p class="sg-label" style="margin-top: var(--sp-8);">derived inks (mixes only — never new hues)</p>
+    <div class="sg-row">
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background: var(--roast-70); height: 3rem;"></div><p class="t-mono t-mono--dim">--roast-70</p></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background: var(--roast-45); height: 3rem;"></div><p class="t-mono t-mono--dim">--roast-45</p></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background: var(--roast-25); height: 3rem;"></div><p class="t-mono t-mono--dim">--roast-25 · hairlines</p></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background: var(--roast-10); height: 3rem;"></div><p class="t-mono t-mono--dim">--roast-10 · grey-box</p></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background: var(--khadi-deep); height: 3rem;"></div><p class="t-mono t-mono--dim">--khadi-deep · wells</p></div>
+    </div>
+  </section>
+
+  <!-- ================= 2 TYPE ================= -->
+  <section class="sg-section">
+    <div class="sg-head"><span class="sg-num">02</span><h2 class="t-chapter">Type</h2></div>
+    <p class="t-body sg-note" style="margin-bottom: var(--sp-8);">Felt is Fraunces, sentence-case. Factual is Plex Mono; uppercase lives only in mono. No exclamation marks anywhere.</p>
+
+    <p class="sg-label">.t-display · clamp(2.8rem, 8vw, 7.5rem) · SOFT 50, WONK 1</p>
+    <p class="t-display">Made by one pair of hands.</p>
+
+    <p class="sg-label" style="margin-top: var(--sp-12);">.t-chapter · clamp(2rem, 5vw, 4.25rem)</p>
+    <p class="t-chapter">Nothing to hide.</p>
+
+    <p class="sg-label" style="margin-top: var(--sp-12);">.t-h3 · clamp(1.375rem, 2.6vw, 2.125rem)</p>
+    <p class="t-h3">Before the city wakes, the press does.</p>
+
+    <p class="sg-label" style="margin-top: var(--sp-12);">.t-body · 18px Fraunces 400</p>
+    <p class="t-body" style="max-width: 38rem;">Rice, dal, butter, spice — and a woman who <span class="u-chili">refuses</span> to cut corners.</p>
+
+    <p class="sg-label" style="margin-top: var(--sp-12);">.t-mono · 13px · ls 0.06em &nbsp;/&nbsp; .t-mono-lg · 14px</p>
+    <p class="t-mono">04:30 — the kitchen is already awake</p>
+    <p class="t-mono-lg t-mono--up" style="margin-top: var(--sp-2);">batch no. 0117 · fresh</p>
+
+    <p class="sg-label" style="margin-top: var(--sp-12);">.t-dev · devanagari accent (wordmark + B8 only)</p>
+    <p class="t-h3">Seema <span class="t-dev" style="color: var(--roast-70);">सीमा</span> · <span class="t-dev">हातची चव</span></p>
+
+    <p class="sg-label" style="margin-top: var(--sp-12);">.u-underline · animatable via --u-progress · .u-underline--chili</p>
+    <p class="t-chapter" style="max-width: 44rem;">No <span class="u-underline">palm oil</span>, no <span class="u-underline">preservatives</span>, no <span class="u-underline u-underline--chili">shortcuts</span>.</p>
+  </section>
+
+  <!-- ================= 3 SPACING / RADII / Z ================= -->
+  <section class="sg-section">
+    <div class="sg-head"><span class="sg-num">03</span><h2 class="t-chapter">Spacing, radii, layers</h2></div>
+    <div class="sg-row" style="gap: var(--sp-16);">
+      <div>
+        <p class="sg-label">spacing scale (4px base)</p>
+        <div class="sg-col" style="gap: var(--sp-2);">
+          <div style="display:flex; align-items:center; gap:var(--sp-4);"><span class="t-mono t-mono--dim" style="width:5rem;">--sp-1</span><span style="display:inline-block;height:0.75rem;background:var(--haldi);width:var(--sp-1);"></span></div>
+          <div style="display:flex; align-items:center; gap:var(--sp-4);"><span class="t-mono t-mono--dim" style="width:5rem;">--sp-2</span><span style="display:inline-block;height:0.75rem;background:var(--haldi);width:var(--sp-2);"></span></div>
+          <div style="display:flex; align-items:center; gap:var(--sp-4);"><span class="t-mono t-mono--dim" style="width:5rem;">--sp-4</span><span style="display:inline-block;height:0.75rem;background:var(--haldi);width:var(--sp-4);"></span></div>
+          <div style="display:flex; align-items:center; gap:var(--sp-4);"><span class="t-mono t-mono--dim" style="width:5rem;">--sp-8</span><span style="display:inline-block;height:0.75rem;background:var(--haldi);width:var(--sp-8);"></span></div>
+          <div style="display:flex; align-items:center; gap:var(--sp-4);"><span class="t-mono t-mono--dim" style="width:5rem;">--sp-16</span><span style="display:inline-block;height:0.75rem;background:var(--haldi);width:var(--sp-16);"></span></div>
+          <div style="display:flex; align-items:center; gap:var(--sp-4);"><span class="t-mono t-mono--dim" style="width:5rem;">--sp-32</span><span style="display:inline-block;height:0.75rem;background:var(--haldi);width:var(--sp-32);"></span></div>
+        </div>
+      </div>
+      <div>
+        <p class="sg-label">radii</p>
+        <div class="ledger">
+          <div class="ledger__row"><span>--r-pill</span><span class="ledger__dots"></span><span class="ledger__val">999px</span></div>
+          <div class="ledger__row"><span>--r-card</span><span class="ledger__dots"></span><span class="ledger__val">14px</span></div>
+          <div class="ledger__row"><span>--r-stamp</span><span class="ledger__dots"></span><span class="ledger__val">10px</span></div>
+          <div class="ledger__row"><span>--r-arch</span><span class="ledger__dots"></span><span class="ledger__val">50% 50% 0 0 / 40% 40% 0 0</span></div>
+        </div>
+      </div>
+      <div>
+        <p class="sg-label">z-layers</p>
+        <div class="ledger sg-zlist">
+          <div class="ledger__row"><span>behind</span><span class="ledger__dots"></span><span class="ledger__val">-1</span></div>
+          <div class="ledger__row"><span>media</span><span class="ledger__dots"></span><span class="ledger__val">10</span></div>
+          <div class="ledger__row"><span>line</span><span class="ledger__dots"></span><span class="ledger__val">20</span></div>
+          <div class="ledger__row"><span>front</span><span class="ledger__dots"></span><span class="ledger__val">30</span></div>
+          <div class="ledger__row"><span>stamp</span><span class="ledger__dots"></span><span class="ledger__val">40</span></div>
+          <div class="ledger__row"><span>card</span><span class="ledger__dots"></span><span class="ledger__val">50</span></div>
+          <div class="ledger__row"><span>chrome</span><span class="ledger__dots"></span><span class="ledger__val">100</span></div>
+          <div class="ledger__row"><span>loader</span><span class="ledger__dots"></span><span class="ledger__val">200</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4 MOTION ================= -->
+  <section class="sg-section">
+    <div class="sg-head"><span class="sg-num">04</span><h2 class="t-chapter">Motion tokens</h2></div>
+    <p class="t-body sg-note" style="margin-bottom: var(--sp-8);">Hover each track. Entrances expo-out, scrubs power2, the stamp gets the site's only overshoot.</p>
+    <div class="sg-row" style="gap: var(--sp-12);">
+      <div class="sg-ease sg-ease--enter"><p class="sg-label">--ease-enter<br>.16,1,.3,1</p><div class="sg-ease__track"><div class="sg-ease__ball"></div></div></div>
+      <div class="sg-ease sg-ease--scrub"><p class="sg-label">--ease-scrub<br>.45,0,.55,1</p><div class="sg-ease__track"><div class="sg-ease__ball"></div></div></div>
+      <div class="sg-ease sg-ease--scrub-out"><p class="sg-label">--ease-scrub-out<br>.5,1,.89,1</p><div class="sg-ease__track"><div class="sg-ease__ball"></div></div></div>
+      <div class="sg-ease sg-ease--slap"><p class="sg-label">--ease-slap<br>.34,1.56,.64,1</p><div class="sg-ease__track"><div class="sg-ease__ball"></div></div></div>
+    </div>
+    <div class="ledger" style="margin-top: var(--sp-8); max-width: 26rem;">
+      <div class="ledger__row"><span>--t-hover</span><span class="ledger__dots"></span><span class="ledger__val">150ms</span></div>
+      <div class="ledger__row"><span>--t-burst</span><span class="ledger__dots"></span><span class="ledger__val">350ms</span></div>
+      <div class="ledger__row"><span>--t-enter</span><span class="ledger__dots"></span><span class="ledger__val">700ms</span></div>
+      <div class="ledger__row"><span>--t-reveal</span><span class="ledger__dots"></span><span class="ledger__val">900ms</span></div>
+      <div class="ledger__row"><span>--t-loader-min</span><span class="ledger__dots"></span><span class="ledger__val">1200ms</span></div>
+      <div class="ledger__row"><span>--t-idle</span><span class="ledger__dots"></span><span class="ledger__val">2000ms</span></div>
+      <div class="ledger__row"><span>--t-steam</span><span class="ledger__dots"></span><span class="ledger__val">2500ms</span></div>
+    </div>
+  </section>
+
+  <!-- ================= 5 GRAIN + ARCH ================= -->
+  <section class="sg-section">
+    <div class="sg-head"><span class="sg-num">05</span><h2 class="t-chapter">Grain and arch utilities</h2></div>
+    <div class="sg-row" style="gap: var(--sp-12); align-items: stretch;">
+      <div style="width: 18rem;">
+        <p class="sg-label">.u-grain · feTurbulence, multiply, --grain-opacity 0.05</p>
+        <div class="u-grain" style="background: var(--khadi); border: 1px solid var(--roast-25); border-radius: var(--r-card); height: 14rem;"></div>
+      </div>
+      <div style="width: 14rem;">
+        <p class="sg-label">.u-arch · 4:5, semicircular crown</p>
+        <div class="u-arch"><div class="slot slot--4x5" data-shot="arch mask"></div></div>
+      </div>
+      <div style="width: 14rem;">
+        <p class="sg-label">.u-arch--squat · 1:1</p>
+        <div class="u-arch u-arch--squat"><div class="slot slot--1x1" data-shot="squat arch"></div></div>
+      </div>
+      <div style="width: 18rem;">
+        <p class="sg-label">.u-rule-dotted · dasharray 1 7 twin</p>
+        <hr class="u-rule-dotted" style="margin-top: var(--sp-8);">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 6 IMAGE SLOTS ================= -->
+  <section class="sg-section">
+    <div class="sg-head"><span class="sg-num">06</span><h2 class="t-chapter">Image slots</h2></div>
+    <p class="t-body sg-note" style="margin-bottom: var(--sp-8);">Grey boxes at the exact shot-list aspect ratios. Agent F swaps each for its picture element at the same ratio, so layout never shifts.</p>
+    <div class="sg-row" style="align-items: flex-end;">
+      <div style="width: 13rem;"><div class="slot slot--4x5" data-shot="S1 · 4:5"></div></div>
+      <div style="width: 13rem;"><div class="slot slot--1x1" data-shot="S2 · 1:1"></div></div>
+      <div style="width: 23rem;"><div class="slot slot--16x9" data-shot="S12 · 16:9"></div></div>
+      <div style="width: 9rem;"><div class="slot slot--1x1 slot--cutout" data-shot="S13a · cutout"></div></div>
+      <div style="width: 9rem;"><div class="slot slot--1x1 slot--round" data-shot="S2"></div></div>
+    </div>
+  </section>
+
+  <!-- ================= 7 PILLS + BUTTONS ================= -->
+  <section class="sg-section">
+    <div class="sg-head"><span class="sg-num">07</span><h2 class="t-chapter">Pills and buttons</h2></div>
+    <div class="sg-col" style="gap: var(--sp-8);">
+      <div>
+        <p class="sg-label">.pill · dial compass label · .is-active inverts roast/ghee</p>
+        <div class="sg-row" style="gap: var(--sp-3);">
+          <span class="pill">no palm oil</span>
+          <span class="pill is-active">no preservatives</span>
+          <span class="pill">no artificial colour</span>
+          <span class="pill">no machines</span>
+        </div>
+      </div>
+      <div>
+        <p class="sg-label">.btn · primary cta (haldi fill, hover ghee) · .btn--quiet · focus ring ghee</p>
+        <div class="sg-row" style="gap: var(--sp-3); align-items: center;">
+          <a class="btn" href="#">Order this week's batch</a>
+          <a class="btn btn--quiet" href="#">Add</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 8 STAMP ================= -->
+  <section class="sg-section">
+    <div class="sg-head"><span class="sg-num">08</span><h2 class="t-chapter">The stamp</h2></div>
+    <p class="t-body sg-note" style="margin-bottom: var(--sp-8);">Chili rubber stamp, used exactly once (B9). Slap-down 1.4→1 with --ease-slap; multiply over the S9 pack shot.</p>
+    <div class="sg-row" style="align-items: center; gap: var(--sp-12);">
+      <div class="sg-slap-replay" style="position: relative; width: 16rem;">
+        <div class="slot slot--4x5" data-shot="S9 · pack 4:5"></div>
+        <span class="stamp" style="position: absolute; top: 9%; right: 6%;">batch 0117 · fresh</span>
+      </div>
+      <span class="stamp">batch 0117 · fresh</span>
+    </div>
+  </section>
+
+  <!-- ================= 9 LEDGER ================= -->
+  <section class="sg-section">
+    <div class="sg-head"><span class="sg-num">09</span><h2 class="t-chapter">Ledger blocks</h2></div>
+    <div class="sg-row" style="gap: var(--sp-16);">
+      <div style="width: 24rem;">
+        <p class="sg-label">.ledger · dotted leaders (nutrition, batch facts)</p>
+        <div class="ledger">
+          <div class="ledger__row"><span>energy</span><span class="ledger__dots"></span><span class="ledger__val">512 kcal / 100 g</span></div>
+          <div class="ledger__row"><span>fried on</span><span class="ledger__dots"></span><span class="ledger__val">saturday</span></div>
+          <div class="ledger__row"><span>batch window</span><span class="ledger__dots"></span><span class="ledger__val">21 days</span></div>
+          <div class="ledger__row"><span>preservatives</span><span class="ledger__dots"></span><span class="ledger__val">none</span></div>
+        </div>
+      </div>
+      <div style="width: 24rem;">
+        <p class="sg-label">.ledger--bare · B8 portrait lines</p>
+        <div class="ledger ledger--bare">
+          <div class="ledger__row">making chakli since the '90s</div>
+          <div class="ledger__row">taught by her mother</div>
+          <div class="ledger__row">still tastes every single batch</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 10 CHROME ================= -->
+  <section class="sg-section">
+    <div class="sg-head"><span class="sg-num">10</span><h2 class="t-chapter">Chrome</h2></div>
+    <p class="t-body sg-note" style="margin-bottom: var(--sp-8);">Wordmark top-left, breadcrumb pill top-right rewriting per chapter, order pill docking after B7, scroll cue bottom-right. Shown here inside a stage frame.</p>
+    <div class="sg-stage u-grain">
+      <div class="chrome">
+        <a class="chrome__wordmark" href="#" aria-label="Seema — home">
+          <span class="t-h3" style="font-weight: 600;">Seema</span>
+          <span class="t-dev t-mono--dim">सीमा</span>
+        </a>
+        <div class="chrome__right">
+          <span class="crumb"><span class="crumb__brand">seema</span><span class="crumb__sep">/</span><span class="crumb__chapter">nothing to hide</span></span>
+          <a class="btn order-pill is-docked" href="#" style="padding: var(--sp-2) var(--sp-6); min-height: 2.25rem;">Order</a>
+        </div>
+      </div>
+      <span class="scroll-cue">scroll — slowly is fine</span>
+    </div>
+    <p class="sg-label" style="margin-top: var(--sp-6);">order pill states</p>
+    <div class="sg-row" style="align-items: center;">
+      <span class="t-mono t-mono--dim">before B7 · opacity 0, lifted 8px, no pointer events</span>
+      <a class="btn order-pill is-docked" href="#" style="padding: var(--sp-2) var(--sp-6); min-height: 2.25rem;">Order</a>
+      <span class="t-mono t-mono--dim">← .is-docked from B7 on, permanent</span>
+    </div>
+  </section>
+
+  <!-- ================= 11 DIAL ================= -->
+  <section class="sg-section">
+    <div class="sg-head"><span class="sg-num">11</span><h2 class="t-chapter">The dial</h2></div>
+    <p class="t-body sg-note" style="margin-bottom: var(--sp-8);">Built once for B4, re-labeled for B9. Ring and ticks arrive from agent D; a placeholder ring is drawn here. Scroll rotates the orbit; the active pill inverts; its one-sentence card parks at the section's top-right.</p>
+    <div class="dial-wrap" style="padding-block: var(--sp-8);">
+      <div class="dial">
+        <svg class="dial__ring" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+          <circle cx="200" cy="200" r="198" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 7"/>
+          <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M200 6v10M200 384v10M6 200h10M384 200h10"/>
+            <path d="M59 59l7 7M334 334l7 7M341 59l-7 7M66 334l-7 7"/>
+          </g>
+        </svg>
+        <div class="dial__center"><div class="slot slot--1x1 slot--round" data-shot="S2 · 1:1"></div></div>
+        <span class="pill dial__pill dial__pill--n is-active">no palm oil</span>
+        <span class="pill dial__pill dial__pill--e">no preservatives</span>
+        <span class="pill dial__pill dial__pill--s">no artificial colour</span>
+        <span class="pill dial__pill dial__pill--w">no machines</span>
+      </div>
+      <aside class="dial-card">
+        <p class="t-mono t-mono--up">no palm oil</p>
+        <p class="dial-card__text">Fried in groundnut oil we'd feed our own kids. Because we do.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ================= 12 ARCH CARDS ================= -->
+  <section class="sg-section">
+    <div class="sg-head"><span class="sg-num">12</span><h2 class="t-chapter">The shelf cards</h2></div>
+    <p class="t-body sg-note" style="margin-bottom: var(--sp-8);">Three doors, SKU-tinted arches: haldi for chakli, chili for chivda, ghee for lahya crunch bites. Hover deepens the tint; the jelly wobble is agent E's.</p>
+    <div class="sg-cards">
+      <article class="card-arch card-arch--chakli">
+        <div class="card-arch__media"><div class="slot slot--4x5" data-shot="S6 · 4:5"></div></div>
+        <h3 class="t-h3 card-arch__name">Bhajani chakli</h3>
+        <p class="t-mono card-arch__meta">₹ ___ · 250 g · this week's batch</p>
+        <a class="btn btn--quiet card-arch__add" href="#">Add</a>
+        <details class="card-arch__facts">
+          <summary>ingredients + nutrition</summary>
+          <div class="ledger">
+            <div class="ledger__row"><span>bhajani flour</span><span class="ledger__dots"></span><span class="ledger__val">rice, chana dal</span></div>
+            <div class="ledger__row"><span>fried in</span><span class="ledger__dots"></span><span class="ledger__val">groundnut oil</span></div>
+          </div>
+        </details>
+      </article>
+      <article class="card-arch card-arch--chivda">
+        <div class="card-arch__media"><div class="slot slot--4x5" data-shot="S7 · 4:5"></div></div>
+        <h3 class="t-h3 card-arch__name">Poha chivda</h3>
+        <p class="t-mono card-arch__meta">₹ ___ · 250 g · this week's batch</p>
+        <a class="btn btn--quiet card-arch__add" href="#">Add</a>
+        <details class="card-arch__facts">
+          <summary>ingredients + nutrition</summary>
+          <div class="ledger">
+            <div class="ledger__row"><span>thin poha</span><span class="ledger__dots"></span><span class="ledger__val">hand-roasted</span></div>
+            <div class="ledger__row"><span>peanuts</span><span class="ledger__dots"></span><span class="ledger__val">whole</span></div>
+          </div>
+        </details>
+      </article>
+      <article class="card-arch card-arch--lahya">
+        <div class="card-arch__media"><div class="slot slot--4x5" data-shot="S8 · 4:5"></div></div>
+        <h3 class="t-h3 card-arch__name">Lahya crunch bites</h3>
+        <p class="t-mono card-arch__meta">₹ ___ · 250 g · this week's batch</p>
+        <a class="btn btn--quiet card-arch__add" href="#">Add</a>
+        <details class="card-arch__facts">
+          <summary>ingredients + nutrition</summary>
+          <div class="ledger">
+            <div class="ledger__row"><span>jowar lahya</span><span class="ledger__dots"></span><span class="ledger__val">popped at home</span></div>
+            <div class="ledger__row"><span>spice</span><span class="ledger__dots"></span><span class="ledger__val">haldi, chili</span></div>
+          </div>
+        </details>
+      </article>
+    </div>
+    <p class="t-mono t-mono--dim" style="margin-top: var(--sp-8);">orders close friday · fried saturday · shipped monday</p>
+  </section>
+
+  <!-- ================= 13 MANIFESTO SAMPLE ================= -->
+  <section class="sg-section">
+    <div class="sg-head"><span class="sg-num">13</span><h2 class="t-chapter">Manifesto grammar</h2></div>
+    <p class="t-chapter sg-manifesto">No <span class="u-underline">factory</span>. No <span class="u-underline">palm oil</span>. No <span class="u-underline">preservatives</span>. No <span class="u-underline">&lsquo;natural identical flavours&rsquo;</span>. Rice, dal, butter, spice — and a woman who <span class="u-chili">refuses</span> to cut corners.</p>
+  </section>
+
+  <footer style="padding-block: var(--sp-16); border-top: 1px solid var(--roast-25);">
+    <p class="t-mono t-mono--dim">agent c · ui tokens + components · consumed by agents e + f · docs/v3-ui-spec.md holds the redlines</p>
+  </footer>
+
+</main>
+
+<script>
+  /* styleguide-only: replay the stamp slap when its panel is clicked */
+  document.querySelectorAll('.sg-slap-replay').forEach(function (el) {
+    el.addEventListener('click', function () {
+      var s = el.querySelector('.stamp');
+      s.style.animation = 'none';
+      void s.offsetWidth;
+      s.style.animation = '';
+    });
+  });
+</script>
+</body>
+</html>

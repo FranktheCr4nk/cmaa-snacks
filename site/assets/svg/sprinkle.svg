@@ -1,0 +1,10 @@
+<!-- Seema v3 · agent D · B7 hover sprinkle (catalog #5): 5 sesame seeds + 2 dots -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path id="speck-1" transform="translate(34 38) rotate(-28)" d="M-5 0Q-2 -3.2 0 -3.2Q3.4 -3.2 5 0Q3.4 3.2 0 3.2Q-2 3.2 -5 0Z" stroke-width="1.6"/>
+  <path id="speck-2" transform="translate(72 24) rotate(14)" d="M-5 0Q-2 -3.2 0 -3.2Q3.4 -3.2 5 0Q3.4 3.2 0 3.2Q-2 3.2 -5 0Z" stroke-width="1.6"/>
+  <path id="speck-3" transform="translate(116 44) rotate(-62)" d="M-5 0Q-2 -3.2 0 -3.2Q3.4 -3.2 5 0Q3.4 3.2 0 3.2Q-2 3.2 -5 0Z" stroke-width="1.6"/>
+  <path id="speck-4" transform="translate(52 78) rotate(40)" d="M-5 0Q-2 -3.2 0 -3.2Q3.4 -3.2 5 0Q3.4 3.2 0 3.2Q-2 3.2 -5 0Z" stroke-width="1.6"/>
+  <path id="speck-5" transform="translate(98 88) rotate(-12)" d="M-5 0Q-2 -3.2 0 -3.2Q3.4 -3.2 5 0Q3.4 3.2 0 3.2Q-2 3.2 -5 0Z" stroke-width="1.6"/>
+  <circle id="speck-6" cx="136" cy="72" r="1.7" fill="currentColor" stroke="none"/>
+  <circle id="speck-7" cx="22" cy="62" r="1.7" fill="currentColor" stroke="none"/>
+</svg>

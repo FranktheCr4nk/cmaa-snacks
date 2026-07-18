@@ -1,0 +1,140 @@
+[
+  {
+    "id": "s1",
+    "title": "Hero chakli",
+    "prompt": "Editorial food photography, single soft window light from camera left at 35 degrees, warm early-morning temperature, soft brown shadows falling right, muted warm film grade, subtle film grain, matte-satin oil sheen, hyper-detailed real Indian homemade snack, imperfect and authentic, no gloss, no HDR, no studio white. Surfaces limited to: cream khadi muslin cloth, dark worn terracotta-brown clay, hammered brass, used steel. Background khadi cream #F5EEE3 where seamless. One golden-brown bhajani chakli spiral, 100mm macro, three-quarter angle floating look on seamless khadi cream, razor focus on ridged spiral texture with sesame seeds, soft contact shadow, faint steam. Geometry: a tight flat cinnamon roll style spiral coil, four concentric turns of one thin rope of dough, the spiral clearly readable. Texture: churro-like deeply RIDGED extruded dough, fried matte golden-brown, scattered white sesame seeds, crispy, savory, NOT glazed, NOT sweet, a fried savory Indian chakli, not a pastry",
+    "ar": "4:5"
+  },
+  {
+    "id": "s2",
+    "title": "Dial chakli (top-down)",
+    "prompt": "Editorial food photography, single soft window light from camera left at 35 degrees, warm early-morning temperature, soft brown shadows falling right, muted warm film grade, subtle film grain, matte-satin oil sheen, hyper-detailed real Indian homemade snack, imperfect and authentic, no gloss, no HDR, no studio white. Surfaces limited to: cream khadi muslin cloth, dark worn terracotta-brown clay, hammered brass, used steel. Background khadi cream #F5EEE3 where seamless. Single bhajani chakli photographed dead top-down on seamless khadi cream, perfectly centered, even spiral geometry visible, macro texture, minimal soft shadow ring. Geometry: a tight flat cinnamon roll style spiral coil, four concentric turns of one thin rope of dough, the spiral clearly readable from directly above. Texture: churro-like deeply RIDGED extruded dough, fried matte golden-brown, scattered white sesame seeds, crispy, savory, NOT glazed, NOT sweet, a fried savory Indian chakli, not a pastry",
+    "ar": "1:1"
+  },
+  {
+    "id": "s3",
+    "title": "Exploded-view center",
+    "prompt": "Editorial food photography, single soft window light from camera left at 35 degrees, warm early-morning temperature, soft brown shadows falling right, muted warm film grade, subtle film grain, matte-satin oil sheen, hyper-detailed real Indian homemade snack, imperfect and authentic, no gloss, no HDR, no studio white. Surfaces limited to: cream khadi muslin cloth, dark worn terracotta-brown clay, hammered brass, used steel. Background khadi cream #F5EEE3 where seamless. Single bhajani chakli photographed dead top-down on seamless khadi cream, slightly small in frame with generous empty cream margin on all sides for compositing, centered, minimal soft shadow. Geometry: a tight flat cinnamon roll style spiral coil, four concentric turns of one thin rope of dough, the spiral clearly readable from directly above. Texture: churro-like deeply RIDGED extruded dough, fried matte golden-brown, scattered white sesame seeds, crispy, savory, NOT glazed, NOT sweet, a fried savory Indian chakli, not a pastry",
+    "ar": "1:1"
+  },
+  {
+    "id": "s4",
+    "title": "Exploded flat-lay (fallback/OG)",
+    "prompt": "Editorial food photography, single soft window light from camera left at 35 degrees, warm early-morning temperature, soft brown shadows falling right, muted warm film grade, subtle film grain, matte-satin oil sheen, hyper-detailed real Indian homemade snack, imperfect and authentic, no gloss, no HDR, no studio white. Surfaces limited to: cream khadi muslin cloth, dark worn terracotta-brown clay, hammered brass, used steel. Background khadi cream #F5EEE3 where seamless. Top-down flat-lay: one bhajani chakli at center (a tight flat cinnamon roll style spiral coil of churro-like deeply RIDGED fried dough, matte golden-brown, white sesame seeds, savory, NOT sweet); radiating around it small neat piles with thin gaps between, on cream khadi cloth: rice flour, chana dal, white sesame seeds, cumin seeds, ajwain seeds, a curl of butter on a hammered brass spoon, three fried curry leaves",
+    "ar": "16:9"
+  },
+  {
+    "id": "s5",
+    "title": "Crunch cross-section",
+    "prompt": "Editorial food photography, single soft window light from camera left at 35 degrees, warm early-morning temperature, soft brown shadows falling right, muted warm film grade, subtle film grain, matte-satin oil sheen, hyper-detailed real Indian homemade snack, imperfect and authentic, no gloss, no HDR, no studio white. Surfaces limited to: cream khadi muslin cloth, dark worn terracotta-brown clay, hammered brass, used steel. Background khadi cream #F5EEE3 where seamless. A bhajani chakli snapped in half, 100mm extreme macro on the break: airy crumb structure, oil-satin interior, loose crumbs mid-fall, dark worn terracotta-brown clay surface. Geometry: the unbroken part still shows a tight flat cinnamon roll style spiral coil of thin dough rope. Texture: churro-like deeply RIDGED extruded dough, fried matte golden-brown, scattered white sesame seeds, crispy, savory, NOT glazed, NOT sweet, a fried savory Indian chakli, not a pastry",
+    "ar": "16:9"
+  },
+  {
+    "id": "s11",
+    "title": "Seema portrait",
+    "prompt": "Editorial food photography, single soft window light from camera left at 35 degrees, warm early-morning temperature, soft brown shadows falling right, muted warm film grade, subtle film grain, matte-satin oil sheen, hyper-detailed real Indian homemade snack, imperfect and authentic, no gloss, no HDR, no studio white. Surfaces limited to: cream khadi muslin cloth, dark worn terracotta-brown clay, hammered brass, used steel. Background khadi cream #F5EEE3 where seamless. Environmental portrait, Indian mother mid-50s in simple cotton saree, standing at her kitchen counter beside a used steel kadhai, 85mm lens, defocused morning kitchen behind, honest gentle almost-smile, hands dusted with flour, window light on face",
+    "ar": "4:5"
+  },
+  {
+    "id": "s12",
+    "title": "The press (4:30 AM)",
+    "prompt": "Editorial food photography, single soft window light from camera left at 35 degrees, warm early-morning temperature, soft brown shadows falling right, muted warm film grade, subtle film grain, matte-satin oil sheen, hyper-detailed real Indian homemade snack, imperfect and authentic, no gloss, no HDR, no studio white. Surfaces limited to: cream khadi muslin cloth, dark worn terracotta-brown clay, hammered brass, used steel. Background khadi cream #F5EEE3 where seamless. Close on the hands of an Indian woman mid-40s, worn hands, small bangles, no manicure, pressing chakli dough through a brass chakli press into hot oil in a used steel kadhai, 50mm lens, dawn-dark kitchen, single warm window glow, oil surface shimmer, steam rising",
+    "ar": "16:9"
+  },
+  {
+    "id": "s13a",
+    "title": "Cutout: rice flour pile",
+    "prompt": "Editorial food photography, single soft window light from camera left at 35 degrees, warm early-morning temperature, soft brown shadows falling right, muted warm film grade, subtle film grain, matte-satin oil sheen, hyper-detailed real Indian homemade snack, imperfect and authentic, no gloss, no HDR, no studio white. Surfaces limited to: cream khadi muslin cloth, dark worn terracotta-brown clay, hammered brass, used steel. Background khadi cream #F5EEE3 where seamless. A single small pinch-pile of fine white rice flour, centered on pure seamless khadi cream background, top-down macro, generous empty cream margin on all sides, one soft shadow, nothing else in frame, for cutout",
+    "ar": "1:1"
+  },
+  {
+    "id": "s13b",
+    "title": "Cutout: chana dal scatter",
+    "prompt": "Editorial food photography, single soft window light from camera left at 35 degrees, warm early-morning temperature, soft brown shadows falling right, muted warm film grade, subtle film grain, matte-satin oil sheen, hyper-detailed real Indian homemade snack, imperfect and authentic, no gloss, no HDR, no studio white. Surfaces limited to: cream khadi muslin cloth, dark worn terracotta-brown clay, hammered brass, used steel. Background khadi cream #F5EEE3 where seamless. A small loose scatter of yellow chana dal split chickpea lentils, centered on pure seamless khadi cream background, top-down macro, generous empty cream margin on all sides, soft shadows, nothing else in frame, for cutout",
+    "ar": "1:1"
+  },
+  {
+    "id": "s13c",
+    "title": "Cutout: white sesame pile",
+    "prompt": "Editorial food photography, single soft window light from camera left at 35 degrees, warm early-morning temperature, soft brown shadows falling right, muted warm film grade, subtle film grain, matte-satin oil sheen, hyper-detailed real Indian homemade snack, imperfect and authentic, no gloss, no HDR, no studio white. Surfaces limited to: cream khadi muslin cloth, dark worn terracotta-brown clay, hammered brass, used steel. Background khadi cream #F5EEE3 where seamless. A single teaspoon-sized pile of white sesame seeds, centered on pure seamless khadi cream background, top-down macro, generous empty cream margin on all sides, one soft shadow, nothing else in frame, for cutout",
+    "ar": "1:1"
+  },
+  {
+    "id": "s14a",
+    "title": "Cutout: cumin pile",
+    "prompt": "Editorial food photography, single soft window light from camera left at 35 degrees, warm early-morning temperature, soft brown shadows falling right, muted warm film grade, subtle film grain, matte-satin oil sheen, hyper-detailed real Indian homemade snack, imperfect and authentic, no gloss, no HDR, no studio white. Surfaces limited to: cream khadi muslin cloth, dark worn terracotta-brown clay, hammered brass, used steel. Background khadi cream #F5EEE3 where seamless. A single small pile of whole brown cumin seeds, centered on pure seamless khadi cream background, top-down macro, generous empty cream margin on all sides, one soft shadow, nothing else in frame, for cutout",
+    "ar": "1:1"
+  },
+  {
+    "id": "s14b",
+    "title": "Cutout: ajwain pile",
+    "prompt": "Editorial food photography, single soft window light from camera left at 35 degrees, warm early-morning temperature, soft brown shadows falling right, muted warm film grade, subtle film grain, matte-satin oil sheen, hyper-detailed real Indian homemade snack, imperfect and authentic, no gloss, no HDR, no studio white. Surfaces limited to: cream khadi muslin cloth, dark worn terracotta-brown clay, hammered brass, used steel. Background khadi cream #F5EEE3 where seamless. A single small pile of tiny ajwain carom seeds, centered on pure seamless khadi cream background, top-down macro, generous empty cream margin on all sides, one soft shadow, nothing else in frame, for cutout",
+    "ar": "1:1"
+  },
+  {
+    "id": "s14c",
+    "title": "Cutout: butter curl on brass spoon",
+    "prompt": "Editorial food photography, single soft window light from camera left at 35 degrees, warm early-morning temperature, soft brown shadows falling right, muted warm film grade, subtle film grain, matte-satin oil sheen, hyper-detailed real Indian homemade snack, imperfect and authentic, no gloss, no HDR, no studio white. Surfaces limited to: cream khadi muslin cloth, dark worn terracotta-brown clay, hammered brass, used steel. Background khadi cream #F5EEE3 where seamless. One small curl of pale butter resting on a hammered brass spoon, centered on pure seamless khadi cream background, top-down macro, generous empty cream margin on all sides, one soft shadow, nothing else in frame, for cutout",
+    "ar": "1:1"
+  },
+  {
+    "id": "s15a",
+    "title": "Cutout: fried curry leaves",
+    "prompt": "Editorial food photography, single soft window light from camera left at 35 degrees, warm early-morning temperature, soft brown shadows falling right, muted warm film grade, subtle film grain, matte-satin oil sheen, hyper-detailed real Indian homemade snack, imperfect and authentic, no gloss, no HDR, no studio white. Surfaces limited to: cream khadi muslin cloth, dark worn terracotta-brown clay, hammered brass, used steel. Background khadi cream #F5EEE3 where seamless. Exactly three crisp dark-green fried curry leaves, centered on pure seamless khadi cream background, top-down macro, generous empty cream margin on all sides, soft shadows, nothing else in frame, for cutout",
+    "ar": "1:1"
+  },
+  {
+    "id": "s15b",
+    "title": "Cutout: dried red chilies",
+    "prompt": "Editorial food photography, single soft window light from camera left at 35 degrees, warm early-morning temperature, soft brown shadows falling right, muted warm film grade, subtle film grain, matte-satin oil sheen, hyper-detailed real Indian homemade snack, imperfect and authentic, no gloss, no HDR, no studio white. Surfaces limited to: cream khadi muslin cloth, dark worn terracotta-brown clay, hammered brass, used steel. Background khadi cream #F5EEE3 where seamless. Exactly two whole dried red chilies with stems, centered on pure seamless khadi cream background, top-down macro, generous empty cream margin on all sides, soft shadows, nothing else in frame, for cutout",
+    "ar": "1:1"
+  },
+  {
+    "id": "s15c",
+    "title": "Cutout: roasted peanuts pile",
+    "prompt": "Editorial food photography, single soft window light from camera left at 35 degrees, warm early-morning temperature, soft brown shadows falling right, muted warm film grade, subtle film grain, matte-satin oil sheen, hyper-detailed real Indian homemade snack, imperfect and authentic, no gloss, no HDR, no studio white. Surfaces limited to: cream khadi muslin cloth, dark worn terracotta-brown clay, hammered brass, used steel. Background khadi cream #F5EEE3 where seamless. A single small pile of roasted red-skin peanuts, centered on pure seamless khadi cream background, top-down macro, generous empty cream margin on all sides, one soft shadow, nothing else in frame, for cutout",
+    "ar": "1:1"
+  },
+  {
+    "id": "s16",
+    "title": "Chivda macro",
+    "prompt": "Editorial food photography, single soft window light from camera left at 35 degrees, warm early-morning temperature, soft brown shadows falling right, muted warm film grade, subtle film grain, matte-satin oil sheen, hyper-detailed real Indian homemade snack, imperfect and authentic, no gloss, no HDR, no studio white. Surfaces limited to: cream khadi muslin cloth, dark worn terracotta-brown clay, hammered brass, used steel. Background khadi cream #F5EEE3 where seamless. Poha chivda extreme macro heap on a hammered brass thali: thin flattened rice poha flakes, roasted peanuts, fried curry leaves, turmeric-gold tone, one raisin, scattered pieces at the heap edge, savory Indian snack",
+    "ar": "4:5"
+  },
+  {
+    "id": "s17",
+    "title": "Chivda mid-air",
+    "prompt": "Editorial food photography, single soft window light from camera left at 35 degrees, warm early-morning temperature, soft brown shadows falling right, muted warm film grade, subtle film grain, matte-satin oil sheen, hyper-detailed real Indian homemade snack, imperfect and authentic, no gloss, no HDR, no studio white. Surfaces limited to: cream khadi muslin cloth, dark worn terracotta-brown clay, hammered brass, used steel. Background khadi cream #F5EEE3 where seamless. Poha chivda tumbling mid-pour from a hammered brass bowl, frozen motion, individual turmeric-gold poha flakes and roasted peanuts and curry leaves sharp against seamless khadi cream, soft shadow below, high shutter speed feel",
+    "ar": "4:5"
+  },
+  {
+    "id": "s18",
+    "title": "Lahya Crunch Bites macro",
+    "prompt": "Editorial food photography, single soft window light from camera left at 35 degrees, warm early-morning temperature, soft brown shadows falling right, muted warm film grade, subtle film grain, matte-satin oil sheen, hyper-detailed real Indian homemade snack, imperfect and authentic, no gloss, no HDR, no studio white. Surfaces limited to: cream khadi muslin cloth, dark worn terracotta-brown clay, hammered brass, used steel. Background khadi cream #F5EEE3 where seamless. Lahya crunch bites: loose bite-size clusters of popped jowar sorghum grains, tiny ivory puffed grains like miniature popcorn, bound in a light golden savory spice coating with turmeric and curry leaf, extreme macro on the popped grain texture and toasted cluster edges, a few loose popped grains and roasted peanuts scattered on dark worn terracotta-brown clay surface, savory, NOT sweet, NOT caramel popcorn",
+    "ar": "4:5"
+  },
+  {
+    "id": "s19",
+    "title": "Frying moment",
+    "prompt": "Editorial food photography, single soft window light from camera left at 35 degrees, warm early-morning temperature, soft brown shadows falling right, muted warm film grade, subtle film grain, matte-satin oil sheen, hyper-detailed real Indian homemade snack, imperfect and authentic, no gloss, no HDR, no studio white. Surfaces limited to: cream khadi muslin cloth, dark worn terracotta-brown clay, hammered brass, used steel. Background khadi cream #F5EEE3 where seamless. Bhajani chaklis frying in a used steel kadhai, top-down-ish 50mm view, oil bubbles ringing the spirals, brass skimmer entering frame left, steam. Geometry: each chakli is a tight flat cinnamon roll style spiral coil, four concentric turns of one thin rope of dough. Texture: churro-like deeply RIDGED extruded dough, frying matte golden-brown, white sesame seeds, crispy, savory, NOT glazed, NOT sweet, fried savory Indian chaklis, not pastries",
+    "ar": "16:9"
+  },
+  {
+    "id": "s20",
+    "title": "Cooling rack",
+    "prompt": "Editorial food photography, single soft window light from camera left at 35 degrees, warm early-morning temperature, soft brown shadows falling right, muted warm film grade, subtle film grain, matte-satin oil sheen, hyper-detailed real Indian homemade snack, imperfect and authentic, no gloss, no HDR, no studio white. Surfaces limited to: cream khadi muslin cloth, dark worn terracotta-brown clay, hammered brass, used steel. Background khadi cream #F5EEE3 where seamless. Fresh bhajani chaklis cooling on a steel mesh rack over cream khadi cloth, raking window light exaggerating ridge texture, one broken piece among them. Geometry: each chakli is a tight flat cinnamon roll style spiral coil, four concentric turns of one thin rope of dough. Texture: churro-like deeply RIDGED extruded dough, fried matte golden-brown, white sesame seeds, crispy, savory, NOT glazed, NOT sweet, fried savory Indian chaklis, not pastries",
+    "ar": "16:9"
+  },
+  {
+    "id": "s21",
+    "title": "Hands + finished batch",
+    "prompt": "Editorial food photography, single soft window light from camera left at 35 degrees, warm early-morning temperature, soft brown shadows falling right, muted warm film grade, subtle film grain, matte-satin oil sheen, hyper-detailed real Indian homemade snack, imperfect and authentic, no gloss, no HDR, no studio white. Surfaces limited to: cream khadi muslin cloth, dark worn terracotta-brown clay, hammered brass, used steel. Background khadi cream #F5EEE3 where seamless. The hands of an Indian woman mid-40s, worn hands, small bangles, no manicure, cupping a heap of golden fried chakli pieces offered toward camera, crumbs falling, 50mm lens, kitchen bokeh behind, window light",
+    "ar": "4:5"
+  },
+  {
+    "id": "s22",
+    "title": "Empty kitchen still",
+    "prompt": "Editorial food photography, single soft window light from camera left at 35 degrees, warm early-morning temperature, soft brown shadows falling right, muted warm film grade, subtle film grain, matte-satin oil sheen, hyper-detailed real Indian homemade snack, imperfect and authentic, no gloss, no HDR, no studio white. Surfaces limited to: cream khadi muslin cloth, dark worn terracotta-brown clay, hammered brass, used steel. Background khadi cream #F5EEE3 where seamless. Quiet kitchen corner still life: a brass chakli press, folded cream khadi cloth, a used steel kadhai, dawn light through a window, no food anywhere, calm and empty",
+    "ar": "16:9"
+  }
+]

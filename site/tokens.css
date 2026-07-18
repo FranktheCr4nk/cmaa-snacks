@@ -1,0 +1,658 @@
+/* ============================================================
+   SEEMA v3 — "UNWIND" · design tokens + component classes
+   Agent C (UI). Framework-free. Everything class-based.
+   Consumed by: styleguide.html, index.html (agent F),
+   motion.js (agent E — animates ONLY these classes/vars).
+   Brief: docs/v3-creative-brief.md §2 (art direction), §6.C.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   0 · CUSTOM PROPERTIES
+   ------------------------------------------------------------ */
+:root {
+  /* palette — 5 values total (brief §2.1). No gradients, no pure
+     white, no pure black, no dark sections. */
+  --khadi: #F5EEE3;   /* base world — every background            */
+  --roast: #2E1F16;   /* ink — all type, all line-work            */
+  --haldi: #DA8A1D;   /* primary accent — active line, CTA fill   */
+  --chili: #A93B26;   /* secondary — one word/chapter, stamp      */
+  --ghee:  #F3C877;   /* highlight — hover, active pill text,
+                         focus rings. NEVER a background field.   */
+
+  /* derived inks (mix only — never new hues) */
+  --roast-70: color-mix(in oklab, var(--roast) 70%, var(--khadi));
+  --roast-45: color-mix(in oklab, var(--roast) 45%, var(--khadi));
+  --roast-25: color-mix(in oklab, var(--roast) 25%, var(--khadi)); /* hairlines */
+  --roast-10: color-mix(in oklab, var(--roast) 10%, var(--khadi)); /* grey-box fill */
+  --khadi-deep: color-mix(in oklab, var(--roast) 5%, var(--khadi)); /* card wells */
+
+  /* type (brief §2.2) */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+  --font-dev: "IBM Plex Sans Devanagari", var(--font-display);
+
+  --fs-display: clamp(2.8rem, 8vw, 7.5rem);   /* B1 hero, B6 crunch   */
+  --fs-chapter: clamp(2rem, 5vw, 4.25rem);    /* B3 manifesto, titles */
+  --fs-h3: clamp(1.375rem, 2.6vw, 2.125rem);  /* card names, B2 line  */
+  --fs-body: 1.125rem;                        /* rare running text    */
+  --fs-mono: 0.8125rem;                       /* 13px captions/labels */
+  --fs-mono-lg: 0.875rem;                     /* 14px ledger/nav      */
+
+  --lh-display: 1.02;
+  --lh-chapter: 1.12;
+  --lh-body: 1.55;
+  --lh-mono: 1.6;
+  --ls-mono: 0.06em;
+
+  /* spacing scale (rem; 4px base) */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-6: 1.5rem;
+  --sp-8: 2rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+  --sp-24: 6rem;
+  --sp-32: 8rem;
+
+  /* page geometry */
+  --margin: clamp(1.25rem, 6vw, 6rem);   /* page side margin        */
+  --gutter: clamp(0.75rem, 1.5vw, 1.5rem);
+  --container-max: 100rem;               /* 1600px                  */
+  --chrome-pad: clamp(1rem, 2.5vw, 2rem);
+
+  /* radii */
+  --r-pill: 999px;
+  --r-card: 0.875rem;    /* detail cards, expandables */
+  --r-stamp: 0.625rem;
+  /* arch: semicircular crown on a 4:5 box (50% of width = 40% of height) */
+  --r-arch: 50% 50% 0 0 / 40% 40% 0 0;
+
+  /* line-work (brief §2.3) */
+  --stroke: 2px;                 /* the spiral, all drawn lines     */
+  --dash-dot: 1 7;               /* SVG stroke-dasharray for dots   */
+
+  /* z-layers */
+  --z-behind: -1;    /* type BEHIND product (B1 "Made by")          */
+  --z-base: 0;
+  --z-media: 10;     /* photography                                 */
+  --z-line: 20;      /* the traveling spiral path                   */
+  --z-front: 30;     /* type IN FRONT of product ("one pair…")      */
+  --z-stamp: 40;     /* B9 stamp, crunch burst                      */
+  --z-card: 50;      /* dial detail card                            */
+  --z-chrome: 100;   /* wordmark, breadcrumb, order pill, cue       */
+  --z-loader: 200;   /* B0                                          */
+
+  /* motion — durations */
+  --t-hover: 150ms;
+  --t-burst: 350ms;        /* crunch burst (catalog #24)            */
+  --t-enter: 700ms;        /* standard entrance                     */
+  --t-reveal: 900ms;       /* aperture/rack-focus class swaps       */
+  --t-loader-min: 1200ms;  /* loader floor (L2)                     */
+  --t-idle: 2000ms;        /* hero idle drift period                */
+  --t-steam: 2500ms;       /* steam squiggle base period            */
+
+  /* motion — easings (brief §6.E doctrine) */
+  --ease-enter: cubic-bezier(0.16, 1, 0.3, 1);      /* expo.out — entrances   */
+  --ease-scrub: cubic-bezier(0.45, 0, 0.55, 1);     /* power2.inOut — scrubs  */
+  --ease-scrub-out: cubic-bezier(0.5, 1, 0.89, 1);  /* power2.out             */
+  --ease-slap: cubic-bezier(0.34, 1.56, 0.64, 1);   /* back.out — stamp ONLY  */
+
+  /* grain */
+  --grain-opacity: 0.05;  /* reads as ~2% noise after multiply      */
+}
+
+/* ------------------------------------------------------------
+   1 · BASE
+   ------------------------------------------------------------ */
+html { background: var(--khadi); color: var(--roast); }
+
+body {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  background: var(--khadi);
+  color: var(--roast);
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg, video { display: block; max-width: 100%; }
+
+::selection { background: var(--ghee); color: var(--roast); }
+
+:focus-visible {
+  outline: 2px solid var(--ghee);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ------------------------------------------------------------
+   2 · TYPE CLASSES
+   Grammar: felt = Fraunces sentence-case · factual = Plex Mono.
+   Uppercase allowed ONLY in mono. No exclamation marks anywhere.
+   ------------------------------------------------------------ */
+.t-display,
+.t-chapter,
+.t-h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  margin: 0;
+}
+
+.t-display {
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  letter-spacing: -0.015em;
+  font-optical-sizing: auto;
+  font-variation-settings: "SOFT" 50, "WONK" 1; /* display sizes only */
+}
+
+.t-chapter {
+  font-size: var(--fs-chapter);
+  line-height: var(--lh-chapter);
+  letter-spacing: -0.01em;
+  font-variation-settings: "SOFT" 50, "WONK" 1;
+}
+
+.t-h3 {
+  font-size: var(--fs-h3);
+  line-height: 1.2;
+  font-variation-settings: "SOFT" 50, "WONK" 0;
+}
+
+.t-body { font-family: var(--font-display); font-weight: 400; font-size: var(--fs-body); line-height: var(--lh-body); margin: 0; }
+
+.t-mono,
+.t-mono-lg {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  letter-spacing: var(--ls-mono);
+  line-height: var(--lh-mono);
+  margin: 0;
+}
+.t-mono { font-size: var(--fs-mono); }
+.t-mono-lg { font-size: var(--fs-mono-lg); }
+.t-mono--up { text-transform: uppercase; }     /* mono only */
+.t-mono--dim { color: var(--roast-70); }
+
+/* Devanagari accent (सीमा, हातची चव) — wordmark + B8 only */
+.t-dev {
+  font-family: var(--font-dev);
+  font-weight: 400;
+  font-size: 1em;
+  margin: 0;
+}
+
+/* single chili word per chapter, max */
+.u-chili { color: var(--chili); }
+.u-haldi { color: var(--haldi); }
+
+/* ------------------------------------------------------------
+   3 · UNDERLINE UTIL (the line underlining truths, B1/B3)
+   Animatable via --u-progress (0→1). Multi-line safe.
+   ------------------------------------------------------------ */
+.u-underline {
+  --u-color: var(--haldi);
+  --u-progress: 1;
+  background-image: linear-gradient(var(--u-color), var(--u-color));
+  background-repeat: no-repeat;
+  background-position: 0 92%;
+  background-size: calc(var(--u-progress) * 100%) 0.075em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.u-underline--chili { --u-color: var(--chili); }
+
+/* ------------------------------------------------------------
+   4 · GRAIN OVERLAY UTIL (brief §2.3 — paper grain, multiply)
+   Apply to any positioned section; ::after stays out of flow.
+   ------------------------------------------------------------ */
+.u-grain { position: relative; }
+.u-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  opacity: var(--grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+.u-grain--fixed::after { position: fixed; }   /* whole-page wash */
+
+/* ------------------------------------------------------------
+   5 · ARCH MASK UTIL (B7 arched-window cards, La Revoltosa)
+   Semicircular crown, straight sides, flat foot.
+   ------------------------------------------------------------ */
+.u-arch {
+  aspect-ratio: 4 / 5;
+  border-radius: var(--r-arch);
+  overflow: hidden;
+}
+.u-arch > img, .u-arch > .slot { width: 100%; height: 100%; object-fit: cover; }
+.u-arch--squat { aspect-ratio: 1 / 1; border-radius: 50% 50% 0 0 / 50% 50% 0 0; }
+
+/* ------------------------------------------------------------
+   6 · IMAGE SLOT (grey-box placeholder at exact shot AR — §5)
+   Usage: <div class="slot slot--4x5" data-shot="S1 · hero chakli"></div>
+   Agent F swaps each slot for its <picture> at the same AR.
+   ------------------------------------------------------------ */
+.slot {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background:
+    linear-gradient(to top right,
+      transparent calc(50% - 1px), var(--roast-25) calc(50% - 1px),
+      var(--roast-25) calc(50% + 1px), transparent calc(50% + 1px)),
+    var(--roast-10);
+  outline: 1px dashed var(--roast-45);
+  outline-offset: -1px;
+}
+.slot::after {
+  content: attr(data-shot);
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: var(--ls-mono);
+  color: var(--roast-70);
+  background: var(--khadi);
+  padding: var(--sp-1) var(--sp-3);
+  white-space: nowrap;
+}
+.slot--4x5  { aspect-ratio: 4 / 5; }
+.slot--1x1  { aspect-ratio: 1 / 1; }
+.slot--16x9 { aspect-ratio: 16 / 9; }
+.slot--round { border-radius: 50%; overflow: hidden; }
+.slot--cutout { outline-style: dotted; background: var(--khadi-deep); } /* alpha cutouts S13–S15 */
+
+/* ------------------------------------------------------------
+   7 · PILLS
+   .pill        — mono label pill (dial compass, breadcrumb base)
+   .is-active   — dial active state: roast fill, ghee text
+   ------------------------------------------------------------ */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-4);
+  border: 1px solid var(--roast-45);
+  border-radius: var(--r-pill);
+  background: var(--khadi);
+  color: var(--roast);
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  font-weight: 500;
+  letter-spacing: var(--ls-mono);
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+  transition:
+    background-color var(--t-hover) var(--ease-enter),
+    color var(--t-hover) var(--ease-enter),
+    border-color var(--t-hover) var(--ease-enter);
+}
+.pill.is-active {
+  background: var(--roast);
+  border-color: var(--roast);
+  color: var(--ghee);
+}
+
+/* ------------------------------------------------------------
+   8 · BUTTONS
+   .btn         — primary CTA: haldi fill, roast ink (B10, order)
+   .btn--quiet  — the "Add" pill on shelf cards
+   ------------------------------------------------------------ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-8);
+  min-height: 2.75rem;                 /* 44px tap target */
+  border: 1px solid var(--haldi);
+  border-radius: var(--r-pill);
+  background: var(--haldi);
+  color: var(--roast);
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-lg);
+  font-weight: 500;
+  letter-spacing: var(--ls-mono);
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--t-hover) var(--ease-enter),
+    border-color var(--t-hover) var(--ease-enter),
+    transform var(--t-hover) var(--ease-enter);
+}
+.btn:hover { background: var(--ghee); border-color: var(--ghee); }
+.btn:active { transform: scale(0.97); }
+
+.btn--quiet {
+  background: transparent;
+  border-color: var(--roast-45);
+  color: var(--roast);
+  padding: var(--sp-2) var(--sp-6);
+  min-height: 2.75rem;
+}
+.btn--quiet:hover { background: var(--ghee); border-color: var(--ghee); }
+
+/* ------------------------------------------------------------
+   9 · STAMP (B9 — chili rubber stamp, used ONCE on the site)
+   Slap-down animation is agent E's; end-state lives here.
+   ------------------------------------------------------------ */
+.stamp {
+  --stamp-rot: -6deg;
+  display: inline-block;
+  padding: var(--sp-2) var(--sp-4);
+  border: 3px solid var(--chili);
+  border-radius: var(--r-stamp);
+  box-shadow: inset 0 0 0 1px var(--khadi), inset 0 0 0 2.5px var(--chili);
+  color: var(--chili);
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-lg);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.3;
+  transform: rotate(var(--stamp-rot));
+  mix-blend-mode: multiply;   /* sits on the S9 pack photo */
+}
+
+/* ------------------------------------------------------------
+   10 · LEDGER BLOCKS (the "honest label" voice)
+   .ledger        — rows with dotted leaders (nutrition, batch)
+   .ledger--bare  — stacked mono lines, no leaders (B8 portrait)
+   ------------------------------------------------------------ */
+.ledger {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-lg);
+  letter-spacing: var(--ls-mono);
+  line-height: var(--lh-mono);
+  color: var(--roast);
+  max-width: 34rem;
+}
+.ledger__row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-3);
+  padding: var(--sp-2) 0;
+}
+.ledger__dots {
+  flex: 1;
+  height: 0.5em;
+  background-image: radial-gradient(circle, var(--roast-45) 1px, transparent 1.4px);
+  background-size: 8px 2px;
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+}
+.ledger__val { white-space: nowrap; }
+.ledger--bare .ledger__row { display: block; padding: var(--sp-1) 0; }
+
+/* dotted horizontal rule (CSS twin of SVG dasharray 1 7) */
+.u-rule-dotted {
+  border: 0;
+  height: 2px;
+  margin: 0;
+  background-image: radial-gradient(circle, var(--roast-45) 1px, transparent 1.4px);
+  background-size: 8px 2px;
+  background-repeat: repeat-x;
+}
+
+/* ------------------------------------------------------------
+   11 · CHROME (global — brief §3 intro)
+   wordmark top-left · breadcrumb pill top-right ·
+   order pill docks after B7 · scroll cue bottom-right
+   ------------------------------------------------------------ */
+.chrome {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: var(--z-chrome);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding: var(--chrome-pad);
+  pointer-events: none;              /* children re-enable */
+}
+.chrome > * { pointer-events: auto; }
+@media (max-width: 480px) { .chrome { flex-wrap: wrap; } }
+
+.chrome__wordmark { display: inline-flex; align-items: center; gap: var(--sp-2); color: var(--roast); text-decoration: none; }
+.chrome__wordmark svg { height: 1.75rem; width: auto; }
+
+.chrome__right { display: inline-flex; align-items: center; gap: var(--sp-3); }
+
+/* breadcrumb — rewrites per chapter: `SEEMA / NOTHING TO HIDE` */
+.crumb {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-4);
+  border: 1px solid var(--roast-25);
+  border-radius: var(--r-pill);
+  background: color-mix(in oklab, var(--khadi) 82%, transparent);
+  backdrop-filter: blur(6px);
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  font-weight: 400;
+  letter-spacing: var(--ls-mono);
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--roast);
+  white-space: nowrap;
+}
+.crumb__brand { font-weight: 500; }
+.crumb__sep { color: var(--roast-45); }
+.crumb__chapter { color: var(--roast-70); }
+/* mobile: chapter only — the wordmark already says seema */
+@media (max-width: 480px) {
+  .crumb__brand, .crumb__sep { display: none; }
+  .crumb__chapter { color: var(--roast); }
+}
+
+/* order pill — hidden until #b7 has been reached, then permanent */
+.order-pill {
+  opacity: 0;
+  transform: translateY(-0.5rem);
+  pointer-events: none !important;
+  transition:
+    opacity var(--t-enter) var(--ease-enter),
+    transform var(--t-enter) var(--ease-enter);
+}
+.order-pill.is-docked {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto !important;
+}
+
+/* scroll cue — fades after first scroll (.is-hidden) */
+.scroll-cue {
+  position: fixed;
+  right: var(--chrome-pad);
+  bottom: var(--chrome-pad);
+  z-index: var(--z-chrome);
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: var(--ls-mono);
+  color: var(--roast-70);
+  transition: opacity var(--t-enter) var(--ease-enter);
+}
+.scroll-cue.is-hidden { opacity: 0; pointer-events: none; }
+
+/* ------------------------------------------------------------
+   12 · DIAL (B4 "Nothing to hide" — reused verbatim in B9)
+   Square stage; SVG ring (agent D) fills it; product 1:1 at
+   center; 4 mono pills at compass points; detail card top-right
+   of the SECTION (not the dial) — see spec §B4.
+   ------------------------------------------------------------ */
+.dial {
+  position: relative;
+  width: min(72vh, 44rem);
+  max-width: 88vw;
+  aspect-ratio: 1 / 1;
+  margin-inline: auto;
+}
+.dial__ring {                       /* slot for D's ring+ticks svg */
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-line);
+  color: var(--roast);
+  pointer-events: none;
+}
+.dial__center {                     /* S2 top-down product */
+  position: absolute;
+  inset: 13%;
+  z-index: var(--z-media);
+  border-radius: 50%;
+  overflow: hidden;
+}
+.dial__pill {
+  position: absolute;
+  z-index: var(--z-front);
+  transform: translate(-50%, -50%);
+}
+.dial__pill--n { left: 50%; top: 0; }
+.dial__pill--e { left: 100%; top: 50%; }
+.dial__pill--s { left: 50%; top: 100%; }
+.dial__pill--w { left: 0; top: 50%; }
+
+/* section wrapper: positions the detail card top-right on desktop,
+   stacks it below the dial on mobile (brief §3 B4 fallback) */
+.dial-wrap { position: relative; }
+.dial-wrap .dial-card { position: absolute; top: 0; right: 0; }
+
+/* mobile: static circle, all four pills visible, no overflow —
+   E/W pills pull flush inside the dial's edges */
+@media (max-width: 767px) {
+  .dial { width: min(84vw, 21rem); }
+  .dial__pill--e { left: auto; right: 0; transform: translateY(-50%); }
+  .dial__pill--w { left: 0; transform: translateY(-50%); }
+  .dial-wrap .dial-card {
+    position: static;
+    max-width: 100%;
+    margin: var(--sp-8) auto 0;
+  }
+}
+
+/* detail card — one sentence, parked top-right of section */
+.dial-card {
+  max-width: 19rem;
+  padding: var(--sp-4) var(--sp-6);
+  border: 1px solid var(--roast-25);
+  border-radius: var(--r-card);
+  background: var(--khadi);
+  box-shadow: 0 1px 0 var(--roast-10);
+  z-index: var(--z-card);
+}
+.dial-card .t-mono--up { color: var(--roast-70); }
+.dial-card__text { font-family: var(--font-display); font-size: 1.0625rem; line-height: 1.45; margin: var(--sp-2) 0 0; }
+
+/* ------------------------------------------------------------
+   13 · ARCH CARDS (B7 — the shelf, three doors)
+   SKU accent tints the arch well behind the render.
+   Wobble on hover is agent E's; transform-origin set here.
+   ------------------------------------------------------------ */
+.card-arch {
+  --sku-accent: var(--haldi);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  text-align: center;
+  transform-origin: 50% 100%;        /* jelly wobble squashes from foot */
+}
+.card-arch__media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--r-arch);
+  overflow: hidden;
+  background: color-mix(in oklab, var(--sku-accent) 16%, var(--khadi));
+}
+.card-arch__media > img, .card-arch__media > .slot { width: 100%; height: 100%; object-fit: cover; }
+/* SKU tint — a warm wash multiplied over the render (or grey-box) */
+.card-arch__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--sku-accent);
+  opacity: 0.14;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  transition: opacity var(--t-hover) var(--ease-enter);
+}
+.card-arch:hover .card-arch__media::after,
+.card-arch:focus-within .card-arch__media::after { opacity: 0.26; }
+.card-arch__name { margin-top: var(--sp-2); }
+.card-arch__meta { color: var(--roast-70); }
+.card-arch__add { align-self: center; }
+.card-arch--chakli { --sku-accent: var(--haldi); }
+.card-arch--chivda { --sku-accent: var(--chili); }
+.card-arch--lahya  { --sku-accent: var(--ghee);  }
+
+/* mono expandable (nutrition/ingredients, plain text, no icons) */
+.card-arch__facts { text-align: left; }
+.card-arch__facts summary {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: var(--ls-mono);
+  color: var(--roast-70);
+  cursor: pointer;
+  list-style: none;
+  padding: var(--sp-2) 0;
+}
+.card-arch__facts summary::-webkit-details-marker { display: none; }
+.card-arch__facts summary::before { content: "+ "; }
+.card-arch__facts[open] summary::before { content: "− "; }
+
+/* ------------------------------------------------------------
+   14 · LAYOUT HELPERS
+   ------------------------------------------------------------ */
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--margin);
+}
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--gutter);
+}
+@media (max-width: 767px) {
+  .grid-12 { grid-template-columns: repeat(4, 1fr); }
+}
+.beat {                    /* one <section> per beat */
+  position: relative;
+  padding-block: var(--sp-32);
+}
+.beat--full { min-height: 100vh; padding-block: 0; }
+
+/* visually hidden (a11y labels) */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ------------------------------------------------------------
+   15 · REDUCED MOTION (kill-switch contract with agent E)
+   E swaps timelines for .is-endstate classes; CSS transitions
+   here are cheap and safe but still honor the query.
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

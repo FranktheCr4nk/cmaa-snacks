@@ -1,0 +1,32 @@
+<!-- Seema v3 · agent D · B5 "everything inside" leader lines. Centre (600,400), chakli radius ~175.
+     Label anchors (mono 13px, attach at tail end): rice flour -> (260,250) text-anchor:end · chana dal -> (232,434) text-anchor:end · sesame -> (329,623) text-anchor:end · cumin -> (518,151) text-anchor:end · ajwain -> (896,206) text-anchor:start · butter -> (970,400) text-anchor:start · curry leaves -> (893,601) text-anchor:start -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <g id="leader-1">
+    <circle id="leader-dot-1" cx="448.4" cy="312.5" r="4" fill="currentColor" stroke="none"/>
+    <path id="leader-path-1" d="M448.4 312.5Q400.3 270.9 340.2 250L260.2 250" stroke-width="1.5"/>
+  </g>
+  <g id="leader-2">
+    <circle id="leader-dot-2" cx="426.3" cy="421.3" r="4" fill="currentColor" stroke="none"/>
+    <path id="leader-path-2" d="M426.3 421.3Q375.7 439.6 322.1 434.1L232.1 434.1" stroke-width="1.5"/>
+  </g>
+  <g id="leader-3">
+    <circle id="leader-dot-3" cx="482.9" cy="530.1" r="4" fill="currentColor" stroke="none"/>
+    <path id="leader-path-3" d="M482.9 530.1Q432.2 568.5 399.3 622.9L329.3 622.9" stroke-width="1.5"/>
+  </g>
+  <g id="leader-4">
+    <circle id="leader-dot-4" cx="584.7" cy="225.7" r="4" fill="currentColor" stroke="none"/>
+    <path id="leader-path-4" d="M584.7 225.7Q569.5 189.4 578.2 151L518.2 151" stroke-width="1.5"/>
+  </g>
+  <g id="leader-5">
+    <circle id="leader-dot-5" cx="730.1" cy="282.9" r="4" fill="currentColor" stroke="none"/>
+    <path id="leader-path-5" d="M730.1 282.9Q780.8 253.3 815.5 206L895.5 206" stroke-width="1.5"/>
+  </g>
+  <g id="leader-6">
+    <circle id="leader-dot-6" cx="775" cy="400" r="4" fill="currentColor" stroke="none"/>
+    <path id="leader-path-6" d="M775 400Q827.5 388 880 400L970 400" stroke-width="1.5"/>
+  </g>
+  <g id="leader-7">
+    <circle id="leader-dot-7" cx="730.1" cy="517.1" r="4" fill="currentColor" stroke="none"/>
+    <path id="leader-path-7" d="M730.1 517.1Q768.5 567.8 822.9 600.7L892.9 600.7" stroke-width="1.5"/>
+  </g>
+</svg>

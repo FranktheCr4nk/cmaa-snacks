@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seema v3 — motion self-test (agent E)</title>
+<!-- Exercises loader + morph states + every beat's motion against the
+     published hooks. Layout here is test scaffolding only (agent F owns
+     the real index.html); grey .slot boxes stand in at exact shot ARs. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Devanagari:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<style>
+  /* ---- test-page scaffolding (agent F owns real layout) ---- */
+  html { overflow-x: hidden; }
+  body { overflow-x: hidden; }
+  .beat--full { min-height: 100vh; }
+  /* each beat is its own stacking context so z --z-behind stays visible */
+  .beat { isolation: isolate; }
+  #the-line { color: var(--roast); }
+
+  /* B0 loader overlay */
+  #b0 {
+    position: fixed; inset: 0;
+    z-index: var(--z-loader);
+    background: var(--khadi);
+  }
+  #b0 .t-mono {
+    position: absolute; left: 50%; top: calc(46vh + 200px);
+    transform: translateX(-50%);
+  }
+
+  /* B1 hero — the type sandwich */
+  #b1 .line-1 {
+    position: absolute; left: var(--margin); top: calc(38vh - 1em);
+    z-index: var(--z-behind);
+  }
+  #b1 .line-2 {
+    position: absolute; left: calc(var(--margin) + 8vw); top: calc(58vh - 1em);
+    z-index: var(--z-front);
+  }
+  #b1 .hero-media {
+    position: absolute; height: 78vh; width: 62.4vh;
+    left: calc(66vw - 31.2vh); top: 7vh;
+    z-index: var(--z-media);
+  }
+  #b1 .hero-steam {
+    position: absolute; width: 140px; height: 160px;
+    left: 58vw; top: 2vh; z-index: var(--z-front);
+    color: var(--roast-45);
+  }
+
+  @media (max-width: 767px) {
+    #b1 .line-1 { top: calc(20vh - 1em); }
+    #b1 .hero-media { width: 78vw; height: 97vw; left: 11vw; top: 24vh; }
+    #b1 .line-2 { left: var(--margin); top: 66vh; max-width: 80vw; }
+    #b1 .hero-steam { left: 40vw; top: 12vh; }
+  }
+
+  /* B2 aperture */
+  #b2 { background: var(--khadi); }
+  #b2 .slot--16x9 { position: absolute; inset: 0; aspect-ratio: auto; }
+  #b2 .t-mono--up { position: absolute; left: 24px; top: 24px; z-index: var(--z-front); }
+  #b2 .t-chapter { position: absolute; left: var(--margin); top: calc(82vh - 1em); max-width: 56vw; z-index: var(--z-front); }
+
+  /* B3 manifesto */
+  #b3 { display: grid; place-items: center; }
+  #b3 .t-chapter { width: calc(100% - 2 * var(--margin) - 16vw); margin-inline: auto; }
+
+  /* B4 + B9 dial beats */
+  .dial-beat { padding-top: 6vh; }
+  .dial-beat .kicker { position: absolute; left: var(--margin); top: 10vh; }
+  .dial-beat .t-chapter { position: absolute; left: var(--margin); top: calc(16vh - 0.5em); }
+  /* centered WITHOUT css translate/transform — motion.js measures the
+     dial via the offset tree (transform-blind by design), so layout
+     centering must be offset-based (note for agent F too) */
+  .dial-beat .dial { position: absolute; left: calc(50% - min(36vh, 22rem)); top: calc(54vh - min(36vh, 22rem)); }
+  /* let the 13% inset govern the centre media, not .slot's width/AR */
+  .dial__center.slot { width: auto; height: auto; aspect-ratio: auto; }
+  .dial-wrap .dial-card { top: 10vh; right: var(--margin); }
+  #b9 .stamp { position: absolute; left: 58vw; top: 38vh; z-index: var(--z-stamp); }
+  #b9 .date-line { position: absolute; left: 50%; transform: translateX(-50%); top: calc(54vh + min(36vh, 22rem) + 24px); }
+
+  /* B5 exploded */
+  #b5 .kicker { position: absolute; left: var(--margin); top: 10vh; }
+  #b5 .t-chapter { position: absolute; left: var(--margin); top: calc(16vh - 0.5em); }
+  #b5 .b5-center { position: absolute; width: 42vh; height: 42vh; left: calc(50vw - 21vh); top: 31vh; z-index: var(--z-media); }
+  #b5 .b5-leaders { position: absolute; width: 144vh; height: 96vh; left: calc(50vw - 72vh); top: calc(52vh - 48vh); z-index: var(--z-line); color: var(--roast); pointer-events: none; }
+  #b5 .slot--cutout { position: absolute; z-index: var(--z-media); }
+  #b5 .b5-label { position: absolute; z-index: var(--z-front); }
+
+  /* B6 crunch */
+  #b6 .slot--16x9 { position: absolute; inset: 0; aspect-ratio: auto; }
+  #b6 .crunch-burst { position: absolute; width: 220px; height: 220px; left: calc(55vw - 110px); top: calc(46vh - 110px); z-index: var(--z-stamp); color: var(--roast); }
+  #b6 .t-display { position: absolute; left: 50%; transform: translateX(-50%); top: calc(56vh - 1em); text-align: center; max-width: 12ch; z-index: var(--z-front); }
+
+  /* B7 shelf */
+  #b7 .shelf-head { max-width: 992px; margin-inline: auto; }
+  #b7 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gutter); max-width: 992px; margin: 64px auto 0; }
+  #b7 .card-arch { position: relative; }
+  #b7 .card-sprinkle { position: absolute; left: 50%; top: -8px; transform: translateX(-50%); width: 160px; height: 120px; color: var(--roast); pointer-events: none; z-index: var(--z-front); }
+  #b7 .shelf-note { text-align: center; margin-top: 48px; }
+  @media (max-width: 767px) { #b7 .cards { grid-template-columns: 1fr; gap: 40px; } }
+
+  /* B8 portrait */
+  #b8 .portrait { position: absolute; height: 72vh; width: 57.6vh; left: calc(var(--margin) + 8vw); top: 14vh; z-index: var(--z-media); }
+  #b8 .t-display { position: absolute; left: 56vw; top: calc(38vh - 1em); }
+  #b8 .t-dev { position: absolute; left: 56.2vw; top: 40vh; font-size: 28px; color: var(--roast-70); }
+  #b8 .ledger { position: absolute; left: 56vw; top: 52vh; }
+
+  /* B10 footer */
+  #b10 { min-height: 100vh; }
+  #b10 .t-chapter { position: absolute; left: 50%; transform: translateX(-50%); top: calc(48vh - 1em); text-align: center; width: 100%; }
+  #b10 .btn { position: absolute; left: 50%; transform: translateX(-50%); top: 56vh; }
+  #b10 .b10-rule { position: absolute; left: var(--margin); right: var(--margin); top: 78vh; height: 2px; background: var(--roast); }
+  #b10 .lockup { position: absolute; left: var(--margin); top: 84vh; display: flex; align-items: center; gap: 12px; }
+  #b10 .contact { position: absolute; right: var(--margin); top: 84vh; }
+</style>
+</head>
+<body class="u-grain">
+
+<!-- THE traveling line — one path, B0→B10. Lives OUTSIDE #b0 so it
+     survives the overlay; motion.js reveals + positions it. -->
+<svg id="the-line" viewBox="0 0 1000 1000" style="visibility:hidden" aria-hidden="true" focusable="false">
+  <path id="spiral-master" d="" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+</svg>
+
+<!-- chrome -->
+<header class="chrome">
+  <a class="chrome__wordmark" href="#b1"><span class="t-h3">seema</span><span class="t-dev t-mono--dim">सीमा</span></a>
+  <div class="chrome__right">
+    <span class="crumb"><span class="crumb__brand">SEEMA</span><span class="crumb__sep">/</span><span class="crumb__chapter">BATCH 0117</span></span>
+    <a class="btn order-pill" href="#b10">Order</a>
+  </div>
+</header>
+<p class="scroll-cue t-mono">scroll — slowly is fine</p>
+
+<!-- B0 · loader -->
+<section id="b0" class="u-grain" aria-hidden="true">
+  <p class="t-mono t-mono--dim">batch no. 0117 — loading fresh</p>
+</section>
+
+<!-- B1 · hero -->
+<section id="b1" class="beat beat--full">
+  <h1 class="t-display line-1">Made by</h1>
+  <div class="slot slot--4x5 hero-media" data-shot="S1 · hero chakli"></div>
+  <svg class="hero-steam" viewBox="0 0 140 160" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+    <path id="steam-1" d="M34 150C22 124 46 106 34 78C24 56 44 42 36 18"/>
+    <path id="steam-2" d="M72 156C60 128 86 110 72 80C60 54 84 38 74 10"/>
+    <path id="steam-3" d="M110 146C100 122 122 106 110 82C100 62 118 48 112 30"/>
+  </svg>
+  <p class="t-display line-2">one pair of <span class="u-underline">hands.</span></p>
+</section>
+
+<!-- B2 · 04:30 -->
+<section id="b2" class="beat beat--full">
+  <div class="slot slot--16x9" data-shot="S12 · the press, 04:30"></div>
+  <p class="t-mono t-mono--up">04:30 — the kitchen is already awake</p>
+  <h2 class="t-chapter">Before the city wakes, the press does.</h2>
+</section>
+
+<!-- B3 · manifesto -->
+<section id="b3" class="beat beat--full">
+  <p class="t-chapter">No <span class="u-underline">factory</span>. No <span class="u-underline">palm oil</span>. No <span class="u-underline">preservatives</span>. No <span class="u-underline">&lsquo;natural identical flavours&rsquo;</span>. Rice, dal, butter, spice — and a woman who <span class="u-chili">refuses</span> to cut corners.</p>
+</section>
+
+<!-- B4 · nothing to hide -->
+<section id="b4" class="beat beat--full dial-beat dial-wrap">
+  <p class="t-mono t-mono--up t-mono--dim kicker">chapter one — the label, out loud</p>
+  <h2 class="t-chapter">Nothing to hide.</h2>
+  <div class="dial">
+    <div class="dial__ring">
+      <svg viewBox="0 0 680 680" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <path id="dial-ring" stroke-dasharray="1 7" d="M356.1 71.7L360.7 71.7L365.4 71.5L370.1 71.5L374.7 71.6L379.3 72.1L383.9 72.9L388.4 73.9L393 75L397.5 76.1L402 77.1L406.5 78L411.1 79L415.6 80L420.1 81.2L424.5 82.6L428.9 84.1L433.3 85.7L437.7 87.2L442.1 88.8L446.4 90.5L450.7 92.3L454.8 94.5L458.8 97L462.7 99.6L466.5 102.2L470.3 104.8L474.3 107.2L478.3 109.5L482.3 111.8L486.3 114.1L490.2 116.6L494 119.2L497.8 121.9L501.5 124.6L505.2 127.4L508.9 130.1L512.6 132.9L516.2 135.8L519.7 138.8L523 142.1L526.2 145.4L529.4 148.7L532.7 152L536.1 155.2L539.6 158.2L543.1 161.3L546.5 164.5L549.8 167.8L552.8 171.4L555.6 175.1L558.3 178.9L560.9 182.7L563.6 186.6L566.1 190.4L568.6 194.4L570.8 198.5L572.9 202.6L574.9 206.8L576.8 211.1L578.8 215.2L580.9 219.4L583.1 223.4L585.4 227.5L587.5 231.6L589.3 235.9L590.9 240.2L592.2 244.7L593.5 249.2L594.7 253.6L596 258.1L597.3 262.5L598.6 266.9L599.9 271.3L601.1 275.8L602.1 280.3L603.2 284.8L604.3 289.2L605.5 293.7L606.7 298.2L608 302.7L609 307.3L609.8 311.9L610.2 316.5L610.4 321.1L610.3 325.8L610.3 330.4L610.3 335.1L610.5 339.7L610.6 344.4L610.6 349L610.5 353.7L610.1 358.3L609.7 362.9L609.2 367.5L608.7 372.1L608.2 376.8L607.6 381.4L606.9 386L605.8 390.5L604.5 395L603 399.4L601.3 403.7L599.8 408.1L598.4 412.5L597.1 416.9L596 421.4L594.8 425.8L593.5 430.3L592.1 434.7L590.5 439L588.8 443.3L587.1 447.6L585.4 451.9L583.7 456.2L581.8 460.5L579.8 464.6L577.5 468.7L575.1 472.7L572.6 476.6L570.2 480.5L567.9 484.5L565.7 488.6L563.5 492.7L561.2 496.8L558.8 500.8L556.1 504.6L553.2 508.2L550.1 511.7L546.9 515.2L543.8 518.6L540.6 521.9L537.3 525.3L534 528.5L530.4 531.5L526.8 534.4L523.2 537.3L519.6 540.2L516.1 543.2L512.7 546.4L509.3 549.5L505.9 552.6L502.3 555.6L498.6 558.3L494.7 560.8L490.7 563.2L486.7 565.5L482.7 567.8L478.8 570.3L474.9 572.7L470.9 575.1L466.9 577.4L462.9 579.6L458.8 581.8L454.7 583.9L450.6 586.2L446.6 588.5L442.5 590.8L438.3 592.9L434.1 594.8L429.7 596.4L425.2 597.7L420.7 598.8L416.1 599.8L411.6 600.8L407.1 601.9L402.6 603.1L398.1 604.2L393.6 605.2L389 606L384.4 606.6L379.8 607.2L375.2 607.8L370.6 608.4L366 609L361.4 609.4L356.7 609.6L352.1 609.6L347.5 609.2L342.8 608.8L338.2 608.4L333.6 608.1L329 608L324.4 608.1L319.8 608.1L315.2 608.1L310.5 607.9L305.9 607.5L301.3 607L296.7 606.4L292.1 605.8L287.5 605.3L282.9 604.6L278.4 603.7L273.9 602.5L269.4 601.1L265 599.6L260.6 598.1L256.2 596.8L251.7 595.5L247.2 594.3L242.7 593.1L238.3 591.7L234 590L229.7 588L225.6 585.8L221.5 583.6L217.5 581.3L213.5 578.9L209.5 576.6L205.5 574.1L201.7 571.5L198 568.8L194.3 566L190.6 563.2L186.8 560.5L183 558L179 555.6L175.1 553.1L171.3 550.4L167.7 547.6L164.2 544.5L160.9 541.3L157.6 538.1L154.3 534.8L150.9 531.6L147.6 528.5L144.2 525.3L140.9 522L137.8 518.6L134.7 515.2L131.6 511.7L128.5 508.3L125.3 504.9L122.2 501.4L119.1 497.9L116.2 494.3L113.6 490.4L111.2 486.4L109.1 482.2L107.1 478L105.1 473.8L103 469.6L100.9 465.5L98.7 461.4L96.7 457.2L94.8 453L93 448.7L91.3 444.4L89.7 440.1L88 435.8L86.3 431.5L84.6 427.2L83.2 422.8L82 418.3L81 413.8L80.2 409.2L79.5 404.6L78.6 400.1L77.5 395.6L76.3 391.2L75 386.7L73.8 382.2L72.8 377.7L72 373.1L71.3 368.6L70.7 364L70.1 359.4L69.6 354.7L69.1 350.1L68.9 345.5L68.9 340.8L69.1 336.2L69.6 331.5L70 326.9L70.4 322.3L70.7 317.6L70.8 313L71 308.3L71.3 303.7L71.9 299.1L72.8 294.5L73.9 290L75.1 285.5L76.4 281L77.7 276.6L79 272.1L80.3 267.7L81.9 263.3L83.5 259L85.3 254.7L87 250.5L88.7 246.2L90.2 241.8L91.5 237.4L92.9 232.9L94.3 228.5L96.1 224.2L98.1 220L100.3 216L102.6 212L104.9 208L107.2 203.9L109.4 199.9L111.7 195.8L114 191.8L116.5 187.9L119.1 184.1L121.8 180.3L124.5 176.5L127.1 172.7L129.7 168.8L132.4 165L135.2 161.3L138.3 157.8L141.7 154.5L145.2 151.5L148.9 148.6L152.5 145.7L156.1 142.7L159.6 139.7L163.1 136.6L166.6 133.6L170.2 130.7L173.9 127.9L177.6 125.2L181.4 122.5L185.1 119.8L188.8 117L192.6 114.3L196.4 111.7L200.4 109.3L204.5 107.2L208.6 105.2L212.8 103.3L217 101.3L221.1 99.1L225.1 96.9L229.1 94.5L233.1 92.2L237.3 90L241.5 88L245.7 86.2L250.1 84.5L254.4 82.9L258.8 81.3L263.2 79.8L267.6 78.4L272.2 77.3L276.7 76.4L281.4 75.7L286 75.1L290.6 74.5L295.1 73.8L299.7 72.9L304.3 72L308.8 71.2L313.4 70.6L318.1 70.2L322.7 70.2L327.4 70.3"/>
+        <g id="dial-tick-1"><path d="M436.3 90.6L450.3 90.6"/><path d="M443.3 83.6L443.3 97.6"/></g>
+        <g id="dial-tick-2"><path d="M523.9 149.1L537.9 149.1"/><path d="M530.9 142.1L530.9 156.1"/></g>
+        <g id="dial-tick-3"><path d="M582.4 236.7L596.4 236.7"/><path d="M589.4 229.7L589.4 243.7"/></g>
+        <g id="dial-tick-4"><path d="M582.4 443.3L596.4 443.3"/><path d="M589.4 436.3L589.4 450.3"/></g>
+        <g id="dial-tick-5"><path d="M523.9 530.9L537.9 530.9"/><path d="M530.9 523.9L530.9 537.9"/></g>
+        <g id="dial-tick-6"><path d="M436.3 589.4L450.3 589.4"/><path d="M443.3 582.4L443.3 596.4"/></g>
+        <g id="dial-tick-7"><path d="M229.7 589.4L243.7 589.4"/><path d="M236.7 582.4L236.7 596.4"/></g>
+        <g id="dial-tick-8"><path d="M142.1 530.9L156.1 530.9"/><path d="M149.1 523.9L149.1 537.9"/></g>
+        <g id="dial-tick-9"><path d="M83.6 443.3L97.6 443.3"/><path d="M90.6 436.3L90.6 450.3"/></g>
+        <g id="dial-tick-10"><path d="M83.6 236.7L97.6 236.7"/><path d="M90.6 229.7L90.6 243.7"/></g>
+        <g id="dial-tick-11"><path d="M142.1 149.1L156.1 149.1"/><path d="M149.1 142.1L149.1 156.1"/></g>
+        <g id="dial-tick-12"><path d="M229.7 90.6L243.7 90.6"/><path d="M236.7 83.6L236.7 97.6"/></g>
+      </svg>
+    </div>
+    <div class="dial__center slot slot--1x1 slot--round" data-shot="S2 · dial chakli"></div>
+    <span class="pill dial__pill dial__pill--n">NO PALM OIL</span>
+    <span class="pill dial__pill dial__pill--e">NO PRESERVATIVES</span>
+    <span class="pill dial__pill dial__pill--s">NO ARTIFICIAL COLOUR</span>
+    <span class="pill dial__pill dial__pill--w">NO MACHINES</span>
+  </div>
+  <aside class="dial-card"><p class="t-mono t-mono--up">no palm oil</p><p class="dial-card__text">Fried in groundnut oil we&rsquo;d feed our own kids. Because we do.</p></aside>
+  <aside class="dial-card"><p class="t-mono t-mono--up">no preservatives</p><p class="dial-card__text">Nothing added to make it keep. A batch never sits long enough to need it.</p></aside>
+  <aside class="dial-card"><p class="t-mono t-mono--up">no artificial colour</p><p class="dial-card__text">The gold is haldi and slow frying. Nothing else.</p></aside>
+  <aside class="dial-card"><p class="t-mono t-mono--up">no machines</p><p class="dial-card__text">One brass press, two hands. That small wobble in the spiral is me.</p></aside>
+</section>
+
+<!-- B5 · everything inside -->
+<section id="b5" class="beat beat--full">
+  <p class="t-mono t-mono--up t-mono--dim kicker">chapter two — the mirror</p>
+  <h2 class="t-chapter">Everything inside.</h2>
+  <div class="slot slot--1x1 b5-center" data-shot="S3 · exploded center"></div>
+  <svg class="b5-leaders" viewBox="0 0 1200 800" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+    <g id="leader-1"><circle id="leader-dot-1" cx="448.4" cy="312.5" r="4" fill="currentColor" stroke="none"/><path id="leader-path-1" d="M448.4 312.5Q400.3 270.9 340.2 250L260.2 250" stroke-width="1.5"/></g>
+    <g id="leader-2"><circle id="leader-dot-2" cx="426.3" cy="421.3" r="4" fill="currentColor" stroke="none"/><path id="leader-path-2" d="M426.3 421.3Q375.7 439.6 322.1 434.1L232.1 434.1" stroke-width="1.5"/></g>
+    <g id="leader-3"><circle id="leader-dot-3" cx="482.9" cy="530.1" r="4" fill="currentColor" stroke="none"/><path id="leader-path-3" d="M482.9 530.1Q432.2 568.5 399.3 622.9L329.3 622.9" stroke-width="1.5"/></g>
+    <g id="leader-4"><circle id="leader-dot-4" cx="584.7" cy="225.7" r="4" fill="currentColor" stroke="none"/><path id="leader-path-4" d="M584.7 225.7Q569.5 189.4 578.2 151L518.2 151" stroke-width="1.5"/></g>
+    <g id="leader-5"><circle id="leader-dot-5" cx="730.1" cy="282.9" r="4" fill="currentColor" stroke="none"/><path id="leader-path-5" d="M730.1 282.9Q780.8 253.3 815.5 206L895.5 206" stroke-width="1.5"/></g>
+    <g id="leader-6"><circle id="leader-dot-6" cx="775" cy="400" r="4" fill="currentColor" stroke="none"/><path id="leader-path-6" d="M775 400Q827.5 388 880 400L970 400" stroke-width="1.5"/></g>
+    <g id="leader-7"><circle id="leader-dot-7" cx="730.1" cy="517.1" r="4" fill="currentColor" stroke="none"/><path id="leader-path-7" d="M730.1 517.1Q768.5 567.8 822.9 600.7L892.9 600.7" stroke-width="1.5"/></g>
+  </svg>
+  <div class="slot slot--1x1 slot--cutout" data-shot="S13a rice flour"  style="width:150px; left:calc(18vw - 75px); top:calc(26vh - 75px);"></div>
+  <div class="slot slot--1x1 slot--cutout" data-shot="S13b chana dal"   style="width:130px; left:calc(33vw - 65px); top:calc(18vh - 65px);"></div>
+  <div class="slot slot--1x1 slot--cutout" data-shot="S13c sesame"      style="width:120px; left:calc(67vw - 60px); top:calc(17vh - 60px);"></div>
+  <div class="slot slot--1x1 slot--cutout" data-shot="S14a cumin"       style="width:110px; left:calc(82vw - 55px); top:calc(30vh - 55px);"></div>
+  <div class="slot slot--1x1 slot--cutout" data-shot="S14b ajwain"      style="width:110px; left:calc(84vw - 55px); top:calc(62vh - 55px);"></div>
+  <div class="slot slot--1x1 slot--cutout" data-shot="S14c butter"      style="width:160px; left:calc(70vw - 80px); top:calc(80vh - 80px);"></div>
+  <div class="slot slot--1x1 slot--cutout" data-shot="S15a curry leaves" style="width:150px; left:calc(22vw - 75px); top:calc(72vh - 75px);"></div>
+  <p class="t-mono b5-label" style="right:calc(100vw - 18vw + 87px); top:calc(26vh - 8px); text-align:right;">rice flour — milled this month</p>
+  <p class="t-mono b5-label" style="right:calc(100vw - 33vw + 77px); top:calc(18vh - 8px); text-align:right;">chana dal — roasted at home</p>
+  <p class="t-mono b5-label" style="left:calc(67vw + 72px); top:calc(17vh - 8px);">sesame — toasted same morning</p>
+  <p class="t-mono b5-label" style="left:calc(82vw - 55px); top:calc(30vh + 67px);">cumin — ground the day of frying</p>
+  <p class="t-mono b5-label" style="left:calc(84vw - 160px); top:calc(62vh + 67px);">ajwain — from the same shop for years</p>
+  <p class="t-mono b5-label" style="left:calc(70vw + 92px); top:calc(80vh - 8px);">butter — white, churned at home</p>
+  <p class="t-mono b5-label" style="left:calc(22vw - 75px); top:calc(72vh + 87px);">curry leaves — fried in the same oil</p>
+</section>
+
+<!-- B6 · the crunch -->
+<section id="b6" class="beat beat--full">
+  <div class="slot slot--16x9" data-shot="S5 · crunch cross-section"></div>
+  <svg class="crunch-burst" viewBox="0 0 240 240" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+    <path id="burst-1" d="M166.4 107.6L212.7 95.2"/>
+    <path id="burst-2" d="M141.6 79.4L167.9 29.9"/>
+    <path id="burst-3" d="M107.1 71.7L95.7 29.2"/>
+    <path id="burst-4" d="M80.1 95.1L36 67.5"/>
+    <path id="burst-5" d="M74 136.8L30.7 152.5"/>
+    <path id="burst-6" d="M110.4 165L99 218.8"/>
+    <path id="burst-7" d="M152.1 158.3L182.4 194.3"/>
+    <circle id="crumb-1" cx="211.7" cy="55.8" r="3.2" fill="currentColor" stroke="none"/>
+    <circle id="crumb-2" cx="4.4" cy="109.9" r="2.4" fill="currentColor" stroke="none"/>
+    <circle id="crumb-3" cx="148.2" cy="225.3" r="3.6" fill="currentColor" stroke="none"/>
+  </svg>
+  <p class="t-display">You&rsquo;ll hear it before you taste it.</p>
+</section>
+
+<!-- B7 · the shelf -->
+<section id="b7" class="beat">
+  <div class="shelf-head">
+    <p class="t-mono t-mono--up t-mono--dim">small batch — three things only</p>
+    <h2 class="t-chapter">This week&rsquo;s shelf.</h2>
+  </div>
+  <div class="cards">
+    <article class="card-arch card-arch--chakli">
+      <svg class="card-sprinkle" viewBox="0 0 160 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <path id="speck-1a" transform="translate(34 38) rotate(-28)" d="M-5 0Q-2 -3.2 0 -3.2Q3.4 -3.2 5 0Q3.4 3.2 0 3.2Q-2 3.2 -5 0Z" stroke-width="1.6"/>
+        <path id="speck-2a" transform="translate(72 24) rotate(14)" d="M-5 0Q-2 -3.2 0 -3.2Q3.4 -3.2 5 0Q3.4 3.2 0 3.2Q-2 3.2 -5 0Z" stroke-width="1.6"/>
+        <path id="speck-3a" transform="translate(116 44) rotate(-62)" d="M-5 0Q-2 -3.2 0 -3.2Q3.4 -3.2 5 0Q3.4 3.2 0 3.2Q-2 3.2 -5 0Z" stroke-width="1.6"/>
+        <path id="speck-4a" transform="translate(52 78) rotate(40)" d="M-5 0Q-2 -3.2 0 -3.2Q3.4 -3.2 5 0Q3.4 3.2 0 3.2Q-2 3.2 -5 0Z" stroke-width="1.6"/>
+        <path id="speck-5a" transform="translate(98 88) rotate(-12)" d="M-5 0Q-2 -3.2 0 -3.2Q3.4 -3.2 5 0Q3.4 3.2 0 3.2Q-2 3.2 -5 0Z" stroke-width="1.6"/>
+        <circle id="speck-6a" cx="136" cy="72" r="1.7" fill="currentColor" stroke="none"/>
+        <circle id="speck-7a" cx="22" cy="62" r="1.7" fill="currentColor" stroke="none"/>
+      </svg>
+      <div class="card-arch__media u-arch"><div class="slot slot--4x5" data-shot="S6 · chakli in hand"></div></div>
+      <h3 class="t-h3 card-arch__name">Bhajani chakli</h3>
+      <p class="t-mono card-arch__meta">&#8377; ___ &middot; 250 g &middot; this week&rsquo;s batch</p>
+      <a class="btn btn--quiet card-arch__add" href="#">Add</a>
+      <details class="card-arch__facts"><summary>ingredients + nutrition</summary><div class="ledger"><div class="ledger__row"><span>bhajani flour</span><span class="ledger__dots"></span><span class="ledger__val">rice, dals, spice</span></div></div></details>
+    </article>
+    <article class="card-arch card-arch--chivda">
+      <svg class="card-sprinkle" viewBox="0 0 160 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <path id="speck-1b" transform="translate(34 38) rotate(-28)" d="M-5 0Q-2 -3.2 0 -3.2Q3.4 -3.2 5 0Q3.4 3.2 0 3.2Q-2 3.2 -5 0Z" stroke-width="1.6"/>
+        <path id="speck-2b" transform="translate(72 24) rotate(14)" d="M-5 0Q-2 -3.2 0 -3.2Q3.4 -3.2 5 0Q3.4 3.2 0 3.2Q-2 3.2 -5 0Z" stroke-width="1.6"/>
+        <path id="speck-3b" transform="translate(116 44) rotate(-62)" d="M-5 0Q-2 -3.2 0 -3.2Q3.4 -3.2 5 0Q3.4 3.2 0 3.2Q-2 3.2 -5 0Z" stroke-width="1.6"/>
+        <path id="speck-4b" transform="translate(52 78) rotate(40)" d="M-5 0Q-2 -3.2 0 -3.2Q3.4 -3.2 5 0Q3.4 3.2 0 3.2Q-2 3.2 -5 0Z" stroke-width="1.6"/>
+        <path id="speck-5b" transform="translate(98 88) rotate(-12)" d="M-5 0Q-2 -3.2 0 -3.2Q3.4 -3.2 5 0Q3.4 3.2 0 3.2Q-2 3.2 -5 0Z" stroke-width="1.6"/>
+        <circle id="speck-6b" cx="136" cy="72" r="1.7" fill="currentColor" stroke="none"/>
+        <circle id="speck-7b" cx="22" cy="62" r="1.7" fill="currentColor" stroke="none"/>
+      </svg>
+      <div class="card-arch__media u-arch"><div class="slot slot--4x5" data-shot="S7 · chivda in hand"></div></div>
+      <h3 class="t-h3 card-arch__name">Poha chivda</h3>
+      <p class="t-mono card-arch__meta">&#8377; ___ &middot; 250 g &middot; this week&rsquo;s batch</p>
+      <a class="btn btn--quiet card-arch__add" href="#">Add</a>
+      <details class="card-arch__facts"><summary>ingredients + nutrition</summary><div class="ledger"><div class="ledger__row"><span>thin poha</span><span class="ledger__dots"></span><span class="ledger__val">peanuts, curry leaf</span></div></div></details>
+    </article>
+    <article class="card-arch card-arch--lahya">
+      <svg class="card-sprinkle" viewBox="0 0 160 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <path id="speck-1c" transform="translate(34 38) rotate(-28)" d="M-5 0Q-2 -3.2 0 -3.2Q3.4 -3.2 5 0Q3.4 3.2 0 3.2Q-2 3.2 -5 0Z" stroke-width="1.6"/>
+        <path id="speck-2c" transform="translate(72 24) rotate(14)" d="M-5 0Q-2 -3.2 0 -3.2Q3.4 -3.2 5 0Q3.4 3.2 0 3.2Q-2 3.2 -5 0Z" stroke-width="1.6"/>
+        <path id="speck-3c" transform="translate(116 44) rotate(-62)" d="M-5 0Q-2 -3.2 0 -3.2Q3.4 -3.2 5 0Q3.4 3.2 0 3.2Q-2 3.2 -5 0Z" stroke-width="1.6"/>
+        <path id="speck-4c" transform="translate(52 78) rotate(40)" d="M-5 0Q-2 -3.2 0 -3.2Q3.4 -3.2 5 0Q3.4 3.2 0 3.2Q-2 3.2 -5 0Z" stroke-width="1.6"/>
+        <path id="speck-5c" transform="translate(98 88) rotate(-12)" d="M-5 0Q-2 -3.2 0 -3.2Q3.4 -3.2 5 0Q3.4 3.2 0 3.2Q-2 3.2 -5 0Z" stroke-width="1.6"/>
+        <circle id="speck-6c" cx="136" cy="72" r="1.7" fill="currentColor" stroke="none"/>
+        <circle id="speck-7c" cx="22" cy="62" r="1.7" fill="currentColor" stroke="none"/>
+      </svg>
+      <div class="card-arch__media u-arch"><div class="slot slot--4x5" data-shot="S8 · lahya in hand"></div></div>
+      <h3 class="t-h3 card-arch__name">Lahya crunch bites</h3>
+      <p class="t-mono card-arch__meta">&#8377; ___ &middot; 250 g &middot; this week&rsquo;s batch</p>
+      <a class="btn btn--quiet card-arch__add" href="#">Add</a>
+      <details class="card-arch__facts"><summary>ingredients + nutrition</summary><div class="ledger"><div class="ledger__row"><span>popped jowar</span><span class="ledger__dots"></span><span class="ledger__val">haldi, chili, ghee</span></div></div></details>
+    </article>
+  </div>
+  <p class="t-mono t-mono--dim shelf-note">orders close friday &middot; fried saturday &middot; shipped monday</p>
+</section>
+
+<!-- B8 · Seema -->
+<section id="b8" class="beat beat--full">
+  <div class="slot slot--4x5 portrait" data-shot="S11 · Seema portrait"></div>
+  <h2 class="t-display">Seema</h2>
+  <p class="t-dev">सीमा</p>
+  <div class="ledger ledger--bare">
+    <div class="ledger__row t-mono">making chakli since the &rsquo;90s</div>
+    <div class="ledger__row t-mono">taught by her mother</div>
+    <div class="ledger__row t-mono">still tastes every single batch</div>
+  </div>
+</section>
+
+<!-- B9 · fresh by batch -->
+<section id="b9" class="beat beat--full dial-beat dial-wrap">
+  <p class="t-mono t-mono--up t-mono--dim kicker">chapter three — the calendar</p>
+  <h2 class="t-chapter">Fresh is a schedule.</h2>
+  <div class="dial">
+    <div class="dial__ring">
+      <svg viewBox="0 0 680 680" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <path id="dial-ring-b9" stroke-dasharray="1 7" d="M356.1 71.7L360.7 71.7L365.4 71.5L370.1 71.5L374.7 71.6L379.3 72.1L383.9 72.9L388.4 73.9L393 75L397.5 76.1L402 77.1L406.5 78L411.1 79L415.6 80L420.1 81.2L424.5 82.6L428.9 84.1L433.3 85.7L437.7 87.2L442.1 88.8L446.4 90.5L450.7 92.3L454.8 94.5L458.8 97L462.7 99.6L466.5 102.2L470.3 104.8L474.3 107.2L478.3 109.5L482.3 111.8L486.3 114.1L490.2 116.6L494 119.2L497.8 121.9L501.5 124.6L505.2 127.4L508.9 130.1L512.6 132.9L516.2 135.8L519.7 138.8L523 142.1L526.2 145.4L529.4 148.7L532.7 152L536.1 155.2L539.6 158.2L543.1 161.3L546.5 164.5L549.8 167.8L552.8 171.4L555.6 175.1L558.3 178.9L560.9 182.7L563.6 186.6L566.1 190.4L568.6 194.4L570.8 198.5L572.9 202.6L574.9 206.8L576.8 211.1L578.8 215.2L580.9 219.4L583.1 223.4L585.4 227.5L587.5 231.6L589.3 235.9L590.9 240.2L592.2 244.7L593.5 249.2L594.7 253.6L596 258.1L597.3 262.5L598.6 266.9L599.9 271.3L601.1 275.8L602.1 280.3L603.2 284.8L604.3 289.2L605.5 293.7L606.7 298.2L608 302.7L609 307.3L609.8 311.9L610.2 316.5L610.4 321.1L610.3 325.8L610.3 330.4L610.3 335.1L610.5 339.7L610.6 344.4L610.6 349L610.5 353.7L610.1 358.3L609.7 362.9L609.2 367.5L608.7 372.1L608.2 376.8L607.6 381.4L606.9 386L605.8 390.5L604.5 395L603 399.4L601.3 403.7L599.8 408.1L598.4 412.5L597.1 416.9L596 421.4L594.8 425.8L593.5 430.3L592.1 434.7L590.5 439L588.8 443.3L587.1 447.6L585.4 451.9L583.7 456.2L581.8 460.5L579.8 464.6L577.5 468.7L575.1 472.7L572.6 476.6L570.2 480.5L567.9 484.5L565.7 488.6L563.5 492.7L561.2 496.8L558.8 500.8L556.1 504.6L553.2 508.2L550.1 511.7L546.9 515.2L543.8 518.6L540.6 521.9L537.3 525.3L534 528.5L530.4 531.5L526.8 534.4L523.2 537.3L519.6 540.2L516.1 543.2L512.7 546.4L509.3 549.5L505.9 552.6L502.3 555.6L498.6 558.3L494.7 560.8L490.7 563.2L486.7 565.5L482.7 567.8L478.8 570.3L474.9 572.7L470.9 575.1L466.9 577.4L462.9 579.6L458.8 581.8L454.7 583.9L450.6 586.2L446.6 588.5L442.5 590.8L438.3 592.9L434.1 594.8L429.7 596.4L425.2 597.7L420.7 598.8L416.1 599.8L411.6 600.8L407.1 601.9L402.6 603.1L398.1 604.2L393.6 605.2L389 606L384.4 606.6L379.8 607.2L375.2 607.8L370.6 608.4L366 609L361.4 609.4L356.7 609.6L352.1 609.6L347.5 609.2L342.8 608.8L338.2 608.4L333.6 608.1L329 608L324.4 608.1L319.8 608.1L315.2 608.1L310.5 607.9L305.9 607.5L301.3 607L296.7 606.4L292.1 605.8L287.5 605.3L282.9 604.6L278.4 603.7L273.9 602.5L269.4 601.1L265 599.6L260.6 598.1L256.2 596.8L251.7 595.5L247.2 594.3L242.7 593.1L238.3 591.7L234 590L229.7 588L225.6 585.8L221.5 583.6L217.5 581.3L213.5 578.9L209.5 576.6L205.5 574.1L201.7 571.5L198 568.8L194.3 566L190.6 563.2L186.8 560.5L183 558L179 555.6L175.1 553.1L171.3 550.4L167.7 547.6L164.2 544.5L160.9 541.3L157.6 538.1L154.3 534.8L150.9 531.6L147.6 528.5L144.2 525.3L140.9 522L137.8 518.6L134.7 515.2L131.6 511.7L128.5 508.3L125.3 504.9L122.2 501.4L119.1 497.9L116.2 494.3L113.6 490.4L111.2 486.4L109.1 482.2L107.1 478L105.1 473.8L103 469.6L100.9 465.5L98.7 461.4L96.7 457.2L94.8 453L93 448.7L91.3 444.4L89.7 440.1L88 435.8L86.3 431.5L84.6 427.2L83.2 422.8L82 418.3L81 413.8L80.2 409.2L79.5 404.6L78.6 400.1L77.5 395.6L76.3 391.2L75 386.7L73.8 382.2L72.8 377.7L72 373.1L71.3 368.6L70.7 364L70.1 359.4L69.6 354.7L69.1 350.1L68.9 345.5L68.9 340.8L69.1 336.2L69.6 331.5L70 326.9L70.4 322.3L70.7 317.6L70.8 313L71 308.3L71.3 303.7L71.9 299.1L72.8 294.5L73.9 290L75.1 285.5L76.4 281L77.7 276.6L79 272.1L80.3 267.7L81.9 263.3L83.5 259L85.3 254.7L87 250.5L88.7 246.2L90.2 241.8L91.5 237.4L92.9 232.9L94.3 228.5L96.1 224.2L98.1 220L100.3 216L102.6 212L104.9 208L107.2 203.9L109.4 199.9L111.7 195.8L114 191.8L116.5 187.9L119.1 184.1L121.8 180.3L124.5 176.5L127.1 172.7L129.7 168.8L132.4 165L135.2 161.3L138.3 157.8L141.7 154.5L145.2 151.5L148.9 148.6L152.5 145.7L156.1 142.7L159.6 139.7L163.1 136.6L166.6 133.6L170.2 130.7L173.9 127.9L177.6 125.2L181.4 122.5L185.1 119.8L188.8 117L192.6 114.3L196.4 111.7L200.4 109.3L204.5 107.2L208.6 105.2L212.8 103.3L217 101.3L221.1 99.1L225.1 96.9L229.1 94.5L233.1 92.2L237.3 90L241.5 88L245.7 86.2L250.1 84.5L254.4 82.9L258.8 81.3L263.2 79.8L267.6 78.4L272.2 77.3L276.7 76.4L281.4 75.7L286 75.1L290.6 74.5L295.1 73.8L299.7 72.9L304.3 72L308.8 71.2L313.4 70.6L318.1 70.2L322.7 70.2L327.4 70.3"/>
+        <g id="dial-tick-1-b9"><path d="M436.3 90.6L450.3 90.6"/><path d="M443.3 83.6L443.3 97.6"/></g>
+        <g id="dial-tick-2-b9"><path d="M523.9 149.1L537.9 149.1"/><path d="M530.9 142.1L530.9 156.1"/></g>
+        <g id="dial-tick-3-b9"><path d="M582.4 236.7L596.4 236.7"/><path d="M589.4 229.7L589.4 243.7"/></g>
+        <g id="dial-tick-4-b9"><path d="M582.4 443.3L596.4 443.3"/><path d="M589.4 436.3L589.4 450.3"/></g>
+        <g id="dial-tick-5-b9"><path d="M523.9 530.9L537.9 530.9"/><path d="M530.9 523.9L530.9 537.9"/></g>
+        <g id="dial-tick-6-b9"><path d="M436.3 589.4L450.3 589.4"/><path d="M443.3 582.4L443.3 596.4"/></g>
+        <g id="dial-tick-7-b9"><path d="M229.7 589.4L243.7 589.4"/><path d="M236.7 582.4L236.7 596.4"/></g>
+        <g id="dial-tick-8-b9"><path d="M142.1 530.9L156.1 530.9"/><path d="M149.1 523.9L149.1 537.9"/></g>
+        <g id="dial-tick-9-b9"><path d="M83.6 443.3L97.6 443.3"/><path d="M90.6 436.3L90.6 450.3"/></g>
+        <g id="dial-tick-10-b9"><path d="M83.6 236.7L97.6 236.7"/><path d="M90.6 229.7L90.6 243.7"/></g>
+        <g id="dial-tick-11-b9"><path d="M142.1 149.1L156.1 149.1"/><path d="M149.1 142.1L149.1 156.1"/></g>
+        <g id="dial-tick-12-b9"><path d="M229.7 90.6L243.7 90.6"/><path d="M236.7 83.6L236.7 97.6"/></g>
+      </svg>
+    </div>
+    <div class="dial__center slot slot--4x5 slot--round" data-shot="S9 · pack shot" style="aspect-ratio:1/1;"></div>
+    <span class="pill dial__pill dial__pill--n">FRIED SATURDAY</span>
+    <span class="pill dial__pill dial__pill--e">PACKED SAME DAY</span>
+    <span class="pill dial__pill dial__pill--s">NO WAREHOUSE</span>
+    <span class="pill dial__pill dial__pill--w">21-DAY WINDOW</span>
+  </div>
+  <div class="stamp">BATCH <span id="stamp-batch-no">0117</span> &middot; FRESH</div>
+  <p class="t-mono t-mono--dim date-line">batch 0117 &middot; orders close fri 24 jul</p>
+</section>
+
+<!-- B10 · the coil -->
+<section id="b10" class="beat u-grain">
+  <h2 class="t-chapter">From Seema&rsquo;s kitchen to yours.</h2>
+  <a class="btn" href="#">Order this week&rsquo;s batch</a>
+  <div class="b10-rule"></div>
+  <div class="lockup"><span class="t-h3">seema</span><span class="t-dev t-mono--dim">सीमा</span></div>
+  <p class="t-mono t-mono--dim contact">orders on whatsapp &middot; instagram @seema.kitchen &middot; pune</p>
+</section>
+
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script type="module" src="js/motion.js"></script>
+</body>
+</html>

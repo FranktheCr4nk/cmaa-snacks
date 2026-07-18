@@ -1,0 +1,13 @@
+<!-- Seema v3 · agent D · B6 one-shot crunch burst (catalog #24): 7 radial lines + 3 crumb dots, 350ms ease-out -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path id="burst-1" d="M166.4 107.6L212.7 95.2"/>
+  <path id="burst-2" d="M141.6 79.4L167.9 29.9"/>
+  <path id="burst-3" d="M107.1 71.7L95.7 29.2"/>
+  <path id="burst-4" d="M80.1 95.1L36 67.5"/>
+  <path id="burst-5" d="M74 136.8L30.7 152.5"/>
+  <path id="burst-6" d="M110.4 165L99 218.8"/>
+  <path id="burst-7" d="M152.1 158.3L182.4 194.3"/>
+  <circle id="crumb-1" cx="211.7" cy="55.8" r="3.2" fill="currentColor" stroke="none"/>
+  <circle id="crumb-2" cx="4.4" cy="109.9" r="2.4" fill="currentColor" stroke="none"/>
+  <circle id="crumb-3" cx="148.2" cy="225.3" r="3.6" fill="currentColor" stroke="none"/>
+</svg>
