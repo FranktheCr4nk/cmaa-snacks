@@ -1,0 +1,20 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>v2 render contact sheet</title>
+<style>
+  body { margin: 0; background: #201510; font: 12px/1.4 monospace; color: #FFF4E2; }
+  h1 { font-size: 14px; padding: 12px 16px 0; }
+  .grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; padding: 12px 16px; }
+  figure { margin: 0; }
+  img { width: 100%; display: block; border-radius: 4px; }
+  figcaption { padding: 3px 1px; }
+</style>
+<h1>SEEMA v4 — shots-v2 derivatives (site/img/v2)</h1>
+<div class="grid" id="g"></div>
+<script>
+  const full = ['v1','v1-alt','v2','v3','v4','v5','v6','v16','v17','v18','v19','v20','v21','v22','v23','v24','v25','v26','v27','v28'];
+  const cut = ['v7','v8','v9','v10','v11','v12','v13','v14','v15'];
+  const g = document.getElementById('g');
+  for (const id of full) g.insertAdjacentHTML('beforeend', `<figure><img src="/site/img/v2/${id}-800.webp"><figcaption>${id} — 800.webp</figcaption></figure>`);
+  for (const id of cut) g.insertAdjacentHTML('beforeend', `<figure><img src="/site/img/v2/${id}-600.webp"><figcaption>${id} — 600.webp (cutout)</figcaption></figure>`);
+</script>

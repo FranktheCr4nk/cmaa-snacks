@@ -1,18 +1,33 @@
 /* ============================================================
-   SEEMA v3 — "UNWIND" · per-beat layout (agent F)
-   Consumes site/tokens.css ONLY for color/type/space/z/motion.
-   No new hex values, no new easings (ui-spec appendix rule).
-   Default state = pre-composed END STATE (clean editorial):
-   works with no JS and under prefers-reduced-motion.
-   html.has-motion = motion.js (agent E) is present and running;
-   it gates the loader, steam, B5 exploded stage, dial cards.
+   SEEMA v4 — "UNWIND: LOUD" · per-beat layout (agent F, final)
+   Consumes site/tokens.css for color/type/space/z/motion tokens.
+   No new hex values, no new easings.
+
+   LAW (docs/v4-creative-brief.md):
+   · DEFAULT state = pre-composed END STATE on statically colored
+     world sections. Works with no JS and under reduced motion.
+   · html.has-motion:not(.is-endstate) = motion.js runs: the two
+     fixed world layers own the paint, beats go transparent, the
+     flight engine (#flyer) carries the product between slots.
+   · Markup follows motion.js's verified HOOK CONTRACT
+     (site/motion-test.html is the reference scaffold):
+     .b1-stage sticky sandwich · .press-media · #b2-clock ·
+     .b3-walls > .wall ×5 · .zero-num ×4 · .b5-center/.cutout/
+     .b5-label/.explode-leaders · .crunch-media · .shelf-track >
+     .shelf-panel[data-world] ×3 · .portrait · .stamp ·
+     .crumb-layer[data-depth] · [data-split]/[data-echo]/.u-punch
+
+   THE FLIP SCORE (brief §1.3):
+     B0 roast · B1 haldi · B2 roast · B3 chili · B4 ghee ·
+     B5 leaf · B6 chili (HARD CUT) · B7 per-panel haldi/chili/leaf ·
+     B8 cream (the only cream) · B9 haldi · B10 roast
    ============================================================ */
 
 /* ---------- fonts (self-hosted, subset, swap) ---------- */
 @font-face {
   font-family: "Fraunces";
   font-style: normal;
-  font-weight: 400 600;
+  font-weight: 300 900;   /* full variable range — XXL runs wght 620 */
   font-display: swap;
   src: url("../fonts/fraunces-var-latin.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212, U+FEFF, U+FFFD;
@@ -30,7 +45,7 @@
   font-weight: 400;
   font-display: swap;
   src: url("../fonts/plexmono-400-rupee.woff2") format("woff2");
-  unicode-range: U+20B9; /* ₹ — shelf card meta */
+  unicode-range: U+20B9; /* ₹ — shelf ledger */
 }
 @font-face {
   font-family: "IBM Plex Mono";
@@ -48,24 +63,59 @@
   unicode-range: U+20, U+091A, U+0924, U+092E, U+0935, U+0938-0939, U+093E, U+0940;
 }
 
-/* ---------- paper grain, whole page (SVG handoff §9) ---------- */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: url("../assets/svg/grain.png");
-  background-size: 240px;
-  mix-blend-mode: multiply;
-  z-index: 999;
-}
-
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 *, *::before, *::after { box-sizing: border-box; }
+/* clip, not hidden: overflow-x hidden makes body a scroll container
+   and KILLS the B1 sticky stages; clip guards bleed without that */
+html, body { overflow-x: hidden; }
+@supports (overflow: clip) { html, body { overflow-x: clip; } }
 
-/* beats whose composition is absolute vh-positioned: exact viewport frames */
-#b3, .beat--dial, #b8, #b10 { padding-block: 0; }
+/* ---------- per-beat world score (belt to data-world's brace) --- */
+#b0, #b2, #b10 {
+  --wc-base: var(--w-roast); --wc-light: var(--w-roast-light); --wc-deep: var(--w-roast-deep);
+  --ink: var(--ink-milk); --accent: var(--w-haldi); --line-ink: var(--ink-haldi);
+}
+#b1, #b9 {
+  --wc-base: var(--w-haldi); --wc-light: var(--w-haldi-light); --wc-deep: var(--w-haldi-deep);
+  --ink: var(--ink-roast); --accent: var(--w-chili); --line-ink: var(--ink-roast);
+}
+#b3, #b6 {
+  --wc-base: var(--w-chili); --wc-light: var(--w-chili-light); --wc-deep: var(--w-chili-deep);
+  --ink: var(--ink-milk); --accent: var(--w-ghee); --line-ink: var(--ink-milk);
+}
+#b4 {
+  --wc-base: var(--w-ghee); --wc-light: var(--w-ghee-light); --wc-deep: var(--w-ghee-deep);
+  --ink: var(--ink-roast); --accent: var(--w-chili); --line-ink: var(--ink-roast);
+}
+#b5 {
+  --wc-base: var(--w-leaf); --wc-light: var(--w-leaf-light); --wc-deep: var(--w-leaf-deep);
+  --ink: var(--ink-milk); --accent: var(--w-haldi); --line-ink: var(--ink-milk);
+}
+#b7 {  /* wrapper only — each .shelf-panel carries its own world */
+  --wc-base: var(--w-haldi); --wc-light: var(--w-haldi-light); --wc-deep: var(--w-haldi-deep);
+  --ink: var(--ink-roast); --accent: var(--w-chili); --line-ink: var(--ink-roast);
+}
+#b8 {
+  --wc-base: var(--w-cream); --wc-light: var(--w-cream-light); --wc-deep: var(--w-cream-deep);
+  --ink: var(--ink-roast); --accent: var(--ink-roast); --line-ink: var(--ink-roast);
+}
+
+/* every beat is painted with its world (static render); with motion
+   the fixed layers own the paint and beats go clear (tokens §1) */
+.beat {
+  padding-block: 0;
+  background-color: var(--wc-base);
+  /* literal recipe (not var(--world-fill)): it must resolve against
+     THIS section's channel — the ID rules above set channel only */
+  background-image: radial-gradient(120% 90% at 35% 12%,
+    var(--wc-light), var(--wc-base) 55%, var(--wc-deep) 130%);
+  color: var(--ink);
+}
+html.has-motion:not(.is-endstate) .beat {
+  background-image: none;
+  background-color: transparent;
+}
 
 /* pictures fill their figures (block so GSAP transforms apply) */
 picture { display: block; }
@@ -73,22 +123,62 @@ picture { display: block; }
 .media picture { width: 100%; height: 100%; }
 .media img { width: 100%; height: 100%; object-fit: cover; }
 
+/* ---------- flight engine (#flyer — motion.js owns) ----------
+   A persistent element flying between per-beat [data-flyer-slot]
+   divs; slots reserve space via aspect-ratio (CLS guard, brief §5). */
+#flyer {
+  position: fixed;
+  left: 0; top: 0;
+  width: 30vw;
+  margin: 0;
+  z-index: var(--z-media);
+  pointer-events: none;
+  visibility: hidden;              /* E reveals when engine boots  */
+}
+html.has-motion:not(.is-endstate) #flyer { visibility: visible; }
+.flyer__lift { width: 100%; height: 100%; }
+/* campaign renders are true alpha cutouts (keyed from the masters) —
+   they sit directly on the live world gradients, no masks needed */
+#flyer img, .slot-static, .hero-slot img, .b5-center img {
+  width: 100%; height: 100%; object-fit: contain; display: block;
+}
+
+/* echo clones: motion.js sets inset:0 then inline left/top offsets —
+   with right:0 still active the clone box narrows and REWRAPS. Pin
+   the clone's box to the fill's metrics (higher specificity wins). */
+[data-echo] .t-echo { right: auto; bottom: auto; width: 100%; }
+
 /* ---------- chrome ---------- */
-.chrome__dev { color: var(--roast-70); font-size: 1rem; margin-left: var(--sp-2); }
+.chrome__dev { font-size: 1rem; margin-left: var(--sp-2); }
 @media (max-width: 767px) { .chrome__dev { display: none; } }
-.chrome__wordmark svg { color: var(--roast); }
-/* keep the chrome on ONE row on small screens (crumb is chapter-only there) */
+.chrome__wordmark svg { color: currentColor; }
 @media (max-width: 480px) { .chrome { flex-wrap: nowrap; } }
+/* crumb pill readability on both ink families (motion mirrors the
+   active world on <body data-world data-ink>) */
+body[data-ink="milk"] .crumb {
+  background: color-mix(in oklab, var(--w-roast) 38%, transparent);
+  border-color: color-mix(in oklab, var(--ink-milk) 40%, transparent);
+  color: var(--ink-milk);
+}
+body[data-ink="roast"] .crumb {
+  background: color-mix(in oklab, var(--ink-milk) 45%, transparent);
+  border-color: color-mix(in oklab, var(--w-roast) 35%, transparent);
+  color: var(--ink-roast);
+}
 
 /* =============================================================
-   B0 · LOADER — only exists when motion runs (no-JS: hidden)
+   B0 · LOADER — roast world; line draws; turmeric SLAMS in via
+   circle clip-wipe (motion.js owns wipe + burst + scale punch)
    ============================================================= */
 #b0 {
   display: none;
   position: fixed;
   inset: 0;
   z-index: var(--z-loader);
-  background: var(--khadi);
+  background-color: var(--w-roast);
+  background-image: radial-gradient(120% 90% at 35% 12%,
+    var(--w-roast-light), var(--w-roast) 55%, var(--w-roast-deep) 130%);
+  color: var(--ink-milk);
   padding: 0;
 }
 html.has-motion:not(.is-endstate) #b0 { display: block; }
@@ -98,16 +188,14 @@ html.has-motion:not(.is-endstate) #b0 { display: block; }
   left: 50%;
   top: calc(46vh + 160px + 40px);
   transform: translateX(-50%);
-  color: var(--roast-70);
+  color: var(--ink-milk);
   white-space: nowrap;
 }
 @media (max-width: 767px) {
   .loader__caption { top: calc(44vh + 120px + 32px); }
 }
-/* the traveling line wrapper (motion.js poses it; fixed by GSAP).
-   Fixed + sized here too so it never takes layout space when JS is
-   off (it ships visibility:hidden). max-width:none — tokens' global
-   svg{max-width:100%} must not clamp the 1000px stage on phones. */
+/* the traveling line — haldi on roast, roast on light worlds, milk
+   on dark (tokens --line-ink; motion.js drives color per flip) */
 #travel-svg {
   position: fixed;
   top: 0;
@@ -116,146 +204,144 @@ html.has-motion:not(.is-endstate) #b0 { display: block; }
   height: 1000px;
   max-width: none;
   pointer-events: none;
-  color: var(--roast);
+  color: var(--line-ink, var(--ink-haldi));
   z-index: var(--z-line);
 }
 
 /* =============================================================
-   B1 · HERO — the type sandwich
+   B1 · HERO — turmeric world, the V1 anchor enormous, XXL type
+   sandwich with echo strokes, 3 suspended-crumb parallax layers.
+   Motion: 220vh section + TWO sticky stages (never ScrollTrigger-
+   pinned — the sandwich must interleave with the body-level
+   #flyer: back stage z 1 < flyer z 10 < front stage z 30).
+   Static: both stages absolute over one viewport = the end state.
    ============================================================= */
-#b1 { isolation: isolate; overflow: hidden; }
-.hero__media {
+#b1 { position: relative; min-height: 100vh; }
+.b1-stage { position: absolute; inset: 0; }
+.b1-stage--back { z-index: 1; }
+.b1-stage--front { z-index: 30; pointer-events: none; }
+html.has-motion:not(.is-endstate) #b1 { height: 220vh; min-height: 0; }
+html.has-motion:not(.is-endstate) .b1-stage {
+  position: sticky;
+  inset: auto;
+  top: 0;
+  height: 100vh;
+}
+html.has-motion:not(.is-endstate) .b1-stage--front { margin-top: -100vh; }
+
+#b1 .line-1 { position: absolute; left: var(--margin); top: calc(17vh - 0.5em); white-space: nowrap; }
+#b1 .line-2 { position: absolute; left: calc(var(--margin) + 3vw); top: calc(56vh - 0.46em); max-width: 92vw; }
+.hero-slot {
   position: absolute;
-  left: 66vw;
-  top: 46vh;
-  height: 78vh;
-  aspect-ratio: 4 / 5;
-  transform: translate(-50%, -50%);
-  z-index: var(--z-media);
+  left: 52vw;
+  top: 6vh;
+  height: 85vh;
+  aspect-ratio: 2 / 3;
+  z-index: 10;
 }
-/* seamless-cream fix (audit #7): the S1 render ships with a visible
-   rectangular muslin backdrop — multiply folds its lights into the
-   page khadi and a feathered radial mask dissolves the photo edges,
-   so the chakli reads as floating with its own (in-photo) shadow.
-   The old CSS drop-shadow shadowed the rectangle itself — removed. */
-.hero__media img {
-  mix-blend-mode: multiply;
-  -webkit-mask-image: radial-gradient(ellipse 50% 48% at 50% 55%, #000 60%, transparent 95%);
-          mask-image: radial-gradient(ellipse 50% 48% at 50% 55%, #000 60%, transparent 95%);
-}
-/* E animates these (y/opacity) — position with top only, no transforms */
-.hero__l1,
-.hero__l2 { position: absolute; white-space: nowrap; line-height: 1; }
-.hero__l1 {
-  left: var(--margin);
-  top: calc(38vh - 0.8em);
-  z-index: var(--z-behind);
-}
-.hero__l2 {
-  left: calc(var(--margin) + 7vw);
-  top: calc(58vh - 0.8em);
-  z-index: var(--z-front);
+.hero-slot picture { width: 100%; height: 100%; }
+.crumb-layer { position: absolute; inset: 0; pointer-events: none; }
+.hero-burst {
+  position: absolute;
+  width: 220px; height: 220px;
+  left: calc(60vw - 110px);
+  top: calc(40vh - 110px);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 35;
 }
 .hero__rule {
   position: absolute;
   left: var(--margin);
   right: var(--margin);
-  top: 78vh;
+  top: 91vh;
   height: 8px;
-  color: var(--roast);
-  z-index: var(--z-line);
+  color: var(--ink);
+  z-index: 20;
 }
 .hero__rule svg { width: 100%; height: 100%; }
-.hero__steam {
-  position: absolute;
-  width: 70px;
-  height: 130px;
-  color: var(--roast-45);
-  z-index: var(--z-front);
-  display: none;
-}
-html.has-motion:not(.is-endstate) .hero__steam { display: block; opacity: 0.4; }
-/* steam rises FROM the chakli (audit #11) — squiggle feet sit at the
-   coil's top edge (~39vh in the S1 crop), not the photo's top edge */
-.hero__steam--a { left: 60vw; top: calc(39vh - 120px); }
-.hero__steam--b { left: 65vw; top: calc(37vh - 125px); }
-/* with motion, the traveling line IS the horizon rule (and the seal):
-   the static twins stand down. .is-endstate (engine missing) restores. */
+/* with motion, the traveling line IS the horizon rule + B10 seal */
 html.has-motion:not(.is-endstate) .hero__rule,
 html.has-motion:not(.is-endstate) .coil__seal { visibility: hidden; }
 
 @media (max-width: 767px) {
-  .hero__l1 { top: calc(20vh - 1.1em); }
-  .hero__media {
-    left: 50vw;
-    top: calc(24vh + 48.75vw);   /* top edge 24vh, height 97.5vw */
-    height: auto;
-    width: 78vw;
-  }
-  .hero__l2 { top: calc(66vh - 0.8em); left: var(--margin); white-space: normal; max-width: 9ch; line-height: var(--lh-display); }
-  .hero__rule { top: 80vh; }
-  .hero__steam--a { display: none !important; }
-  .hero__steam--b { left: 48vw; top: calc(24vh + 10vw); }
+  html.has-motion:not(.is-endstate) #b1 { height: 180vh; }
+  #b1 .line-1 { top: calc(12vh - 0.5em); white-space: normal; max-width: 8ch; }
+  .hero-slot { left: calc(50vw - 18.7vh); top: 19vh; height: 56vh; }
+  #b1 .line-2 { top: calc(66vh - 0.46em); left: var(--margin); max-width: calc(100vw - 2 * var(--margin)); }
+  .hero__rule { top: 92vh; }
 }
 
 /* =============================================================
-   B2 · 04:30 — the hands (end state: full-bleed)
+   B2 · 04:30 — roast world; V25 press full-bleed; the timestamp
+   COUNTS 00:00 → 04:30 on scrub (#b2-clock, motion.js)
    ============================================================= */
-#b2 { min-height: 100vh; overflow: hidden; }
-.aperture { position: absolute; inset: 0; }
-.aperture__win {
-  position: absolute;
-  inset: 0;
-  margin: 0;
-  overflow: hidden;
-}
-.aperture__win img { width: 100%; height: 100%; object-fit: cover; }
-.aperture__time {
-  position: absolute;
-  left: 24px;
-  top: 24px;
-  color: var(--khadi);
-  z-index: var(--z-front);
-}
-/* motion mode: E tracks the window via transforms that END at (0,0),
-   so the base position IS the full-bleed rest spot — 24px inset,
-   dropped below the fixed wordmark */
-html.has-motion:not(.is-endstate) .aperture__time { left: 24px; top: 72px; }
-@media (max-width: 767px) {
-  html.has-motion:not(.is-endstate) .aperture__time { left: 16px; top: 56px; }
-}
-.aperture__head {
+#b2 { overflow: hidden; }
+.press-media { position: absolute; inset: 0; z-index: 0; margin: 0; }
+.press-media img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.88); }
+.b2-time {
   position: absolute;
   left: var(--margin);
-  top: calc(82vh - 1em);
-  max-width: 56vw;
-  color: var(--khadi);
-  z-index: var(--z-front);
+  top: 13vh;
+  z-index: 30;
+  color: var(--ink-milk);
+}
+#b2-clock {
+  display: block;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+}
+/* ID-scoped: motion.js injects [data-echo]{position:relative} after
+   this sheet — positioned echo headlines must out-rank it */
+#b2 .b2-head {
+  position: absolute;
+  left: var(--margin);
+  bottom: 10vh;
+  max-width: 88vw;
+  z-index: 30;
+  color: var(--ink-milk);
 }
 @media (max-width: 767px) {
-  .aperture__time { left: 16px; top: 16px; }
-  .aperture__head { top: calc(78vh - 1em); max-width: 20ch; }
+  .b2-time { top: 11vh; }
+  .b2-head { bottom: 8vh; max-width: calc(100vw - 2 * var(--margin)); }
 }
 
 /* =============================================================
-   B3 · MANIFESTO
+   B3 · MANIFESTO — chili world; statements as viewport walls.
+   Motion: walls stack absolute (posters over posters, pin 320vh).
+   Static / no-JS: a poster column of XXL milk lines.
    ============================================================= */
-#b3 { min-height: 100vh; display: flex; align-items: center; }
-.manifesto {
-  width: min(100% - 2 * var(--margin), 72rem);
-  margin-inline: auto;
-  padding-left: calc(1 * (100vw - 2 * var(--margin)) / 12);
+#b3 { position: relative; }
+#b3 { padding-block: 18vh 14vh; }
+.b3-walls { position: static; }
+.wall { padding: 4vh var(--margin); }
+#b3 .u-punch { color: var(--w-ghee); display: inline-block; }
+html.has-motion:not(.is-endstate) #b3 { min-height: 100vh; padding: 0; }
+html.has-motion:not(.is-endstate) .b3-walls { position: absolute; inset: 0; }
+html.has-motion:not(.is-endstate) .wall {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 0 4vw;
 }
-@media (max-width: 767px) {
-  #b3 { align-items: flex-start; }
-  .manifesto { padding-left: 0; padding-top: 18vh; }
-}
+/* posters slapped over posters — each wall lands in its own corner
+   so the receding stack stays legible (gsap only drives the wall's
+   scale/alpha; these grid placements never fight it) */
+html.has-motion:not(.is-endstate) .wall:nth-child(1) { place-items: start start; text-align: left; padding: 16vh 4vw 0; }
+html.has-motion:not(.is-endstate) .wall:nth-child(2) { place-items: center end; text-align: right; }
+html.has-motion:not(.is-endstate) .wall:nth-child(3) { place-items: end start; text-align: left; padding: 0 4vw 12vh; }
+html.has-motion:not(.is-endstate) .wall:nth-child(4) { place-items: end end; text-align: right; padding: 0 4vw 10vh; }
+html.has-motion:not(.is-endstate) .wall:nth-child(5) { place-items: center center; text-align: center; }
+html.has-motion:not(.is-endstate) .wall:nth-child(5) p { max-width: 18em; }
 
 /* =============================================================
-   shared beat header (B4 / B5 / B7 / B9)
+   shared beat header (B4 / B5 / B9)
    ============================================================= */
-.beat-head { position: absolute; left: var(--margin); top: 10vh; z-index: var(--z-front); }
-.beat-head .t-mono--up { color: var(--roast-70); }
+.beat-head { position: absolute; left: var(--margin); top: 8vh; z-index: var(--z-front); }
+.beat-head .t-mono--up { color: var(--ink); }
 .beat-head h2 { margin-top: var(--sp-2); max-width: 40vw; }
 @media (max-width: 767px) {
   .beat-head { position: static; padding: var(--sp-16) var(--margin) 0; }
@@ -263,39 +349,45 @@ html.has-motion:not(.is-endstate) .aperture__time { left: 24px; top: 72px; }
 }
 
 /* =============================================================
-   B4 / B9 · THE DIAL
+   B4 · THE DIAL (ghee world) / B9 (turmeric world)
+   motion.js drives momentum spin (velocity lerp); pills counter-
+   rotate level; the counting-zeros line runs above the dial.
    ============================================================= */
 .beat--dial { min-height: 100vh; }
-/* E rotates .dial — keep its base transform empty (no translate centering) */
 .beat--dial .dial {
   position: absolute;
   left: calc(50vw - min(36vh, 22rem));
   top: calc(54vh - min(36vh, 22rem));
   margin: 0;
 }
-/* the ring svg's 4 empty stadium "anchors" are geometry only — as
-   rendered strokes they read as orphan pills orbiting the dial in
-   every mode, duplicating the real pills (audit #8). Never show. */
-.dial__ring [id^="dial-anchor-"] { display: none; }
-/* end-state desktop: four cards are listed at the right —
-   shift the dial left so the orbit clears the card column */
 @media (min-width: 768px) {
+  .beat--dial .dial-wrap { position: relative; height: 100vh; }
   html:not(.has-motion) .beat--dial .dial,
   html.is-endstate .beat--dial .dial { left: calc(43vw - min(36vh, 22rem)); }
-  /* end state parks the N pill at the dial top (~16vh) — wrap the
-     headline before it reaches the pill column (audit #4/#8:
-     "…schedule." was covered) */
   html:not(.has-motion) .beat--dial .beat-head h2,
   html.is-endstate .beat--dial .beat-head h2 { max-width: min(40vw, calc(43vw - 9rem - var(--margin))); }
-  /* pre-applied stamp must sit on the pack photo's upper-right —
-     the dial centre is at 43vw in end state, not 58vw (audit #4) */
   html:not(.has-motion) .stamp-host,
   html.is-endstate .stamp-host { left: calc(50vw - 135px); }
 }
-/* detail cards — END STATE: four listed top-right (spec fallback) */
+/* the counting-zeros line (B4): zeros land one by one (motion).
+   Sits under the dial — the strip above it belongs to the headline
+   and the N pill (mirrors B9's batch-line position). */
+.zero-line {
+  position: absolute;
+  left: 50%;
+  top: calc(54vh + min(36vh, 22rem) + 24px);
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: var(--z-front);
+}
+@media (max-width: 767px) {
+  .zero-line { position: static; transform: none; text-align: center; margin-top: var(--sp-6); white-space: normal; padding-inline: var(--margin); }
+}
+/* detail cards — END STATE: four listed top-right; with motion
+   they stack in one spot and crossfade (motion.js toggles) */
 .dial-cards {
   position: absolute;
-  top: 10vh;
+  top: 8vh;
   right: var(--margin);
   display: flex;
   flex-direction: column;
@@ -304,7 +396,6 @@ html.has-motion:not(.is-endstate) .aperture__time { left: 24px; top: 72px; }
   z-index: var(--z-card);
 }
 .dial-cards .dial-card { position: static; }
-/* motion mode (desktop): cards stack in one spot, E crossfades them */
 @media (min-width: 768px) {
   html.has-motion:not(.is-endstate) .dial-cards { display: block; }
   html.has-motion:not(.is-endstate) .dial-cards .dial-card {
@@ -314,33 +405,29 @@ html.has-motion:not(.is-endstate) .aperture__time { left: 24px; top: 72px; }
     width: 100%;
   }
 }
-.dial__center img { width: 100%; height: 100%; object-fit: cover; }
+/* alpha cutouts float free in the dial — no disc crop, no cover */
+.dial__center { overflow: visible; border-radius: 0; }
+.dial__center img { width: 100%; height: 100%; object-fit: contain; }
 .dial__center picture { width: 100%; height: 100%; }
-/* .media sets position:relative later in the cascade — restore the
-   tokens' absolute inset-13% circle for the dial product */
 .dial__center.media { position: absolute; }
 
 @media (max-width: 767px) {
   .beat--dial { min-height: 0; padding-bottom: var(--sp-16); }
-  /* stays positioned so ring / centre / pills anchor to the dial box */
-  .beat--dial .dial { position: relative; left: auto; top: auto; margin: var(--sp-12) auto 8.5rem; }
+  .beat--dial .dial { position: relative; left: auto; top: auto; margin: var(--sp-12) auto 10.75rem; }
   .dial-cards { position: static; width: auto; margin: var(--sp-8) var(--margin) 0; }
-  /* audit #8: E/W pills lay across the middle of the centre photo.
-     N keeps the compass crown; E/S/W ladder beneath the circle in
-     activation order (top→bottom = scroll highlight order). */
   .dial__pill--e { left: 50%; right: auto; top: calc(100% + 1rem); transform: translateX(-50%); }
-  .dial__pill--s { left: 50%; top: calc(100% + 3.4rem); transform: translateX(-50%); }
-  .dial__pill--w { left: 50%; top: calc(100% + 5.8rem); transform: translateX(-50%); }
+  .dial__pill--s { left: 50%; top: calc(100% + 3.9rem); transform: translateX(-50%); }
+  .dial__pill--w { left: 50%; top: calc(100% + 6.8rem); transform: translateX(-50%); }
 }
 
-/* B9 extras — host carries .stamp (agent E's hook) but the artwork is
-   D's svg, so the tokens text-stamp box styles are neutralized here */
+/* B9 extras — the stamp slaps at 2.2→1 (motion.js overshoot #2).
+   End state parked here: stamp visible, pre-applied. */
 .stamp-host {
   position: absolute;
   left: calc(58vw - 135px);
   top: calc(38vh - 75px);
   width: 270px;
-  color: var(--chili);
+  color: var(--w-chili);
   mix-blend-mode: multiply;
   z-index: var(--z-stamp);
   pointer-events: none;
@@ -357,227 +444,208 @@ html.has-motion:not(.is-endstate) .aperture__time { left: 24px; top: 72px; }
   left: 50vw;
   top: calc(54vh + min(36vh, 22rem) + 24px);
   transform: translateX(-50%);
-  color: var(--roast-70);
+  color: var(--ink);
   white-space: nowrap;
+  z-index: var(--z-front);
 }
 @media (max-width: 767px) {
-  /* upper-right of the pack photo (circle centre sits at dial-wrap
-     y ≈ sp-12 + 168px on mobile) — was hanging half off lower-right */
   .stamp-host { left: auto; right: 13vw; top: calc(var(--sp-12) + 3rem); width: 170px; }
   .batch-line { position: static; transform: none; display: block; text-align: center; margin-top: var(--sp-6); }
 }
 
 /* =============================================================
-   B5 · EVERYTHING INSIDE
+   B5 · EVERYTHING INSIDE — leaf world; nine cutouts around the
+   chakli, leader lines, sticker shadows. Static = exploded end
+   state; motion flies them out (motion.js redraws leaders live).
+   Mobile: flat fallback + ledger (brief rule, unchanged).
    ============================================================= */
 #b5 { min-height: 100vh; }
-/* exploded stage — desktop + motion only */
-.explode { display: none; position: absolute; inset: 0; overflow: hidden; }
-/* centred WITHOUT translate (audit #1): motion.js pinnedCenter() walks
-   offsetLeft/Top, which ignores transforms — a translate(-50%,-50%)
-   here put the traveling line's rim +half-media down-right for the
-   whole pin. calc centering keeps offsets truthful (same trick as .dial). */
-.explode__center {
+#b5 .beat-head { position: absolute; left: var(--margin); top: 8vh; padding: 0; }
+.b5-center {
   position: absolute;
   left: calc(50vw - 21vh);
-  top: calc(52vh - 21vh);
+  top: 31vh;
   width: 42vh;
   height: 42vh;
-  z-index: var(--z-media);
+  z-index: 9;   /* under the body-level #flyer (z 10) — the glow disc
+                   must never paint over the landed chakli */
 }
-/* S3 arrives as a square photo — circle-crop + multiply melts its
-   muslin ground into the page cream (audit #7); the rim ring hugs it */
-.explode__center img { border-radius: 50%; mix-blend-mode: multiply; }
-/* inset 0 so leader svg px == section px — motion.js re-draws every
-   leader from the real cutout/centre geometry at refresh (audit #5) */
-.explode__leaders {
+.b5-center .slot-static, .b5-center picture { width: 100%; height: 100%; }
+.explode-leaders {
   position: absolute;
   inset: 0;
-  color: var(--roast);
-  z-index: var(--z-line);
+  z-index: 20;
+  color: var(--ink);
+  pointer-events: none;
 }
-.explode__leaders svg { width: 100%; height: 100%; }
-/* E flies these (x/y/scale) — center via calc, keep transform empty */
-.cutout {
+.explode-leaders svg { width: 100%; height: 100%; display: block; }
+#b5 .cutout {
   position: absolute;
-  left: calc(var(--x) - var(--s) / 2);
-  top: calc(var(--y) - var(--s) / 2);
-  width: var(--s);
-  height: var(--s);
+  z-index: 12;
   margin: 0;
-  z-index: var(--z-media);
+  filter: drop-shadow(10px 14px 0 var(--sticker-ink));
 }
-.cutout img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; mix-blend-mode: multiply; }
-.cutout--near img { filter: blur(2px); }   /* img only — label stays legible */
-.cutout figcaption {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  white-space: nowrap;
-  color: var(--roast);
+#b5 .cutout img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.b5-label { position: absolute; z-index: 30; color: var(--ink); }
+.b5-flat { display: none; }
+@media (max-width: 767px) {
+  #b5 { min-height: 0; padding-bottom: var(--sp-24); }
+  #b5 .beat-head { position: static; padding: var(--sp-16) var(--margin) 0; }
+  #b5 .cutout, .b5-label, .explode-leaders, .b5-center { display: none; }
+  .b5-flat { display: block; padding: 0 var(--margin); margin-top: var(--sp-10); }
+  .b5-flat .media { border-radius: var(--r-card); overflow: hidden; }
+  .b5-flat .ledger--bare { margin-top: var(--sp-6); }
 }
-.cutout--lbl-l figcaption { right: calc(100% + 12px); text-align: right; }
-.cutout--lbl-r figcaption { left: calc(100% + 12px); }
-.cutout--lbl-b figcaption { top: calc(100% + 10px); left: 50%; transform: translateX(-50%); }
-@media (min-width: 768px) {
-  html.has-motion:not(.is-endstate) .explode { display: block; }
-  html.has-motion:not(.is-endstate) .b5-fallback { display: none; }
-  html.has-motion:not(.is-endstate) #b5 { min-height: 100vh; padding-block: 0; }
-  html.has-motion:not(.is-endstate) #b5 .beat-head { position: absolute; padding: 0; top: 10vh; left: var(--margin); }
-}
-/* fallback / mobile composition (also the OG asset S4) */
-.b5-fallback { padding: 0 var(--margin) var(--sp-24); }
-.b5-fallback .media { margin-top: var(--sp-12); }
-.b5-fallback .ledger--bare { margin-top: var(--sp-6); }
-#b5 .beat-head { position: static; padding: var(--sp-24) var(--margin) 0; }
-#b5 .beat-head h2 { max-width: 100%; }
 
 /* =============================================================
-   B6 · THE CRUNCH
+   B6 · THE CRUNCH — the HARD CUT to chili (1-frame). V16 shatter
+   punches in 1.3→1; burst fires 2×; viewport shakes (motion.js).
+   Static: composed frame, burst at 12%.
    ============================================================= */
 #b6 { overflow: hidden; }
-.crunch__media { position: absolute; inset: 0; margin: 0; }
-.crunch__media img { width: 100%; height: 100%; object-fit: cover; }
-.crunch__burst {
+/* V16 is a keyed alpha shatter — full-bleed over the live chili world,
+   no card, no shadow: the one hard-cut moment reads as a punch */
+.crunch-media {
   position: absolute;
-  left: 55vw;
-  top: 46vh;
-  width: 220px;
-  height: 220px;
-  transform: translate(-50%, -50%);
-  color: var(--khadi);
-  opacity: 0.12;                     /* pre-rendered faint end state */
-  z-index: var(--z-stamp);
+  inset: 0;
+  z-index: 0;
+  margin: 0;
 }
-/* E enters this (y/opacity) — center with inset + margin, no transforms */
-.crunch__head {
+.crunch-media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 38%; }
+.crunch-burst {
   position: absolute;
-  left: 0;
-  right: 0;
-  top: calc(56vh - 1.1em);
-  margin-inline: auto;
-  max-width: 12ch;
-  text-align: center;
-  color: var(--khadi);
-  z-index: var(--z-front);
-}
-@media (max-width: 767px) {
-  .crunch__head { top: calc(54vh - 1.1em); }
-  .crunch__burst { width: 150px; height: 150px; }
-}
-
-/* =============================================================
-   B7 · THE SHELF
-   ============================================================= */
-#b7 { padding-block: var(--sp-32); }
-.shelf__head { padding-inline: var(--margin); }
-.shelf__head .t-mono--up { color: var(--roast-70); }
-.shelf__head h2 { margin-top: var(--sp-2); }
-.shelf__row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--gutter);
-  max-width: 62rem;
-  margin: var(--sp-16) auto 0;
-  padding-inline: var(--margin);
-}
-.shelf__note { text-align: center; margin-top: var(--sp-12); color: var(--roast-70); }
-.card-arch__facts .ledger { font-size: var(--fs-mono); max-width: 100%; }
-/* keep the three cards' baselines aligned (lahya name wraps to 2 lines) */
-@media (min-width: 768px) {
-  .card-arch__name { min-height: 2.4em; display: flex; align-items: flex-end; justify-content: center; }
-}
-.card-arch__meta { white-space: nowrap; }
-/* sesame sprinkle overlay (E animates 2 specks on hover) */
-.card-arch__media .sprinkle {
-  position: absolute;
-  left: 12%;
-  right: 12%;
-  top: 8%;
-  height: 42%;
-  color: var(--khadi);
+  width: 440px; height: 440px;
+  left: calc(52vw - 220px);
+  top: calc(36vh - 220px);
+  z-index: 40;
+  color: var(--ink-milk);
+  opacity: 0.12;
   pointer-events: none;
-  z-index: var(--z-front);
 }
-.card-arch__media .sprinkle svg { width: 100%; height: 100%; }
-/* specks are invisible until E animates them */
-html:not(.has-motion) .card-arch__media .sprinkle,
-html.is-endstate .card-arch__media .sprinkle { display: none; }
+/* bottom-anchored: the punchline grows upward, so the final line
+   ("it.") can never clip against #b6's overflow at any pin position */
+#b6 .b6-head {
+  position: absolute;
+  left: 4vw; right: 4vw;
+  top: auto;
+  bottom: 5vh;
+  text-align: center;
+  z-index: 30;
+  color: var(--ink-milk);
+}
 @media (max-width: 767px) {
-  .shelf__row { grid-template-columns: 1fr; gap: var(--sp-10, 2.5rem); }
-  .shelf__note { text-align: left; padding-inline: var(--margin); }
-  /* no hover on touch — E only inits specks on desktop, so without
-     this they render as 7 static outlines over the photo (audit #3) */
-  .card-arch__media .sprinkle { display: none; }
+  .crunch-burst { width: 300px; height: 300px; left: calc(50vw - 150px); top: calc(30vh - 150px); }
+  #b6 .b6-head { bottom: 6vh; }
 }
 
 /* =============================================================
-   B8 · SEEMA — the rack focus
+   B7 · THE SHELF — three full-viewport SKU world panels
+   (component anatomy = tokens §12). Desktop motion: motion.js
+   pins 300vh and translates .shelf-track −200vw; the fixed world
+   layers sync per panel. Mobile / no-JS: native scroll-snap.
+   Reduced motion: stacked, statically colored.
+   ============================================================= */
+#b7 { padding-block: 0; position: relative; }
+@media (min-width: 768px) {
+  html.has-motion:not(.is-endstate) #b7 { height: 100vh; overflow: hidden; }
+  html.has-motion:not(.is-endstate) #b7 .shelf__track {
+    overflow: visible;
+    scroll-snap-type: none;
+    width: max-content;
+  }
+}
+html.is-endstate #b7 .shelf__track {
+  flex-direction: column;
+  overflow: visible;
+  scroll-snap-type: none;
+}
+.shelf-panel .crumb-layer { z-index: 1; }
+/* re-assert vs motion.js's injected [data-echo]{position:relative} */
+#b7 .shelf-panel__name { position: absolute; }
+/* the standing order note persists across panels */
+.shelf__note {
+  position: absolute;
+  left: 50%;
+  bottom: var(--sp-6);
+  transform: translateX(-50%);
+  z-index: var(--z-front);
+  white-space: nowrap;
+  pointer-events: none;
+}
+@media (max-width: 767px) {
+  .shelf__note { display: none; }
+  /* pack floats clear of the buy ledger strip */
+  .shelf-panel__pack { bottom: 16cqh; }
+}
+
+/* =============================================================
+   B8 · SEEMA — the exhale. The ONLY cream. No echo strokes, no
+   parallax; grain may read here only (section carries .u-grain).
+   Display L — she doesn't shout.
    ============================================================= */
 #b8 { min-height: 100vh; }
-.portrait__media {
+.portrait {
   position: absolute;
-  left: calc(var(--margin) + (100vw - 2 * var(--margin)) / 12);
-  top: 50vh;
-  transform: translateY(-50%);
+  left: calc(var(--margin) + 4vw);
+  top: 14vh;
   height: 72vh;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 2 / 3;
   z-index: var(--z-media);
+  margin: 0;
+  overflow: hidden;
+  border-radius: 4px;
 }
-html.has-motion .portrait__media img { /* E scrubs blur 24px -> 0 */ }
-.portrait__name {
+.portrait picture { width: 100%; height: 100%; }
+.portrait img { width: 100%; height: 100%; object-fit: cover; }
+.portrait-name {
   position: absolute;
-  left: 54vw;
-  top: 38vh;
-  transform: translateY(-82%);
+  left: 56vw;
+  top: calc(32vh - 0.5em);
   z-index: var(--z-front);
 }
-.portrait__dev {
+.portrait-dev {
   position: absolute;
-  left: 54vw;
-  top: calc(38vh + 12px);
+  left: 56.2vw;
+  top: 44vh;
   font-size: 1.75rem;
-  color: var(--roast-70);
+  color: var(--ink);
 }
-.portrait__ledger { position: absolute; left: 54vw; top: 52vh; }
-.portrait__ledger .ledger__row { padding: var(--sp-2) 0; }
+.portrait-ledger { position: absolute; left: 56vw; top: 54vh; }
+.portrait-ledger .ledger__row { padding: var(--sp-2) 0; }
 @media (max-width: 767px) {
   #b8 { min-height: 0; padding-block: var(--sp-16); }
-  .portrait__media { position: relative; left: 0; top: 0; transform: none; height: auto; width: calc(100% - 2 * var(--margin)); margin: 0 auto; }
-  /* anchor the khadi name/सीमा to the PHOTO, not the section bottom
-     (audit #2 — they were invisible on cream + corrupted the ledger).
-     photo top = section padding (sp-16); photo height = width × 5/4. */
-  .portrait__name { position: absolute; left: calc(var(--margin) + var(--sp-4)); top: calc(var(--sp-16) + (100vw - 2 * var(--margin)) * 1.25 - 7.25rem); bottom: auto; transform: none; color: var(--khadi); z-index: var(--z-front); }
-  .portrait__dev { position: absolute; left: calc(var(--margin) + var(--sp-4)); top: calc(var(--sp-16) + (100vw - 2 * var(--margin)) * 1.25 - 3.4rem); bottom: auto; color: var(--khadi); z-index: var(--z-front); }
-  .portrait__ledger { position: static; margin: var(--sp-8) var(--margin) 0; }
+  .portrait { position: relative; left: 0; top: 0; height: auto; width: calc(100% - 2 * var(--margin)); margin: 0 auto; }
+  .portrait-name { position: static; margin: var(--sp-8) var(--margin) 0; }
+  .portrait-dev { position: static; margin: var(--sp-2) var(--margin) 0; }
+  .portrait-ledger { position: static; margin: var(--sp-6) var(--margin) 0; }
 }
 
 /* =============================================================
-   B10 · THE COIL — footer-as-poster
+   B10 · THE COIL — home on roast, footer-as-poster (200vh: the
+   XXL poster scrolls past, then the final home screen with the
+   recoiled seal + haldi CTA). Seal glow = motion.js idle loop.
    ============================================================= */
-#b10 { min-height: 90vh; padding: 0; }
+#b10 { min-height: 200vh; padding: 0; position: relative; }
+#b10 .b10-head {
+  position: absolute;
+  left: 4vw; right: 4vw;
+  top: 14vh;
+  text-align: center;
+  color: var(--ink-milk);
+}
 .coil__seal {
   position: absolute;
   left: 50vw;
-  top: 26vh;
+  top: 126vh;
   width: 180px;
   height: 180px;
   transform: translate(-50%, -50%);
-  color: var(--roast);
-}
-/* E enters these (y/opacity) — no transform positioning */
-.coil__head {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: calc(48vh - 1em);
-  text-align: center;
+  color: var(--w-haldi);
 }
 .coil__cta-wrap {
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 56vh;
+  left: 0; right: 0;
+  top: 145vh;
   display: flex;
   justify-content: center;
 }
@@ -585,39 +653,33 @@ html.has-motion .portrait__media img { /* E scrubs blur 24px -> 0 */ }
   position: absolute;
   left: var(--margin);
   right: var(--margin);
-  top: 78vh;
+  top: 174vh;
   height: 8px;
-  color: var(--roast);
+  color: var(--w-haldi);
 }
 .coil__rule svg { width: 100%; height: 100%; }
-.coil__lockup {
+.lockup {
   position: absolute;
   left: var(--margin);
-  top: 84vh;
+  top: 182vh;
   display: flex;
   align-items: center;
   gap: var(--sp-3);
-  color: var(--roast);
+  color: var(--ink-milk);
 }
-.coil__lockup svg:first-child { height: 28px; width: auto; }
-.coil__lockup .coil__lockup-seal { height: 40px; width: 40px; }
+.lockup svg:first-child { height: 28px; width: auto; }
+.lockup .lockup-seal { height: 40px; width: 40px; color: var(--w-haldi); }
 .coil__contact {
   position: absolute;
   right: var(--margin);
-  top: 84vh;
-  color: var(--roast-70);
+  top: calc(182vh + 0.4rem);
+  color: var(--ink-milk);
 }
 @media (max-width: 767px) {
-  #b10 { min-height: 100vh; }
-  .coil__seal { width: 128px; height: 128px; top: 20vh; }
-  .coil__head { top: calc(42vh - 1em); padding-inline: var(--margin); }
-  .coil__cta-wrap { top: 50vh; }
-  .coil__rule { top: 70vh; }
-  .coil__lockup { left: 50vw; top: 76vh; transform: translateX(-50%); }
-  .coil__contact { position: absolute; right: 0; left: 0; top: calc(76vh + 3.25rem); text-align: center; white-space: normal; padding-inline: var(--margin); }
+  #b10 .b10-head { top: 10vh; }
+  .coil__seal { width: 128px; height: 128px; top: 124vh; }
+  .coil__cta-wrap { top: 140vh; padding-inline: var(--margin); }
+  .coil__rule { top: 166vh; }
+  .lockup { left: 50vw; top: 174vh; transform: translateX(-50%); }
+  .coil__contact { left: 0; right: 0; top: 182vh; text-align: center; white-space: normal; padding-inline: var(--margin); }
 }
-
-/* =============================================================
-   slot fine-tuning (grey boxes awaiting renders)
-   ============================================================= */
-.slot--fill { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; }

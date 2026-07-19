@@ -1,0 +1,198 @@
+[
+  {
+    "id": "v1",
+    "title": "V1 Chakli hero A — LOCKED ANCHOR",
+    "note": "LOCKED. Do not re-render. Master is renders/test/oai-chakli-hero.png, copied to assets/masters/v2/v1.png. v1-alt.jpg is a same-campaign regen kept as alternate.",
+    "ar": "2:3",
+    "quality": "high"
+  },
+  {
+    "id": "v2",
+    "title": "V2 Chakli hero B (+turn)",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat deep turmeric yellow #F7AE00, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Subject floating in mid-air unless stated. Small crumbs and particles suspended around the subject. No props, no surfaces, no hands, no text unless stated. Colors rich and saturated but food tones natural and true. Same single golden-brown bhajani chakli spiral with black sesame seeds as the campaign hero: a tight flat spiral coil, four concentric turns of one thin rope of extruded dough, deeply ridged bumpy fried texture studded with black sesame seeds, matte golden-brown, crispy, savory, NOT glazed, NOT a pastry. It floats large in frame, rotated roughly 25 degrees clockwise and tilted slightly away from camera, same suspended toasted crumbs and loose black sesame seeds frozen mid-air around it, same punchy key light.",
+    "ar": "2:3",
+    "quality": "high"
+  },
+  {
+    "id": "v3",
+    "title": "V3 Chakli hero C (−turn)",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat deep turmeric yellow #F7AE00, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Subject floating in mid-air unless stated. Small crumbs and particles suspended around the subject. No props, no surfaces, no hands, no text unless stated. Colors rich and saturated but food tones natural and true. Same single golden-brown bhajani chakli spiral with black sesame seeds as the campaign hero: a tight flat spiral coil, four concentric turns of one thin rope of extruded dough, deeply ridged bumpy fried texture studded with black sesame seeds, matte golden-brown, crispy, savory, NOT glazed, NOT a pastry. It floats large in frame, rotated roughly 25 degrees counter-clockwise and tilted slightly toward camera, same suspended toasted crumbs and loose black sesame seeds frozen mid-air around it, same punchy key light.",
+    "ar": "2:3",
+    "quality": "high"
+  },
+  {
+    "id": "v4",
+    "title": "V4 Chakli top-down (dial)",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat ghee yellow #FFC933, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Subject floating in mid-air unless stated. Small crumbs and particles suspended around the subject. No props, no surfaces, no hands, no text unless stated. Colors rich and saturated but food tones natural and true. A single golden-brown bhajani chakli photographed dead top-down, perfectly centered: a tight flat spiral coil, four concentric turns of one thin rope of extruded dough, the spiral geometry perfectly even and clearly readable from directly above, deeply ridged bumpy fried texture studded with black sesame seeds, matte golden-brown, crispy, savory, NOT glazed, NOT a pastry. Crisp circular drop shadow ring directly beneath it, a few suspended toasted crumbs near the frame edges, generous empty background margin on all sides.",
+    "ar": "1:1",
+    "quality": "high"
+  },
+  {
+    "id": "v5",
+    "title": "V5 Chivda floating hero — DONE (rendered as hero-poha, renamed v5.jpg)",
+    "prompt": "High-impact commercial snack-brand advertising photography. Poha chivda as an exploded levitating scatter: a dense central cloud of turmeric-gold flattened rice poha flakes, roasted red-skin peanuts, fried dark-green curry leaves, yellow chana dal and golden raisins, all frozen mid-air in a dynamic floating burst, denser at center and dispersing toward the frame edges. Every flake crisp and individually sharp, matte turmeric-gold, savory Indian snack, NOT cereal, NOT granola. Backdrop: seamless saturated chili-red studio sweep, vivid and punchy. Punchy hard studio lighting, crisp edge highlights on every flying piece, subtle soft shadows, vivid saturated color grade, hyper-detailed macro food texture, razor sharp focus, high-speed frozen-motion feel, premium loud snack campaign style.",
+    "ar": "4:5",
+    "quality": "high"
+  },
+  {
+    "id": "v6",
+    "title": "V6 Lahya floating hero — DONE (rendered as hero-lahya, renamed v6.jpg)",
+    "prompt": "High-impact commercial snack-brand advertising photography. Lahya crunch bites levitating in mid-air: one large hero cluster of popped jowar sorghum grains at center tilted at a dynamic angle — tiny ivory puffed grains like miniature popcorn bound into a bite-size cluster by a light golden savory turmeric-spice coating with flecks of curry leaf — with two smaller clusters and loose single popped grains floating around it. Toasted cluster edges, crunchy, savory, NOT sweet, NOT caramel popcorn. Backdrop: seamless saturated leaf-green studio sweep, vivid and punchy. Suspended crumbs and loose popped grains frozen mid-air. Punchy hard studio lighting, crisp edge highlights, subtle soft shadow behind, vivid saturated color grade, hyper-detailed macro food texture, razor sharp focus, premium loud snack campaign style.",
+    "ar": "4:5",
+    "quality": "high"
+  },
+  {
+    "id": "v7",
+    "title": "V7 Cutout: rice flour",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat deep turmeric yellow #F7AE00, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Subject floating in mid-air unless stated. Small crumbs and particles suspended around the subject. No props, no surfaces, no hands, no text unless stated. Colors rich and saturated but food tones natural and true. A small airborne puff-pile of fine white rice flour floating centered in frame, a soft cloud of flour dust suspended around it, generous empty background margin on all sides, subject occupying the middle half of the frame.",
+    "ar": "1:1",
+    "quality": "medium"
+  },
+  {
+    "id": "v8",
+    "title": "V8 Cutout: chana dal",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat deep turmeric yellow #F7AE00, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Subject floating in mid-air unless stated. Small crumbs and particles suspended around the subject. No props, no surfaces, no hands, no text unless stated. Colors rich and saturated but food tones natural and true. A loose floating scatter of golden split chana dal lentils, about a dozen lentils suspended mid-air centered in frame, each lentil crisp and sharp, generous empty background margin on all sides, subject occupying the middle half of the frame.",
+    "ar": "1:1",
+    "quality": "medium"
+  },
+  {
+    "id": "v9",
+    "title": "V9 Cutout: sesame",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat deep turmeric yellow #F7AE00, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Subject floating in mid-air unless stated. Small crumbs and particles suspended around the subject. No props, no surfaces, no hands, no text unless stated. Colors rich and saturated but food tones natural and true. A floating pinch of mixed white and black sesame seeds suspended mid-air in a loose cluster centered in frame, every seed crisp and sharp, generous empty background margin on all sides, subject occupying the middle half of the frame.",
+    "ar": "1:1",
+    "quality": "medium"
+  },
+  {
+    "id": "v10",
+    "title": "V10 Cutout: cumin",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat deep leaf green #0E7B3D, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Subject floating in mid-air unless stated. Small crumbs and particles suspended around the subject. No props, no surfaces, no hands, no text unless stated. Colors rich and saturated but food tones natural and true. Whole brown cumin seeds floating in a loose swirl centered in frame, each seed crisp and sharp, generous empty background margin on all sides, subject occupying the middle half of the frame.",
+    "ar": "1:1",
+    "quality": "medium"
+  },
+  {
+    "id": "v11",
+    "title": "V11 Cutout: ajwain",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat deep leaf green #0E7B3D, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Subject floating in mid-air unless stated. Small crumbs and particles suspended around the subject. No props, no surfaces, no hands, no text unless stated. Colors rich and saturated but food tones natural and true. Tiny ajwain carom seeds floating in a small dense cloud centered in frame, seeds crisp and sharp, generous empty background margin on all sides, subject occupying the middle half of the frame.",
+    "ar": "1:1",
+    "quality": "medium"
+  },
+  {
+    "id": "v12",
+    "title": "V12 Cutout: butter",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat chili red #C8301B, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Subject floating in mid-air unless stated. Small crumbs and particles suspended around the subject. No props, no surfaces, no hands, no text unless stated. Colors rich and saturated but food tones natural and true. A single curl of pale golden butter floating centered in frame, one edge just beginning to melt, tiny golden droplets suspended around it, generous empty background margin on all sides, subject occupying the middle half of the frame.",
+    "ar": "1:1",
+    "quality": "medium"
+  },
+  {
+    "id": "v13",
+    "title": "V13 Cutout: curry leaves",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat chili red #C8301B, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Subject floating in mid-air unless stated. Small crumbs and particles suspended around the subject. No props, no surfaces, no hands, no text unless stated. Colors rich and saturated but food tones natural and true. Exactly three crisp fried dark-green curry leaves floating fanned mid-air centered in frame, matte fried texture not glossy, generous empty background margin on all sides, subject occupying the middle half of the frame.",
+    "ar": "1:1",
+    "quality": "medium"
+  },
+  {
+    "id": "v14",
+    "title": "V14 Cutout: dried chili",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat deep turmeric yellow #F7AE00, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Subject floating in mid-air unless stated. Small crumbs and particles suspended around the subject. No props, no surfaces, no hands, no text unless stated. Colors rich and saturated but food tones natural and true. Two whole dried red chilies with stems crossed mid-air, a few chili flakes suspended around them, centered in frame, generous empty background margin on all sides, subject occupying the middle half of the frame.",
+    "ar": "1:1",
+    "quality": "medium"
+  },
+  {
+    "id": "v15",
+    "title": "V15 Cutout: peanuts",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat deep leaf green #0E7B3D, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Subject floating in mid-air unless stated. Small crumbs and particles suspended around the subject. No props, no surfaces, no hands, no text unless stated. Colors rich and saturated but food tones natural and true. Roasted red-skin peanuts floating in a loose cluster, some skins split showing pale kernels, centered in frame, generous empty background margin on all sides, subject occupying the middle half of the frame.",
+    "ar": "1:1",
+    "quality": "medium"
+  },
+  {
+    "id": "v16",
+    "title": "V16 Crunch shatter macro",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat chili red #C8301B, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Subject floating in mid-air unless stated. Small crumbs and particles suspended around the subject. No props, no surfaces, no hands, no text unless stated. Colors rich and saturated but food tones natural and true. Extreme macro of a golden-brown bhajani chakli snapping in half mid-air: a tight flat spiral coil of deeply ridged fried dough with black sesame seeds, the break point razor sharp at center of frame showing airy crumb structure inside, shards and toasted crumbs blasting outward frozen mid-flight, high drama, high shutter speed frozen motion, crispy, savory, NOT a pastry.",
+    "ar": "3:2",
+    "quality": "high"
+  },
+  {
+    "id": "v17",
+    "title": "V17 Chivda mid-air pour",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat deep turmeric yellow #F7AE00, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Subject floating in mid-air unless stated. Small crumbs and particles suspended around the subject. No props, no surfaces, no hands, no text unless stated. Colors rich and saturated but food tones natural and true. Poha chivda pouring straight downward from the top of the frame, frozen mid-fall: a column of thin golden flattened rice poha flakes, roasted red-skin peanuts and fried dark-green curry leaves cascading, individual pieces razor sharp against the background, savory Indian snack, NOT cereal, NOT granola.",
+    "ar": "2:3",
+    "quality": "high"
+  },
+  {
+    "id": "v18",
+    "title": "V18 Chakli pack-in-hand",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat deep turmeric yellow #F7AE00, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Small crumbs and particles suspended around the subject. Colors rich and saturated but food tones natural and true. An Indian woman's hands, mid-40s, small bangles, no manicure, holding a matte kraft stand-up pouch with a large cream paper label toward camera; at the top of the label 'Seema' in a warm elegant serif logotype with small Devanagari 'सीमा' beneath it; below, the product name 'Bhajani Chakli' in bold serif; a thin horizontal rule; a small neat ingredient list block in monospace type; a small circular batch-stamp area lower right; label edges cleanly printed, kraft texture visible around it. The pack razor sharp, the hands slightly soft, two golden-brown ridged chakli spirals with black sesame seeds floating beside the pack, toasted crumbs suspended in the air.",
+    "ar": "2:3",
+    "quality": "high"
+  },
+  {
+    "id": "v19",
+    "title": "V19 Chivda pack-in-hand",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat chili red #C8301B, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Small crumbs and particles suspended around the subject. Colors rich and saturated but food tones natural and true. An Indian woman's hands, mid-40s, small bangles, no manicure, holding a matte kraft stand-up pouch with a large cream paper label toward camera; at the top of the label 'Seema' in a warm elegant serif logotype with small Devanagari 'सीमा' beneath it; below, the product name 'Poha Chivda' in bold serif; a thin horizontal rule; a small neat ingredient list block in monospace type; a small circular batch-stamp area lower right; label edges cleanly printed, kraft texture visible around it. The pack razor sharp, the hands slightly soft, golden poha chivda flakes and roasted peanuts suspended in the air around the pack.",
+    "ar": "2:3",
+    "quality": "high"
+  },
+  {
+    "id": "v20",
+    "title": "V20 Lahya pack-in-hand",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat deep leaf green #0E7B3D, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Small crumbs and particles suspended around the subject. Colors rich and saturated but food tones natural and true. An Indian woman's hands, mid-40s, small bangles, no manicure, holding a matte kraft stand-up pouch with a large cream paper label toward camera; at the top of the label 'Seema' in a warm elegant serif logotype with small Devanagari 'सीमा' beneath it; below, the product name 'Lahya Crunch Bites' in bold serif; a thin horizontal rule; a small neat ingredient list block in monospace type; a small circular batch-stamp area lower right; label edges cleanly printed, kraft texture visible around it. The pack razor sharp, the hands slightly soft, golden popped-jowar crunch bite clusters suspended in the air around the pack.",
+    "ar": "2:3",
+    "quality": "high"
+  },
+  {
+    "id": "v21",
+    "title": "V21 Chakli pack floating",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat deep turmeric yellow #F7AE00, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Subject floating in mid-air unless stated. Small crumbs and particles suspended around the subject. No props, no surfaces, no hands unless stated. Colors rich and saturated but food tones natural and true. A matte kraft stand-up pouch floating upright mid-air, tilted 8 degrees, with a large cream paper label; at the top 'Seema' in a warm elegant serif logotype with small Devanagari 'सीमा' beneath it; below, the product name 'Bhajani Chakli' in bold serif; a thin horizontal rule; a small neat ingredient list block in monospace type; a small circular batch-stamp area lower right; label edges cleanly printed, kraft texture visible around it. Two golden-brown ridged chakli spirals with black sesame seeds and toasted crumbs orbiting the pack, crisp soft-edged shadow below.",
+    "ar": "2:3",
+    "quality": "medium"
+  },
+  {
+    "id": "v22",
+    "title": "V22 Chivda pack floating",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat chili red #C8301B, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Subject floating in mid-air unless stated. Small crumbs and particles suspended around the subject. No props, no surfaces, no hands unless stated. Colors rich and saturated but food tones natural and true. A matte kraft stand-up pouch floating upright mid-air, tilted 8 degrees, with a large cream paper label; at the top 'Seema' in a warm elegant serif logotype with small Devanagari 'सीमा' beneath it; below, the product name 'Poha Chivda' in bold serif; a thin horizontal rule; a small neat ingredient list block in monospace type; a small circular batch-stamp area lower right; label edges cleanly printed, kraft texture visible around it. Golden poha chivda flakes, roasted peanuts and fried curry leaves orbiting the pack, crisp soft-edged shadow below.",
+    "ar": "2:3",
+    "quality": "medium"
+  },
+  {
+    "id": "v23",
+    "title": "V23 Lahya pack floating",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat deep leaf green #0E7B3D, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Subject floating in mid-air unless stated. Small crumbs and particles suspended around the subject. No props, no surfaces, no hands unless stated. Colors rich and saturated but food tones natural and true. A matte kraft stand-up pouch floating upright mid-air, tilted 8 degrees, with a large cream paper label; at the top 'Seema' in a warm elegant serif logotype with small Devanagari 'सीमा' beneath it; below, the product name 'Lahya Crunch Bites' in bold serif; a thin horizontal rule; a small neat ingredient list block in monospace type; a small circular batch-stamp area lower right; label edges cleanly printed, kraft texture visible around it. Golden popped-jowar crunch bite clusters and loose popped grains orbiting the pack, crisp soft-edged shadow below.",
+    "ar": "2:3",
+    "quality": "medium"
+  },
+  {
+    "id": "v24",
+    "title": "V24 Seema portrait (preamble OVERRIDE)",
+    "prompt": "Environmental portrait photography, dignified and real. An Indian mother in her mid-50s in a simple cotton saree, standing at her home kitchen counter beside a steel kadhai, warm soft window light on her face, honest gentle almost-smile, hands dusted with flour, defocused warm kitchen behind her, 85mm lens look with shallow depth of field, muted warm color grade, subtle film grain, dignified and real, NOT a studio color background, NOT saturated, no floating elements, no text.",
+    "ar": "2:3",
+    "quality": "high"
+  },
+  {
+    "id": "v25",
+    "title": "V25 The press (4:30 AM)",
+    "prompt": "Commercial food advertising photography, hyper-detailed, dramatic low-key. An Indian woman's hands, mid-40s, small bangles, no manicure, pressing chakli dough through a brass chakli press into hot oil in a steel kadhai, dawn-dark kitchen, one hard warm directional light raking from the left, oil surface shimmer, rising steam, deep roast-brown shadows swallowing the edges of the frame, crisp defined highlights, rich saturated warm tones, food tones natural and true, no text.",
+    "ar": "3:2",
+    "quality": "high"
+  },
+  {
+    "id": "v26",
+    "title": "V26 Kadhai frying",
+    "prompt": "Commercial food advertising photography, hyper-detailed, dramatic low-key. Golden bhajani chakli spirals frying in a steel kadhai shot from a steep high angle, each chakli a tight flat spiral coil of deeply ridged dough with black sesame seeds, matte golden-brown, oil bubbles ringing each spiral, a brass skimmer entering the frame from one side, one hard warm directional light, dark roast-brown surround swallowing the frame edges, steam and oil droplets frozen mid-air, crisp defined highlights, rich saturated warm tones, food tones natural and true, no text.",
+    "ar": "3:2",
+    "quality": "high"
+  },
+  {
+    "id": "v27",
+    "title": "V27 Texture: chakli ridge",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Punchy directional studio key light from upper left, crisp defined edges. Colors rich and saturated but food tones natural and true. Extreme macro filling the entire frame with golden-brown bhajani chakli ridge texture: deeply ridged fried besan dough bumps, embedded black sesame seeds, satin oil sheen, warm golden tones, a shallow band of razor focus across the middle of the frame softly defocusing top and bottom, crispy, savory, NOT a pastry, no text.",
+    "ar": "1:1",
+    "quality": "medium"
+  },
+  {
+    "id": "v28",
+    "title": "V28 Texture: chivda heap",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Punchy directional studio key light from upper left, crisp defined edges. Colors rich and saturated but food tones natural and true. Extreme macro filling the entire frame with a poha chivda heap: layered thin golden flattened rice poha flakes, split roasted red-skin peanuts, crisp fried curry leaf edges, turmeric-gold spice dust, shallow focus band across the center, savory Indian snack, NOT cereal, NOT granola, no text.",
+    "ar": "1:1",
+    "quality": "medium"
+  }
+]
