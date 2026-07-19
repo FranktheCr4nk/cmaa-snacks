@@ -38,7 +38,21 @@ async function genNanoBanana(prompt, ar, _seed, model) {
   return Buffer.from(img.inlineData.data, 'base64');
 }
 
-const BACKENDS = { pollinations: genPollinations, nanobanana: genNanoBanana };
+async function genOpenAI(prompt, ar, _seed, model, quality) {
+  const env = fs.readFileSync(path.join(ROOT, '.env'), 'utf8');
+  const KEY = (env.match(/OPENAI_API_KEY=(.+)/) || [])[1]?.trim();
+  if (!KEY) throw new Error('no OPENAI_API_KEY in .env');
+  const sizeMap = { '4:5': '1024x1536', '2:3': '1024x1536', '9:16': '1024x1536', '1:1': '1024x1024', '16:9': '1536x1024', '3:2': '1536x1024', '21:9': '1536x1024' };
+  const r = await fetch('https://api.openai.com/v1/images/generations', {
+    method: 'POST', headers: { Authorization: 'Bearer ' + KEY, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ model: model || 'gpt-image-2', prompt, size: sizeMap[ar] || '1024x1536', quality: quality || 'high' }),
+  });
+  const j = await r.json();
+  if (!r.ok) throw new Error('openai HTTP ' + r.status + ' ' + JSON.stringify(j).slice(0, 200));
+  return Buffer.from(j.data[0].b64_json, 'base64');
+}
+
+const BACKENDS = { pollinations: genPollinations, nanobanana: genNanoBanana, openai: genOpenAI };
 
 (async () => {
   const mode = process.argv[2];
@@ -48,7 +62,7 @@ const BACKENDS = { pollinations: genPollinations, nanobanana: genNanoBanana };
 
   if (mode === 'one') {
     const [, , , prompt, out] = process.argv;
-    const buf = await gen(prompt, arg('ar', '4:5'), Number(arg('seed', 7)), arg('model'));
+    const buf = await gen(prompt, arg('ar', '4:5'), Number(arg('seed', 7)), arg('model'), arg('quality'));
     fs.mkdirSync(path.dirname(out), { recursive: true });
     fs.writeFileSync(out, buf);
     console.log('OK', out, Math.round(buf.length / 1024) + 'KB', backend);
@@ -63,7 +77,7 @@ const BACKENDS = { pollinations: genPollinations, nanobanana: genNanoBanana };
         const seed = 100 + v * 37 + (s.seedOffset || 0);
         const out = path.join(outdir, `${s.id}${variants > 1 ? '-v' + (v + 1) : ''}.jpg`);
         try {
-          const buf = await gen(s.prompt, s.ar || '4:5', seed, arg('model'));
+          const buf = await gen(s.prompt, s.ar || '4:5', seed, arg('model'), s.quality || arg('quality'));
           fs.writeFileSync(out, buf);
           ok++; console.log('OK ', s.id, 'v' + (v + 1), Math.round(buf.length / 1024) + 'KB');
         } catch (e) { fail++; console.log('ERR', s.id, 'v' + (v + 1), String(e).slice(0, 120)); }
