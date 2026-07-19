@@ -1,0 +1,44 @@
+[
+  {
+    "id": "v2",
+    "title": "B1 hero flyer — turn frame 2 (replaces v2)",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat deep turmeric yellow #F7AE00, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Subject floating in mid-air unless stated. Small crumbs and particles suspended around the subject. No props, no surfaces, no hands, no text unless stated. Colors rich and saturated but food tones natural and true. The same single golden-brown bhajani chakli as the campaign hero: a tight FLAT Archimedean spiral coil with EXACTLY four concentric turns touching each other with no gaps, winding all the way to a filled centre, deeply ridged star-section extruded dough, black and white sesame seeds in the ridges. The chakli is rotated roughly 25 degrees clockwise from the hero frame and tilted slightly away from camera, same suspended crumbs and sesame, same upper-left key light, same scale in frame. Turns must touch — no gaps between coil turns, no hollow centre, no loose flying tail.",
+    "ar": "2:3",
+    "quality": "high"
+  },
+  {
+    "id": "v3",
+    "title": "B1 hero flyer — turn frame 3 (replaces v3)",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat deep turmeric yellow #F7AE00, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Subject floating in mid-air unless stated. Small crumbs and particles suspended around the subject. No props, no surfaces, no hands, no text unless stated. Colors rich and saturated but food tones natural and true. The same single golden-brown bhajani chakli as the campaign hero: a tight FLAT Archimedean spiral coil with EXACTLY four concentric turns touching each other with no gaps, winding all the way to a filled centre, deeply ridged star-section extruded dough, black and white sesame seeds in the ridges. The chakli is rotated roughly 25 degrees counter-clockwise from the hero frame and tilted slightly toward camera, same suspended crumbs and sesame, same upper-left key light, same scale in frame. Turns must touch — no gaps between coil turns, no hollow centre, no loose flying tail.",
+    "ar": "2:3",
+    "quality": "high"
+  },
+  {
+    "id": "v4",
+    "title": "B4 dial centre + B5 exploded centre + B1 turn frame 4 (replaces v4)",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat warm ghee gold #FFC933, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Subject floating in mid-air unless stated. Small crumbs and particles suspended around the subject. No props, no surfaces, no hands, no text unless stated. Colors rich and saturated but food tones natural and true. Dead top-down view of a single bhajani chakli centred in frame like a vinyl record, perfectly circular silhouette. The chakli is a tight FLAT Archimedean spiral coil of deeply ridged star-section extruded dough: EXACTLY four concentric turns that touch each other with no gaps between them, winding continuously into the centre where the coil ends in a small tucked tail. Even golden-brown fry colour, black and white sesame seeds embedded in the sharp ridges, faint satin oil sheen. Crisp soft-edged shadow directly beneath, a few crumbs and sesame seeds suspended just outside the rim. Not a rope, not a cinnamon roll, not jalebi, no extra turns, no gaps between turns.",
+    "ar": "1:1",
+    "quality": "high"
+  },
+  {
+    "id": "v5",
+    "title": "B7 shelf card 2 hero — poha chivda burst (replaces v5)",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat chili red #C8301B, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Subject floating in mid-air unless stated. Small crumbs and particles suspended around the subject. No props, no surfaces, no hands, no text unless stated. Colors rich and saturated but food tones natural and true. A loose airborne burst of authentic Maharashtrian poha chivda frozen mid-explosion at the centre of frame. The mix is dominated by paper-THIN flattened-rice poha flakes: flat, irregular, slightly curled, so thin their ragged edges turn translucent against the light, pale turmeric-gold and dusted with spice. Mixed through the flakes: split-skin roasted peanuts, crisp dark-green fried curry leaves, golden raisins, fine crunchy sev strands, roasted chana dal, tiny black mustard seeds. Every flake must clearly read as thin pressed rice — NOT cornflakes, NOT thick chips, NOT granola clusters. Spice dust and stray flakes suspended around the main burst, crisp shadows.",
+    "ar": "2:3",
+    "quality": "high"
+  },
+  {
+    "id": "v16",
+    "title": "B6 crunch full-bleed — the snap (replaces v16)",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat chili red #C8301B, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Subject floating in mid-air unless stated. Small crumbs and particles suspended around the subject. No props, no surfaces, no hands, no text unless stated. Colors rich and saturated but food tones natural and true. ONE single bhajani chakli — a tight flat Archimedean spiral of exactly four concentric touching turns, deeply ridged star-section extruded dough, golden-brown with black and white sesame seeds in the ridges — snapped violently in half along a single break line, high-speed flash-freeze. The two halves are separated by only a few centimetres and still aligned, so they clearly read as the SAME spiral pulled apart; the matching fracture faces are angled slightly toward camera revealing coarse, airy, crisp fried interior crumb. A violent blast of crumbs and sesame explodes outward from the break point. Not two whole chaklis, not two separate spirals, no second spiral centre — one spiral broken in two.",
+    "ar": "3:2",
+    "quality": "high"
+  },
+  {
+    "id": "v6",
+    "title": "B7 shelf card 3 hero — lahya crunch bites (replaces v6, optional polish)",
+    "prompt": "Commercial food advertising photography, hyper-detailed and appetizing. Seamless saturated studio background in flat deep leaf green #0E7B3D, with a subtle darker vignette at the bottom edge and slightly lighter glow upper-left. Punchy directional studio key light from upper left, crisp defined edges, crisp soft-edged drop shadow. Subject floating in mid-air unless stated. Small crumbs and particles suspended around the subject. No props, no surfaces, no hands, no text unless stated. Colors rich and saturated but food tones natural and true. Lahya crunch bites levitating in mid-air: one large hero cluster at centre tilted at a dynamic angle, two smaller clusters and loose popped pearls floating around it. Each cluster is made of popped jowar sorghum pearls — small matte ivory puffed spheres like miniature popcorn — bound together by a golden savoury turmeric-spice coating, with split-skin roasted red peanuts CLEARLY VISIBLE embedded in every cluster, and tiny flecks of fried curry leaf. Toasted cluster edges, crunchy, savory, NOT sweet, NOT caramel popcorn, NOT makhana. Loose popped pearls, peanuts and spice dust suspended around the clusters, crisp shadows.",
+    "ar": "2:3",
+    "quality": "high"
+  }
+]
